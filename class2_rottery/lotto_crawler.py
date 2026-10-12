@@ -2,7 +2,7 @@
 
 https://www.dhlottery.co.kr/lt645/result 페이지가 내부적으로 호출하는
 JSON API(/lt645/selectPstLt645InfoNew.do)를 사용해 1회~1245회의
-순위별 당첨 정보를 수집하고 CSV로 저장한다.
+순위별 당첨 정보와 회차별 총판매금액을 수집하고 CSV로 저장한다.
 
 사용법:
     python lotto_crawler.py                      # 1~1245회 -> lotto_rank_1_1245.csv
@@ -35,6 +35,7 @@ COLUMNS = [
     "1게임당 당첨금",
     "당첨기준",
     "비고",
+    "총판매금액",
 ]
 
 # 사이트 표의 당첨기준 문구
@@ -81,6 +82,8 @@ def parse_round(item: dict) -> list[dict]:
     (초기 회차의 rnkNSumWnAmt 필드는 이월금 등 다른 의미로 채워져 있어 사용하지 않는다.)
     """
     remarks = make_remarks(item)
+    # 사이트의 "총판매금액" 표시값과 동일한 필드(회차 단위 값이므로 5개 행에 반복)
+    total_sales = int(item["wholEpsdSumNtslAmt"])
     rows = []
     for rank in range(1, 6):
         count = int(item[f"rnk{rank}WnNope"])
@@ -94,6 +97,7 @@ def parse_round(item: dict) -> list[dict]:
                 "1게임당 당첨금": amount,
                 "당첨기준": CRITERIA[rank],
                 "비고": remarks,
+                "총판매금액": total_sales,
             }
         )
     return rows

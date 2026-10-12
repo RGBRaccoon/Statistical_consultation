@@ -25,6 +25,8 @@ ROUND_1245 = {
     "rnk4WnAmt": 50000,
     "rnk5WnNope": 2786728,
     "rnk5WnAmt": 5000,
+    "rlvtEpsdSumNtslAmt": 124358734000,
+    "wholEpsdSumNtslAmt": 124358734000,
 }
 
 
@@ -40,12 +42,20 @@ def test_parse_round_returns_five_rank_rows_matching_site():
         "1게임당 당첨금": 3006515775,
         "당첨기준": "6개번호 일치",
         "비고": "1등 자동10 수동0 반자동0",
+        "총판매금액": 124358734000,
     }
     assert rows[1]["당첨기준"] == "5개번호 일치 + 보너스번호 일치"
     assert rows[1]["등위별 총 당첨금"] == 5010859672
     assert rows[2]["등위별 총 당첨금"] == 5010862230
     assert rows[4]["등위별 총 당첨금"] == 13933640000
     assert rows[4]["당첨게임 수"] == 2786728
+    assert all(r["총판매금액"] == 124358734000 for r in rows)
+
+
+def test_parse_round_total_sales_uses_site_display_field():
+    # 사이트는 총판매금액에 wholEpsdSumNtslAmt 값을 표시한다
+    item = dict(ROUND_1245, rlvtEpsdSumNtslAmt=1, wholEpsdSumNtslAmt=3681782000)
+    assert lc.parse_round(item)[0]["총판매금액"] == 3681782000
 
 
 def test_parse_round_remarks_empty_when_wintype0_nonzero():
