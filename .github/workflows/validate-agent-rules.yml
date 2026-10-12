@@ -1,0 +1,72 @@
+name: Protect managed agent files
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reject direct edits and verify managed-file hashes
+        shell: bash
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          HEAD_REF: ${{ github.head_ref }}
+          EXPECTED_SOURCE_REPO: RGBRaccoon/dev-agent-standard
+        run: |
+          set -euo pipefail
+
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            git fetch origin "$BASE_REF" --depth=1
+            CHANGED="$(git diff --name-only "origin/$BASE_REF...HEAD")"
+          else
+            CHANGED=""
+          fi
+
+          MANAGED_REGEX='^(AGENTS\.md|CLAUDE\.md|TASK_TEMPLATE\.md|\.agent-standard/lock\.json|\.github/workflows/validate-agent-rules\.yml)$'
+          MANAGED_CHANGED="$(printf '%s\n' "$CHANGED" | grep -E "$MANAGED_REGEX" || true)"
+
+          if [[ -n "$MANAGED_CHANGED" && "$HEAD_REF" != "agent-standard-sync/rules" ]]; then
+            echo "ERROR: centrally managed agent files were edited directly:"
+            printf '%s\n' "$MANAGED_CHANGED"
+            echo "Put project-specific instructions in PROJECT_RULES.md."
+            exit 1
+          fi
+
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          lock_path = Path('.agent-standard/lock.json')
+          if not lock_path.exists():
+              raise SystemExit('Missing .agent-standard/lock.json')
+
+          lock = json.loads(lock_path.read_text(encoding='utf-8'))
+          expected_source = os.environ['EXPECTED_SOURCE_REPO']
+          if lock.get('source_repo') != expected_source:
+              raise SystemExit(
+                  f"Unexpected source_repo: {lock.get('source_repo')} != {expected_source}"
+              )
+
+          for rel, expected in lock.get('managed_files', {}).items():
+              path = Path(rel)
+              if not path.exists():
+                  raise SystemExit(f'Missing managed file: {rel}')
+              actual = hashlib.sha256(path.read_bytes()).hexdigest()
+              if actual != expected:
+                  raise SystemExit(f'Hash mismatch for managed file: {rel}')
+
+          print('Managed agent files are internally consistent.')
+          PY
