@@ -8,6 +8,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import lotto_crawler as lc  # noqa: E402
 
+# 1245회 실제 당첨번호
+NUMS, BONUS = [4, 5, 25, 28, 32, 42], 12
+
 # 실제 API(1245회) 응답 일부
 ROUND_1245 = {
     "winType0": 0,
@@ -15,6 +18,13 @@ ROUND_1245 = {
     "winType2": 0,
     "winType3": 0,
     "ltEpsd": 1245,
+    "tm1WnNo": NUMS[0],
+    "tm2WnNo": NUMS[1],
+    "tm3WnNo": NUMS[2],
+    "tm4WnNo": NUMS[3],
+    "tm5WnNo": NUMS[4],
+    "tm6WnNo": NUMS[5],
+    "bnsWnNo": BONUS,
     "rnk1WnNope": 10,
     "rnk1WnAmt": 3006515775,
     "rnk2WnNope": 91,
@@ -43,6 +53,13 @@ def test_parse_round_returns_five_rank_rows_matching_site():
         "당첨기준": "6개번호 일치",
         "비고": "1등 자동10 수동0 반자동0",
         "총판매금액": 124358734000,
+        "당첨번호1": NUMS[0],
+        "당첨번호2": NUMS[1],
+        "당첨번호3": NUMS[2],
+        "당첨번호4": NUMS[3],
+        "당첨번호5": NUMS[4],
+        "당첨번호6": NUMS[5],
+        "보너스번호": BONUS,
     }
     assert rows[1]["당첨기준"] == "5개번호 일치 + 보너스번호 일치"
     assert rows[1]["등위별 총 당첨금"] == 5010859672
@@ -56,6 +73,12 @@ def test_parse_round_total_sales_uses_site_display_field():
     # 사이트는 총판매금액에 wholEpsdSumNtslAmt 값을 표시한다
     item = dict(ROUND_1245, rlvtEpsdSumNtslAmt=1, wholEpsdSumNtslAmt=3681782000)
     assert lc.parse_round(item)[0]["총판매금액"] == 3681782000
+
+
+def test_parse_round_repeats_winning_numbers_on_every_rank_row():
+    for row in lc.parse_round(ROUND_1245):
+        assert [row[f"당첨번호{i}"] for i in range(1, 7)] == NUMS
+        assert row["보너스번호"] == BONUS
 
 
 def test_parse_round_remarks_empty_when_wintype0_nonzero():
