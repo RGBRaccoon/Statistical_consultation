@@ -144,3 +144,18 @@ def test_embedded_png_is_self_contained(tmp_path):
     assert tag.startswith('<img alt="검증 그림" src="data:image/png;base64,')
     encoded = tag.split("base64,", 1)[1].split('"', 1)[0]
     assert base64.b64decode(encoded) == payload
+
+
+def test_english_table_translates_headers_and_category_values():
+    frame = pd.DataFrame({"순위": ["1등"], "확률": [1 / la.TOTAL_COMBINATIONS]})
+
+    table = la._english_table(
+        frame,
+        {"순위": "Rank", "확률": "Probability"},
+        {"Probability": ".10f"},
+    )
+
+    assert "Rank" in table
+    assert "Probability" in table
+    assert "1st" in table
+    assert "1등" not in table

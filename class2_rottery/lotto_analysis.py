@@ -823,6 +823,41 @@ def _markdown_table(frame: pd.DataFrame, formats: dict[str, str] | None = None) 
     return output.to_markdown(index=False)
 
 
+ENGLISH_VALUES = {
+    "1등": "1st",
+    "2등": "2nd",
+    "3등": "3rd",
+    "4등": "4th",
+    "5등": "5th",
+    "생일형 전체(모두 31 이하)": "All numbers at most 31",
+    "생일형 전체": "All numbers at most 31",
+    "연속번호 포함": "Contains consecutive numbers",
+    "같은 끝자리 쌍 포함": "Contains same-ending pair",
+    "홀짝 3:3": "Three odd and three even",
+    "직전 회차 번호 포함": "Overlaps previous draw",
+    "생일형_전체": "All numbers at most 31",
+    "연속쌍_수": "Consecutive pairs",
+    "같은끝자리쌍_수": "Same-ending pairs",
+    "직전회차_중복수": "Overlap with previous draw",
+    "합계": "Number sum",
+    "범위": "Number range",
+    "홀수_개수": "Odd-number count",
+    "매회 1게임": "One game every draw",
+    "직전 회차 1등 없음": "After a draw with no jackpot winner",
+    "과거자료로 선택한 mod5": "Best modulo-5 group using past data",
+}
+
+
+def _english_table(
+    frame: pd.DataFrame,
+    columns: dict[str, str],
+    formats: dict[str, str] | None = None,
+) -> str:
+    """Translate display-only table labels while preserving numeric results."""
+    translated = frame.rename(columns=columns).replace(ENGLISH_VALUES)
+    return _markdown_table(translated, formats)
+
+
 def _jsonable(value: Any) -> Any:
     if isinstance(value, dict):
         return {str(key): _jsonable(item) for key, item in value.items()}
@@ -1165,7 +1200,465 @@ def write_report(
     report_path.write_text("\n".join(sections) + "\n", encoding="utf-8")
 
 
-def run_analysis(csv_path: Path, output_dir: Path, report_path: Path) -> dict[str, Any]:
+def write_english_report(
+    report_path: Path,
+    charts: dict[str, Path],
+    rank_data: pd.DataFrame,
+    probability: pd.DataFrame,
+    main_frequency: pd.DataFrame,
+    bonus_frequency: pd.DataFrame,
+    main_summary: dict[str, float],
+    bonus_summary: dict[str, float],
+    main_simulation: dict[str, float],
+    bonus_simulation: dict[str, float],
+    combination_summary: dict[str, Any],
+    pair_table: pd.DataFrame,
+    triple_table: pd.DataFrame,
+    pattern_table: pd.DataFrame,
+    crowd_comparisons: pd.DataFrame,
+    crowd_coefficients: pd.DataFrame,
+    rank_ev: pd.DataFrame,
+    round_ev: pd.DataFrame,
+    cycle: pd.DataFrame,
+    autocorrelation: pd.DataFrame,
+    rollover: pd.DataFrame,
+    backtest: pd.DataFrame,
+    timing_summary: dict[str, float],
+) -> None:
+    """Write the English self-contained report using the existing charts."""
+    current = round_ev.loc[round_ev["회차"] >= CURRENT_RULE_START_ROUND]
+    mean_gross = current["세전_기대수령액"].mean()
+    mean_net = current["세후_기대수령액"].mean()
+    top_main = main_frequency.nlargest(10, "출현횟수")[
+        ["번호", "출현횟수", "출현률", "Holm_보정_p값"]
+    ]
+    top_bonus = bonus_frequency.nlargest(10, "출현횟수")[
+        ["번호", "출현횟수", "출현률", "Holm_보정_p값"]
+    ]
+    numeric_summary = (
+        rank_data[
+            [
+                "회차",
+                "등위별 총 당첨금",
+                "당첨게임 수",
+                "1게임당 당첨금",
+                "총판매금액",
+            ]
+        ]
+        .agg(["count", "nunique", "mean", "median", "min", "max"])
+        .T.reset_index()
+    )
+    numeric_summary["index"] = numeric_summary["index"].replace(
+        {
+            "회차": "Draw number",
+            "등위별 총 당첨금": "Total prize by tier",
+            "당첨게임 수": "Winning games",
+            "1게임당 당첨금": "Prize per winning game",
+            "총판매금액": "Total sales",
+        }
+    )
+    rank_summary = (
+        rank_data.groupby("순위", sort=False)
+        .agg(
+            draws=("회차", "size"),
+            mean_winning_games=("당첨게임 수", "mean"),
+            median_winning_games=("당첨게임 수", "median"),
+            mean_prize=("1게임당 당첨금", "mean"),
+            median_prize=("1게임당 당첨금", "median"),
+        )
+        .reset_index()
+    )
+    max_autocorrelation = autocorrelation.iloc[
+        autocorrelation["자기상관"].abs().argmax()
+    ]
+    sum_effect = crowd_coefficients.loc[crowd_coefficients["변수"] == "합계"].iloc[0]
+    column_description = pd.DataFrame(
+        [
+            (
+                "Draw number",
+                "Integer",
+                "Draw identifier; repeated for tiers 1 through 5.",
+            ),
+            ("Rank", "Category", "Prize tier from 1st through 5th."),
+            ("Total prize by tier", "KRW", "Total pre-tax prize paid to the tier."),
+            (
+                "Winning games",
+                "Integer",
+                "Number of winning games, which may differ from winners.",
+            ),
+            (
+                "Prize per winning game",
+                "KRW",
+                "Pre-tax amount paid to one winning game.",
+            ),
+            (
+                "Winning condition",
+                "Category",
+                "Number-matching rule for the prize tier.",
+            ),
+            ("Notes", "Text", "Automatic, manual, and semi-automatic 1st-tier games."),
+            ("Total sales", "KRW", "Draw-level sales, repeated on all five tier rows."),
+            (
+                "Winning number 1-6",
+                "Integer",
+                "Six main numbers in ascending order, not draw order.",
+            ),
+            ("Bonus number", "Integer", "Bonus number used to determine the 2nd tier."),
+        ],
+        columns=["Column", "Type", "Description and caution"],
+    )
+
+    sections = [
+        "# Lotto 6/45 Maximum Expected Return Analysis",
+        "",
+        "## 1. Objective",
+        "",
+        "This report asks whether purchase timing or number selection can increase the expected return per game. It separates number prediction, prize-sharing avoidance, and draw-timing strategies, using draws 1 through 1,245.",
+        "",
+        "- Unit of analysis: one game containing six selected numbers",
+        "- Current price: KRW 1,000 per game",
+        f"- Current fixed-prize regime for tiers 4 and 5: draws {CURRENT_RULE_START_ROUND}-1,245",
+        "- After-tax values: current 2026 tax rules hypothetically applied to historical prizes",
+        "- Draw-level expected return: retrospective estimates using observed prize tables",
+        "",
+        "## 2. Data Structure and Column Descriptions",
+        "",
+        f"The source contains draws 1-{int(rank_data['회차'].max()):,}, {len(rank_data):,} rows, and {rank_data.shape[1]} columns, with {int(rank_data.isna().sum().sum()):,} missing values. Each draw appears on five tier rows, so sales and number analyses retain one row per draw.",
+        "",
+        _markdown_table(column_description),
+        "",
+        "`Total prize by tier ≈ winning games × prize per winning game`. Small differences may arise from KRW-unit rounding.",
+        "",
+        "### 2.1 Summary Statistics for Major Numeric Columns",
+        "",
+        _english_table(
+            numeric_summary,
+            {
+                "index": "Column",
+                "count": "Valid values",
+                "nunique": "Unique values",
+                "mean": "Mean",
+                "median": "Median",
+                "min": "Minimum",
+                "max": "Maximum",
+            },
+            {
+                "Valid values": ",.0f",
+                "Unique values": ",.0f",
+                "Mean": ",.1f",
+                "Median": ",.1f",
+                "Minimum": ",.0f",
+                "Maximum": ",.0f",
+            },
+        ),
+        "",
+        "### 2.2 Summary Statistics by Prize Tier",
+        "",
+        _english_table(
+            rank_summary,
+            {
+                "순위": "Rank",
+                "draws": "Draws",
+                "mean_winning_games": "Mean winning games",
+                "median_winning_games": "Median winning games",
+                "mean_prize": "Mean prize",
+                "median_prize": "Median prize",
+            },
+            {
+                "Mean winning games": ",.2f",
+                "Median winning games": ",.0f",
+                "Mean prize": ",.0f",
+                "Median prize": ",.0f",
+            },
+        ),
+        "",
+        "## 3. Probability of Each Prize Tier",
+        "",
+        _english_table(
+            probability[["순위", "유리한 조합 수", "확률", "약_몇분의1"]],
+            {
+                "순위": "Rank",
+                "유리한 조합 수": "Favorable combinations",
+                "확률": "Probability",
+                "약_몇분의1": "About 1 in",
+            },
+            {"Probability": ".10f", "About 1 in": ",.1f"},
+        ),
+        "",
+        embedded_png_tag(charts["probability"], "Probability by prize tier"),
+        "",
+        "Every exact six-number combination has the same probability. Historical frequency differences therefore do not, by themselves, improve the probability of the next draw.",
+        "",
+        "## 4. Main and Bonus Number Frequencies",
+        "",
+        f"The global uniformity test for main numbers gives p = **{main_summary['균등성_p값']:.4f}**. After Holm correction across 45 numbers, the number of significant results is {(main_frequency['Holm_보정_p값'] < 0.05).sum()}.",
+        "",
+        _english_table(
+            top_main,
+            {
+                "번호": "Number",
+                "출현횟수": "Count",
+                "출현률": "Rate",
+                "Holm_보정_p값": "Holm-adjusted p",
+            },
+            {"Rate": ".2%", "Holm-adjusted p": ".4f"},
+        ),
+        "",
+        embedded_png_tag(charts["main_frequency"], "Main-number frequencies"),
+        "",
+        f"In {int(main_simulation['반복수']):,} covariance-matched normal simulations, a main-number range at least as large as observed occurred in **{main_simulation['최대최소차_이상_확률']:.2%}** of runs.",
+        "",
+        f"The bonus-number uniformity test gives p = **{bonus_summary['균등성_p값']:.4f}**; the number of significant results after Holm correction is {(bonus_frequency['Holm_보정_p값'] < 0.05).sum()}.",
+        "",
+        _english_table(
+            top_bonus,
+            {
+                "번호": "Number",
+                "출현횟수": "Count",
+                "출현률": "Rate",
+                "Holm_보정_p값": "Holm-adjusted p",
+            },
+            {"Rate": ".2%", "Holm-adjusted p": ".4f"},
+        ),
+        "",
+        embedded_png_tag(charts["bonus_frequency"], "Bonus-number frequencies"),
+        "",
+        f"The corresponding simulated probability for the observed bonus-number range is **{bonus_simulation['최대최소차_이상_확률']:.2%}**. These simulations use a covariance-matched normal approximation rather than exact discrete draws.",
+        "",
+        "Under a fair draw, every number has a 6/45 chance of appearing among the six main numbers in the next draw.",
+        "",
+        "## 5. Common Combinations and Prize Sharing",
+        "",
+        f"The {int(rank_data['회차'].max()):,} draws contain {combination_summary['서로다른_정확조합수']:,} distinct exact combinations and {combination_summary['반복된_정확조합수']:,} repeated exact combinations.",
+        "",
+        "### 5.1 Co-occurring Number Sets",
+        "",
+        _english_table(
+            pair_table.head(10),
+            {
+                "번호1": "Number 1",
+                "번호2": "Number 2",
+                "동반출현횟수": "Co-occurrences",
+            },
+        ),
+        "",
+        _english_table(
+            triple_table.head(10),
+            {
+                "번호1": "Number 1",
+                "번호2": "Number 2",
+                "번호3": "Number 3",
+                "동반출현횟수": "Co-occurrences",
+            },
+        ),
+        "",
+        embedded_png_tag(charts["pairs"], "Most frequent main-number pairs"),
+        "",
+        "### 5.2 Combination Shape and Shared Jackpots",
+        "",
+        _english_table(
+            pattern_table,
+            {
+                "조합특성": "Feature",
+                "회차수": "Draws",
+                "비율": "Share",
+                "평균_1등당첨게임": "Mean 1st-tier games",
+                "평균_수동1등": "Mean manual 1st-tier games",
+            },
+            {
+                "Share": ".2%",
+                "Mean 1st-tier games": ".2f",
+                "Mean manual 1st-tier games": ".2f",
+            },
+        ),
+        "",
+        _english_table(
+            crowd_comparisons,
+            {
+                "조합특성": "Feature",
+                "해당_회차수": "Draws with feature",
+                "비해당_회차수": "Draws without feature",
+                "해당_평균_수동1등_1억게임당": "With: manual wins per 100M games",
+                "비해당_평균_수동1등_1억게임당": "Without: manual wins per 100M games",
+                "평균차이": "Mean difference",
+                "Mann_Whitney_p값": "Mann-Whitney p",
+            },
+            {
+                "With: manual wins per 100M games": ".2f",
+                "Without: manual wins per 100M games": ".2f",
+                "Mean difference": ".2f",
+                "Mann-Whitney p": ".4f",
+            },
+        ),
+        "",
+        embedded_png_tag(
+            charts["crowd"], "Combination features and manual shared jackpots"
+        ),
+        "",
+        "The negative-binomial model below uses sold games as an exposure offset. An incidence-rate ratio above 1 indicates an association with more shared winning games.",
+        "",
+        _english_table(
+            crowd_coefficients,
+            {
+                "변수": "Variable",
+                "계수": "Coefficient",
+                "발생률비": "Incidence-rate ratio",
+                "p값": "p",
+                "95%CI_하한": "95% CI lower",
+                "95%CI_상한": "95% CI upper",
+            },
+            {
+                "Coefficient": ".4f",
+                "Incidence-rate ratio": ".3f",
+                "p": ".4f",
+                "95% CI lower": ".3f",
+                "95% CI upper": ".3f",
+            },
+        ),
+        "",
+        f"After controlling for the other features and sales volume, a one-standard-deviation increase in number sum has an incidence-rate ratio of **{sum_effect['발생률비']:.3f}** (p = {sum_effect['p값']:.4g}). Consecutive numbers, combinations containing only numbers up to 31, same-ending pairs, and odd-number count are not significant at the 5% level.",
+        "",
+        "This analysis does not increase the chance of winning. It explores whether avoiding combinations favored by other players might reduce prize sharing. Because the data do not include every purchased combination, these results show associations rather than causal effects.",
+        "",
+        "## 6. Does Expected Return Vary by Draw?",
+        "",
+        f"From draw 401 onward, the mean retrospective gross expected receipt is **KRW {mean_gross:,.1f}** per game. Applying current tax rules gives **KRW {mean_net:,.1f}**.",
+        "",
+        embedded_png_tag(charts["round_ev"], "Expected receipt by draw"),
+        "",
+        "### 6.1 Five-Draw Cycle Hypothesis",
+        "",
+        _english_table(
+            cycle,
+            {
+                "회차_mod5": "Modulo-5 position",
+                "회차수": "Draws",
+                "평균_세전기대수령액": "Mean gross receipt",
+                "중앙_세전기대수령액": "Median gross receipt",
+                "표준편차": "Standard deviation",
+            },
+            {
+                "Mean gross receipt": ",.2f",
+                "Median gross receipt": ",.2f",
+                "Standard deviation": ",.2f",
+            },
+        ),
+        "",
+        embedded_png_tag(charts["cycle"], "Five-draw cycle comparison"),
+        "",
+        f"The largest difference among the five group means is KRW {timing_summary['mod5_평균차이']:,.2f}. The permutation-test p-value is **{timing_summary['mod5_순열검정_p값']:.4f}**, and the Kruskal-Wallis p-value is **{timing_summary['mod5_Kruskal_p값']:.4f}**.",
+        "",
+        f"Across lags 1-20, the largest absolute autocorrelation is **{max_autocorrelation['자기상관']:.3f}** at lag {int(max_autocorrelation['시차'])}. No clear repeating cycle is present.",
+        "",
+        _english_table(
+            autocorrelation,
+            {"시차": "Lag", "자기상관": "Autocorrelation"},
+            {"Autocorrelation": ".4f"},
+        ),
+        "",
+        "### 6.2 Rollover Information and Timing Strategies",
+        "",
+        _english_table(
+            rollover,
+            {
+                "직전회차_1등없음": "Previous draw had no jackpot winner",
+                "회차수": "Draws",
+                "평균_세전기대수령액": "Mean gross receipt",
+                "중앙_세전기대수령액": "Median gross receipt",
+                "평균_세후기대수령액": "Mean after-tax receipt",
+                "중앙_세후기대수령액": "Median after-tax receipt",
+            },
+            {
+                "Mean gross receipt": ",.2f",
+                "Median gross receipt": ",.2f",
+                "Mean after-tax receipt": ",.2f",
+                "Median after-tax receipt": ",.2f",
+            },
+        ),
+        "",
+        _english_table(
+            backtest,
+            {
+                "전략": "Strategy",
+                "구매회차수": "Purchased draws",
+                "평균_세전기대수령액": "Mean gross receipt",
+                "평균_세후기대수령액": "Mean after-tax receipt",
+                "평균_세전ROI": "Mean gross ROI",
+                "평균_세후ROI": "Mean after-tax ROI",
+            },
+            {
+                "Mean gross receipt": ",.2f",
+                "Mean after-tax receipt": ",.2f",
+                "Mean gross ROI": ".2%",
+                "Mean after-tax ROI": ".2%",
+            },
+        ),
+        "",
+        "Actual winner counts and prizes are only known after each draw. The backtests use only the previous draw and earlier observations. The rollover estimate is highly uncertain because its sample is very small.",
+        "",
+        "## 7. Expected-Return Contribution by Prize Tier",
+        "",
+        _english_table(
+            rank_ev,
+            {
+                "순위": "Rank",
+                "확률": "Probability",
+                "평균_당첨금": "Mean prize",
+                "평균_세전기대수령액": "Mean gross contribution",
+                "평균_세후기대수령액": "Mean after-tax contribution",
+                "세전기대수령액_비중": "Gross contribution share",
+            },
+            {
+                "Probability": ".10f",
+                "Mean prize": ",.0f",
+                "Mean gross contribution": ",.2f",
+                "Mean after-tax contribution": ",.2f",
+                "Gross contribution share": ".2%",
+            },
+        ),
+        "",
+        embedded_png_tag(charts["rank_ev"], "Expected-return contribution by tier"),
+        "",
+        "A player cannot target only one prize tier with a game. This table decomposes the total expected receipt. Tiers 4 and 5 are fixed prizes; tiers 1-3 vary with sales, rollovers, and shared winning games.",
+        "",
+        "## 8. Expected Return per Game and Conclusion",
+        "",
+        f"Under the current-rule period, the historical mean gross expected receipt is **KRW {mean_gross:,.1f}**, for a mean gross expected profit of **KRW {mean_gross - 1_000:,.1f}**. Applying current tax rules gives a mean receipt of **KRW {mean_net:,.1f}** and a mean profit of **KRW {mean_net - 1_000:,.1f}**.",
+        "",
+        "This is a counterfactual estimate that adds one uniformly selected game to each historical draw. For tiers 1-3, that game is included in the winner count before the prize pool is divided. The official 50% long-run payout rate is sales-weighted across all sold games; the draw-level arithmetic mean and uniform-combination assumption used here need not equal exactly KRW 500. This is not a return known before purchase.",
+        "",
+        "1. Frequently drawn numbers do not have a higher probability in the next fair draw.",
+        "2. A rollover is observable before purchase and may raise the prize pool, but the sample and tax effect must be considered.",
+        "3. Avoiding combinations that may be popular can only address prize-sharing risk; it does not increase the probability of winning.",
+        "4. Even the best examined strategy has a negative expected profit.",
+        "",
+        "## 9. Limitations",
+        "",
+        "- Purchased combination-level data are unavailable, so combination popularity is inferred indirectly from winning combinations and shared winners.",
+        "- Draw-level expected returns are retrospective and cannot be known precisely before purchase.",
+        "- Current 2026 tax rules are applied uniformly to historical prizes.",
+        "- Early draws use different ticket prices and prize rules and are excluded from current-rule expected-return comparisons.",
+        "- Statistical association does not establish causality or draw manipulation.",
+        "",
+        "## 10. Reproduction and Official References",
+        "",
+        "```bash",
+        "python class2_rottery/lotto_analysis.py",
+        "```",
+        "",
+        "- [Donghaeng Lottery: Lotto 6/45 rules and prize structure](https://www.dhlottery.co.kr/lt645/intro)",
+        "- [National Tax Service: withholding rates for other income](https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7893&mi=6467)",
+        "- [Korean Law Information Center: Income Tax Act, Article 84](https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900029004)",
+    ]
+    report_path.write_text("\n".join(sections) + "\n", encoding="utf-8")
+
+
+def run_analysis(
+    csv_path: Path,
+    output_dir: Path,
+    report_path: Path,
+    english_report_path: Path | None = None,
+) -> dict[str, Any]:
     """7개 분석을 실행하고 모든 표·그림·요약·보고서를 저장한다."""
     configure_plots()
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -1306,6 +1799,32 @@ def run_analysis(csv_path: Path, output_dir: Path, report_path: Path) -> dict[st
         backtest,
         timing_summary,
     )
+    if english_report_path is not None:
+        write_english_report(
+            english_report_path,
+            charts,
+            rank_data,
+            probability,
+            main_frequency,
+            bonus_frequency,
+            main_summary,
+            bonus_summary,
+            main_simulation,
+            bonus_simulation,
+            combination_summary,
+            pair_table,
+            triple_table,
+            pattern_table,
+            crowd_comparisons,
+            crowd_coefficients,
+            rank_ev,
+            round_ev,
+            cycle,
+            autocorrelation,
+            rollover,
+            backtest,
+            timing_summary,
+        )
     return summary
 
 
@@ -1315,13 +1834,17 @@ def main() -> None:
     parser.add_argument("--csv", type=Path, default=base / "lotto_rank_1_1245.csv")
     parser.add_argument("--output", type=Path, default=base / "analysis_results")
     parser.add_argument("--report", type=Path, default=base / "lotto_rank_report.md")
+    parser.add_argument(
+        "--report-en", type=Path, default=base / "lotto_rank_report_en.md"
+    )
     args = parser.parse_args()
-    summary = run_analysis(args.csv, args.output, args.report)
+    summary = run_analysis(args.csv, args.output, args.report, args.report_en)
     print(
         "분석 완료:",
         f"{summary['metadata']['rounds']}개 회차,",
         f"결과={args.output},",
         f"보고서={args.report}",
+        f"영문보고서={args.report_en}",
     )
 
 
