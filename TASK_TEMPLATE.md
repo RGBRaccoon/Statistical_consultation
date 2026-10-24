@@ -1,6 +1,6 @@
 <!--
 AUTO-GENERATED / DO NOT EDIT DIRECTLY
-Source: RGBRaccoon/dev-agent-standard@f7ff8557e7407039d9c1506e04f2e178cdddbc67
+Source: RGBRaccoon/dev-agent-standard@e3925f388f0e9a6c4d280e9cce5acb315e902067
 Project-specific rules belong in PROJECT_RULES.md.
 -->
 

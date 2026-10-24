@@ -33,7 +33,7 @@ jobs:
             CHANGED=""
           fi
 
-          MANAGED_REGEX='^(AGENTS\.md|CLAUDE\.md|TASK_TEMPLATE\.md|\.agent-standard/lock\.json|\.github/workflows/validate-agent-rules\.yml)$'
+          MANAGED_REGEX='^(AGENTS\.md|CLAUDE\.md|TASK_TEMPLATE\.md|\.agent-standard/lock\.json|\.github/workflows/validate-agent-rules\.yml|\.github/workflows/auto-merge-agent-rules\.yml)$'
           MANAGED_CHANGED="$(printf '%s\n' "$CHANGED" | grep -E "$MANAGED_REGEX" || true)"
 
           if [[ -n "$MANAGED_CHANGED" && "$HEAD_REF" != "agent-standard-sync/rules" ]]; then
