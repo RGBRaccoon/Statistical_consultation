@@ -1,11 +1,12 @@
 {
   "schema_version": 1,
   "source_repo": "RGBRaccoon/dev-agent-standard",
-  "source_sha": "f7ff8557e7407039d9c1506e04f2e178cdddbc67",
+  "source_sha": "e3925f388f0e9a6c4d280e9cce5acb315e902067",
   "managed_files": {
-    "AGENTS.md": "53e4283c1630557476e93d467b0ef6c22646ce71a2f24817c8475b8662d32045",
-    "CLAUDE.md": "7690abd48340671a8fd5c8e6342793b2ad173f82f997b678b2abba494d5fd7b3",
-    "TASK_TEMPLATE.md": "18d17fe2f415daa5c664b0b7e3ea059037e303633e1d09403947dc439620944a",
-    ".github/workflows/validate-agent-rules.yml": "6be867fec18964aebe57fe38ed5c137430e744a13992dc880c2e26c4fb6838ab"
+    "AGENTS.md": "95506e01adc9b2d8327b2f106b74293228d4c3599660b32602a371ffd4a92d73",
+    "CLAUDE.md": "387b37467cabba24626e21c79b6e52386764d83117a4dcd80edbeaccaa56f3a3",
+    "TASK_TEMPLATE.md": "8f2a533010a7ca1237a13af6ee5136bad5c0451b7982e31a6bfb410d1e429044",
+    ".github/workflows/validate-agent-rules.yml": "64febe25c8c34d0aadcf938631e07ebb6ba82c1aab59c276a51c7b3feee8ab1d",
+    ".github/workflows/auto-merge-agent-rules.yml": "11d4368be076f00e8e4cb6b912cfc37ab9cccb230ef0523980424ebee70f909c"
   }
 }

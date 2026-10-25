@@ -1,0 +1,93 @@
+name: Auto merge agent standard sync
+
+on:
+  workflow_run:
+    workflows: ["Protect managed agent files"]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
+
+jobs:
+  merge:
+    name: merge validated sync PR
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.head_branch == 'agent-standard-sync/rules' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Resolve validated sync PR
+        id: pr
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
+        run: |
+          set -euo pipefail
+          DEFAULT_BRANCH="$(gh repo view "$GITHUB_REPOSITORY" --json defaultBranchRef --jq '.defaultBranchRef.name')"
+          PR_NUMBER="$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --head "$HEAD_BRANCH" --json number,title,headRefOid,headRefName,baseRefName,author --jq --arg sha "$HEAD_SHA" --arg branch "$HEAD_BRANCH" --arg base "$DEFAULT_BRANCH" --arg owner "$GITHUB_REPOSITORY_OWNER" 'map(select(.headRefOid == $sha and .headRefName == $branch and .baseRefName == $base and .title == "chore: sync agent development rules" and .author.login == $owner)) | .[0].number // empty')"
+          if [[ -z "$PR_NUMBER" ]]; then
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "found=true" >> "$GITHUB_OUTPUT"
+          echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+
+      - name: Verify sync PR scope
+        if: steps.pr.outputs.found == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          EXPECTED_SOURCE_REPO: RGBRaccoon/dev-agent-standard
+        run: |
+          set -euo pipefail
+          CHANGED="$(gh pr view "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json files --jq '.files[].path')"
+          ALLOWED_REGEX='^(AGENTS\.md|CLAUDE\.md|TASK_TEMPLATE\.md|PROJECT_RULES\.md|\.agent-standard/lock\.json|\.github/workflows/validate-agent-rules\.yml|\.github/workflows/auto-merge-agent-rules\.yml)$'
+          DISALLOWED="$(printf '%s\n' "$CHANGED" | grep -Ev "$ALLOWED_REGEX" || true)"
+          if [[ -n "$DISALLOWED" ]]; then
+            echo "Unexpected files:"
+            printf '%s\n' "$DISALLOWED"
+            exit 1
+          fi
+          LOCK_JSON="$(gh api "repos/$GITHUB_REPOSITORY/contents/.agent-standard/lock.json?ref=$HEAD_SHA" --jq '.content' | tr -d '\n' | base64 --decode)"
+          SOURCE_REPO="$(printf '%s' "$LOCK_JSON" | jq -r '.source_repo // empty')"
+          if [[ "$SOURCE_REPO" != "$EXPECTED_SOURCE_REPO" ]]; then
+            echo "Unexpected source_repo: $SOURCE_REPO"
+            exit 1
+          fi
+
+      - name: Wait for PR checks
+        if: steps.pr.outputs.found == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        run: |
+          set -euo pipefail
+          gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --watch --interval 10 --fail-fast
+
+      - name: Merge validated sync PR
+        if: steps.pr.outputs.found == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        run: |
+          set -euo pipefail
+          REPO_INFO="$(gh api "repos/$GITHUB_REPOSITORY")"
+          if [[ "$(printf '%s' "$REPO_INFO" | jq -r '.allow_squash_merge')" == "true" ]]; then
+            METHOD="--squash"
+          elif [[ "$(printf '%s' "$REPO_INFO" | jq -r '.allow_merge_commit')" == "true" ]]; then
+            METHOD="--merge"
+          elif [[ "$(printf '%s' "$REPO_INFO" | jq -r '.allow_rebase_merge')" == "true" ]]; then
+            METHOD="--rebase"
+          else
+            echo "No enabled merge method."
+            exit 1
+          fi
+          gh pr merge "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" "$METHOD" --delete-branch
