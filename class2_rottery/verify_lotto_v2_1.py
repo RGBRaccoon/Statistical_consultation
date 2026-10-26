@@ -102,4 +102,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    # 기존 초안 감사 함수는 보존하고 명령 실행은 현재 보고서를 검증한다.
+    from verify_lotto_v2_1_basic import main as current_main
+
+    current_main()

@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "command": "python -X utf8 class2_rottery/verify_lotto_v2_1_basic.py",
+  "original_source_sha256": "8B2C9836A5BAD4C55811CE95E18B96E2C051070E1C8263B5C653B3D7F5595214",
+  "v2_input_sha256": "391E8042B771CC33AC15C1BDED8D3AFB3302326431E090BFCA2ED4206E18A4E0",
+  "source_rows_preserved": 3735,
+  "approved_topic_ids": [
+    "01",
+    "02",
+    "03",
+    "08",
+    "09A",
+    "09B",
+    "09C",
+    "09D",
+    "10"
+  ],
+  "independently_verified_xy_and_comparison_rows": 33496,
+  "reconstructed_comparison_scores": 33496,
+  "embedded_pngs_verified": 36,
+  "rank_then_comparison_order_verified": true,
+  "verified_artifact_hashes": 90
+}

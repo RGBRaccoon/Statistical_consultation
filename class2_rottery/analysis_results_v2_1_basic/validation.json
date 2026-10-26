@@ -1,0 +1,21 @@
+{
+  "approved_topic_ids": [
+    "01",
+    "02",
+    "03",
+    "08",
+    "09A",
+    "09B",
+    "09C",
+    "09D",
+    "10"
+  ],
+  "three_ranks_only": true,
+  "topic_rank_tables": true,
+  "main_figures": true,
+  "comparison_figures": true,
+  "embedded_figures": true,
+  "input_hash_unchanged": true,
+  "scores_reconstructed": true,
+  "status": "passed"
+}

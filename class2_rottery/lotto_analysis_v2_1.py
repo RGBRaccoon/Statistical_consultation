@@ -1,12 +1,12 @@
 """V2.1: 1·2·3등의 회차별 편차를 12개 관점으로 비교한다.
 
-각 분석은 등수별 표·그림 3개와 부록의 비교표·바이올린 1개를 만든다.
+이 파일의 분석 함수는 이전 12개 편차 초안 API를 보존한다.
+명령 실행은 사용자 정정에 따라 lotto_analysis_v2_1_basic.py의 일반 현황 9개로 연결한다.
 기존 V2 입력과 산출물은 수정하지 않는다.
 """
 
 from __future__ import annotations
 
-import argparse
 import base64
 import hashlib
 import json
@@ -1195,31 +1195,10 @@ def run(source: str | Path, output: str | Path) -> dict[str, Any]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    base = Path(__file__).resolve().parent
-    parser.add_argument(
-        "--source", type=Path, default=base / "lotto_preprocessed_v2.csv"
-    )
-    parser.add_argument("--output", type=Path, default=base / "analysis_results_v2_1")
-    args = parser.parse_args()
-    result = run(args.source, args.output)
-    for extension in ("md", "html"):
-        name = f"lotto_rank_report_v2_1.{extension}"
-        (base / name).write_bytes((args.output / name).read_bytes())
-    print(
-        json.dumps(
-            {
-                "validation": result["validation"]["status"],
-                "analyses": 12,
-                "rank_outputs": 36,
-                "appendix_outputs": 12,
-                "report": str(base / "lotto_rank_report_v2_1.md"),
-                "case_round": result["case_round"],
-            },
-            ensure_ascii=False,
-        )
-    )
-    return 0 if result["validation"]["status"] == "passed" else 1
+    """명령 실행은 사용자 정정에 따른 일반 현황 보고서를 생성한다."""
+    from lotto_analysis_v2_1_basic import main as current_main
+
+    return current_main()
 
 
 if __name__ == "__main__":
