@@ -1,0 +1,145 @@
+{
+  "task": "로또 V2.1: 1·2·3등, 분석별 4개 결과",
+  "status": "검증 완료",
+  "commands": [
+    {
+      "command": "python -X utf8 class2_rottery/lotto_analysis_v2_1.py",
+      "exit_code": 0,
+      "output": "{\"validation\": \"passed\", \"analyses\": 12, \"rank_outputs\": 36, \"appendix_outputs\": 12, \"case_round\": 1057}",
+      "tool_chunk_id": "10160a"
+    },
+    {
+      "command": "python -m pytest -q -p no:cacheprovider",
+      "initial_result": {
+        "chunk_id": "b22fce",
+        "wall_time_seconds": 10.0029202,
+        "session_id": 82534,
+        "original_token_count": 7,
+        "output": "............................"
+      },
+      "completion_result": {
+        "exit_code": 0,
+        "output": "35 passed in 19.92s",
+        "tool_chunk_id": "dd34ea",
+        "note": "실제 완료 출력을 전사함"
+      }
+    },
+    {
+      "command": "python -m ruff check class2_rottery/lotto_analysis_v2_1.py class2_rottery/verify_lotto_v2_1.py class2_rottery/tests/test_lotto_analysis_v2_1.py",
+      "result": {
+        "chunk_id": "bf3409",
+        "wall_time_seconds": 0.3384344,
+        "exit_code": 0,
+        "original_token_count": 5,
+        "output": "All checks passed!\n"
+      }
+    },
+    {
+      "command": "python -m ruff format --check class2_rottery/lotto_analysis_v2_1.py class2_rottery/verify_lotto_v2_1.py class2_rottery/tests/test_lotto_analysis_v2_1.py",
+      "result": {
+        "chunk_id": "db9149",
+        "wall_time_seconds": 0.3288677,
+        "exit_code": 0,
+        "original_token_count": 7,
+        "output": "3 files already formatted\n"
+      }
+    },
+    {
+      "command": "python -X utf8 class2_rottery/verify_lotto_v2_1.py",
+      "result": {
+        "chunk_id": "c8c3bc",
+        "wall_time_seconds": 1.8830683000000001,
+        "exit_code": 0,
+        "original_token_count": 165,
+        "output": "{\r\n  \"status\": \"passed\",\r\n  \"command\": \"python -X utf8 class2_rottery/verify_lotto_v2_1.py\",\r\n  \"raw_source_sha256\": \"8B2C9836A5BAD4C55811CE95E18B96E2C051070E1C8263B5C653B3D7F5595214\",\r\n  \"v2_input_sha256\": \"391E8042B771CC33AC15C1BDED8D3AFB3302326431E090BFCA2ED4206E18A4E0\",\r\n  \"source_rows_preserved\": 3735,\r\n  \"independently_recomputed_ratios\": 3735,\r\n  \"reconstructed_display_scores\": 34950,\r\n  \"main_rank_result_sections\": 36,\r\n  \"appendix_comparison_sections\": 12,\r\n  \"embedded_pngs_identical_to_files\": 48,\r\n  \"verified_artifact_hashes\": 125,\r\n  \"root_and_results_report_copies_identical\": true,\r\n  \"training_precedes_validation_in_all_models\": true\r\n}\r\n"
+      }
+    },
+    {
+      "command": "git diff --exit-code HEAD -- class2_rottery/lotto_rank_1_1245.csv class2_rottery/lotto_preprocessed_v2.csv class2_rottery/lotto_analysis_v2.py class2_rottery/lotto_rank_report_v2.md class2_rottery/analysis_results_v2",
+      "result": {
+        "chunk_id": "34b1aa",
+        "wall_time_seconds": 0.3282266,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    }
+  ],
+  "verification_evidence": "실제 도구 실행 출력과 파일 계산 결과를 기록했다. 이 로그의 설명문 자체는 LLM 직접 작성이며 외부 사실을 독립적으로 입증하지 않는다.",
+  "requirements": [
+    {
+      "requirement": "1·2·3등만 분석",
+      "evidence": "independent_audit.json: 원자료 중 세 등수의 3,735행 보존"
+    },
+    {
+      "requirement": "최소 10개 분석",
+      "evidence": "manifest.json의 12개 분석"
+    },
+    {
+      "requirement": "분석별 개별 등수 3개 + 바이올린 비교1개",
+      "evidence": "independent_audit.json: 본문36·부록12·임베딩48"
+    },
+    {
+      "requirement": "튀는 값과 유의성을 구분",
+      "evidence": "03 이항모형의 가정 부적합 명시, 11 시간분리 검증의 탐색적 BY 보정, 다른 분석은 기술통계"
+    },
+    {
+      "requirement": "코드·결과·임베딩 보고서 보존",
+      "evidence": "분석모듈·테스트·검증모듈·tables·charts·Markdown·HTML"
+    }
+  ],
+  "visual_review": {
+    "method": "12개 visual_review 시트로 원본 그림48개를 모두 육안 검사. 주석 배치 수정 후 03_rank_2, 07_rank_3, 11_rank_2를 원본 크기로 다시 검사.",
+    "findings": "한글 표시, 공통 축, 세 등수 색, 극단 회차, 검증 구간의 끊김 확인.",
+    "limitation": "브라우저에서 HTML 렌더링을 직접 검사하지는 않았다. HTML 구조와 모든 이미지 파일 일치를 검사했다."
+  },
+  "issues": [
+    {
+      "issue": "최초 배치 해석이 사용자 의도와 달랐음",
+      "resolution": "최종 정정대로 분석별 개별3 + 비교1, 비교는 마지막 부록에 배치"
+    },
+    {
+      "issue": "RED에서 모듈 부재",
+      "resolution": "의도된 실패 후 새 모듈 구현",
+      "tool_chunk_id": "a7fc05"
+    },
+    {
+      "issue": "편집용 일회성 명령의 따옴표 SyntaxError",
+      "resolution": "파일 쓰기 전에 중단됨; apply_patch로 수정",
+      "tool_chunk_id": "30098c"
+    },
+    {
+      "issue": "Ruff 미사용 norm import",
+      "resolution": "미사용 import 제거",
+      "tool_chunk_id": "fa7f9d"
+    },
+    {
+      "issue": "09 원값/정규화 계수 재계산 불일치",
+      "resolution": "회귀 테스트가 3,735개 불일치를 검출. 로그 원값을 저장하도록 수정 후 34,950개 표시점수 재계산 통과",
+      "red_chunk_id": "730d96",
+      "green_chunk_id": "34e4de"
+    },
+    {
+      "issue": "극단 회차 주석 위치와 검증 구간 연결선",
+      "resolution": "주석을 경계 안쪽으로 이동하고 학습·검증 공백에 선을 잇지 않도록 수정"
+    },
+    {
+      "issue": "타입검사 미실행",
+      "resolution": "pyright 설치·저장소 설정 없음. 통과했다고 주장하지 않음"
+    },
+    {
+      "issue": "NB2 모수 불확실성·모형의 한계",
+      "resolution": "탐색 후보로만 보고하고 확정 이상·원인·비리 판정이나 클러스터링은 실행하지 않음"
+    },
+    {
+      "issue": "재실행 시 이전 독립 감사 파일을 manifest에 포함하면 후속 감사 갱신과 해시가 서로 참조됨",
+      "resolution": "기존 감사 파일을 둔 통합 회귀 테스트로 재현(실패) 후 independent_audit.json을 파이프라인 산출물 목록에서 제외. 전체35개와 별도감사 통과",
+      "red_chunk_id": "a04d66",
+      "final_green_chunk_id": "dd34ea"
+    }
+  ],
+  "excluded_user_changes": [
+    "class2_rottery/lotto_rank_report_en.md",
+    "class2_rottery/수업 피드백.md"
+  ]
+}

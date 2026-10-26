@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "command": "python -X utf8 class2_rottery/verify_lotto_v2_1.py",
+  "raw_source_sha256": "8B2C9836A5BAD4C55811CE95E18B96E2C051070E1C8263B5C653B3D7F5595214",
+  "v2_input_sha256": "391E8042B771CC33AC15C1BDED8D3AFB3302326431E090BFCA2ED4206E18A4E0",
+  "source_rows_preserved": 3735,
+  "independently_recomputed_ratios": 3735,
+  "reconstructed_display_scores": 34950,
+  "main_rank_result_sections": 36,
+  "appendix_comparison_sections": 12,
+  "embedded_pngs_identical_to_files": 48,
+  "verified_artifact_hashes": 125,
+  "root_and_results_report_copies_identical": true,
+  "training_precedes_validation_in_all_models": true
+}
