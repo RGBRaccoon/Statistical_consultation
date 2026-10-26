@@ -1,0 +1,98 @@
+{
+  "created_at_utc": "2026-10-26T05:01:58.273527+00:00",
+  "execution_command": "python -X utf8 class2_rottery/lotto_analysis_v2.py",
+  "source_path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\lotto_rank_1_1245.csv",
+  "input_sha256": "8B2C9836A5BAD4C55811CE95E18B96E2C051070E1C8263B5C653B3D7F5595214",
+  "processed_path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\lotto_preprocessed_v2.csv",
+  "output_sha256": "391E8042B771CC33AC15C1BDED8D3AFB3302326431E090BFCA2ED4206E18A4E0",
+  "source_rows": 6225,
+  "processed_rows": 6225,
+  "rounds": 1245,
+  "price_rule": {
+    "1-87": 2000,
+    "88+": 1000
+  },
+  "tax_applied": false,
+  "step2_executed": false,
+  "price_sources": [
+    {
+      "title": "국가법령정보센터 판결문(초기 게임 가격 2,000원)",
+      "url": "https://law.go.kr/LSW/precInfoP.do?evtNo=2007%EB%82%9810421",
+      "use": "초기 1게임 가격 근거"
+    },
+    {
+      "title": "동아일보 2004-07-21 기사(제88회 판매분부터 1,000원)",
+      "url": "https://www.donga.com/news/Series/article/all/20040721/8086157/1",
+      "use": "가격 전환 경계 근거"
+    },
+    {
+      "title": "동행복권 로또6/45 소개",
+      "url": "https://www.dhlottery.co.kr/lt645/intro",
+      "use": "현재 게임 가격과 당첨 구조 참고"
+    }
+  ],
+  "outputs": [
+    "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\lotto_preprocessed_v2.csv",
+    "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step0_validation.json",
+    "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step1_rank_summary.csv",
+    "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step1_period_summary.csv",
+    "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_1.png",
+    "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_2.png",
+    "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_3.png",
+    "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_4.png",
+    "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_5.png",
+    "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\lotto_rank_report_v2.md"
+  ],
+  "artifact_records": [
+    {
+      "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\lotto_preprocessed_v2.csv",
+      "size_bytes": 2141476,
+      "sha256": "391E8042B771CC33AC15C1BDED8D3AFB3302326431E090BFCA2ED4206E18A4E0"
+    },
+    {
+      "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step0_validation.json",
+      "size_bytes": 1174,
+      "sha256": "67EA5C41DD71B2594C13F1DADB12BA2CD7283B9743B3D9AE0759DE7A70F16DD7"
+    },
+    {
+      "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step1_rank_summary.csv",
+      "size_bytes": 4486,
+      "sha256": "FD976ADC3D389D295DBAFFEF83B6E827DB2469EF8C3CEB9E8F1F341F61469CCF"
+    },
+    {
+      "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step1_period_summary.csv",
+      "size_bytes": 1887,
+      "sha256": "CABBEE087060CEA0796EE283E2349382CD86A78FABB7ED691BC6029272A8D3A1"
+    },
+    {
+      "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_1.png",
+      "size_bytes": 413314,
+      "sha256": "866F3EDC03891C920EB1EB0089D8D17691EB3CB3F4AAF8698809BCB1AE09D2EE"
+    },
+    {
+      "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_2.png",
+      "size_bytes": 306299,
+      "sha256": "474511629E39C74E538B67E286E2C03CEDD6DE8FD1FA69D32496821AF2DC5D88"
+    },
+    {
+      "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_3.png",
+      "size_bytes": 448337,
+      "sha256": "9CD2A5A2AEE398610E71CEBC847FA844475FF44B07350845F4D9987BC6A369F1"
+    },
+    {
+      "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_4.png",
+      "size_bytes": 367674,
+      "sha256": "C7ABFE3D6DF492772CE9049570BDD9DE1E0C2963C6B79F9CDEA1BD4F57DBB2C5"
+    },
+    {
+      "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_5.png",
+      "size_bytes": 318834,
+      "sha256": "162AF576C5A1D0111782F1E25F9D9D2AB1026227D83659D688497BD536DE4C5E"
+    },
+    {
+      "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\lotto_rank_report_v2.md",
+      "size_bytes": 2477930,
+      "sha256": "91EC650EE61DCCD6D72723CD9C31EFC06E146450BCA7FBC2CE2E50D6C1981343"
+    }
+  ]
+}
