@@ -1,7 +1,7 @@
 {
   "version": "2.1 corrected basic",
   "status": "passed",
-  "created_at_utc": "2026-10-26T08:03:49.062808+00:00",
+  "created_at_utc": "2026-10-26T08:20:42.503113+00:00",
   "command": "python -X utf8 class2_rottery/lotto_analysis_v2_1_basic.py",
   "source": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\lotto_preprocessed_v2.csv",
   "source_sha256": "391E8042B771CC33AC15C1BDED8D3AFB3302326431E090BFCA2ED4206E18A4E0",
@@ -92,7 +92,7 @@
   "rank_figures": 27,
   "comparison_figures": 9,
   "python": "3.13.9",
-  "inference": "기술통계와 관계계수; 통계적 유의성 또는 인과관계 확정 아님",
+  "inference": "기술통계와 분포 비교; 통계적 유의성 또는 인과관계 확정 아님",
   "artifacts": [
     {
       "path": "charts\\01_rank_1.png",
@@ -291,13 +291,13 @@
     },
     {
       "path": "lotto_rank_report_v2_1.html",
-      "size_bytes": 3395066,
-      "sha256": "D23E23BF377AA1C3CE108031EAEB892D55B97387C82D719CBA7AF6ED641AFA2C"
+      "size_bytes": 3390922,
+      "sha256": "2D4041B9EED9828A78754EDAAA2104A34838A398C29A78A887B3E1C8510251B7"
     },
     {
       "path": "lotto_rank_report_v2_1.md",
-      "size_bytes": 3374173,
-      "sha256": "0F906434196C31BE71BD4F56512BC01157B9495ECA86FEC6482E2B90991C1CB7"
+      "size_bytes": 3370776,
+      "sha256": "682ECF0288AD7E60B8E5BCAC246F2EE77A67837C991C4863EE0172B64689AB17"
     },
     {
       "path": "normalization.csv",
@@ -311,13 +311,13 @@
     },
     {
       "path": "summary.csv",
-      "size_bytes": 5964,
-      "sha256": "E076CB6393D27A5D5A89645F82988593F6496FC8B209738BA3DEE033A88B72CD"
+      "size_bytes": 5512,
+      "sha256": "49B87527E38E6C7915F79758B6CFD63E8773B94BF61AC053E5DF93A5F6C5CC3D"
     },
     {
       "path": "tables\\01_comparison.csv",
-      "size_bytes": 990,
-      "sha256": "21B3A58B6FBE31485FE32F86A53CD749BD3113D4FC2AC5FF0B9313605DB6FD24"
+      "size_bytes": 946,
+      "sha256": "F1DF294A38387D14824E714A629B59219AD9243291A97FA8A6E630F089AD6AF4"
     },
     {
       "path": "tables\\01_rank_1.csv",
@@ -336,8 +336,8 @@
     },
     {
       "path": "tables\\02_comparison.csv",
-      "size_bytes": 888,
-      "sha256": "D8B447C851D98F8ADA71DE9F1C9165DB114331318F31EA11D05D73494E65BD5D"
+      "size_bytes": 844,
+      "sha256": "9C8F40CF3C5D33FC84D931A06E0BEEC653C19FD6C2ED0204554634D916C49FBF"
     },
     {
       "path": "tables\\02_rank_1.csv",
@@ -356,8 +356,8 @@
     },
     {
       "path": "tables\\03_comparison.csv",
-      "size_bytes": 1003,
-      "sha256": "ED9420663C5C494166609F584D43AD4E16EA594722A725A21679CAADEDC8A49A"
+      "size_bytes": 959,
+      "sha256": "90AD4DDFD5A8089EB938800385D619F4BAF48DEF3716A28BF1FAE419D12E1357"
     },
     {
       "path": "tables\\03_rank_1.csv",
@@ -376,8 +376,8 @@
     },
     {
       "path": "tables\\08_comparison.csv",
-      "size_bytes": 1110,
-      "sha256": "F08EC4F9B988F465A04955D0B8855B12E462011691532DCD07FDFE94F29F2F9E"
+      "size_bytes": 946,
+      "sha256": "8810862EEC159EC266047917AAE15E44DC669204A2A048E7D085893DC024A494"
     },
     {
       "path": "tables\\08_rank_1.csv",
@@ -396,8 +396,8 @@
     },
     {
       "path": "tables\\09A_comparison.csv",
-      "size_bytes": 1035,
-      "sha256": "DF6B70D741781D65487BFBE52DAE3E26568E068C073A7C316B077769793B1971"
+      "size_bytes": 991,
+      "sha256": "C4DC3CD2EF8E2609171B59454788A5227BED6D2D74ACEEDFC76DAD60969DC341"
     },
     {
       "path": "tables\\09A_rank_1.csv",
@@ -416,8 +416,8 @@
     },
     {
       "path": "tables\\09B_comparison.csv",
-      "size_bytes": 949,
-      "sha256": "317DC77362624E5765DF377A0151A5D9F7808A363A8421CB572C84476A670DEE"
+      "size_bytes": 905,
+      "sha256": "C555AE80507B8FFE544CEB92FB1AE5D4852406EA463DA708FED739A26965A3CA"
     },
     {
       "path": "tables\\09B_rank_1.csv",
@@ -436,8 +436,8 @@
     },
     {
       "path": "tables\\09C_comparison.csv",
-      "size_bytes": 1009,
-      "sha256": "1BED99B5B0D8A3BBE778552A3373B9C00052B4708D1CCB0877E6898DFA110C4D"
+      "size_bytes": 846,
+      "sha256": "EB359C59E2D8D4E971DD5F9C379D1621CB86F21C351A8C037EA6DC45AF12E546"
     },
     {
       "path": "tables\\09C_rank_1.csv",
@@ -456,8 +456,8 @@
     },
     {
       "path": "tables\\09D_comparison.csv",
-      "size_bytes": 1119,
-      "sha256": "00846FBF1E43F3C5044BAC39159FA1D6D4FAB9000CB18E5C39A5B2A66C9376D0"
+      "size_bytes": 954,
+      "sha256": "1A3176589179E7259EAC058BB337570BE971084A6B6E69A36304DC3CF94B047F"
     },
     {
       "path": "tables\\09D_rank_1.csv",
@@ -476,8 +476,8 @@
     },
     {
       "path": "tables\\10_comparison.csv",
-      "size_bytes": 989,
-      "sha256": "56F3BA51E9E308073CE4349D346DAC4527E9CF944EC795DA30F009FE0CC13FB5"
+      "size_bytes": 945,
+      "sha256": "2D049DA18221B633E48E9D9B0808E798965B5CEB487A7ECB86B6429FFB22F9A5"
     },
     {
       "path": "tables\\10_rank_1.csv",

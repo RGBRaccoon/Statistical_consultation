@@ -147,6 +147,20 @@ def test_run_outputs_nine_sets_of_four_self_contained_figures():
         )
         prose = re.sub(r"data:image/png;base64,[^)]+", "[image]", report)
         assert "학습" not in prose and "NB2" not in prose
+        html = (output / "lotto_rank_report_v2_1.html").read_text(encoding="utf-8")
+        html_prose = re.sub(r"data:image/png;base64,[A-Za-z0-9+/=]+", "[image]", html)
+        for forbidden in ("상관계수", "순위상관", "spearman", "pearson", "correlation"):
+            assert forbidden not in prose.casefold()
+            assert forbidden not in html_prose.casefold()
+        for path in (
+            output / "summary.csv",
+            *(output / "tables").glob("*_comparison.csv"),
+        ):
+            columns = pd.read_csv(path, encoding="utf-8-sig").columns
+            assert not any(
+                re.search(r"상관|spearman|pearson|correl", column, re.IGNORECASE)
+                for column in columns
+            )
         assert len(manifest["topics"]) == 9
         assert manifest["status"] == "passed"
         assert hashlib.sha256(SOURCE.read_bytes()).hexdigest() == before

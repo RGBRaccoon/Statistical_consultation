@@ -24,7 +24,6 @@ import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 from matplotlib.ticker import FuncFormatter  # noqa: E402
 from PIL import Image, ImageDraw  # noqa: E402
-from scipy.stats import spearmanr  # noqa: E402
 
 RANKS = ("1등", "2등", "3등")
 COLORS = {"1등": "#1768ac", "2등": "#c46100", "3등": "#208251"}
@@ -279,14 +278,6 @@ def analyze(source: str | Path) -> dict[str, Any]:
                     }
                 )
 
-            correlation = None
-            adjusted_correlation = None
-            if code in ("08", "09C", "09D"):
-                correlation = float(spearmanr(frame["x"], frame["y"]).statistic)
-                x_adjusted = predictor
-                adjusted_correlation = float(
-                    spearmanr(x_adjusted, frame["비교값"]).statistic
-                )
             y = frame["y"]
             largest = frame.loc[y.idxmax()]
             smallest = frame.loc[y.idxmin()]
@@ -313,8 +304,6 @@ def analyze(source: str | Path) -> dict[str, Any]:
                     "표준화최대": float(frame["비교Z"].max()),
                     "표시기준3초과": int(frame["비교Z"].abs().gt(3).sum()),
                     "최대절대편차회차": int(extreme["회차"]),
-                    "Spearman_본문": correlation,
-                    "Spearman_가격환산": adjusted_correlation,
                     "증가회차수": int(y.gt(0).sum())
                     if code in ("09A", "09B")
                     else None,
@@ -631,8 +620,7 @@ def make_report(result: dict[str, Any], paths: dict, source_hash: str) -> str:
         "관계 분석 08·09C·09D의 바이올린은 세 등수의 전체 분포뿐 아니라 X 하위·중위·상위 구간별 Y 분포를 "
         "함께 표시한다. 09C의 X 구간은 가격 환산 직전 당첨금으로 정한다. X 구간은 원인이나 유의성 기준이 "
         "아닌 기술적 비교용 3분위 구간이다. 단순한 Y의 바이올린 하나로 두 변수의 관계를 "
-        "판정하지 않는다. 관계 요약에는 Spearman 계수를 제시하되 회차 간 의존과 기간 효과를 해결한 "
-        "확정 검정으로 부르지 않는다.",
+        "판정하지 않는다.",
         table(
             pd.DataFrame(
                 [
@@ -710,11 +698,6 @@ def make_report(result: dict[str, Any], paths: dict, source_hash: str) -> str:
                     ("감소 회차 수", row["감소회차수"]),
                     ("동일 회차 수", row["동일회차수"]),
                 ]
-            if code in ("08", "09C", "09D"):
-                metrics += [
-                    ("Spearman(본문 명목 값)", row["Spearman_본문"]),
-                    ("Spearman(가격 환산 값)", row["Spearman_가격환산"]),
-                ]
             sections += [
                 f"### {code}-{rank}. 개별 분석",
                 table(pd.DataFrame(metrics, columns=["지표", "결과"])),
@@ -727,12 +710,6 @@ def make_report(result: dict[str, Any], paths: dict, source_hash: str) -> str:
                 sections.append(
                     f"직전 회차보다 증가 {int(row['증가회차수'])}회, 감소 {int(row['감소회차수'])}회, "
                     f"동일 {int(row['동일회차수'])}회다. 제외된 관측쌍은 이 빈도에 넣지 않았다."
-                )
-            if code in ("08", "09C", "09D"):
-                sections.append(
-                    f"본문 값의 Spearman 순위상관은 **{row['Spearman_본문']:.4f}**, 금액을 가격 환산하면 "
-                    f"**{row['Spearman_가격환산']:.4f}**다. 이 차이를 함께 공개해 가격 구간에 따른 "
-                    "관계 해석의 민감도를 확인한다. 계수만으로 영향이나 인과관계를 확정하지 않는다."
                 )
             if code == "10":
                 period_rows = result["groups"].loc[
@@ -790,7 +767,7 @@ def make_report(result: dict[str, Any], paths: dict, source_hash: str) -> str:
         "## 범위 제한과 재현",
         "이번 실험은 승인된 질문의 현황·관계·분포를 기록한다. 이론 확률 검정이나 극단값 회차의 원인 규명은 "
         "별도 실험이며 여기서 확정하지 않는다. 단위가 다른 변수의 관계를 비율로 바꾸거나 새로운 주제를 "
-        "추가하지 않았다. 상관계수는 인과관계나 예측 전략을 보증하지 않는다.",
+        "추가하지 않았다.",
         "```powershell\npython -X utf8 class2_rottery/lotto_analysis_v2_1_basic.py\npython -X utf8 class2_rottery/verify_lotto_v2_1_basic.py\npython -m pytest -q -p no:cacheprovider\n```",
         f"입력: `lotto_preprocessed_v2.csv`, SHA-256 `{source_hash}`. "
         "정정 산출물은 `analysis_results_v2_1_basic`에 저장한다. 기존 12개 편차 초안 결과와 혼합하지 않는다. "
@@ -906,7 +883,7 @@ def run(source: str | Path, output: str | Path) -> dict[str, Any]:
         "rank_figures": 27,
         "comparison_figures": 9,
         "python": platform.python_version(),
-        "inference": "기술통계와 관계계수; 통계적 유의성 또는 인과관계 확정 아님",
+        "inference": "기술통계와 분포 비교; 통계적 유의성 또는 인과관계 확정 아님",
         "artifacts": artifacts,
     }
     (output / "manifest.json").write_text(

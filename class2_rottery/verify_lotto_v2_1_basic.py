@@ -96,6 +96,17 @@ def main() -> None:
     html = (base / "lotto_rank_report_v2_1.html").read_text(encoding="utf-8")
     assert md == (output / "lotto_rank_report_v2_1.md").read_text(encoding="utf-8")
     assert html == (output / "lotto_rank_report_v2_1.html").read_text(encoding="utf-8")
+    for document in (md, html):
+        prose = re.sub(r"data:image/png;base64,[A-Za-z0-9+/=]+", "[image]", document)
+        assert not re.search(
+            r"상관계수|순위상관|spearman|pearson|correlation", prose, re.IGNORECASE
+        )
+    for path in (output / "summary.csv", *(output / "tables").glob("*_comparison.csv")):
+        columns = pd.read_csv(path, encoding="utf-8-sig").columns
+        assert not any(
+            re.search(r"상관|spearman|pearson|correl", column, re.IGNORECASE)
+            for column in columns
+        )
     images = re.findall(r"!\[([0-9A-D]+) (.*?)\]\(data:image/png;base64,([^)]*)\)", md)
     assert len(images) == 36 and html.count("data:image/png;base64,") == 36
     for code in codes:
@@ -129,6 +140,7 @@ def main() -> None:
         "reconstructed_comparison_scores": len(joined),
         "embedded_pngs_verified": 36,
         "rank_then_comparison_order_verified": True,
+        "correlation_free_reports_and_csvs": True,
         "verified_artifact_hashes": len(manifest["artifacts"]),
     }
     (output / "independent_audit.json").write_text(

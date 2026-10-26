@@ -19,5 +19,6 @@
   "reconstructed_comparison_scores": 33496,
   "embedded_pngs_verified": 36,
   "rank_then_comparison_order_verified": true,
+  "correlation_free_reports_and_csvs": true,
   "verified_artifact_hashes": 90
 }

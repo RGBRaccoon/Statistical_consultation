@@ -1,139 +1,278 @@
 {
-  "task": "승인된 일반 현황 9개 주제로 V2.1 정정",
+  "task": "V2.1 상관계수 제거",
+  "original_user_command": "나도 동의함. 보통 저 상관계수보면 그래서 어쩌자는건지가 안보임. 빼는 것으로",
   "status": "검증 완료",
-  "evidence_classification": "LLM이 작성한 코드의 실제 실행 결과. 원본 CSV를 별도 구현으로 대조했으나 복권 운영 외부 사실이나 인과·유의성을 보증하는 증거가 아님.",
-  "original_user_command": "A는 9번에 들어갈만한 것으로 보임.\nB는 9번의 확장이고. 둘다 리젝에 가까움. 9번이후 결과에 따라 확장실험 대상이지, 지금 시도할 새로운 시각은 아님. 아에 다른 방향성의 인사이트를 뻔하더라고 제공해야하는데. 아닌거같음. 애매하다면, 차라리 지금 나온 후보만을 대상으로 실험을 진행하라",
-  "scope": {
-    "topics": [
-      "01",
-      "02",
-      "03",
-      "08",
-      "09A",
-      "09B",
-      "09C",
-      "09D",
-      "10"
-    ],
-    "ranks": [
-      1,
-      2,
-      3
-    ],
-    "rank_charts": 27,
-    "comparison_violins": 9,
-    "main_values": "실제 금액과 게임 수; 10번 시기 비교는 가격 환산",
-    "rejected": "4·5·6·7 및 추가 제안 A/B"
-  },
-  "generation": {
-    "command": "python -X utf8 class2_rottery/lotto_analysis_v2_1.py",
-    "status": "실행 완료 후 별도 감사 통과",
-    "record": "manifest.json와 validation.json",
-    "compatibility": "기존 CLI는 새 일반 현황 모듈로 연결하고 이전 API·초안 결과 디렉터리는 보존"
-  },
+  "base_commit": "fe43b30",
+  "evidence_classification": "실제 도구 실행 기록과 사용자 CSV 기반 코드 실행 결과. 설명문·Task 문서는 LLM 직접 작성물이며 독립적인 사실 근거로 취급하지 않음.",
+  "requirement_results": [
+    {
+      "requirement": "현재 V2.1 보고서의 모든 상관계수와 관련 해석 제거",
+      "status": "검증 완료",
+      "evidence": "독립 감사 correlation_free_reports_and_csvs=true; 재생성된 Markdown/HTML 본문과 요약·비교 CSV 검사"
+    },
+    {
+      "requirement": "재생성 시에도 제거 유지",
+      "status": "검증 완료",
+      "evidence": "생성 모듈의 scipy.stats.spearmanr import·호출·필드·해석 제거, 회귀 테스트 RED→GREEN 확인"
+    },
+    {
+      "requirement": "나머지 분석과 입력 보존",
+      "status": "검증 완료",
+      "evidence": "기존 9개 주제 및 내장 이미지 36개 감사 통과. 입력·관측값·그림·정규화 CSV의 HEAD 대비 diff exit0"
+    }
+  ],
   "commands": [
     {
-      "command": "python -m ruff check class2_rottery/lotto_analysis_v2_1_basic.py class2_rottery/verify_lotto_v2_1_basic.py class2_rottery/lotto_analysis_v2_1.py class2_rottery/verify_lotto_v2_1.py class2_rottery/tests/test_lotto_analysis_v2_1_basic.py",
+      "command": "python -m pytest -q -p no:cacheprovider class2_rottery/tests/test_lotto_analysis_v2_1_basic.py -k run_outputs",
+      "status": "RED: 상관계수 문구가 남아 의도대로 실패",
+      "chunk_id": "89a510",
+      "wall_time_seconds": 0.0000086,
+      "exit_code": 1,
+      "original_token_count": 651,
+      "output": "F                                                                        [100%]\r\n================================== FAILURES ===================================\r\n__________ test_run_outputs_nine_sets_of_four_self_contained_figures __________\r\n\r\n    def test_run_outputs_nine_sets_of_four_self_contained_figures():\r\n        output = BASE / \".test_output_v2_1_basic\"\r\n        assert not output.exists()\r\n        before = hashlib.sha256(SOURCE.read_bytes()).hexdigest()\r\n        output.mkdir()\r\n        try:\r\n            basic.run(SOURCE, output)\r\n            report = (output / \"lotto_rank_report_v2_1.md\").read_text(encoding=\"utf-8\")\r\n            manifest = json.loads((output / \"manifest.json\").read_text(encoding=\"utf-8\"))\r\n            assert report.count(\"data:image/png;base64,\") == 36\r\n            assert len(list((output / \"charts\").glob(\"*_rank_*.png\"))) == 27\r\n            assert len(list((output / \"charts\").glob(\"*_violin.png\"))) == 9\r\n            assert all(\r\n                f\"## {code}.\" in report\r\n                for code in (\"01\", \"02\", \"03\", \"08\", \"09A\", \"09B\", \"09C\", \"09D\", \"10\")\r\n            )\r\n            assert (\r\n                report.index(\"### 01-3��\")\r\n                < report.index(\"### 01-��\")\r\n                < report.index(\"## 02.\")\r\n            )\r\n            prose = re.sub(r\"data:image/png;base64,[^)]+\", \"[image]\", report)\r\n            assert \"�н�\" not in prose and \"NB2\" not in prose\r\n            html = (output / \"lotto_rank_report_v2_1.html\").read_text(encoding=\"utf-8\")\r\n            html_prose = re.sub(r\"data:image/png;base64,[A-Za-z0-9+/=]+\", \"[image]\", html)\r\n            for forbidden in (\"������\", \"�������\", \"spearman\", \"pearson\", \"correlation\"):\r\n>               assert forbidden not in prose.casefold()\r\nE               AssertionError: assert '������' not in '# �ζ� ������ v2...8086157/1)\\n'\r\nE                 \r\nE                 '������' is contained here:\r\nE                   �߰����� �ʾҴ�. �������� �ΰ����質 ���� ������ �������� �ʴ´�.\r\nE                 ?           ++++\r\nE                   \r\nE                   ```powershell\r\nE                   python -x utf8 class2_rottery/lotto_analysis_v2_1_basic.py...\r\nE                 \r\nE                 ...Full output truncated (13 lines hidden), use '-vv' to show\r\n\r\nclass2_rottery\\tests\\test_lotto_analysis_v2_1_basic.py:153: AssertionError\r\n=========================== short test summary info ===========================\r\nFAILED class2_rottery/tests/test_lotto_analysis_v2_1_basic.py::test_run_outputs_nine_sets_of_four_self_contained_figures\r\n1 failed, 7 deselected in 10.79s\r\n"
+    },
+    {
+      "command": "python -X utf8 -m pytest -q -p no:cacheprovider class2_rottery/tests/test_lotto_analysis_v2_1_basic.py -k run_outputs",
       "status": "검증 완료",
-      "chunk_id": "a12c01",
-      "wall_time_seconds": 0.4233806,
+      "chunk_id": "56d073",
+      "wall_time_seconds": 0.000008,
+      "exit_code": 0,
+      "original_token_count": 29,
+      "output": ".                                                                        [100%]\r\n1 passed, 7 deselected in 9.76s\r\n"
+    },
+    {
+      "command": "python -X utf8 class2_rottery/lotto_analysis_v2_1.py",
+      "status": "실행 완료 후 독립 감사로 검증",
+      "chunk_id": "fa47ab",
+      "wall_time_seconds": 0.0000099,
+      "exit_code": 0,
+      "original_token_count": 75,
+      "output": "{\"status\": \"passed\", \"topics\": 9, \"rank_figures\": 27, \"violin_figures\": 9, \"report\": \"C:\\\\Users\\\\chldu\\\\Downloads\\\\Statistical_consultation\\\\class2_rottery\\\\lotto_rank_report_v2_1.md\", \"results\": \"C:\\\\Users\\\\chldu\\\\Downloads\\\\Statistical_consultation\\\\class2_rottery\\\\analysis_results_v2_1_basic\"}\r\n"
+    },
+    {
+      "command": "python -X utf8 class2_rottery/verify_lotto_v2_1.py",
+      "status": "검증 완료",
+      "chunk_id": "574530",
+      "wall_time_seconds": 1.6809443,
+      "exit_code": 0,
+      "original_token_count": 181,
+      "output": "{\r\n  \"status\": \"passed\",\r\n  \"command\": \"python -X utf8 class2_rottery/verify_lotto_v2_1_basic.py\",\r\n  \"original_source_sha256\": \"8B2C9836A5BAD4C55811CE95E18B96E2C051070E1C8263B5C653B3D7F5595214\",\r\n  \"v2_input_sha256\": \"391E8042B771CC33AC15C1BDED8D3AFB3302326431E090BFCA2ED4206E18A4E0\",\r\n  \"source_rows_preserved\": 3735,\r\n  \"approved_topic_ids\": [\r\n    \"01\",\r\n    \"02\",\r\n    \"03\",\r\n    \"08\",\r\n    \"09A\",\r\n    \"09B\",\r\n    \"09C\",\r\n    \"09D\",\r\n    \"10\"\r\n  ],\r\n  \"independently_verified_xy_and_comparison_rows\": 33496,\r\n  \"reconstructed_comparison_scores\": 33496,\r\n  \"embedded_pngs_verified\": 36,\r\n  \"rank_then_comparison_order_verified\": true,\r\n  \"correlation_free_reports_and_csvs\": true,\r\n  \"verified_artifact_hashes\": 90\r\n}\r\n"
+    },
+    {
+      "command": "python -m ruff check class2_rottery/lotto_analysis_v2_1_basic.py class2_rottery/verify_lotto_v2_1_basic.py class2_rottery/tests/test_lotto_analysis_v2_1_basic.py",
+      "status": "검증 완료",
+      "chunk_id": "76e651",
+      "wall_time_seconds": 0.3518757,
       "exit_code": 0,
       "original_token_count": 5,
       "output": "All checks passed!\n"
     },
     {
-      "command": "python -m ruff format --check class2_rottery/lotto_analysis_v2_1_basic.py class2_rottery/verify_lotto_v2_1_basic.py class2_rottery/lotto_analysis_v2_1.py class2_rottery/verify_lotto_v2_1.py class2_rottery/tests/test_lotto_analysis_v2_1_basic.py",
+      "command": "python -m ruff format --check class2_rottery/lotto_analysis_v2_1_basic.py class2_rottery/verify_lotto_v2_1_basic.py class2_rottery/tests/test_lotto_analysis_v2_1_basic.py",
       "status": "검증 완료",
-      "chunk_id": "c38388",
-      "wall_time_seconds": 0.3468674,
+      "chunk_id": "b18353",
+      "wall_time_seconds": 0.3428049,
       "exit_code": 0,
       "original_token_count": 7,
-      "output": "5 files already formatted\n"
+      "output": "3 files already formatted\n"
     },
     {
-      "command": "python -X utf8 class2_rottery/verify_lotto_v2_1_basic.py",
+      "command": "python -X utf8 -m pytest -q -p no:cacheprovider",
       "status": "검증 완료",
-      "chunk_id": "36a719",
-      "wall_time_seconds": 2.1925954,
+      "chunk_id": "dc3e25",
+      "wall_time_seconds": 0.000009,
       "exit_code": 0,
-      "original_token_count": 170,
-      "output": "{\r\n  \"status\": \"passed\",\r\n  \"command\": \"python -X utf8 class2_rottery/verify_lotto_v2_1_basic.py\",\r\n  \"original_source_sha256\": \"8B2C9836A5BAD4C55811CE95E18B96E2C051070E1C8263B5C653B3D7F5595214\",\r\n  \"v2_input_sha256\": \"391E8042B771CC33AC15C1BDED8D3AFB3302326431E090BFCA2ED4206E18A4E0\",\r\n  \"source_rows_preserved\": 3735,\r\n  \"approved_topic_ids\": [\r\n    \"01\",\r\n    \"02\",\r\n    \"03\",\r\n    \"08\",\r\n    \"09A\",\r\n    \"09B\",\r\n    \"09C\",\r\n    \"09D\",\r\n    \"10\"\r\n  ],\r\n  \"independently_verified_xy_and_comparison_rows\": 33496,\r\n  \"reconstructed_comparison_scores\": 33496,\r\n  \"embedded_pngs_verified\": 36,\r\n  \"rank_then_comparison_order_verified\": true,\r\n  \"verified_artifact_hashes\": 90\r\n}\r\n"
+      "original_token_count": 17,
+      "output": ".......                              [100%]\r\n43 passed in 30.60s\r\n"
     },
     {
-      "command": "git diff --exit-code HEAD -- class2_rottery/lotto_rank_1_1245.csv class2_rottery/lotto_preprocessed_v2.csv class2_rottery/lotto_analysis_v2.py class2_rottery/lotto_rank_report_v2.md class2_rottery/analysis_results_v2",
+      "command": "git diff --exit-code HEAD -- class2_rottery/lotto_rank_1_1245.csv class2_rottery/lotto_preprocessed_v2.csv class2_rottery/analysis_results_v2_1_basic/charts class2_rottery/analysis_results_v2_1_basic/visual_review class2_rottery/analysis_results_v2_1_basic/observations.csv class2_rottery/analysis_results_v2_1_basic/groups.csv class2_rottery/analysis_results_v2_1_basic/focus.csv class2_rottery/analysis_results_v2_1_basic/normalization.csv",
       "status": "검증 완료",
-      "chunk_id": "c60e23",
-      "wall_time_seconds": 0.3368702,
+      "chunk_id": "6f36e9",
+      "wall_time_seconds": 0.3260119,
       "exit_code": 0,
       "original_token_count": 0,
       "output": ""
-    },
-    {
-      "command": "python -m pytest -q -p no:cacheprovider",
-      "status": "검증 완료",
-      "chunk_id": "378632",
-      "wall_time_seconds": 0.0000089,
-      "exit_code": 0,
-      "original_token_count": 19,
-      "output": "...............                              [100%]\r\n43 passed in 30.56s\r\n"
     }
   ],
-  "visual_review": {
-    "status": "육안 검사 완료",
-    "reviewed": "visual_review/의 9개 모음 그림으로 전체 36개 확인. 최종 조정 후 01_rank_1,08_violin,10_rank_3 재확인",
-    "browser_render": "미실행. HTML은 이미지 36개 내장과 원본 PNG 일치 및 문서 복제 일치만 자동 검증"
-  },
   "issues": [
     {
-      "issue": "기존 초안이 요청한 일반 현황 대신 잔차 중심으로 구성됨",
-      "status": "해결",
-      "action": "승인된 9개 일반 분석으로 본문을 교체; 각 주제 1·2·3등 이후 비교 바이올린 배치"
+      "description": "RED 단계에서 상관계수 문구가 남아 테스트 실패",
+      "resolved": true,
+      "action": "계산·출력·해석 삭제 후 동일 테스트 통과. 기존 테스트 삭제·약화 없음"
     },
     {
-      "issue": "TDD RED 단계에서 신규 모듈 미구현으로 import 실패",
-      "status": "해결",
-      "action": "신규 모듈 구현 이후 8개 신규 테스트와 전체 43개 통과"
+      "description": "RED 실행 로그의 터미널 한글 출력 인코딩 깨짐",
+      "resolved": true,
+      "action": "후속 Python 명령을 -X utf8로 실행. RED 실패 위치와 exit1은 기록에 보존"
     },
     {
-      "issue": "초기 Ruff에서 미사용 pytest import 발견",
-      "status": "해결",
-      "action": "미사용 import 제거 후 최종 Ruff 통과"
+      "description": "Windows 기존 pytest 임시 디렉터리 권한 제약",
+      "resolved": true,
+      "action": "이전 실행에서 확인된 제약에 따라 전체 테스트를 승인된 escalated 환경에서 실행; 43개 통과"
     },
     {
-      "issue": "맑은 고딕 Unicode minus 글리프 경고",
-      "status": "해결",
-      "action": "축 라벨은 ASCII 하이픈, 눈금은 unicode_minus=False; 재생성 시 경고 없음"
+      "description": "Git LF→CRLF 안내",
+      "resolved": true,
+      "action": "diff에서 안내 확인. 그래프·입력·관측값의 byte 변경 없음 확인"
     },
     {
-      "issue": "본문 금지어 검사가 Base64 임의 문자열을 오탐",
-      "status": "해결",
-      "action": "이미지 데이터 URI를 제외한 실제 본문에 같은 금지어 검사 적용; 결과물 수·순서·입력 무변경 검사는 유지"
+      "description": "Pyright 미설치",
+      "resolved": false,
+      "action": "importlib.util.find_spec 결과 False. 타입 검사 미실행이며 통과로 주장하지 않음"
     },
     {
-      "issue": "Windows 임시 디렉터리 권한 때문에 기본 pytest 실행 제한",
-      "status": "해결",
-      "action": "승인된 escalated pytest 실행으로 전체 43개 통과"
-    },
-    {
-      "issue": "PowerShell 시작 프로필이 실행 정책에 의해 차단됨",
-      "status": "해결",
-      "action": "프로필 없이 login=false로 후속 셸 실행; git status 자체는 exit0"
-    },
-    {
-      "issue": "Pyright 미설치, 별도 타입 검사 구성 없음",
-      "status": "미실행",
-      "action": "python -c importlib.util.find_spec 검사 결과 pyright_installed=False. 타입 검사 통과라고 주장하지 않음"
-    },
-    {
-      "issue": "브라우저에서 최종 HTML 렌더링 확인",
-      "status": "미실행",
-      "action": "로컬 PNG 육안 확인 및 HTML 구조/내장 이미지 자동 검증으로 검증 범위를 명시"
-    },
-    {
-      "issue": "Git LF→CRLF 안내",
-      "status": "안내",
-      "action": "git diff에서 줄바꿈 변환 안내 확인; 입력 CSV와 V2의 diff exit0 확인"
+      "description": "브라우저 렌더링 검사",
+      "resolved": false,
+      "action": "미실행. 이번 변경에서 그림 36개와 육안 검사용 모음의 git diff exit0 및 이미지 내장·일치 감사로 보존 확인"
     }
   ],
-  "reproducibility": "원본 및 V2 SHA256과 산출물 90개 해시는 manifest.json/independent_audit.json에 저장. execution_log.json과 감사·manifest는 순환 참조 방지를 위해 manifest 산출물 해시 대상에서 제외."
+  "artifact_locations": {
+    "reports": [
+      "../lotto_rank_report_v2_1.md",
+      "../lotto_rank_report_v2_1.html"
+    ],
+    "audit": "independent_audit.json",
+    "csv": "summary.csv와 tables/*_comparison.csv",
+    "hashes": "manifest.json"
+  },
+  "previous_execution": {
+    "task": "승인된 일반 현황 9개 주제로 V2.1 정정",
+    "status": "검증 완료",
+    "evidence_classification": "LLM이 작성한 코드의 실제 실행 결과. 원본 CSV를 별도 구현으로 대조했으나 복권 운영 외부 사실이나 인과·유의성을 보증하는 증거가 아님.",
+    "original_user_command": "A는 9번에 들어갈만한 것으로 보임.\nB는 9번의 확장이고. 둘다 리젝에 가까움. 9번이후 결과에 따라 확장실험 대상이지, 지금 시도할 새로운 시각은 아님. 아에 다른 방향성의 인사이트를 뻔하더라고 제공해야하는데. 아닌거같음. 애매하다면, 차라리 지금 나온 후보만을 대상으로 실험을 진행하라",
+    "scope": {
+      "topics": [
+        "01",
+        "02",
+        "03",
+        "08",
+        "09A",
+        "09B",
+        "09C",
+        "09D",
+        "10"
+      ],
+      "ranks": [
+        1,
+        2,
+        3
+      ],
+      "rank_charts": 27,
+      "comparison_violins": 9,
+      "main_values": "실제 금액과 게임 수; 10번 시기 비교는 가격 환산",
+      "rejected": "4·5·6·7 및 추가 제안 A/B"
+    },
+    "generation": {
+      "command": "python -X utf8 class2_rottery/lotto_analysis_v2_1.py",
+      "status": "실행 완료 후 별도 감사 통과",
+      "record": "manifest.json와 validation.json",
+      "compatibility": "기존 CLI는 새 일반 현황 모듈로 연결하고 이전 API·초안 결과 디렉터리는 보존"
+    },
+    "commands": [
+      {
+        "command": "python -m ruff check class2_rottery/lotto_analysis_v2_1_basic.py class2_rottery/verify_lotto_v2_1_basic.py class2_rottery/lotto_analysis_v2_1.py class2_rottery/verify_lotto_v2_1.py class2_rottery/tests/test_lotto_analysis_v2_1_basic.py",
+        "status": "검증 완료",
+        "chunk_id": "a12c01",
+        "wall_time_seconds": 0.4233806,
+        "exit_code": 0,
+        "original_token_count": 5,
+        "output": "All checks passed!\n"
+      },
+      {
+        "command": "python -m ruff format --check class2_rottery/lotto_analysis_v2_1_basic.py class2_rottery/verify_lotto_v2_1_basic.py class2_rottery/lotto_analysis_v2_1.py class2_rottery/verify_lotto_v2_1.py class2_rottery/tests/test_lotto_analysis_v2_1_basic.py",
+        "status": "검증 완료",
+        "chunk_id": "c38388",
+        "wall_time_seconds": 0.3468674,
+        "exit_code": 0,
+        "original_token_count": 7,
+        "output": "5 files already formatted\n"
+      },
+      {
+        "command": "python -X utf8 class2_rottery/verify_lotto_v2_1_basic.py",
+        "status": "검증 완료",
+        "chunk_id": "36a719",
+        "wall_time_seconds": 2.1925954,
+        "exit_code": 0,
+        "original_token_count": 170,
+        "output": "{\r\n  \"status\": \"passed\",\r\n  \"command\": \"python -X utf8 class2_rottery/verify_lotto_v2_1_basic.py\",\r\n  \"original_source_sha256\": \"8B2C9836A5BAD4C55811CE95E18B96E2C051070E1C8263B5C653B3D7F5595214\",\r\n  \"v2_input_sha256\": \"391E8042B771CC33AC15C1BDED8D3AFB3302326431E090BFCA2ED4206E18A4E0\",\r\n  \"source_rows_preserved\": 3735,\r\n  \"approved_topic_ids\": [\r\n    \"01\",\r\n    \"02\",\r\n    \"03\",\r\n    \"08\",\r\n    \"09A\",\r\n    \"09B\",\r\n    \"09C\",\r\n    \"09D\",\r\n    \"10\"\r\n  ],\r\n  \"independently_verified_xy_and_comparison_rows\": 33496,\r\n  \"reconstructed_comparison_scores\": 33496,\r\n  \"embedded_pngs_verified\": 36,\r\n  \"rank_then_comparison_order_verified\": true,\r\n  \"verified_artifact_hashes\": 90\r\n}\r\n"
+      },
+      {
+        "command": "git diff --exit-code HEAD -- class2_rottery/lotto_rank_1_1245.csv class2_rottery/lotto_preprocessed_v2.csv class2_rottery/lotto_analysis_v2.py class2_rottery/lotto_rank_report_v2.md class2_rottery/analysis_results_v2",
+        "status": "검증 완료",
+        "chunk_id": "c60e23",
+        "wall_time_seconds": 0.3368702,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      },
+      {
+        "command": "python -m pytest -q -p no:cacheprovider",
+        "status": "검증 완료",
+        "chunk_id": "378632",
+        "wall_time_seconds": 0.0000089,
+        "exit_code": 0,
+        "original_token_count": 19,
+        "output": "...............                              [100%]\r\n43 passed in 30.56s\r\n"
+      }
+    ],
+    "visual_review": {
+      "status": "육안 검사 완료",
+      "reviewed": "visual_review/의 9개 모음 그림으로 전체 36개 확인. 최종 조정 후 01_rank_1,08_violin,10_rank_3 재확인",
+      "browser_render": "미실행. HTML은 이미지 36개 내장과 원본 PNG 일치 및 문서 복제 일치만 자동 검증"
+    },
+    "issues": [
+      {
+        "issue": "기존 초안이 요청한 일반 현황 대신 잔차 중심으로 구성됨",
+        "status": "해결",
+        "action": "승인된 9개 일반 분석으로 본문을 교체; 각 주제 1·2·3등 이후 비교 바이올린 배치"
+      },
+      {
+        "issue": "TDD RED 단계에서 신규 모듈 미구현으로 import 실패",
+        "status": "해결",
+        "action": "신규 모듈 구현 이후 8개 신규 테스트와 전체 43개 통과"
+      },
+      {
+        "issue": "초기 Ruff에서 미사용 pytest import 발견",
+        "status": "해결",
+        "action": "미사용 import 제거 후 최종 Ruff 통과"
+      },
+      {
+        "issue": "맑은 고딕 Unicode minus 글리프 경고",
+        "status": "해결",
+        "action": "축 라벨은 ASCII 하이픈, 눈금은 unicode_minus=False; 재생성 시 경고 없음"
+      },
+      {
+        "issue": "본문 금지어 검사가 Base64 임의 문자열을 오탐",
+        "status": "해결",
+        "action": "이미지 데이터 URI를 제외한 실제 본문에 같은 금지어 검사 적용; 결과물 수·순서·입력 무변경 검사는 유지"
+      },
+      {
+        "issue": "Windows 임시 디렉터리 권한 때문에 기본 pytest 실행 제한",
+        "status": "해결",
+        "action": "승인된 escalated pytest 실행으로 전체 43개 통과"
+      },
+      {
+        "issue": "PowerShell 시작 프로필이 실행 정책에 의해 차단됨",
+        "status": "해결",
+        "action": "프로필 없이 login=false로 후속 셸 실행; git status 자체는 exit0"
+      },
+      {
+        "issue": "Pyright 미설치, 별도 타입 검사 구성 없음",
+        "status": "미실행",
+        "action": "python -c importlib.util.find_spec 검사 결과 pyright_installed=False. 타입 검사 통과라고 주장하지 않음"
+      },
+      {
+        "issue": "브라우저에서 최종 HTML 렌더링 확인",
+        "status": "미실행",
+        "action": "로컬 PNG 육안 확인 및 HTML 구조/내장 이미지 자동 검증으로 검증 범위를 명시"
+      },
+      {
+        "issue": "Git LF→CRLF 안내",
+        "status": "안내",
+        "action": "git diff에서 줄바꿈 변환 안내 확인; 입력 CSV와 V2의 diff exit0 확인"
+      }
+    ],
+    "reproducibility": "원본 및 V2 SHA256과 산출물 90개 해시는 manifest.json/independent_audit.json에 저장. execution_log.json과 감사·manifest는 순환 참조 방지를 위해 manifest 산출물 해시 대상에서 제외."
+  }
 }
