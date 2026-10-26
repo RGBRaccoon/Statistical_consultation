@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-10-26T05:01:58.273527+00:00",
+  "created_at_utc": "2026-10-26T05:19:44.824654+00:00",
   "execution_command": "python -X utf8 class2_rottery/lotto_analysis_v2.py",
   "source_path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\lotto_rank_1_1245.csv",
   "input_sha256": "8B2C9836A5BAD4C55811CE95E18B96E2C051070E1C8263B5C653B3D7F5595214",
@@ -36,6 +36,9 @@
     "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step0_validation.json",
     "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step1_rank_summary.csv",
     "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step1_period_summary.csv",
+    "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step1_sample_size_guidance.csv",
+    "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step1_sample_size_context.csv",
+    "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step1_binomial_dispersion.csv",
     "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_1.png",
     "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_2.png",
     "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_3.png",
@@ -65,6 +68,21 @@
       "sha256": "CABBEE087060CEA0796EE283E2349382CD86A78FABB7ED691BC6029272A8D3A1"
     },
     {
+      "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step1_sample_size_guidance.csv",
+      "size_bytes": 5693,
+      "sha256": "96788698EAB6BF7DD6ACC0A734C8E329E5CDEB2C3745A4DDDA72D4461F1FA8AB"
+    },
+    {
+      "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step1_sample_size_context.csv",
+      "size_bytes": 1022,
+      "sha256": "936D67ADC0B0F94B5531A718192492217791A0213F4D7F2E08769A07CFF87BBD"
+    },
+    {
+      "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\step1_binomial_dispersion.csv",
+      "size_bytes": 1241,
+      "sha256": "47C76DAA5B79F570EE95DD56818685B0EFCB2B785BA5BFBE8FD5908ABA0BAC52"
+    },
+    {
       "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2\\charts\\step1_rank_1.png",
       "size_bytes": 413314,
       "sha256": "866F3EDC03891C920EB1EB0089D8D17691EB3CB3F4AAF8698809BCB1AE09D2EE"
@@ -91,8 +109,8 @@
     },
     {
       "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\lotto_rank_report_v2.md",
-      "size_bytes": 2477930,
-      "sha256": "91EC650EE61DCCD6D72723CD9C31EFC06E146450BCA7FBC2CE2E50D6C1981343"
+      "size_bytes": 2480852,
+      "sha256": "A5D320D650C07E7B06A726A5EBF2C5C8E865AFB7DD86B8D19CC0D3E9C406E4CC"
     }
   ]
 }

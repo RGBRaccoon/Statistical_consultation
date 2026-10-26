@@ -19,6 +19,7 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from statistics import NormalDist
 from typing import Any
 
 import matplotlib.pyplot as plt
@@ -324,6 +325,134 @@ def build_step1_period_summary(processed: pd.DataFrame) -> pd.DataFrame:
     )
 
 
+def build_sample_size_guidance() -> pd.DataFrame:
+    """등수별로 서로 다른 세 가지 표본수 기준을 계산한다.
+
+    ``95% 상대오차``는 이항비율의 정규근사 신뢰구간 반폭을 기준으로 한다.
+    ``80% 검정력 상대증가 검출``은 알려진 기준 확률에 대한 양측 5% 단일
+    비율 z 검정의 근사 표본수다. 두 기준 모두 독립·동일확률 게임을 가정한다.
+    """
+    rows: list[dict[str, Any]] = []
+    z_alpha = NormalDist().inv_cdf(0.975)
+    z_power = NormalDist().inv_cdf(0.80)
+
+    for rank, favorable in RANK_FAVORABLE_COMBINATIONS.items():
+        probability = favorable / TOTAL_COMBINATIONS
+        for expected_count in (5, 10, 30):
+            rows.append(
+                {
+                    "순위": rank,
+                    "이론확률": probability,
+                    "약_몇게임당_1회": 1 / probability,
+                    "기준종류": "기대 당첨게임 수",
+                    "기준값": expected_count,
+                    "필요_판매게임수": math.ceil(expected_count / probability),
+                    "가정": "이항모형; 기대값 np",
+                }
+            )
+
+        for relative_margin in (0.5, 0.2, 0.1):
+            required_games = math.ceil(
+                z_alpha**2 * (1 - probability) / (relative_margin**2 * probability)
+            )
+            rows.append(
+                {
+                    "순위": rank,
+                    "이론확률": probability,
+                    "약_몇게임당_1회": 1 / probability,
+                    "기준종류": "95% 상대오차",
+                    "기준값": relative_margin,
+                    "필요_판매게임수": required_games,
+                    "가정": "이항비율 정규근사; 상대 신뢰구간 반폭",
+                }
+            )
+
+        for relative_increase in (0.5, 0.2, 0.1):
+            alternative = probability * (1 + relative_increase)
+            numerator = (
+                z_alpha * math.sqrt(probability * (1 - probability))
+                + z_power * math.sqrt(alternative * (1 - alternative))
+            ) ** 2
+            required_games = math.ceil(numerator / (alternative - probability) ** 2)
+            rows.append(
+                {
+                    "순위": rank,
+                    "이론확률": probability,
+                    "약_몇게임당_1회": 1 / probability,
+                    "기준종류": "80% 검정력 상대증가 검출",
+                    "기준값": relative_increase,
+                    "필요_판매게임수": required_games,
+                    "가정": "양측 유의수준 5%; 단일 비율 z 검정 근사",
+                }
+            )
+
+    return pd.DataFrame(rows)
+
+
+def build_sample_size_context(processed: pd.DataFrame) -> pd.DataFrame:
+    """실제 회차가 등수별 기대 당첨 건수 기준을 얼마나 만족하는지 센다."""
+    rows: list[dict[str, Any]] = []
+    sales_by_round = processed.drop_duplicates("회차")[
+        ["회차", "추정_판매게임수"]
+    ].sort_values("회차")
+    for rank, favorable in RANK_FAVORABLE_COMBINATIONS.items():
+        probability = favorable / TOTAL_COMBINATIONS
+        expected = sales_by_round["추정_판매게임수"] * probability
+        rows.append(
+            {
+                "순위": rank,
+                "이론확률": probability,
+                "약_몇게임당_1회": 1 / probability,
+                "전체회차수": len(sales_by_round),
+                "최소_판매게임수": int(sales_by_round["추정_판매게임수"].min()),
+                "중앙_판매게임수": float(sales_by_round["추정_판매게임수"].median()),
+                "최대_판매게임수": int(sales_by_round["추정_판매게임수"].max()),
+                "최소_기대당첨게임수": float(expected.min()),
+                "중앙_기대당첨게임수": float(expected.median()),
+                "최대_기대당첨게임수": float(expected.max()),
+                "기대5이상_회차수": int(expected.ge(5).sum()),
+                "기대10이상_회차수": int(expected.ge(10).sum()),
+                "기대30이상_회차수": int(expected.ge(30).sum()),
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def build_binomial_dispersion_diagnostics(processed: pd.DataFrame) -> pd.DataFrame:
+    """이론적 이항분산과 실제 회차 간 변동의 차이를 등수·기간별로 계산한다."""
+    periods = (
+        ("전체", processed["회차"].ge(1)),
+        ("1~87회", processed["회차"].le(87)),
+        ("88회 이후", processed["회차"].ge(88)),
+    )
+    rows: list[dict[str, Any]] = []
+    for period_name, period_mask in periods:
+        for rank in RANKS:
+            data = processed.loc[period_mask & processed["순위"].eq(rank)]
+            observed = data["당첨게임 수"].to_numpy(dtype=float)
+            expected = data["이론_기대당첨게임수"].to_numpy(dtype=float)
+            probability = data["이론_등수당첨확률"].to_numpy(dtype=float)
+            variance = expected * (1 - probability)
+            pearson_residual = (observed - expected) / np.sqrt(variance)
+            rows.append(
+                {
+                    "기간": period_name,
+                    "순위": rank,
+                    "회차수": len(data),
+                    "Pearson_과산포계수": float(
+                        np.sum(pearson_residual**2) / (len(data) - 1)
+                    ),
+                    "Pearson잔차_절댓값_중앙값": float(
+                        np.median(np.abs(pearson_residual))
+                    ),
+                    "Pearson잔차_절댓값_최댓값": float(
+                        np.max(np.abs(pearson_residual))
+                    ),
+                }
+            )
+    return pd.DataFrame(rows)
+
+
 def _configure_plots() -> None:
     plt.rcParams.update(
         {
@@ -479,6 +608,9 @@ def write_report(
     validation: dict[str, Any],
     rank_summary: pd.DataFrame,
     period_summary: pd.DataFrame,
+    sample_size_guidance: pd.DataFrame,
+    sample_size_context: pd.DataFrame,
+    dispersion_diagnostics: pd.DataFrame,
     chart_paths: list[Path],
     report_path: str | Path,
     source_path: str | Path,
@@ -507,6 +639,61 @@ def write_report(
                 f"{rank_data['관측_기대_비율'].median():.4f}",
                 f"{rank_data['등위별_지급률'].mean():.4%}",
                 f"{rank_data['1000원기준_1게임당당첨금'].median():,.0f}원",
+            ]
+        )
+
+    sample_size_rows: list[list[str]] = []
+    for rank in RANKS:
+        rank_guidance = sample_size_guidance.loc[sample_size_guidance["순위"] == rank]
+        rank_context = sample_size_context.loc[
+            sample_size_context["순위"] == rank
+        ].iloc[0]
+        expected_30 = rank_guidance.loc[
+            (rank_guidance["기준종류"] == "기대 당첨게임 수")
+            & (rank_guidance["기준값"] == 30),
+            "필요_판매게임수",
+        ].iloc[0]
+        precision_20 = rank_guidance.loc[
+            (rank_guidance["기준종류"] == "95% 상대오차")
+            & (rank_guidance["기준값"] == 0.2),
+            "필요_판매게임수",
+        ].iloc[0]
+        power_20 = rank_guidance.loc[
+            (rank_guidance["기준종류"] == "80% 검정력 상대증가 검출")
+            & (rank_guidance["기준값"] == 0.2),
+            "필요_판매게임수",
+        ].iloc[0]
+        sample_size_rows.append(
+            [
+                rank,
+                f"{rank_context['약_몇게임당_1회']:,.1f}",
+                f"{expected_30:,.0f}",
+                f"{precision_20:,.0f}",
+                f"{power_20:,.0f}",
+                f"{rank_context['기대30이상_회차수']:,.0f}/{rank_context['전체회차수']:,.0f}",
+            ]
+        )
+
+    dispersion_rows: list[list[str]] = []
+    for rank in RANKS:
+        all_period = dispersion_diagnostics.loc[
+            (dispersion_diagnostics["기간"] == "전체")
+            & (dispersion_diagnostics["순위"] == rank)
+        ].iloc[0]
+        early_period = dispersion_diagnostics.loc[
+            (dispersion_diagnostics["기간"] == "1~87회")
+            & (dispersion_diagnostics["순위"] == rank)
+        ].iloc[0]
+        later_period = dispersion_diagnostics.loc[
+            (dispersion_diagnostics["기간"] == "88회 이후")
+            & (dispersion_diagnostics["순위"] == rank)
+        ].iloc[0]
+        dispersion_rows.append(
+            [
+                rank,
+                f"{all_period['Pearson_과산포계수']:,.2f}",
+                f"{early_period['Pearson_과산포계수']:,.2f}",
+                f"{later_period['Pearson_과산포계수']:,.2f}",
             ]
         )
 
@@ -555,6 +742,42 @@ def write_report(
         + "\n",
         "상세 기술통계는 `analysis_results_v2/step1_rank_summary.csv`, 가격 구간별 비교는 "
         "`analysis_results_v2/step1_period_summary.csv`에 저장했다.\n",
+        "## 판매게임 수가 적을 때의 변동\n",
+        "‘통계적으로 유의한 구매량’은 하나의 고정값이 아니다. 검출하려는 차이의 크기, 유의수준, "
+        "검정력 또는 원하는 추정 오차를 먼저 정해야 한다. 아래는 독립적인 각 게임이 이론 확률을 "
+        "따른다는 이항모형에서 계산한 게임 수다. 실제 종이 복권 장수는 CSV에 없으므로 계산할 수 없다.\n",
+        _markdown_table(
+            [
+                "순위",
+                "평균적으로 1회 당첨에 필요한 게임",
+                "기대 당첨 30건",
+                "95% 상대오차 ±20%",
+                "+20% 차이 검출(검정력 80%)",
+                "실제 기대30 이상 회차",
+            ],
+            sample_size_rows,
+        )
+        + "\n",
+        "`기대 당첨 30건`은 정규근사를 비교적 안정적으로 쓰기 위한 경험적 기준일 뿐 유의성을 "
+        "보장하지 않는다. `95% 상대오차 ±20%`는 추정값의 신뢰구간 정밀도 기준이고, 마지막 열은 "
+        "양측 유의수준 5%에서 이론값보다 20% 큰 실제 확률을 80% 확률로 검출하기 위한 근사값이다. "
+        "계산 전체는 `step1_sample_size_guidance.csv`, 실제 회차 비교는 "
+        "`step1_sample_size_context.csv`에 저장했다.\n",
+        "### 이항모형과 실제 데이터의 차이\n",
+        _markdown_table(
+            ["순위", "전체 Pearson 과산포", "1~87회", "88회 이후"],
+            dispersion_rows,
+        )
+        + "\n",
+        "이론적 독립 이항모형이 맞으면 Pearson 과산포계수는 대략 1이어야 한다. 실제 값은 모든 "
+        "등수에서 1보다 크며 특히 하위 등수에서 매우 크다. 따라서 위 표본수 표를 그대로 이상 회차 "
+        "판정에 사용하면 유의한 회차가 지나치게 많이 생긴다. 가능한 원인은 동일 번호의 반복 구매, "
+        "수동 선택의 번호 선호, 회차별 제도 차이와 자료 정의 차이다. 현재 데이터에는 전체 구매 조합이 "
+        "없으므로 원인을 분리해 확정할 수 없다. 상세 결과는 `step1_binomial_dispersion.csv`에 저장했다.\n",
+        "초반 회차를 삭제하거나 임의 평활화하면 정보와 실제 변동을 함께 없앤다. 회차별 분석에서는 "
+        "기대 당첨 건수가 작은 회차에 `저정보 회차` 표시를 붙여야 한다. 이상 회차 검정에는 순수 "
+        "이항분산 대신 등수·제도 구간별 경험적 과산포나 음이항모형을 검토해야 한다. 여러 회차를 "
+        "합칠 때는 회차 수가 아니라 누적 기대 당첨 건수가 목표값에 도달할 때까지 묶어야 한다.\n",
     ]
 
     for rank, chart_path in zip(RANKS, chart_paths):
@@ -602,11 +825,29 @@ def run_v2(
     processed.to_csv(processed_file, index=False, encoding="utf-8-sig")
     rank_summary = build_step1_rank_summary(processed)
     period_summary = build_step1_period_summary(processed)
+    sample_size_guidance = build_sample_size_guidance()
+    sample_size_context = build_sample_size_context(processed)
+    dispersion_diagnostics = build_binomial_dispersion_diagnostics(processed)
     rank_summary.to_csv(
         results_dir / "step1_rank_summary.csv", index=False, encoding="utf-8-sig"
     )
     period_summary.to_csv(
         results_dir / "step1_period_summary.csv", index=False, encoding="utf-8-sig"
+    )
+    sample_size_guidance.to_csv(
+        results_dir / "step1_sample_size_guidance.csv",
+        index=False,
+        encoding="utf-8-sig",
+    )
+    sample_size_context.to_csv(
+        results_dir / "step1_sample_size_context.csv",
+        index=False,
+        encoding="utf-8-sig",
+    )
+    dispersion_diagnostics.to_csv(
+        results_dir / "step1_binomial_dispersion.csv",
+        index=False,
+        encoding="utf-8-sig",
     )
 
     validation_path = results_dir / "step0_validation.json"
@@ -619,6 +860,9 @@ def run_v2(
         validation,
         rank_summary,
         period_summary,
+        sample_size_guidance,
+        sample_size_context,
+        dispersion_diagnostics,
         chart_paths,
         report_file,
         source_file,
@@ -630,6 +874,9 @@ def run_v2(
         validation_path,
         results_dir / "step1_rank_summary.csv",
         results_dir / "step1_period_summary.csv",
+        results_dir / "step1_sample_size_guidance.csv",
+        results_dir / "step1_sample_size_context.csv",
+        results_dir / "step1_binomial_dispersion.csv",
         *chart_paths,
         report_file,
     ]
