@@ -1,0 +1,559 @@
+{
+  "version": "2.3",
+  "created_at_utc": "2026-10-26T09:01:24.937889+00:00",
+  "command": "python -X utf8 class2_rottery/lotto_analysis_v2_3.py",
+  "source": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\lotto_preprocessed_v2.csv",
+  "source_sha256": "391E8042B771CC33AC15C1BDED8D3AFB3302326431E090BFCA2ED4206E18A4E0",
+  "raw_source_sha256": "8B2C9836A5BAD4C55811CE95E18B96E2C051070E1C8263B5C653B3D7F5595214",
+  "section_rank_rules": 27,
+  "images": 46,
+  "outlier_rows": 1163,
+  "unique_rounds": 244,
+  "rule": "strictly upper 1.5/3 IQR, own section/rank main Y",
+  "quartile_interpolation": "linear",
+  "sources": [
+    "https://www.itl.nist.gov/div898/handbook/prc/section1/prc16.htm"
+  ],
+  "artifacts": [
+    {
+      "path": "charts\\01_rank_1.png",
+      "size_bytes": 74127,
+      "sha256": "57F857BD0E94F9195CEA99A20C0507FE1FE31B5D055C09B9E413FB1D60AE1D46"
+    },
+    {
+      "path": "charts\\01_rank_2.png",
+      "size_bytes": 71948,
+      "sha256": "2AEC634C4DF59EA30EA98489844C9787BA4D6153957B5669DDEF9311F9A2B185"
+    },
+    {
+      "path": "charts\\01_rank_3.png",
+      "size_bytes": 76683,
+      "sha256": "5FF8F8C83D2D9C00DDA7CA5F984872EE2020564B5D0AE34C99DB4FBD0E919639"
+    },
+    {
+      "path": "charts\\01_upper_iqr.png",
+      "size_bytes": 117136,
+      "sha256": "843D0B8806BA4153954114705433AC4ECBE06153F5A157498CD0EEF510C2416F"
+    },
+    {
+      "path": "charts\\01_violin.png",
+      "size_bytes": 70456,
+      "sha256": "4F9E186405E1849B11AB85AAB2E1BE059EC4FB490F016C92CED1FC8B8C7A7BD5"
+    },
+    {
+      "path": "charts\\02_rank_1.png",
+      "size_bytes": 68359,
+      "sha256": "38455B9A7C80A918D7678BC5BC1AA517430644678DAD9D366067DC64D38130C3"
+    },
+    {
+      "path": "charts\\02_rank_2.png",
+      "size_bytes": 75138,
+      "sha256": "CD01E05E77BB11334C67C17E0368D6719CF7C1340C61592918204BC7A124D879"
+    },
+    {
+      "path": "charts\\02_rank_3.png",
+      "size_bytes": 81697,
+      "sha256": "C1EC568FA81E45ADD2B64FDEF84AC55A7FD7B74D988FA2DF65CB495E9D73D3E6"
+    },
+    {
+      "path": "charts\\02_upper_iqr.png",
+      "size_bytes": 113347,
+      "sha256": "F6D6A65FCFEA1461E09B103199B51F441864E2A780D6F03185CB6356EB377AA4"
+    },
+    {
+      "path": "charts\\02_violin.png",
+      "size_bytes": 67007,
+      "sha256": "9252E4DAC115EF600283A4635F720D24BA2FD0165243AEB5CFB67B21AFD7FE70"
+    },
+    {
+      "path": "charts\\03_rank_1.png",
+      "size_bytes": 69509,
+      "sha256": "0E90135A9D2C611EE3F0DB5348D604C1A15B5109436D44564B16780A55A1C9AC"
+    },
+    {
+      "path": "charts\\03_rank_2.png",
+      "size_bytes": 77576,
+      "sha256": "D456D550F5A22B913A1CCA48A049C609B08BD7B89A8315C154FE3A712D7C3F96"
+    },
+    {
+      "path": "charts\\03_rank_3.png",
+      "size_bytes": 78852,
+      "sha256": "452B575C870BE3AA67DA36103C56BCBA2A93822FE0EE0429E8064DB547B6DE8D"
+    },
+    {
+      "path": "charts\\03_upper_iqr.png",
+      "size_bytes": 91535,
+      "sha256": "872145ADF5A092B3FAE880839ACF55C07D3A6D05001773EE995DF260723A40B5"
+    },
+    {
+      "path": "charts\\03_violin.png",
+      "size_bytes": 99886,
+      "sha256": "955436216D15FE075B3A0FF9AF3E453183D14042FE738D69D4963C8499D98D66"
+    },
+    {
+      "path": "charts\\08_rank_1.png",
+      "size_bytes": 68694,
+      "sha256": "66E1FBFCF14C1D4CD033A22524D0491517D9ED8654189FF2A90060AA7FABD271"
+    },
+    {
+      "path": "charts\\08_rank_2.png",
+      "size_bytes": 63096,
+      "sha256": "D63B57B334A4DD38168A188E5F190C233E6583292D385D926957ECF20C0A42DF"
+    },
+    {
+      "path": "charts\\08_rank_3.png",
+      "size_bytes": 69102,
+      "sha256": "49562F76A21288B6FFA4F708D1B7C27C50BCB0157F8BCCF912EAA6BEABF37523"
+    },
+    {
+      "path": "charts\\08_upper_iqr.png",
+      "size_bytes": 121322,
+      "sha256": "E04849405D9E389FACB6D7955B797969D66B9399B3DF4FD8A045E5E6824EF2D6"
+    },
+    {
+      "path": "charts\\08_violin.png",
+      "size_bytes": 72237,
+      "sha256": "0080E9E94D696FA58F8452C98B4983A99ADDC6EE21BF5FE61C38950F889129F0"
+    },
+    {
+      "path": "charts\\09A_rank_1.png",
+      "size_bytes": 78252,
+      "sha256": "B3B4ADCDCE169DE2E2C9265C58386AE285C7F4C7C332DBBBADF24BA32D169F6F"
+    },
+    {
+      "path": "charts\\09A_rank_2.png",
+      "size_bytes": 71210,
+      "sha256": "F7A4F271B0A19E9604180BBC4F4D7C5EA60BF5537845F8279A795C5716D73D36"
+    },
+    {
+      "path": "charts\\09A_rank_3.png",
+      "size_bytes": 78786,
+      "sha256": "831EE81677393A66E17C744CF53CDB60F44B0EEE2BCEA3F003A10257B22F5A49"
+    },
+    {
+      "path": "charts\\09A_upper_iqr.png",
+      "size_bytes": 118638,
+      "sha256": "5ADE98AC2E9F0C1B9B27CAC65C47743CB396110E2BFEB51090285022A2D24260"
+    },
+    {
+      "path": "charts\\09A_violin.png",
+      "size_bytes": 70787,
+      "sha256": "D756721CBB6DC2B360CE1E2FDAA29E2D927572C232CC0CBD9A9CF3AECD299A70"
+    },
+    {
+      "path": "charts\\09B_rank_1.png",
+      "size_bytes": 79904,
+      "sha256": "458038A0AF62CD571B9BBD38B2509A1665A79D2413ECA46A21AB26CFB96DD258"
+    },
+    {
+      "path": "charts\\09B_rank_2.png",
+      "size_bytes": 73396,
+      "sha256": "58F5FA70DD2A11945CCE02FA83960514DD3A4F6763C87AA5F97011FED5A614CA"
+    },
+    {
+      "path": "charts\\09B_rank_3.png",
+      "size_bytes": 71926,
+      "sha256": "630B0CE07A0492C6C011EEF202C3E64760C5C753BF92819F56D85E4EADEE03C3"
+    },
+    {
+      "path": "charts\\09B_upper_iqr.png",
+      "size_bytes": 113986,
+      "sha256": "6BE9DDF2AE34A7F5FE5FC0F294817388B60F84289CB483843EDC9E7792C5ED74"
+    },
+    {
+      "path": "charts\\09B_violin.png",
+      "size_bytes": 67998,
+      "sha256": "8D8373C9BE606165778E70E42C09F6D22AA57A4801ED31479752C608033DE59D"
+    },
+    {
+      "path": "charts\\09C_rank_1.png",
+      "size_bytes": 53413,
+      "sha256": "2C5B57E6E49563CB4D0F24FA61BB1C525BF030A804095B435961E042DDAA9B63"
+    },
+    {
+      "path": "charts\\09C_rank_2.png",
+      "size_bytes": 46668,
+      "sha256": "7D5B1B112B70187AE8964945C6A9929288AFA026513276B4FCA204698B6AA906"
+    },
+    {
+      "path": "charts\\09C_rank_3.png",
+      "size_bytes": 55637,
+      "sha256": "909EE1ED3E738096C1E085AA0E6A2D93D1A7B7BF463E55437B8DBF38CCC27249"
+    },
+    {
+      "path": "charts\\09C_upper_iqr.png",
+      "size_bytes": 116156,
+      "sha256": "03D99AABC3C73B14816AC89EA5031F4961F1D6C4F4D0C14003F345F7998BFBE0"
+    },
+    {
+      "path": "charts\\09C_violin.png",
+      "size_bytes": 71431,
+      "sha256": "E557557A864488E6F9D433BB7735016AB8DDE89739C624CBA7EC6EC1B4AEC2E9"
+    },
+    {
+      "path": "charts\\09D_rank_1.png",
+      "size_bytes": 47186,
+      "sha256": "C1646D16ECCE29B279CF4B625C3C38544081E06CF4921CB38DFB4EB732579464"
+    },
+    {
+      "path": "charts\\09D_rank_2.png",
+      "size_bytes": 42471,
+      "sha256": "2C85F8633B691F7F19E74F33BCDBA7F780C787DAC2B0A13752F5C3B1050D5263"
+    },
+    {
+      "path": "charts\\09D_rank_3.png",
+      "size_bytes": 53410,
+      "sha256": "6552A1620D9D8757365B75355F46FCE2176A4F4956A1258ED30A9F9E3E14402B"
+    },
+    {
+      "path": "charts\\09D_upper_iqr.png",
+      "size_bytes": 121941,
+      "sha256": "D060D50C6EB2EE1E0D900F0548CAED21B80B3BF04ECAA5A4736B175138CA21A4"
+    },
+    {
+      "path": "charts\\09D_violin.png",
+      "size_bytes": 73125,
+      "sha256": "FD1C528A8FC30A5FFB5A8D1410F6B614639A0BFB63685B1AA63393E16029B6B9"
+    },
+    {
+      "path": "charts\\10_rank_1.png",
+      "size_bytes": 72552,
+      "sha256": "5CD6563E923485901D29AD21CB66CEE3B768986408AE69F6C8C763525DBA539C"
+    },
+    {
+      "path": "charts\\10_rank_2.png",
+      "size_bytes": 64275,
+      "sha256": "88E221EED0FA220F21D872D236D31FD0723F8E5B516158E3B25AAB74B3BF30E2"
+    },
+    {
+      "path": "charts\\10_rank_3.png",
+      "size_bytes": 65776,
+      "sha256": "F68CE9DB341A091A88A7A9E6C714D468E35AE0AC442F4F1F32F1BB3D4C2DABF1"
+    },
+    {
+      "path": "charts\\10_upper_iqr.png",
+      "size_bytes": 132563,
+      "sha256": "2F46AB4344A92FD4AFDCE46BE0ABE59354CD28CA1F3BBFF5A535A48E64E0E5C6"
+    },
+    {
+      "path": "charts\\10_violin.png",
+      "size_bytes": 75166,
+      "sha256": "3C59A469BD550F2AE83417BC256FFFFBF3A1A757694A5A930796EF8C84DE5035"
+    },
+    {
+      "path": "charts\\overlap_all.png",
+      "size_bytes": 163841,
+      "sha256": "81EDE5DDF733A05E1BD195AAE8204BD419DA30E33E28A20D11B30421E704473C"
+    },
+    {
+      "path": "comparisons.csv",
+      "size_bytes": 119887,
+      "sha256": "2F7628DD35A43BD74767E07F2243CCFE0DB7184A96C324DDFE1BA2FA00F15D0E"
+    },
+    {
+      "path": "excluded.csv",
+      "size_bytes": 10674,
+      "sha256": "B6B84B93D13C1A84B5AF2D00AB516784E0578046E220BDFF5AC46B63033767AF"
+    },
+    {
+      "path": "features.csv",
+      "size_bytes": 400159,
+      "sha256": "4BE667EB3ADF932E7B1247C060730EE830298AD0F835EE2EBDCE171E02F54BE3"
+    },
+    {
+      "path": "fences.csv",
+      "size_bytes": 2126,
+      "sha256": "911049DAF61472DD389AE35BF3D5C99CDC7D1A11B08123851B377ACA084B3937"
+    },
+    {
+      "path": "focus.csv",
+      "size_bytes": 1492799,
+      "sha256": "2EC4440350ADB20E6C9556847252B0DF024AC7CEB56970CBA2002CFA30144DB5"
+    },
+    {
+      "path": "groups.csv",
+      "size_bytes": 5245,
+      "sha256": "A04897F6ACB6FC07C6F7636AEF4ADE046145E01EC329A7E5675F1ED0C68C6824"
+    },
+    {
+      "path": "labeled.csv",
+      "size_bytes": 5243917,
+      "sha256": "B42322635C1546F305B41A523D8E8452303C6AE36451613E660552E0E524FB51"
+    },
+    {
+      "path": "lotto_rank_report_v2_3.html",
+      "size_bytes": 5486390,
+      "sha256": "6DCC4493926844401583A0055CFE4B2F1C9771E4E82F4F816A3630669A02D97D"
+    },
+    {
+      "path": "lotto_rank_report_v2_3.md",
+      "size_bytes": 5281421,
+      "sha256": "A179225C06570318F71F1853EF4855417B4C2F86F6260A1E566EA1F02985531F"
+    },
+    {
+      "path": "normalization.csv",
+      "size_bytes": 2382,
+      "sha256": "3B32AC05D00D1CEC553A92F9128A581F944587F9EBCB59EFDA3E75B35565972D"
+    },
+    {
+      "path": "observations.csv",
+      "size_bytes": 3124146,
+      "sha256": "1C2972EFEFF45820181A8AC22925497A2F3DF7D7C70582649F7107CA266BE740"
+    },
+    {
+      "path": "outliers.csv",
+      "size_bytes": 278658,
+      "sha256": "034CF310DB780B2CA677F9283A16E2E69474ABC3F7BF92875577E8CC7FBCA0C5"
+    },
+    {
+      "path": "overlaps.csv",
+      "size_bytes": 32350,
+      "sha256": "18942FCF6AEE54AFB465E72FEF13AA8577726D23AB615057BC0B8DED5D33315D"
+    },
+    {
+      "path": "periods.csv",
+      "size_bytes": 4785,
+      "sha256": "F979AECF9DF6955BB2BA9560648D1E7FB06C5A77EA17FFB49CB63D4A14D5AAC9"
+    },
+    {
+      "path": "rounds.csv",
+      "size_bytes": 14346,
+      "sha256": "C158E3E193750E343EF3C577F69138C37BAE6A9C38D79BEA866956F14799D3B7"
+    },
+    {
+      "path": "summary.csv",
+      "size_bytes": 5512,
+      "sha256": "49B87527E38E6C7915F79758B6CFD63E8773B94BF61AC053E5DF93A5F6C5CC3D"
+    },
+    {
+      "path": "tables\\01_comparisons.csv",
+      "size_bytes": 13176,
+      "sha256": "9887A7A326B03E3BD8077E4F6796D56A3CB5445032E914AC781510F146A35E43"
+    },
+    {
+      "path": "tables\\01_fences.csv",
+      "size_bytes": 342,
+      "sha256": "B76AB6816AEF2E823EFC73066B85DDD69B2B0B720588278B25814EAD30296DD3"
+    },
+    {
+      "path": "tables\\01_outliers.csv",
+      "size_bytes": 57485,
+      "sha256": "DB8923C5BC412B0D31878E0320F520151CAB6EC2DD0789031A60207D8056B8E2"
+    },
+    {
+      "path": "tables\\01_periods.csv",
+      "size_bytes": 656,
+      "sha256": "D6E8A3AEA664FA737626A3ACFCC53A324FC8D8A24F759408770D63DC41914C33"
+    },
+    {
+      "path": "tables\\02_comparisons.csv",
+      "size_bytes": 13236,
+      "sha256": "2EAC328A611ABFE5EE4B19FE2F79CF67E9902BE515FA333F32C0F286CFA39BDA"
+    },
+    {
+      "path": "tables\\02_fences.csv",
+      "size_bytes": 254,
+      "sha256": "E2B961911D26C59960B940576F147153CDD934CE4FB2EEDC90CD3480D959E06E"
+    },
+    {
+      "path": "tables\\02_outliers.csv",
+      "size_bytes": 11687,
+      "sha256": "62C094EE88147EE623D6E49AC225EF3A4A6D6D4C00907B93EC52456D20D3FFF5"
+    },
+    {
+      "path": "tables\\02_periods.csv",
+      "size_bytes": 581,
+      "sha256": "EB9E259681DA0CB3204F36796B57234B6E71A992DFF2A22EF56BC858C4CE7CAD"
+    },
+    {
+      "path": "tables\\03_comparisons.csv",
+      "size_bytes": 11942,
+      "sha256": "BCE8BD68E469DCCB189AA61279E0A5C7E76FF3645442934358E1FF022D16B94C"
+    },
+    {
+      "path": "tables\\03_fences.csv",
+      "size_bytes": 366,
+      "sha256": "7E4BFE9F7CB16492374DC3EE0EF7B005DCCDEBEF73411A9C2B85792DA00ED4CA"
+    },
+    {
+      "path": "tables\\03_outliers.csv",
+      "size_bytes": 2200,
+      "sha256": "B9F117A697505425809A02CC8BA6047B5AEA9F18FE84FD59469E0780C9FB298F"
+    },
+    {
+      "path": "tables\\03_periods.csv",
+      "size_bytes": 611,
+      "sha256": "4D297279A4E597B0EA0F98853B51C82C655ABDF1E3A3C453121C29698AFC52BE"
+    },
+    {
+      "path": "tables\\08_comparisons.csv",
+      "size_bytes": 13176,
+      "sha256": "BE8B8087BC0586E92819D346130475AC60AA9D0235729CCAA3FC3C5899284D29"
+    },
+    {
+      "path": "tables\\08_fences.csv",
+      "size_bytes": 342,
+      "sha256": "CE41370EEAE0714AE041A82A0CAC3B8D559917F3F6E03D74888EADCB06A3E450"
+    },
+    {
+      "path": "tables\\08_outliers.csv",
+      "size_bytes": 60743,
+      "sha256": "64911F81AA591DBBA86B16E0D7634B637B016FE47CDE6C6E0957442F2369A0CA"
+    },
+    {
+      "path": "tables\\08_periods.csv",
+      "size_bytes": 656,
+      "sha256": "2852F7BCB32BF2F3031BABD733435F1F81E3C801788B77F6C1CBA38EE6616318"
+    },
+    {
+      "path": "tables\\09A_comparisons.csv",
+      "size_bytes": 15432,
+      "sha256": "FE3BB46BC7A5FA52A7A4F2F559165138C73DC069E402ADCA0A398CB304F70DB4"
+    },
+    {
+      "path": "tables\\09A_fences.csv",
+      "size_bytes": 356,
+      "sha256": "2C2762D8FBBBDF6E2FE89B79D4E9129D4C59807AE977A75A63E6B175D8236ED5"
+    },
+    {
+      "path": "tables\\09A_outliers.csv",
+      "size_bytes": 29288,
+      "sha256": "F9D00E0F03D174ED69A99C3A1A979E9FCD7511353E0B9212319280C828435FF3"
+    },
+    {
+      "path": "tables\\09A_periods.csv",
+      "size_bytes": 693,
+      "sha256": "FCA87D0250EF60989E289AF5DF9199904EC7572418ED0AEFF5B4C549776BC126"
+    },
+    {
+      "path": "tables\\09B_comparisons.csv",
+      "size_bytes": 15423,
+      "sha256": "9001CFCA483BE94A091079BC478F95AD1EB6378FEA4721C0614D799FF9ADB176"
+    },
+    {
+      "path": "tables\\09B_fences.csv",
+      "size_bytes": 262,
+      "sha256": "892E808A6FA7E1A563C84482FBDC91ADCF9E737461B935EC82D312AD65AE8FA6"
+    },
+    {
+      "path": "tables\\09B_outliers.csv",
+      "size_bytes": 18343,
+      "sha256": "4E608FC32F56637FAE383FC5278C484915A25620E3A2C528A6F0EFFED5009649"
+    },
+    {
+      "path": "tables\\09B_periods.csv",
+      "size_bytes": 639,
+      "sha256": "E4654740746A015BA796F9263B9CB782DDD14EBEA936DD679CF12C9038A1A292"
+    },
+    {
+      "path": "tables\\09C_comparisons.csv",
+      "size_bytes": 13292,
+      "sha256": "01ABD14327FCA3E379219A6FE357E36CE23C41E1584FE6935BDFE1A73B16134A"
+    },
+    {
+      "path": "tables\\09C_fences.csv",
+      "size_bytes": 260,
+      "sha256": "2563B9D6D8923F9C379DE62B9589CA55B21272768938027CFF7751468A0EAB6C"
+    },
+    {
+      "path": "tables\\09C_outliers.csv",
+      "size_bytes": 12432,
+      "sha256": "16F6275E9719169DDB97B7E5C4932DCE0AFDEEEB1B7791F68198B72BDCD0A5E5"
+    },
+    {
+      "path": "tables\\09C_periods.csv",
+      "size_bytes": 590,
+      "sha256": "3D58922F6CA7EB2CBFC9D072A9925A9D0DE902E98B4D11022CE7CC8AC7DDDEFB"
+    },
+    {
+      "path": "tables\\09D_comparisons.csv",
+      "size_bytes": 13243,
+      "sha256": "0A2624C277718CF7E7D64E1B61816454D3375DA24E4A3FF10CED6DDF59F262B4"
+    },
+    {
+      "path": "tables\\09D_fences.csv",
+      "size_bytes": 355,
+      "sha256": "95FDB189B3D210EF5BEA114FE2A489ACA7D88DCCBE54E6A12FE58BF9AA84A0E3"
+    },
+    {
+      "path": "tables\\09D_outliers.csv",
+      "size_bytes": 58541,
+      "sha256": "83A713F0E775E874BAFD1C10E394B6B23A3A328F7C52E69FB4CA12E7DACF1E1C"
+    },
+    {
+      "path": "tables\\09D_periods.csv",
+      "size_bytes": 680,
+      "sha256": "0C088631DF5799BC4DABE25F10178C4C81442AABAAC25EDDAAC89ADA3D63E9B3"
+    },
+    {
+      "path": "tables\\10_comparisons.csv",
+      "size_bytes": 13183,
+      "sha256": "1E841312E939B9B714E17B40F2C4D8FB680ADF9CA8F6A9675344A545679850B0"
+    },
+    {
+      "path": "tables\\10_fences.csv",
+      "size_bytes": 341,
+      "sha256": "353BD05B4BD20A9010F9BD73661275D8787A6457632B30D75ECD0CAB51C66E96"
+    },
+    {
+      "path": "tables\\10_outliers.csv",
+      "size_bytes": 30259,
+      "sha256": "E2B6578A2C9847B13DBFF1EF523D0462D08D4A374C0021BD6957278F7FE1107E"
+    },
+    {
+      "path": "tables\\10_periods.csv",
+      "size_bytes": 671,
+      "sha256": "84938C0077FFADEF6950BE2BD5DDB18EDD8D2A05B53D330E8E59D629AC443202"
+    },
+    {
+      "path": "validation.json",
+      "size_bytes": 222,
+      "sha256": "37DF9EA3C75A5C195DAF61F09B6E77E49512A8ABDB123319C17CCF7D66C54E58"
+    },
+    {
+      "path": "visual_review\\01_review.png",
+      "size_bytes": 244720,
+      "sha256": "B5889356D46F4740A5D6ABF2EAB765C64D99346E088035BAF5F863B5EC43D78C"
+    },
+    {
+      "path": "visual_review\\02_review.png",
+      "size_bytes": 259532,
+      "sha256": "D6ADE943584CF9968697F3793F1012BF796CF21C016B2A73F2DD26A2114813CC"
+    },
+    {
+      "path": "visual_review\\03_review.png",
+      "size_bytes": 219869,
+      "sha256": "040AC26691F35DCAE8381081FA792CAD74323BAB112E7F6B6B9E9B0F13B81268"
+    },
+    {
+      "path": "visual_review\\08_review.png",
+      "size_bytes": 235367,
+      "sha256": "521DAB543F09C0E3E5680F95B9B73D0ECA8E76CBB469AB2FECEDF3CF4FF3ADCD"
+    },
+    {
+      "path": "visual_review\\09A_review.png",
+      "size_bytes": 257526,
+      "sha256": "EF6DF75EFC62C464918CC06CF676A1F76E219AA59564B3A5FB9088F4941AA0E1"
+    },
+    {
+      "path": "visual_review\\09B_review.png",
+      "size_bytes": 257400,
+      "sha256": "E8009F91DCB90700E1850D54A90D09642B32D42F32F6AA3573C0D7EEB4F27BF0"
+    },
+    {
+      "path": "visual_review\\09C_review.png",
+      "size_bytes": 193708,
+      "sha256": "79B8D945E345048FC4E20BD08A59FE8442B3CC974D955C18E9B407B3AA94512B"
+    },
+    {
+      "path": "visual_review\\09D_review.png",
+      "size_bytes": 183068,
+      "sha256": "B03C7E0ED0C26126225E43CCC9E516DA19E4CF3F746545B767C62387F3167234"
+    },
+    {
+      "path": "visual_review\\10_review.png",
+      "size_bytes": 198591,
+      "sha256": "1580AAF186530C0D7CEF3B967048836EA9960D4C298CCD4EC28A627EEE590B4F"
+    }
+  ]
+}

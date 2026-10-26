@@ -1,0 +1,200 @@
+{
+  "task": "V2.3 섹션별 상방 이상치와 공통 특징 분석",
+  "original_user_command": "좋아. 그러면 이제 작업을 시작하도록",
+  "prior_agreement": "공통 분석·공통 상방 IQR 규칙에 각 섹션·등수의 Y를 입력. 낮은 이상치는 조사하지 않고 해당·직전 회차를 비교. 상관계수 제외.",
+  "status": "검증 완료",
+  "evidence_classification": "실제 도구 실행 결과 및 사용자 로컬 CSV 기반 계산. 설명문·Task 문서·설계 이유는 LLM 직접 작성물이며 독립 근거가 아님. 코드를 실행했다는 사실만으로 수학적 정확성을 보증하지 않으므로 원본 CSV와 별도 구현으로 대조했다.",
+  "provenance": {
+    "raw_source": "../lotto_rank_1_1245.csv (사용자 제공 로컬 CSV)",
+    "preprocessed_source": "../lotto_preprocessed_v2.csv",
+    "external_source_revalidation": "이번 작업에서는 복권 원천 웹페이지를 재수집·대조하지 않음",
+    "rule_source": "https://www.itl.nist.gov/div898/handbook/prc/section1/prc16.htm",
+    "input_hashes": "manifest.json 및 independent_audit.json 참조"
+  },
+  "requirements": [
+    {
+      "requirement": "각 섹션·등수의 본문 Y만으로 상방 IQR 판정",
+      "status": "검증 완료",
+      "evidence": "27개 경계, 33,496행의 원본 Y·판정 대조. X 변경 시 선정 불변 테스트"
+    },
+    {
+      "requirement": "동일 후속 분석과 정확한 직전 회차",
+      "status": "검증 완료",
+      "evidence": "특징값 29,880개, 비교표 585행, 겹침 729조합, 시기별 빈도 대조"
+    },
+    {
+      "requirement": "낮은 이상치 제외, 엄격한 경계 초과",
+      "status": "검증 완료",
+      "evidence": "합성 경계 사례 테스트와 실제 상방 목록 1,163행 대조"
+    },
+    {
+      "requirement": "섹션별 독립 결과 및 동일 Y 반복 검출 공개",
+      "status": "검증 완료",
+      "evidence": "각자 판정, 겹침표·동일Y계열 표시, 중복 포함 1,163건/중복 회차 합친 244회 구분"
+    },
+    {
+      "requirement": "표·그림 내장 보고서와 전체 실험 결과 보존",
+      "status": "검증 완료",
+      "evidence": "MD/HTML 각각 내장 PNG 46개 검증, 섹션별 전체 이상치 목록 표시 일치, CSV·해시 108개"
+    },
+    {
+      "requirement": "기존 파일 보존",
+      "status": "검증 완료",
+      "evidence": "입력·V2·V2.1 대상 git diff exit0; 기존 그림 36개 바이트 일치"
+    }
+  ],
+  "commands": [
+    {
+      "command": "python -X utf8 -m pytest -q -p no:cacheprovider class2_rottery/tests/test_lotto_analysis_v2_3.py",
+      "status": "RED: 의도한 실패",
+      "exit_code": 1,
+      "tool_chunk": "45dd89",
+      "output_excerpt": "ModuleNotFoundError: No module named 'lotto_analysis_v2_3'; 1 error in 0.96s"
+    },
+    {
+      "command": "python -X utf8 -m pytest -q -p no:cacheprovider class2_rottery/tests/test_lotto_analysis_v2_3.py -k 'not report_is_self_contained'",
+      "status": "실행 실패: 테스트 입력 설계 오류",
+      "exit_code": 1,
+      "tool_chunk": "2fb08c",
+      "output_excerpt": "test_section_rule_uses_own_y_and_ignores_x: assert 10.5 != 10.5; 1 failed, 5 passed, 1 deselected"
+    },
+    {
+      "command": "python -X utf8 -m pytest -q -p no:cacheprovider class2_rottery/tests/test_lotto_analysis_v2_3.py",
+      "status": "GREEN: 테스트 입력의 배율 수정 후 통과",
+      "chunk_id": "708595",
+      "wall_time_seconds": 0.0000098,
+      "exit_code": 0,
+      "original_token_count": 24,
+      "output": "..                                                                  [100%]\r\n7 passed in 42.62s\r\n"
+    },
+    {
+      "command": "python -X utf8 class2_rottery/lotto_analysis_v2_3.py",
+      "status": "실행 완료 후 원본 독립 감사로 검증",
+      "chunk_id": "64b9d7",
+      "wall_time_seconds": 0.0000087,
+      "exit_code": 0,
+      "original_token_count": 48,
+      "output": "{\"status\": \"passed\", \"outlier_rows\": 1163, \"unique_rounds\": 244, \"images\": 46, \"report\": \"C:\\\\Users\\\\chldu\\\\Downloads\\\\Statistical_consultation\\\\class2_rottery\\\\lotto_rank_report_v2_3.md\"}\r\n"
+    },
+    {
+      "command": "python -X utf8 class2_rottery/verify_lotto_v2_3.py",
+      "status": "검증 완료",
+      "chunk_id": "329bc2",
+      "wall_time_seconds": 3.8297488,
+      "exit_code": 0,
+      "original_token_count": 183,
+      "output": "{\r\n  \"status\": \"passed\",\r\n  \"command\": \"python -X utf8 class2_rottery/verify_lotto_v2_3.py\",\r\n  \"raw_source_sha256\": \"8B2C9836A5BAD4C55811CE95E18B96E2C051070E1C8263B5C653B3D7F5595214\",\r\n  \"v2_source_sha256\": \"391E8042B771CC33AC15C1BDED8D3AFB3302326431E090BFCA2ED4206E18A4E0\",\r\n  \"original_rows_preserved\": 3735,\r\n  \"section_rank_rules\": 27,\r\n  \"main_y_and_labels_checked\": 33496,\r\n  \"current_previous_feature_values_checked\": 29880,\r\n  \"comparison_rows_checked\": 585,\r\n  \"overlap_pairs_checked\": 729,\r\n  \"outlier_rows\": 1163,\r\n  \"unique_outlier_rounds\": 244,\r\n  \"embedded_images_per_report\": 46,\r\n  \"artifact_hashes_checked\": 108,\r\n  \"quartiles\": \"independent sorted linear interpolation\",\r\n  \"no_analysis_module_import\": true\r\n}\r\n"
+    },
+    {
+      "command": "python -X utf8 -m pytest -q -p no:cacheprovider",
+      "status": "검증 완료",
+      "chunk_id": "8fc4cc",
+      "wall_time_seconds": 0.0000086,
+      "exit_code": 0,
+      "original_token_count": 19,
+      "output": "......................                       [100%]\r\n50 passed in 46.41s\r\n"
+    },
+    {
+      "command": "python -m ruff check class2_rottery/lotto_analysis_v2_3.py class2_rottery/verify_lotto_v2_3.py class2_rottery/tests/test_lotto_analysis_v2_3.py; python -m ruff format --check class2_rottery/lotto_analysis_v2_3.py class2_rottery/verify_lotto_v2_3.py class2_rottery/tests/test_lotto_analysis_v2_3.py",
+      "status": "검증 완료",
+      "chunk_id": "a4b415",
+      "wall_time_seconds": 0.2913686,
+      "exit_code": 0,
+      "original_token_count": 12,
+      "output": "All checks passed!\n3 files already formatted\n"
+    },
+    {
+      "command": "git diff --exit-code HEAD -- class2_rottery/lotto_rank_1_1245.csv class2_rottery/lotto_preprocessed_v2.csv class2_rottery/lotto_analysis_v2.py class2_rottery/lotto_analysis_v2_1_basic.py class2_rottery/lotto_rank_report_v2.md class2_rottery/lotto_rank_report_v2_1.md class2_rottery/lotto_rank_report_v2_1.html class2_rottery/analysis_results_v2 class2_rottery/analysis_results_v2_1_basic",
+      "status": "검증 완료",
+      "chunk_id": "fe6790",
+      "wall_time_seconds": 0.1324793,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    },
+    {
+      "command": "python -c \"import importlib.util; print('pyright_installed=' + str(importlib.util.find_spec('pyright') is not None))\"",
+      "status": "실행 결과 확인",
+      "exit_code": 0,
+      "output": "pyright_installed=False"
+    }
+  ],
+  "visual_review": {
+    "status": "육안 검사 완료",
+    "new_images": "01,02,03,08,09A,09B,09C,09D,10_upper_iqr.png와 overlap_all.png 모두 확인",
+    "final_layout_adjustment": "범례를 전체 그림 아래로 옮긴 뒤 01·09B 재확인. 나머지 그림도 같은 공통 함수로 재생성",
+    "existing_images": "V2.1의 기존 현황 그림 36개와 바이트 일치",
+    "browser_render": "미실행. HTML은 문서 복사본 일치 및 내장 PNG의 디코딩·원본 일치 검증"
+  },
+  "issues": [
+    {
+      "description": "신규 모듈 부재로 RED import 실패",
+      "resolved": true,
+      "action": "테스트 선행 후 모듈 구현, 최종 전체 50개 테스트 통과"
+    },
+    {
+      "description": "서로 다른 합성 Y가 우연히 같은 Q1·Q3를 가져 경계 차이 테스트 실패",
+      "resolved": true,
+      "action": "B 데이터를 10배 간격으로 변경하고 경계값 105를 명시 검증. X 독립성·상방 수 검사는 유지"
+    },
+    {
+      "description": "초기 테스트 초안의 비한국어 열명·주석",
+      "resolved": true,
+      "action": "사용자 규칙에 맞게 한국어로 정리"
+    },
+    {
+      "description": "반복 query 부분집합 선택 중 KeyError:3 및 집단 수/포함 집합 불일치",
+      "resolved": true,
+      "root_cause": "단독 query는 정상이며 내부 원인은 확정하지 못함",
+      "action": "신규 생성·감사 코드에서 query를 명시적인 열별 필터로 대체. 전체 원본 계산, 보고서에 표시한 27개 목록과 전체 회귀 통과. 외부 라이브러리 자체의 버그라고 확정하지 않음"
+    },
+    {
+      "description": "포맷된 줄 및 잘못 입력한 컨텍스트 때문에 apply_patch 3건 검증 실패",
+      "resolved": true,
+      "action": "실제 줄을 다시 읽고 정확한 컨텍스트로 재적용. 실패한 패치는 적용되지 않았음 확인"
+    },
+    {
+      "description": "초기 IQR 그림에서 범례가 큰 관측점을 가림",
+      "resolved": true,
+      "action": "그림 아래 공통 범례로 변경·재생성·대표 그림 육안 확인 및 전체 테스트 재실행"
+    },
+    {
+      "description": "이전 초안의 |Z| 극단 목록과 새 IQR 판정이 혼동될 가능성",
+      "resolved": true,
+      "action": "V2.3 본문에서 기존 절대 Z 극단 목록·건수를 제거하고 상방 IQR 건수로 교체. 바이올린 Z는 분포 표시용이라고 명시"
+    },
+    {
+      "description": "Pyright 미설치",
+      "resolved": false,
+      "action": "타입 검사 미실행. 통과로 주장하지 않음"
+    },
+    {
+      "description": "브라우저 HTML 렌더링 검사",
+      "resolved": false,
+      "action": "미실행. 이미지와 문서 구조·복사본 일치 검증 범위만 보고"
+    },
+    {
+      "description": "Windows pytest 임시 디렉터리 권한 제약",
+      "resolved": true,
+      "action": "이전 확인된 제약에 따라 승인된 escalated 환경에서 테스트 실행"
+    },
+    {
+      "description": "Git LF→CRLF 안내",
+      "resolved": true,
+      "action": "변경 diff 및 입력/이전 보고서 무변경 확인. 데이터 내용 변경으로 처리하지 않음"
+    }
+  ],
+  "limitations": "기술적 집단 차이와 설명 후보를 제시한다. 인과·유의성·미래 예측 효용은 입증하지 않음. 상방 1건인 집단도 수와 결측을 표시하며 원인으로 일반화하지 않음.",
+  "artifacts": {
+    "main_report": "../lotto_rank_report_v2_3.md",
+    "html": "../lotto_rank_report_v2_3.html",
+    "code": "../lotto_analysis_v2_3.py",
+    "verifier": "../verify_lotto_v2_3.py",
+    "audit": "independent_audit.json",
+    "hashes": "manifest.json",
+    "all_cases": "outliers.csv",
+    "integrated_rounds": "rounds.csv",
+    "comparisons": "comparisons.csv",
+    "overlap": "overlaps.csv"
+  }
+}
