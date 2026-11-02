@@ -749,7 +749,7 @@ def _plot_crowd(comparisons: pd.DataFrame, path: Path) -> None:
         color="#54A24B",
     )
     axis.set_xticks(x, comparisons["조합특성"], rotation=15)
-    axis.set_ylabel("1억 판매게임당 수동 1등")
+    axis.set_ylabel("100백만 판매게임당 수동 1등")
     axis.set_title("조합 특성과 수동 공동당첨 규모")
     axis.legend()
     _save_figure(fig, path)

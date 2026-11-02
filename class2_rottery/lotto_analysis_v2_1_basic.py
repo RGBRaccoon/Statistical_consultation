@@ -358,11 +358,9 @@ def analyze(source: str | Path) -> dict[str, Any]:
 
 
 def money_tick(value: float, _position: int) -> str:
-    if abs(value) >= 1e8:
-        return f"{value / 1e8:,.1f}억"
-    if abs(value) >= 1e4:
-        return f"{value / 1e4:,.0f}만"
-    return f"{value:,.0f}"
+    from report_units import display_number
+
+    return display_number(value)
 
 
 def draw(result: dict[str, Any], output: Path) -> dict[tuple[str, str], Path]:
@@ -457,13 +455,7 @@ def draw(result: dict[str, Any], output: Path) -> dict[tuple[str, str], Path]:
             if code == "09C":
                 ax.xaxis.set_major_formatter(FuncFormatter(money_tick))
             elif code in ("08", "09D"):
-                ax.xaxis.set_major_formatter(
-                    FuncFormatter(
-                        lambda value, pos: f"{value / 1e6:.0f}백만"
-                        if code == "08"
-                        else f"{value:,.0f}"
-                    )
-                )
+                ax.xaxis.set_major_formatter(FuncFormatter(money_tick))
             else:
                 ax.ticklabel_format(axis="x", style="plain", useOffset=False) if item[
                     "plot"

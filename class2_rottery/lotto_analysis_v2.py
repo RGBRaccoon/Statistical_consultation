@@ -467,11 +467,9 @@ def _configure_plots() -> None:
 
 
 def _won_formatter(value: float, _position: int) -> str:
-    if abs(value) >= 100_000_000:
-        return f"{value / 100_000_000:.1f}억"
-    if abs(value) >= 10_000:
-        return f"{value / 10_000:.0f}만"
-    return f"{value:,.0f}"
+    from report_units import display_number
+
+    return display_number(value)
 
 
 def create_step1_charts(processed: pd.DataFrame, chart_dir: str | Path) -> list[Path]:
