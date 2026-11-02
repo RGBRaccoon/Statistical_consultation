@@ -1,0 +1,52 @@
+{
+  "command": "python -X utf8 class2_rottery/export_report_html.py",
+  "status": "verified",
+  "validation": "Saved HTML parsed; PNG payloads compared to MD and decoded; no external rendering resources.",
+  "limitation": "Browser rendering not verified in this execution.",
+  "reports": [
+    {
+      "source": "lotto_rank_report_v2.md",
+      "source_sha256": "4d8551790229a7af66a36b8637241d725de1c38e2a655a00aa41e4fdad3d8d5b",
+      "html": "lotto_rank_report_v2.html",
+      "html_sha256": "00d410e367af18918db7ca8e89b90a208501910339f7c2725b5089dadbcb5678",
+      "size_bytes": 2477934,
+      "embedded_images": 5,
+      "image_payloads_identical_to_md": true,
+      "external_resources": [],
+      "md_unchanged": true
+    },
+    {
+      "source": "lotto_rank_report_v2_1.md",
+      "source_sha256": "f8443ef667887b09d2b90f6656bc5acabed56e01dcd0c0bbfca83bd100037a3a",
+      "html": "lotto_rank_report_v2_1.html",
+      "html_sha256": "337ac7742995426ad1648999f828325e5922a8b842ad0a856f448230c36ca3ac",
+      "size_bytes": 3445070,
+      "embedded_images": 36,
+      "image_payloads_identical_to_md": true,
+      "external_resources": [],
+      "md_unchanged": true
+    },
+    {
+      "source": "lotto_rank_report_v2_3.md",
+      "source_sha256": "350be59043765fdee03b63d259283c8627fa75cdf6872d2720171f6497647880",
+      "html": "lotto_rank_report_v2_3.html",
+      "html_sha256": "524ccd29ad992f537973c33b8746c5225b0291dcf0472e4e7d2a9fc459539161",
+      "size_bytes": 5579548,
+      "embedded_images": 46,
+      "image_payloads_identical_to_md": true,
+      "external_resources": [],
+      "md_unchanged": true
+    },
+    {
+      "source": "lotto_rank_report_v2_4.md",
+      "source_sha256": "28bd60886d8ad3432dff085b1219759a9f9025150cc73bc6aaab76ce5e0d6f33",
+      "html": "lotto_rank_report_v2_4.html",
+      "html_sha256": "a31709817b6d6b25a1e96319be6891d7c4df8bc9af3428fe126327a09e989984",
+      "size_bytes": 20848010,
+      "embedded_images": 99,
+      "image_payloads_identical_to_md": true,
+      "external_resources": [],
+      "md_unchanged": true
+    }
+  ]
+}
