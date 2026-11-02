@@ -1,0 +1,4133 @@
+[
+  {
+    "topic": "01",
+    "feature": "y",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\01_y_violin.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "01",
+    "feature": "current_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\01_current_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "01",
+    "feature": "current_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\01_current_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "01",
+    "feature": "current_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\01_current_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "01",
+    "feature": "current_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\01_current_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "01",
+    "feature": "previous_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\01_previous_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 1,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "01",
+    "feature": "previous_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\01_previous_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1149,
+        "missing": 9,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 71,
+        "missing": 2,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 29,
+        "missing": 2,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 1,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "01",
+    "feature": "previous_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\01_previous_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 1,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "01",
+    "feature": "previous_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\01_previous_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 1,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "02",
+    "feature": "y",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\02_y_violin.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1217,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1229,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1235,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "02",
+    "feature": "current_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\02_current_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1217,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1229,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1235,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "02",
+    "feature": "current_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\02_current_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1203,
+        "missing": 14,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 2,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1235,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "02",
+    "feature": "current_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\02_current_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1217,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1229,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1235,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "02",
+    "feature": "current_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\02_current_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1217,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1229,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1235,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "02",
+    "feature": "previous_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\02_previous_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1216,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1228,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1234,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "02",
+    "feature": "previous_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\02_previous_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1202,
+        "missing": 15,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1226,
+        "missing": 3,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1234,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "02",
+    "feature": "previous_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\02_previous_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1216,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1228,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1234,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "02",
+    "feature": "previous_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\02_previous_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1216,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1228,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1234,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "03",
+    "feature": "y",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\03_y_violin.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1243,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 2,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1245,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1245,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      }
+    ]
+  },
+  {
+    "topic": "03",
+    "feature": "current_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\03_current_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1243,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 2,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1245,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1245,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      }
+    ]
+  },
+  {
+    "topic": "03",
+    "feature": "current_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\03_current_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1229,
+        "missing": 14,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 2,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1243,
+        "missing": 2,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1245,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      }
+    ]
+  },
+  {
+    "topic": "03",
+    "feature": "current_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\03_current_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1243,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 2,
+        "missing": 0,
+        "density_drawn": false
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1245,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1245,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      }
+    ]
+  },
+  {
+    "topic": "03",
+    "feature": "current_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\03_current_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1243,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 2,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1245,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1245,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      }
+    ]
+  },
+  {
+    "topic": "03",
+    "feature": "previous_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\03_previous_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1242,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 2,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1244,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1244,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      }
+    ]
+  },
+  {
+    "topic": "03",
+    "feature": "previous_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\03_previous_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1230,
+        "missing": 13,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 0,
+        "missing": 2,
+        "density_drawn": false
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1242,
+        "missing": 3,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1244,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      }
+    ]
+  },
+  {
+    "topic": "03",
+    "feature": "previous_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\03_previous_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1242,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 2,
+        "missing": 0,
+        "density_drawn": false
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1244,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1244,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      }
+    ]
+  },
+  {
+    "topic": "03",
+    "feature": "previous_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\03_previous_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1242,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 2,
+        "missing": 0,
+        "density_drawn": false
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1244,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1244,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 0,
+        "missing": 0,
+        "density_drawn": false
+      }
+    ]
+  },
+  {
+    "topic": "08",
+    "feature": "y",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\08_y_violin.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "08",
+    "feature": "current_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\08_current_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "08",
+    "feature": "current_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\08_current_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "08",
+    "feature": "current_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\08_current_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "08",
+    "feature": "current_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\08_current_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "08",
+    "feature": "previous_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\08_previous_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 1,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "08",
+    "feature": "previous_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\08_previous_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1149,
+        "missing": 9,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 71,
+        "missing": 2,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 29,
+        "missing": 2,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 1,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "08",
+    "feature": "previous_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\08_previous_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 1,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "08",
+    "feature": "previous_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\08_previous_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 1,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09A",
+    "feature": "y",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09A_y_violin.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1169,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 51,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1223,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1220,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 24,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09A",
+    "feature": "current_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09A_current_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1169,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 51,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1223,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1220,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 24,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09A",
+    "feature": "current_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09A_current_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1169,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 51,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1223,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1220,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 24,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09A",
+    "feature": "current_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09A_current_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1169,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 51,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1223,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1220,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 24,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09A",
+    "feature": "current_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09A_current_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1169,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 51,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1223,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1220,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 24,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09A",
+    "feature": "previous_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09A_previous_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1169,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 51,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1223,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1220,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 24,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09A",
+    "feature": "previous_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09A_previous_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1169,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 51,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1223,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1220,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 24,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09A",
+    "feature": "previous_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09A_previous_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1169,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 51,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1223,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1220,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 24,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09A",
+    "feature": "previous_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09A_previous_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1169,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 51,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1223,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1220,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 24,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09B",
+    "feature": "y",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09B_y_violin.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1222,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 22,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1219,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 25,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1205,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 39,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09B",
+    "feature": "current_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09B_current_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1222,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 22,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1219,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 25,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1205,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 39,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09B",
+    "feature": "current_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09B_current_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1209,
+        "missing": 13,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 22,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1217,
+        "missing": 2,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 25,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1205,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 39,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09B",
+    "feature": "current_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09B_current_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1222,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 22,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1219,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 25,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1205,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 39,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09B",
+    "feature": "current_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09B_current_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1222,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 22,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1219,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 25,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1205,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 39,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09B",
+    "feature": "previous_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09B_previous_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1222,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 22,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1219,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 25,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1205,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 39,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09B",
+    "feature": "previous_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09B_previous_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 10,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 18,
+        "missing": 4,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1217,
+        "missing": 2,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 25,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1205,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 39,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09B",
+    "feature": "previous_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09B_previous_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1222,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 22,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1219,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 25,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1205,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 39,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09B",
+    "feature": "previous_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09B_previous_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1222,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 22,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1219,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 25,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1205,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 39,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09C",
+    "feature": "y",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09C_y_violin.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1202,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1226,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1234,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09C",
+    "feature": "current_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09C_current_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1202,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1226,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1234,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09C",
+    "feature": "current_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09C_current_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1192,
+        "missing": 10,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1224,
+        "missing": 2,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1234,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09C",
+    "feature": "current_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09C_current_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1202,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1226,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1234,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09C",
+    "feature": "current_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09C_current_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1202,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1226,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1234,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09C",
+    "feature": "previous_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09C_previous_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1202,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1226,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1234,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09C",
+    "feature": "previous_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09C_previous_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1202,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1226,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1234,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09C",
+    "feature": "previous_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09C_previous_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1202,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1226,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1234,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09C",
+    "feature": "previous_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09C_previous_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1202,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 28,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1226,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 16,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1234,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 10,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09D",
+    "feature": "y",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09D_y_violin.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09D",
+    "feature": "current_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09D_current_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09D",
+    "feature": "current_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09D_current_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09D",
+    "feature": "current_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09D_current_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09D",
+    "feature": "current_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09D_current_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09D",
+    "feature": "previous_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09D_previous_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09D",
+    "feature": "previous_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09D_previous_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1149,
+        "missing": 9,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 71,
+        "missing": 2,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 29,
+        "missing": 2,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09D",
+    "feature": "previous_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09D_previous_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "09D",
+    "feature": "previous_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\09D_previous_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "10",
+    "feature": "y",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\10_y_violin.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "10",
+    "feature": "current_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\10_current_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "10",
+    "feature": "current_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\10_current_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "10",
+    "feature": "current_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\10_current_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "10",
+    "feature": "current_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\10_current_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1212,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 18,
+        "missing": 0,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "10",
+    "feature": "previous_sales",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\10_previous_sales.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 1,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "10",
+    "feature": "previous_prize",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\10_previous_prize.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1149,
+        "missing": 9,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 71,
+        "missing": 2,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 29,
+        "missing": 2,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 1,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "10",
+    "feature": "previous_winners",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\10_previous_winners.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 1,
+        "density_drawn": true
+      }
+    ]
+  },
+  {
+    "topic": "10",
+    "feature": "previous_total",
+    "path": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\analysis_results_v2_4\\figures\\10_previous_total.png",
+    "panels": 3,
+    "distribution_slots": 6,
+    "groups": [
+      {
+        "rank": "1등",
+        "outlier": false,
+        "n": 1158,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "1등",
+        "outlier": true,
+        "n": 73,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": false,
+        "n": 1211,
+        "missing": 1,
+        "density_drawn": true
+      },
+      {
+        "rank": "2등",
+        "outlier": true,
+        "n": 31,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": false,
+        "n": 1227,
+        "missing": 0,
+        "density_drawn": true
+      },
+      {
+        "rank": "3등",
+        "outlier": true,
+        "n": 17,
+        "missing": 1,
+        "density_drawn": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "command": "python -X utf8 class2_rottery/verify_lotto_v2_4.py",
+  "raw_source_sha256": "8B2C9836A5BAD4C55811CE95E18B96E2C051070E1C8263B5C653B3D7F5595214",
+  "v2_source_sha256": "391E8042B771CC33AC15C1BDED8D3AFB3302326431E090BFCA2ED4206E18A4E0",
+  "original_rows": 3735,
+  "independent_section_rank_rules": 27,
+  "main_xy_and_labels_checked": 33496,
+  "current_previous_feature_values_checked": 29880,
+  "comparison_rows_checked": 216,
+  "normal_and_outlier_populations_independently_checked": true,
+  "overlap_pairs_checked": 729,
+  "outlier_rows": 775,
+  "unique_outlier_rounds": 204,
+  "embedded_images_per_report": 99,
+  "output_format": "markdown_only",
+  "six_group_violin_metadata_checked": 81,
+  "artifact_hashes_checked": 122,
+  "no_analysis_module_import": true,
+  "quartiles": "independent sorted linear interpolation"
+}

@@ -1,0 +1,927 @@
+{
+  "version": "2.4",
+  "stage": "review_scaffold",
+  "statistical_analysis_executed": false,
+  "created_at_utc": "2026-10-26T10:04:00.698223+00:00",
+  "command": "python -X utf8 class2_rottery/build_lotto_v2_4_scaffold.py",
+  "sections": [
+    "01",
+    "02",
+    "03",
+    "08",
+    "09A",
+    "09B",
+    "09C",
+    "09D",
+    "10"
+  ],
+  "comparison_features": [
+    "current_sales",
+    "current_prize",
+    "current_winners",
+    "current_total",
+    "previous_sales",
+    "previous_prize",
+    "previous_winners",
+    "previous_total"
+  ],
+  "source_audit": "../analysis_results_v2_3/independent_audit.json",
+  "plot_slots": [
+    {
+      "id": "01-selection",
+      "section": "01",
+      "kind": "selection",
+      "image": "placeholders\\01_scatter.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "01-target",
+      "section": "01",
+      "kind": "target_distribution",
+      "image": "placeholders\\01_violin.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "01-current_sales",
+      "section": "01",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "01-current_prize",
+      "section": "01",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "01-current_winners",
+      "section": "01",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "01-current_total",
+      "section": "01",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "01-previous_sales",
+      "section": "01",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "01-previous_prize",
+      "section": "01",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "01-previous_winners",
+      "section": "01",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "01-previous_total",
+      "section": "01",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "01-overlap",
+      "section": "01",
+      "kind": "overlap_comparison",
+      "image": "placeholders\\01_overlap.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "02-selection",
+      "section": "02",
+      "kind": "selection",
+      "image": "placeholders\\02_scatter.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "02-target",
+      "section": "02",
+      "kind": "target_distribution",
+      "image": "placeholders\\02_violin.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "02-current_sales",
+      "section": "02",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "02-current_prize",
+      "section": "02",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "02-current_winners",
+      "section": "02",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "02-current_total",
+      "section": "02",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "02-previous_sales",
+      "section": "02",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "02-previous_prize",
+      "section": "02",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "02-previous_winners",
+      "section": "02",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "02-previous_total",
+      "section": "02",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "02-overlap",
+      "section": "02",
+      "kind": "overlap_comparison",
+      "image": "placeholders\\02_overlap.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "03-selection",
+      "section": "03",
+      "kind": "selection",
+      "image": "placeholders\\03_scatter.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "03-target",
+      "section": "03",
+      "kind": "target_distribution",
+      "image": "placeholders\\03_violin.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "03-current_sales",
+      "section": "03",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "03-current_prize",
+      "section": "03",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "03-current_winners",
+      "section": "03",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "03-current_total",
+      "section": "03",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "03-previous_sales",
+      "section": "03",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "03-previous_prize",
+      "section": "03",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "03-previous_winners",
+      "section": "03",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "03-previous_total",
+      "section": "03",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "03-overlap",
+      "section": "03",
+      "kind": "overlap_comparison",
+      "image": "placeholders\\03_overlap.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "08-selection",
+      "section": "08",
+      "kind": "selection",
+      "image": "placeholders\\08_scatter.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "08-target",
+      "section": "08",
+      "kind": "target_distribution",
+      "image": "placeholders\\08_violin.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "08-current_sales",
+      "section": "08",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "08-current_prize",
+      "section": "08",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "08-current_winners",
+      "section": "08",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "08-current_total",
+      "section": "08",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "08-previous_sales",
+      "section": "08",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "08-previous_prize",
+      "section": "08",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "08-previous_winners",
+      "section": "08",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "08-previous_total",
+      "section": "08",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "08-overlap",
+      "section": "08",
+      "kind": "overlap_comparison",
+      "image": "placeholders\\08_overlap.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09A-selection",
+      "section": "09A",
+      "kind": "selection",
+      "image": "placeholders\\09A_scatter.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09A-target",
+      "section": "09A",
+      "kind": "target_distribution",
+      "image": "placeholders\\09A_violin.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09A-current_sales",
+      "section": "09A",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09A-current_prize",
+      "section": "09A",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09A-current_winners",
+      "section": "09A",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09A-current_total",
+      "section": "09A",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09A-previous_sales",
+      "section": "09A",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09A-previous_prize",
+      "section": "09A",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09A-previous_winners",
+      "section": "09A",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09A-previous_total",
+      "section": "09A",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09A-overlap",
+      "section": "09A",
+      "kind": "overlap_comparison",
+      "image": "placeholders\\09A_overlap.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09B-selection",
+      "section": "09B",
+      "kind": "selection",
+      "image": "placeholders\\09B_scatter.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09B-target",
+      "section": "09B",
+      "kind": "target_distribution",
+      "image": "placeholders\\09B_violin.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09B-current_sales",
+      "section": "09B",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09B-current_prize",
+      "section": "09B",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09B-current_winners",
+      "section": "09B",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09B-current_total",
+      "section": "09B",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09B-previous_sales",
+      "section": "09B",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09B-previous_prize",
+      "section": "09B",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09B-previous_winners",
+      "section": "09B",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09B-previous_total",
+      "section": "09B",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09B-overlap",
+      "section": "09B",
+      "kind": "overlap_comparison",
+      "image": "placeholders\\09B_overlap.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09C-selection",
+      "section": "09C",
+      "kind": "selection",
+      "image": "placeholders\\09C_scatter.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09C-target",
+      "section": "09C",
+      "kind": "target_distribution",
+      "image": "placeholders\\09C_violin.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09C-current_sales",
+      "section": "09C",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09C-current_prize",
+      "section": "09C",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09C-current_winners",
+      "section": "09C",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09C-current_total",
+      "section": "09C",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09C-previous_sales",
+      "section": "09C",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09C-previous_prize",
+      "section": "09C",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09C-previous_winners",
+      "section": "09C",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09C-previous_total",
+      "section": "09C",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09C-overlap",
+      "section": "09C",
+      "kind": "overlap_comparison",
+      "image": "placeholders\\09C_overlap.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09D-selection",
+      "section": "09D",
+      "kind": "selection",
+      "image": "placeholders\\09D_scatter.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09D-target",
+      "section": "09D",
+      "kind": "target_distribution",
+      "image": "placeholders\\09D_violin.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09D-current_sales",
+      "section": "09D",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09D-current_prize",
+      "section": "09D",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09D-current_winners",
+      "section": "09D",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09D-current_total",
+      "section": "09D",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09D-previous_sales",
+      "section": "09D",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09D-previous_prize",
+      "section": "09D",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09D-previous_winners",
+      "section": "09D",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09D-previous_total",
+      "section": "09D",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "09D-overlap",
+      "section": "09D",
+      "kind": "overlap_comparison",
+      "image": "placeholders\\09D_overlap.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "10-selection",
+      "section": "10",
+      "kind": "selection",
+      "image": "placeholders\\10_scatter.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "10-target",
+      "section": "10",
+      "kind": "target_distribution",
+      "image": "placeholders\\10_violin.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "10-current_sales",
+      "section": "10",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "10-current_prize",
+      "section": "10",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "10-current_winners",
+      "section": "10",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "10-current_total",
+      "section": "10",
+      "kind": "feature_comparison",
+      "image": "placeholders\\current_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "10-previous_sales",
+      "section": "10",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_sales_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "10-previous_prize",
+      "section": "10",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_prize_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "10-previous_winners",
+      "section": "10",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_winners_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "10-previous_total",
+      "section": "10",
+      "kind": "feature_comparison",
+      "image": "placeholders\\previous_total_six_slots.png",
+      "status": "awaiting_calculation"
+    },
+    {
+      "id": "10-overlap",
+      "section": "10",
+      "kind": "overlap_comparison",
+      "image": "placeholders\\10_overlap.png",
+      "status": "awaiting_calculation"
+    }
+  ],
+  "embedded_image_references": 99,
+  "distinct_placeholder_images": 35,
+  "pending_values": [
+    "IQR 경계",
+    "집단별 관측 수",
+    "이상치 회차",
+    "분포",
+    "차이",
+    "해석"
+  ],
+  "known_structure_review": "10번은 구간 제거 후 01번과 중복. 그대로 표시하고 임의로 새 주제로 바꾸지 않음",
+  "artifacts": [
+    {
+      "path": "lotto_rank_report_v2_4.html",
+      "size_bytes": 3175895,
+      "sha256": "A11779170628340D7ADEB290E4A6916EF329BFE61D8778A993F0D51E05D54AF6"
+    },
+    {
+      "path": "lotto_rank_report_v2_4.md",
+      "size_bytes": 3167181,
+      "sha256": "386D66FEF0959925218FE61D917F3BE8A6BD0C1DF10068C504996F48088351D2"
+    },
+    {
+      "path": "placeholders\\01_overlap.png",
+      "size_bytes": 22548,
+      "sha256": "10F3D880805198BBFE055221C217E35A65A3BC887E179BD8A469CE1D1B38F61B"
+    },
+    {
+      "path": "placeholders\\01_scatter.png",
+      "size_bytes": 23506,
+      "sha256": "AC45A0C0EC98CE6306D2A01AAA077D57FFFAA5A4C68B03A0F42F88DDB5D1A196"
+    },
+    {
+      "path": "placeholders\\01_violin.png",
+      "size_bytes": 22729,
+      "sha256": "2F14466C2EA80C9EE44F73BA82277146AE8DF8D064621375EFBFECA1D559775A"
+    },
+    {
+      "path": "placeholders\\02_overlap.png",
+      "size_bytes": 22758,
+      "sha256": "D2BA4677112C39E31A3C74B02A912049DAB5D78A011028502B459CF17BE9FAF8"
+    },
+    {
+      "path": "placeholders\\02_scatter.png",
+      "size_bytes": 23259,
+      "sha256": "451ED7437631F05C83FB382F23E6D90FCB80D593619BE57C61DD8E86992E1B57"
+    },
+    {
+      "path": "placeholders\\02_violin.png",
+      "size_bytes": 22687,
+      "sha256": "94194AA6F72859D614CDFA504245B875CAF5C96723823BA122A66873978E9E06"
+    },
+    {
+      "path": "placeholders\\03_overlap.png",
+      "size_bytes": 22847,
+      "sha256": "617A8281623EF1E677A69329048C42C962E9A6A23C24ADAEC60358FD17829297"
+    },
+    {
+      "path": "placeholders\\03_scatter.png",
+      "size_bytes": 24098,
+      "sha256": "17A762E83253C855C7A63C508CDC2047EEA953C79BD84074C7ABC4476B51FE82"
+    },
+    {
+      "path": "placeholders\\03_violin.png",
+      "size_bytes": 23019,
+      "sha256": "ED7F70D59E876E77DCFB6AFED313512256FF53867B1C3B21C78EB976C5A60B51"
+    },
+    {
+      "path": "placeholders\\08_overlap.png",
+      "size_bytes": 22933,
+      "sha256": "8F5B5FDCDA606DE18976CF507DE3E0D4F0283A90DEEFF3DA33A794CC35132FEC"
+    },
+    {
+      "path": "placeholders\\08_scatter.png",
+      "size_bytes": 24860,
+      "sha256": "2F24277C192AF2A3DB4C046406556409A362B6FE27192AD21F3B8FF2DDDADF49"
+    },
+    {
+      "path": "placeholders\\08_violin.png",
+      "size_bytes": 23109,
+      "sha256": "B757B88D56888C9E6206BEBD04570F68E621063EB98A47C994EF272AE02CE62E"
+    },
+    {
+      "path": "placeholders\\09A_overlap.png",
+      "size_bytes": 23379,
+      "sha256": "39CB37E55A86BE9B19A9D2FFA2F280DAE6FA10BEAC58287E706994737EA61071"
+    },
+    {
+      "path": "placeholders\\09A_scatter.png",
+      "size_bytes": 26130,
+      "sha256": "727301251D04BF49DEBB6F900279F6E7405C4FCA04D364CE13CB61F5816939DA"
+    },
+    {
+      "path": "placeholders\\09A_violin.png",
+      "size_bytes": 23964,
+      "sha256": "D5CC8B6505D235B951D9F91D89FA7146F4ECF824E4DBCE28D5153D14AC17B546"
+    },
+    {
+      "path": "placeholders\\09B_overlap.png",
+      "size_bytes": 23220,
+      "sha256": "7F006E4C31F7BD7B8C8740B3DAC8FEE72D28EFB45202CFD708FD7A40A8DAB24A"
+    },
+    {
+      "path": "placeholders\\09B_scatter.png",
+      "size_bytes": 26586,
+      "sha256": "12C9E511D07F52AEE85AD996D0475BAF43F860987C8FCCA886C1D05AED9EEB75"
+    },
+    {
+      "path": "placeholders\\09B_violin.png",
+      "size_bytes": 23572,
+      "sha256": "62759D824B00ED3C9111D0A1CB24A429959774DB23C16F4F52D017B295CC1681"
+    },
+    {
+      "path": "placeholders\\09C_overlap.png",
+      "size_bytes": 23304,
+      "sha256": "2E16AD6D772488EEF716F86F44249EB06C7F1788CFAC9569F020DE5CFB177468"
+    },
+    {
+      "path": "placeholders\\09C_scatter.png",
+      "size_bytes": 25651,
+      "sha256": "BF0FE369370CA30A5A4D18AE8CDDAE28E7BF8272177F67C428D78A659CC05B9C"
+    },
+    {
+      "path": "placeholders\\09C_violin.png",
+      "size_bytes": 23234,
+      "sha256": "4287826506546F5EE1A458954A171AF793E234CD7221E1B9A5CE764ABE455CC4"
+    },
+    {
+      "path": "placeholders\\09D_overlap.png",
+      "size_bytes": 23228,
+      "sha256": "47BD7FB04766F812DE34FA22F03AFB54B2B6CFB95FC2F256D36DB3725016A7E1"
+    },
+    {
+      "path": "placeholders\\09D_scatter.png",
+      "size_bytes": 25622,
+      "sha256": "0C51200D82F73CBF2040CFCDDB4C9A68584311F71AE1D61D1E129303B120B8FB"
+    },
+    {
+      "path": "placeholders\\09D_violin.png",
+      "size_bytes": 23396,
+      "sha256": "3CF450A9E640CAC22745529AD0706422C5A061A25A96D2762EBFBCCDB2397376"
+    },
+    {
+      "path": "placeholders\\10_overlap.png",
+      "size_bytes": 22548,
+      "sha256": "40B70F60056313214770A68DBEA88DA26F90FC82F78C91E7AF605EF6E1A0D0DC"
+    },
+    {
+      "path": "placeholders\\10_scatter.png",
+      "size_bytes": 25019,
+      "sha256": "0127139898E2CBB8840A48CAA5AC228B6911CF0EFB830B6C80DE89FE8D5EB648"
+    },
+    {
+      "path": "placeholders\\10_violin.png",
+      "size_bytes": 22730,
+      "sha256": "7C922065FFFC9C003EF5CE520DDF4CD51A28FFBA6521807903FAE1F2BD3444A8"
+    },
+    {
+      "path": "placeholders\\current_prize_six_slots.png",
+      "size_bytes": 23608,
+      "sha256": "1FD424C220D9FD0AE11E3CE60528BD720B47EB00F7992C0A3E6E022FEB371938"
+    },
+    {
+      "path": "placeholders\\current_sales_six_slots.png",
+      "size_bytes": 22699,
+      "sha256": "BF6DEA06D010707B552BDF1255144838421BC0CEC3F719EEF509263654080DAE"
+    },
+    {
+      "path": "placeholders\\current_total_six_slots.png",
+      "size_bytes": 23922,
+      "sha256": "509D6064B48C12A3572015F46FAA2A174D8EB9DA7CC20AA05234B1D85048E844"
+    },
+    {
+      "path": "placeholders\\current_winners_six_slots.png",
+      "size_bytes": 23144,
+      "sha256": "2F6238119ACD3B579588E3865B2F81B35A0ADB6BD2997B428899CE33E243EBDB"
+    },
+    {
+      "path": "placeholders\\previous_prize_six_slots.png",
+      "size_bytes": 23843,
+      "sha256": "35CC95C383237195B22AF259B5F851E74AF6C986C547F1792BCEEF4938C7F0F7"
+    },
+    {
+      "path": "placeholders\\previous_sales_six_slots.png",
+      "size_bytes": 22873,
+      "sha256": "13FC3D3E1A567BA4F26008EEB9638C8B9E8B8B2150E9938D470D389AD7907B00"
+    },
+    {
+      "path": "placeholders\\previous_total_six_slots.png",
+      "size_bytes": 24159,
+      "sha256": "1B3B87C773EA50D507C66A9F457C32FA47B8175AB137D3560CBE0133A08DFB46"
+    },
+    {
+      "path": "placeholders\\previous_winners_six_slots.png",
+      "size_bytes": 23376,
+      "sha256": "EBD1EBE57C54E23A3C4A871AD97ABF47B982D9BE6B878314B335630AB6C5220B"
+    },
+    {
+      "path": "review_preview.png",
+      "size_bytes": 138888,
+      "sha256": "E89D16115C42E328183C73FD6A1E51960988FD33BCFF8F06536E418A806A3D61"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "command": "python -X utf8 class2_rottery/verify_lotto_v2_4_scaffold.py",
+  "stage": "review_scaffold",
+  "statistical_analysis_executed": false,
+  "section_count": 9,
+  "embedded_empty_plot_slots_per_report": 99,
+  "feature_comparison_slots": 72,
+  "distinct_placeholder_images": 35,
+  "tables_in_report": 0,
+  "source_and_previous_comparison_before_overlap": true,
+  "analysis_output_directory_absent": true,
+  "analysis_module_absent": true,
+  "analysis_absence_required": true,
+  "builder_uses_no_statistical_modules_or_csv_loader": true,
+  "input_hashes_match_prior_audit": true,
+  "artifact_hashes_checked": 38
+}

@@ -1,0 +1,628 @@
+{
+  "version": "2.4",
+  "stage": "actual_experiment",
+  "created_at_utc": "2026-10-26T10:09:18.043041+00:00",
+  "command": "python -X utf8 class2_rottery/lotto_analysis_v2_4.py",
+  "source": "C:\\Users\\chldu\\Downloads\\Statistical_consultation\\class2_rottery\\lotto_preprocessed_v2.csv",
+  "source_sha256": "391E8042B771CC33AC15C1BDED8D3AFB3302326431E090BFCA2ED4206E18A4E0",
+  "raw_source_sha256": "8B2C9836A5BAD4C55811CE95E18B96E2C051070E1C8263B5C653B3D7F5595214",
+  "outlier_rows": 775,
+  "unique_rounds": 204,
+  "images": 99,
+  "normalization": "all money * 1000 / game price; normalize before differencing",
+  "rules": "own section/rank Y, strict upper 1.5/3 IQR, all eligible draws",
+  "artifacts": [
+    {
+      "path": "cases.csv",
+      "size_bytes": 6088341,
+      "sha256": "D0214B91AF7D4CC260D904CC1EF92BF75A5073854EB6CDF81F8A0AAF8670AE1D"
+    },
+    {
+      "path": "comparisons.csv",
+      "size_bytes": 37500,
+      "sha256": "F2DDB975C83436E9ACB0A37188540968EF8F87B97328790B535EAB78A3B3FB43"
+    },
+    {
+      "path": "excluded.csv",
+      "size_bytes": 7262,
+      "sha256": "4C35F5D0308143631D13F5FEE1ED2988B5D0884465C1ECFCDFA5FF4D1626E3AA"
+    },
+    {
+      "path": "features.csv",
+      "size_bytes": 390519,
+      "sha256": "937AC9FDA8D533579E5A1074BF799F97F21BD1ACB2E78B876495770CC75B9A11"
+    },
+    {
+      "path": "fences.csv",
+      "size_bytes": 2112,
+      "sha256": "58D98899107B8C9CE089714D2B2D5342CB82649E5F402963CE5DB92BB69EE38E"
+    },
+    {
+      "path": "figures\\01_current_prize.png",
+      "size_bytes": 132225,
+      "sha256": "D500EB6CDD8650FDA5EF46D4C928EA3B1CE78417BA31F3EB142A0878AD8C6F75"
+    },
+    {
+      "path": "figures\\01_current_sales.png",
+      "size_bytes": 213610,
+      "sha256": "48AD58AED45C10E84573A9EA0A4C4E8D5081D6FB2A400176517B84E34A2CDD72"
+    },
+    {
+      "path": "figures\\01_current_total.png",
+      "size_bytes": 210408,
+      "sha256": "68F650CEC45139EBE75FDC90D1476AAA9C3602066B030D997F11BB50F5E43174"
+    },
+    {
+      "path": "figures\\01_current_winners.png",
+      "size_bytes": 113344,
+      "sha256": "870987A4D54558BA89D5C52430F45C4DBD2552FE8D24ADC3ECD7A23331D0DA76"
+    },
+    {
+      "path": "figures\\01_overlap.png",
+      "size_bytes": 60599,
+      "sha256": "7027C7924076D20AC32CB7239A8EE360DD559CD4440AB4BB48A7B5ECEEB06F1B"
+    },
+    {
+      "path": "figures\\01_previous_prize.png",
+      "size_bytes": 138413,
+      "sha256": "FF8CE8F610494A0538A79A060CAB9A260DAA32C02D0314B12331D401D2818A4F"
+    },
+    {
+      "path": "figures\\01_previous_sales.png",
+      "size_bytes": 212814,
+      "sha256": "F475E8949BC063B0B0A8EE96DA90EF85722745CD7BEEADCAD28103E542A220DE"
+    },
+    {
+      "path": "figures\\01_previous_total.png",
+      "size_bytes": 217462,
+      "sha256": "D4B9010D0B48FD29BFC37612A37F37DA921C300F85BC8F5F2654C54C7A7893A4"
+    },
+    {
+      "path": "figures\\01_previous_winners.png",
+      "size_bytes": 128954,
+      "sha256": "595D7BC60A3CDC192B163D78595A589D85CEAECF5D55DA2371E9720E86FD5210"
+    },
+    {
+      "path": "figures\\01_selection.png",
+      "size_bytes": 244944,
+      "sha256": "0BCA5B5CB36D683D7403644F58764F61AD37A821833DB42A594EAF902674A00A"
+    },
+    {
+      "path": "figures\\01_y_violin.png",
+      "size_bytes": 126965,
+      "sha256": "DE4DF4FCE0267DCA0ECE875D843EA32EF0D5399256D51CE8044243E435E59292"
+    },
+    {
+      "path": "figures\\02_current_prize.png",
+      "size_bytes": 123012,
+      "sha256": "167F5C1C83C64C60E74D0EE9F02495F49EE4EADD9077142FFD467E91262F776A"
+    },
+    {
+      "path": "figures\\02_current_sales.png",
+      "size_bytes": 196622,
+      "sha256": "940ED842260558C50532FE722DF93EA4ED4D57E64DE38ED1A61DE4260E20A56A"
+    },
+    {
+      "path": "figures\\02_current_total.png",
+      "size_bytes": 203416,
+      "sha256": "FE474BCBD7D226CB103EDA3E8ADBC17EB7BF342BDB91D34D257CC80F7A652181"
+    },
+    {
+      "path": "figures\\02_current_winners.png",
+      "size_bytes": 124381,
+      "sha256": "27FEB17531767D21F656F6338D0654B2567C1D2EB312F9532E5A727D0289147D"
+    },
+    {
+      "path": "figures\\02_overlap.png",
+      "size_bytes": 61465,
+      "sha256": "C851A1B78509B289FF67E830B609321E81869CA78C18ADBA59E28BCB47CD8BC4"
+    },
+    {
+      "path": "figures\\02_previous_prize.png",
+      "size_bytes": 134921,
+      "sha256": "FEBC8C9DDE976FD29AB3CB5CA71BB0FB11766C4E568CF0DF4437D2A9E7513189"
+    },
+    {
+      "path": "figures\\02_previous_sales.png",
+      "size_bytes": 200037,
+      "sha256": "C592D377240EEB1EC655DC28CCC2AE57387BE1459017FAE1183D3084344C8CE7"
+    },
+    {
+      "path": "figures\\02_previous_total.png",
+      "size_bytes": 209201,
+      "sha256": "464EE714D22490519B181503C337107665D4D47137D28EA42C9D3BA1226194E9"
+    },
+    {
+      "path": "figures\\02_previous_winners.png",
+      "size_bytes": 123664,
+      "sha256": "2C771BA88F207880634E7346AE9D16C01A5B9EE2CE9229043E75D6184B2488A2"
+    },
+    {
+      "path": "figures\\02_selection.png",
+      "size_bytes": 191239,
+      "sha256": "69B88FC55A90262AA87936797074BBE355F7E9D1C109F32C06192663CBE293AB"
+    },
+    {
+      "path": "figures\\02_y_violin.png",
+      "size_bytes": 118941,
+      "sha256": "0DC93B95D87B4D550512AF89F0EFFB54D69043008C921C2E1784722D59EE5237"
+    },
+    {
+      "path": "figures\\03_current_prize.png",
+      "size_bytes": 113547,
+      "sha256": "4DFA41A9063AFCE5DA52EE8AA2E73698BB2FEE147EB4D74296984DE880795F0E"
+    },
+    {
+      "path": "figures\\03_current_sales.png",
+      "size_bytes": 179249,
+      "sha256": "8CFCD8BA01984C14B31730BC479B1B9E691DFCD281FBD20A1C0EC45F1570E4F3"
+    },
+    {
+      "path": "figures\\03_current_total.png",
+      "size_bytes": 186356,
+      "sha256": "30BE2F196F2100CBD74915D0A057057888F56E364E8E5480A7F9B9C29185222F"
+    },
+    {
+      "path": "figures\\03_current_winners.png",
+      "size_bytes": 105983,
+      "sha256": "D6233FE50E26FD60708412AC04F56E8335D71956F0905477E25BBDDAFD358496"
+    },
+    {
+      "path": "figures\\03_overlap.png",
+      "size_bytes": 76594,
+      "sha256": "25CC93667523DBDD1DBDD3622839F12CBED3FF833216A4425671D28478469671"
+    },
+    {
+      "path": "figures\\03_previous_prize.png",
+      "size_bytes": 112545,
+      "sha256": "C8085C04255BF11216C25BF45D36F9BD538AEEB7191B4E4DE8B312853304E538"
+    },
+    {
+      "path": "figures\\03_previous_sales.png",
+      "size_bytes": 179410,
+      "sha256": "D447F6802F590E0AF1FA9B29499E33E6776D1293E7AA1AEE900043DB41E79558"
+    },
+    {
+      "path": "figures\\03_previous_total.png",
+      "size_bytes": 184853,
+      "sha256": "CDF31D442256B80ACDB630AFA6EDBD76112DCB685342808FAC0FC049EB98CA91"
+    },
+    {
+      "path": "figures\\03_previous_winners.png",
+      "size_bytes": 105836,
+      "sha256": "83D35BD3093373EFEA425A6B89C34EB7D901C5CD5568D4EEC524D8AF059FB37F"
+    },
+    {
+      "path": "figures\\03_selection.png",
+      "size_bytes": 158601,
+      "sha256": "DBE322592643893192C0C747F46426C0B13DCD6A0162CF2F616D159F67A21D78"
+    },
+    {
+      "path": "figures\\03_y_violin.png",
+      "size_bytes": 180254,
+      "sha256": "23D26DFD91F9B58D551C9D69FFA54037E26B491AFBA5CABB1C05635829FF8E40"
+    },
+    {
+      "path": "figures\\08_current_prize.png",
+      "size_bytes": 132644,
+      "sha256": "A72AD0A3995DE22AAEB4EB28229C1C1D2E93DF3F9387963DDC60F01D7E9BC7FA"
+    },
+    {
+      "path": "figures\\08_current_sales.png",
+      "size_bytes": 214018,
+      "sha256": "01E44D7D2311E72C5A8B78BAF7F5A6AAF7D3D2F7A485D3AA66FDD33B50A27281"
+    },
+    {
+      "path": "figures\\08_current_total.png",
+      "size_bytes": 210834,
+      "sha256": "1FDCA9A7AA432D3F04EA4061A3A08EAA577207AFEE9B187B4DEBDF3EE672ABD4"
+    },
+    {
+      "path": "figures\\08_current_winners.png",
+      "size_bytes": 113883,
+      "sha256": "B18339F3E706889037B9DDF889B099B9043A9B503C3C458536C44C9BB3A29FC6"
+    },
+    {
+      "path": "figures\\08_overlap.png",
+      "size_bytes": 60796,
+      "sha256": "D4C759E6F79D0AB1E7D15579D69EC9D9EA8BB34BA4EE3EC5178E8ED76EBF499F"
+    },
+    {
+      "path": "figures\\08_previous_prize.png",
+      "size_bytes": 138751,
+      "sha256": "8511EC5625803349F17A20788A24295505BD90B5695504E3B43E2B5218F798D6"
+    },
+    {
+      "path": "figures\\08_previous_sales.png",
+      "size_bytes": 213113,
+      "sha256": "4FFC545BACACDD0FC28D2969E89F27A9A02A3CE57E609E62EBC8DA7C78B76480"
+    },
+    {
+      "path": "figures\\08_previous_total.png",
+      "size_bytes": 217855,
+      "sha256": "9A59EF2306F6C2CF20B37FBA96C68B317393656C8F4D2C3D737B641C37022C50"
+    },
+    {
+      "path": "figures\\08_previous_winners.png",
+      "size_bytes": 129392,
+      "sha256": "E0023E6BA82E2BC2FAC59DC9111F106398FDB85A473C3B1D81184EF2E875DA32"
+    },
+    {
+      "path": "figures\\08_selection.png",
+      "size_bytes": 219313,
+      "sha256": "8098E55C26734C853CC4B90AD685478CA6C008DCFF28D38D07F2AFC8CC8BAFBE"
+    },
+    {
+      "path": "figures\\08_y_violin.png",
+      "size_bytes": 127428,
+      "sha256": "C2EC19A394D018DA56CD932F4286E7B1BB971C7417F8D3DF90E20CD35C95478E"
+    },
+    {
+      "path": "figures\\09A_current_prize.png",
+      "size_bytes": 150986,
+      "sha256": "5473DDED1DA748F09BEAA8CCC040400F62FBA8E9FCD5B74649E27AC3D3DDDAB8"
+    },
+    {
+      "path": "figures\\09A_current_sales.png",
+      "size_bytes": 208783,
+      "sha256": "7B15E55A9B408C4CF31C44775FE069EC1523F967C0E68FDBE9408633274ABCBD"
+    },
+    {
+      "path": "figures\\09A_current_total.png",
+      "size_bytes": 224769,
+      "sha256": "CD01B89B2FFE3677D73DFBA0AF4FF7736FB159384D879B90C4B244A149D9BC6F"
+    },
+    {
+      "path": "figures\\09A_current_winners.png",
+      "size_bytes": 117210,
+      "sha256": "B0128B54769CD14745FDE7C44066804558EF8D87F7D2ECA70FF27CF44105020D"
+    },
+    {
+      "path": "figures\\09A_overlap.png",
+      "size_bytes": 61508,
+      "sha256": "A6D0DFA9C94F9BC39F336FDE60DC5DB5B3DF4A91F872845D4D17459B05E5E590"
+    },
+    {
+      "path": "figures\\09A_previous_prize.png",
+      "size_bytes": 131667,
+      "sha256": "7189C04749BEFE7BB29A615AF01DB6AE8DD8E14718C373FD64E16F83F26F91D1"
+    },
+    {
+      "path": "figures\\09A_previous_sales.png",
+      "size_bytes": 215115,
+      "sha256": "CA04A3E6FC6583199761F3180B48BE967ED534628393A3404934FC494DCEEE61"
+    },
+    {
+      "path": "figures\\09A_previous_total.png",
+      "size_bytes": 212143,
+      "sha256": "F6FD5D68FC925F7E6733EE15B974066B4D892AAE16BBCDC4CA50854BA0BE0CE7"
+    },
+    {
+      "path": "figures\\09A_previous_winners.png",
+      "size_bytes": 131407,
+      "sha256": "CA828801750DBB26A4ABA9CD22AE35CD69ADFE7E0C6E018BD19C49BC8D941348"
+    },
+    {
+      "path": "figures\\09A_selection.png",
+      "size_bytes": 247331,
+      "sha256": "2CDDA3FBCDA2629DDE30D86A8732A556F6CF290776C30A9C1B8B967023F9963F"
+    },
+    {
+      "path": "figures\\09A_y_violin.png",
+      "size_bytes": 127481,
+      "sha256": "3DE7B39C38B9CB5126044B89A7EBFC9293C982499C6B93FCA3C0692090206405"
+    },
+    {
+      "path": "figures\\09B_current_prize.png",
+      "size_bytes": 129111,
+      "sha256": "84B3E549D2BB6B60404C94EAA59EDB128425881EDABFA450F23CEFC6D8759D3C"
+    },
+    {
+      "path": "figures\\09B_current_sales.png",
+      "size_bytes": 207625,
+      "sha256": "81C19BB3E51D12F2877781DB4D61954991B8D5F32CD0A26226ABD9733623EC98"
+    },
+    {
+      "path": "figures\\09B_current_total.png",
+      "size_bytes": 218215,
+      "sha256": "058C939A81E6C1B5966F6D41236FF643BD9EA29827C1819463070B0D6D3143C5"
+    },
+    {
+      "path": "figures\\09B_current_winners.png",
+      "size_bytes": 131442,
+      "sha256": "3BF41AAE60D1FDE4E9073FA6AC2C136804C483D16454F44AC5D7469FAC90F688"
+    },
+    {
+      "path": "figures\\09B_overlap.png",
+      "size_bytes": 62638,
+      "sha256": "6D4F63E749F8406BBF047D82510421F97DDDF364E26BCA2D0BFBA490D2F0710F"
+    },
+    {
+      "path": "figures\\09B_previous_prize.png",
+      "size_bytes": 137956,
+      "sha256": "EB26B06262A118DE71C4BDFCC20E035425D3C707DAE3A556FEC17B184B3D7674"
+    },
+    {
+      "path": "figures\\09B_previous_sales.png",
+      "size_bytes": 205880,
+      "sha256": "4A18B49A7607FF7EE540F32506A0C6CCF89A3AD5FBCB0FE7B2F65C53FFE1FD03"
+    },
+    {
+      "path": "figures\\09B_previous_total.png",
+      "size_bytes": 213021,
+      "sha256": "38DFCF9D5AE98D8469AD5169959024CA0D2384F081933F296AB14BD2F7975822"
+    },
+    {
+      "path": "figures\\09B_previous_winners.png",
+      "size_bytes": 123792,
+      "sha256": "60F6501A6F6DA12AAFBBC30919379B91EB36196CB295079EDFE594467FF3D4D1"
+    },
+    {
+      "path": "figures\\09B_selection.png",
+      "size_bytes": 187518,
+      "sha256": "47851F9FFD5967BC3D94107A68790950D87365D19F93C089379F5B83F4C8DB34"
+    },
+    {
+      "path": "figures\\09B_y_violin.png",
+      "size_bytes": 91058,
+      "sha256": "2C37EC6D3BACE01F968C2A3D5C8306A4975CA01967A59B71F9BB45703425EAF3"
+    },
+    {
+      "path": "figures\\09C_current_prize.png",
+      "size_bytes": 136595,
+      "sha256": "72996714A28ED44EBE97B2D925FF911F40FBE15CF61A161C79704EB54F5686C1"
+    },
+    {
+      "path": "figures\\09C_current_sales.png",
+      "size_bytes": 197716,
+      "sha256": "FA4227238DCF7D7B9B4A1A5E313A0AF279C929B03458BF059AEA4DFB03B6F94C"
+    },
+    {
+      "path": "figures\\09C_current_total.png",
+      "size_bytes": 217479,
+      "sha256": "B25A572F211F5715EC3B08D9733EF64E87503B5E436CA1291E0423B3217002B1"
+    },
+    {
+      "path": "figures\\09C_current_winners.png",
+      "size_bytes": 125022,
+      "sha256": "A651C46ECEDE3699AB671C0A57DC07F068565EC5414E9C8272FB74D6A825F8F8"
+    },
+    {
+      "path": "figures\\09C_overlap.png",
+      "size_bytes": 61368,
+      "sha256": "EE3A7995C3B99FCD459CAC431E84C52C8E73B69B846630D4565A453C5E3B25DD"
+    },
+    {
+      "path": "figures\\09C_previous_prize.png",
+      "size_bytes": 135385,
+      "sha256": "FC35F782945E0FA9524ACAE42DE1AA0F40D8C70F8D05D0FE9D74AC447FDAE33A"
+    },
+    {
+      "path": "figures\\09C_previous_sales.png",
+      "size_bytes": 205519,
+      "sha256": "E245CEC2BBB11E1551371754253A06D243A8DA50AFA2BB8A705597A302EE6CDF"
+    },
+    {
+      "path": "figures\\09C_previous_total.png",
+      "size_bytes": 205239,
+      "sha256": "E7E8328998315830329B5121714A233D164060801EABCA22D93162621521BF72"
+    },
+    {
+      "path": "figures\\09C_previous_winners.png",
+      "size_bytes": 123365,
+      "sha256": "CC8363C05EAE4C50B693936831C9C93DB071007364AEBAA500F17EC001DBAE73"
+    },
+    {
+      "path": "figures\\09C_selection.png",
+      "size_bytes": 153396,
+      "sha256": "78AAB8D5ABC2AE28840CAE4625E39BC3530337DA82109EE39854C32B231CC6F9"
+    },
+    {
+      "path": "figures\\09C_y_violin.png",
+      "size_bytes": 119625,
+      "sha256": "6F7AF435978959E2474F22B0D5D938F164F1D80BCCD7E695D9F936CC7FD34977"
+    },
+    {
+      "path": "figures\\09D_current_prize.png",
+      "size_bytes": 132203,
+      "sha256": "BFDC9C4F71FD659C4AC7819E42659C04A4A4A7C2386DD9E7AD5FBE35B2058547"
+    },
+    {
+      "path": "figures\\09D_current_sales.png",
+      "size_bytes": 209958,
+      "sha256": "2D1153012EF48C27996E4928E745FE121FE1424E32D789A56A57B04719A9A882"
+    },
+    {
+      "path": "figures\\09D_current_total.png",
+      "size_bytes": 212203,
+      "sha256": "DFE1E051F8752E892FCD7D5592895F3FC6798CA2A725EE2026467D78242284C6"
+    },
+    {
+      "path": "figures\\09D_current_winners.png",
+      "size_bytes": 113619,
+      "sha256": "FF619FBC2F60A7DBAF397EF4ABA17B9BEF8B119A2BBAF2843675C9ABE757F313"
+    },
+    {
+      "path": "figures\\09D_overlap.png",
+      "size_bytes": 60957,
+      "sha256": "02DC5A28872D8517CB52CE80BF5CF8C27B1A0696E3787CCF9FF08C38CF042469"
+    },
+    {
+      "path": "figures\\09D_previous_prize.png",
+      "size_bytes": 139295,
+      "sha256": "A7E59F4DF11715EC6F4AAEA35475FAEF635E3EF9C78227CA2EC53F93012EDFAA"
+    },
+    {
+      "path": "figures\\09D_previous_sales.png",
+      "size_bytes": 213457,
+      "sha256": "142BE04C2C8D9A3CAA26ABEF6ACCBEA1C4A889E41F88F52ACCAB015789E559E9"
+    },
+    {
+      "path": "figures\\09D_previous_total.png",
+      "size_bytes": 218084,
+      "sha256": "C0EFB3CB5165CBF2B191DCF78BC17415FD16FE8400C42BDCA16B8D923648EEB5"
+    },
+    {
+      "path": "figures\\09D_previous_winners.png",
+      "size_bytes": 129553,
+      "sha256": "0BF26E883DCAB87F7C6F56B133806E8F73E5FD2EDB5180C7CDEF27AD8BD9533E"
+    },
+    {
+      "path": "figures\\09D_selection.png",
+      "size_bytes": 165596,
+      "sha256": "7E04CD5E30B6FB1FD72653D24A3443B8FC1A80098301B25C757BFE3284BCAE1C"
+    },
+    {
+      "path": "figures\\09D_y_violin.png",
+      "size_bytes": 127018,
+      "sha256": "C9C61B8E60B59659CC12DEE1F9F63E0C7C63F981A40CDDC009E8898126EEBABA"
+    },
+    {
+      "path": "figures\\10_current_prize.png",
+      "size_bytes": 132203,
+      "sha256": "31EAF32C1ED088A8EF1084B67F9C3D3AC5521199472C01B8D924F817FABB3FBC"
+    },
+    {
+      "path": "figures\\10_current_sales.png",
+      "size_bytes": 213601,
+      "sha256": "B51B0F09EB83DBB8B32029B195D51252CF851A6EEC36E36EFDCA987B7D7930FD"
+    },
+    {
+      "path": "figures\\10_current_total.png",
+      "size_bytes": 210403,
+      "sha256": "74644A9B6AAE4023413EBED01DFCCDC1E1C799C4D5EF696D7B5F2AE10E97F202"
+    },
+    {
+      "path": "figures\\10_current_winners.png",
+      "size_bytes": 113351,
+      "sha256": "13E8E040746AFFAC49757B26EC75F61EE132D0E9258B843BC9280E99F13B8559"
+    },
+    {
+      "path": "figures\\10_overlap.png",
+      "size_bytes": 60532,
+      "sha256": "CAE4519A42FDA7BDB8620BB1D7D5A055EAE8E5EDB6BBA76ABC0AC8C4B8DF9B9B"
+    },
+    {
+      "path": "figures\\10_previous_prize.png",
+      "size_bytes": 138314,
+      "sha256": "F6143C01F44759E3FB6598A69B42C17846461E640694D2A656943F7DF4E5DF39"
+    },
+    {
+      "path": "figures\\10_previous_sales.png",
+      "size_bytes": 212817,
+      "sha256": "46E0C9AFA00719988E211B207104B16A05CBDAB34378618530A8E43BD4F38C26"
+    },
+    {
+      "path": "figures\\10_previous_total.png",
+      "size_bytes": 217357,
+      "sha256": "B9120F505BA6A5128C9EA4DA49828EAC3ACD0A9265B2A4DAD25B90B01393463D"
+    },
+    {
+      "path": "figures\\10_previous_winners.png",
+      "size_bytes": 128963,
+      "sha256": "518CF6767E077A9C78B9E282EE44453FBE2B329E4E11BC3376C773F90506EF23"
+    },
+    {
+      "path": "figures\\10_selection.png",
+      "size_bytes": 247504,
+      "sha256": "24B22ED70F09C85FF02AB500B571F587AAFD2C05E738AA807D27FDA751E40706"
+    },
+    {
+      "path": "figures\\10_y_violin.png",
+      "size_bytes": 126928,
+      "sha256": "21847CE79920ADF22D964953B2BF07535C4D6364B7F223614BA762366FB667E8"
+    },
+    {
+      "path": "focus.csv",
+      "size_bytes": 1318356,
+      "sha256": "9EEDC7A1E0BE8D210C3202C6056655C547B8069C8143614C1FA42161CCB4DED4"
+    },
+    {
+      "path": "labeled.csv",
+      "size_bytes": 2922321,
+      "sha256": "8DD120C135FE36EDC8B6B41BF7BF3B91AB275AB2EA1801AABB8D3AFC3CAE5109"
+    },
+    {
+      "path": "lotto_rank_report_v2_4.md",
+      "size_bytes": 20844409,
+      "sha256": "28BD60886D8AD3432DFF085B1219759A9F9025150CC73BC6AAAB76CE5E0D6F33"
+    },
+    {
+      "path": "observations.csv",
+      "size_bytes": 1013414,
+      "sha256": "10D9386A8EFAAA0E6C077621FDC8708666509013917D9A090180239B24193C96"
+    },
+    {
+      "path": "outliers.csv",
+      "size_bytes": 143126,
+      "sha256": "BD791FF0AB60342ABB2B0072B6F5494771397059159DA3ED7E74776BE4735CE3"
+    },
+    {
+      "path": "overlaps.csv",
+      "size_bytes": 61118,
+      "sha256": "88B6CEDC1837EAF5A6CA9675CC111CD7071C4004CBAB0FFEDE7B6D0C116D2BB1"
+    },
+    {
+      "path": "plot_metadata.json",
+      "size_bytes": 92084,
+      "sha256": "AB6FCCA07D8DE503E1F44BA16504ED5A13596F8FEC4EA6B0F46DC2805753FC86"
+    },
+    {
+      "path": "rounds.csv",
+      "size_bytes": 2301,
+      "sha256": "0C784EEA72A2038F6A7197CCEF3ED7B8ACF81DFFA3D30729AEE5AFD7838998D9"
+    },
+    {
+      "path": "validation.json",
+      "size_bytes": 150,
+      "sha256": "3EB238DF1D50696DB93712B9ADCB4514DDCCFB1A8FA8D5414C92E5B2703E8698"
+    },
+    {
+      "path": "visual_review\\01_review.png",
+      "size_bytes": 590719,
+      "sha256": "91CC9F0E1F662ED7CE665DF9E9F0A9AB78F340160142002580466A47F5478598"
+    },
+    {
+      "path": "visual_review\\02_review.png",
+      "size_bytes": 560572,
+      "sha256": "9204CC67B8488DAB95CFE0A0FC7E554FC81EDF123ACFAA5B75CDABF4B16138DC"
+    },
+    {
+      "path": "visual_review\\03_review.png",
+      "size_bytes": 527733,
+      "sha256": "E684B6F369199A35E39668ACD34E056F597F398A3EC16D7C77711A0E33FEC759"
+    },
+    {
+      "path": "visual_review\\08_review.png",
+      "size_bytes": 588645,
+      "sha256": "1AEA6710C19713CEEF546879387F7D0C1DD7788D118F432932D8870B965D36D1"
+    },
+    {
+      "path": "visual_review\\09A_review.png",
+      "size_bytes": 609098,
+      "sha256": "9406589A735B2A7BE2963C0350FBBF4D024C3C3D54EC8D489DE7AB296B8A84AF"
+    },
+    {
+      "path": "visual_review\\09B_review.png",
+      "size_bytes": 583917,
+      "sha256": "5369A1FFE16186C1DC42537B2B8DC891DC102D664A800EC7C729BC683E8DA877"
+    },
+    {
+      "path": "visual_review\\09C_review.png",
+      "size_bytes": 564423,
+      "sha256": "3AE0DD1F8D436AC418FFDB49CAA083866FF7D5B79DEC7EBD48A3973EBF047CC5"
+    },
+    {
+      "path": "visual_review\\09D_review.png",
+      "size_bytes": 578574,
+      "sha256": "B2B51BC3577EE159BA8B8E435036B5CB4F963FEFF5042D6A8C18F231FB367033"
+    },
+    {
+      "path": "visual_review\\10_review.png",
+      "size_bytes": 591827,
+      "sha256": "B77E9F87B5357E7FA163147939A0972035E671ED3C1F90C5DDE57D9249AD80E3"
+    }
+  ],
+  "output_format": "markdown_only",
+  "html_status": "generated_before_markdown_only_instruction; preserved unchanged and excluded from delivery"
+}

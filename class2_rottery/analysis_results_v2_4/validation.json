@@ -1,0 +1,8 @@
+{
+  "section_rank_rules": true,
+  "comparisons": true,
+  "overlaps": true,
+  "figures": true,
+  "input_unchanged": true,
+  "status": "passed"
+}
