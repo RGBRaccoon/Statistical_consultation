@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# 도구 캐시
+.pytest_cache/
+pytest-cache-files-*/
+.ruff_cache/
+
+# 임시 파일
+.tmp/
