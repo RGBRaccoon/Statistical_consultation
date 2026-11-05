@@ -6,7 +6,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 import preprocess_v3_1 as prep  # noqa: E402
 
 BASE = Path(__file__).resolve().parents[1]
@@ -14,7 +14,7 @@ BASE = Path(__file__).resolve().parents[1]
 
 @pytest.fixture(scope="module")
 def pair():
-    source = pd.read_csv(BASE / "lotto_preprocessed_v2.csv")
+    source = pd.read_csv(BASE / "data" / "lotto_preprocessed_v2.csv")
     return source, prep.build(source)
 
 

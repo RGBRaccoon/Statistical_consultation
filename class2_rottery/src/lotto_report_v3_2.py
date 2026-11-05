@@ -1,4 +1,5 @@
-"""V3.1 그림·CSV·MD 보고서를 만든다. 계산은 lotto_analysis_v3_1에서 가져온다."""
+"""V3.2 그림·CSV·MD 보고서를 만든다. 계산은 lotto_analysis_v3_1에서 가져오고,
+V3.1 검토에서 제외한 칼럼을 뺀다."""
 
 import base64
 import hashlib
@@ -16,11 +17,23 @@ from matplotlib.ticker import FuncFormatter  # noqa: E402
 from scipy.stats import gaussian_kde  # noqa: E402
 
 import lotto_analysis_v3_1 as analysis  # noqa: E402
+from paths import DATA, REPORTS  # noqa: E402
 
-BASE = Path(__file__).resolve().parent
-SOURCE = BASE / "lotto_preprocessed_v3_1.csv"
-OUTPUT = BASE / "analysis_results_v3_1"
-REPORT = BASE / "lotto_rank_report_v3_1.md"
+SOURCE = DATA / "lotto_preprocessed_v3_1.csv"
+OUTPUT = REPORTS / "v3_2" / "analysis_results_v3_2"
+REPORT = REPORTS / "v3_2" / "lotto_rank_report_v3_2.md"
+
+# V3.1 검토(plan_v3_1.md 6절)에서 제외한 칼럼과 사유.
+EXCLUSION_REASONS = {
+    "1게임당 당첨금": "총 당첨금 ÷ 당첨게임 수라 내용이 뻔함",
+    "총판매금액": "금액에 2,000원 구간이 섞임. 판매게임수가 대신함",
+    "1000원기준_1게임당당첨금": "제외 결정",
+    "1000원기준_등위별총당첨금": "제외 결정",
+    "1억게임당_당첨게임수": "당첨게임률 × 1억과 같은 값",
+    "등위별_지급률": "총 당첨금 ÷ 총판매금액. 거의 일정한 비율이라 그룹 차이가 없음",
+}
+EXCLUDED = list(EXCLUSION_REASONS)
+COLUMNS = [c for c in analysis.COMPARE_COLUMNS if c not in EXCLUSION_REASONS]
 
 # 하위(파랑) ← 전체(회색) → 상위(빨강). 바깥 그룹일수록 진하다.
 GROUP_COLORS = [
@@ -166,11 +179,8 @@ def violin_figure(
     ax.spines["bottom"].set_color("#d8d7d2")
     ax.grid(axis="y", color="#ebeae6", lw=0.8)
     ax.set_axisbelow(True)
-    pending = (
-        " · 보류: 정규화 정의 미확정" if column in analysis.PENDING_COLUMNS else ""
-    )
     ax.set_title(
-        f"{column} · {rank} (당첨게임수 기준 그룹){pending}",
+        f"{column} · {rank} (당첨게임수 기준 그룹)",
         fontsize=13,
         color=TEXT,
         loc="left",
@@ -247,6 +257,15 @@ def render(result: dict[str, Any]) -> dict[str, Any]:
     figures_dir = OUTPUT / "figures"
     figures_dir.mkdir(exist_ok=True)
     plt.rcParams.update({"font.family": "Malgun Gothic", "axes.unicode_minus": False})
+    result = {
+        **result,
+        "summary": result["summary"][result["summary"]["칼럼"].isin(COLUMNS)],
+        "seed_check": result["seed_check"][result["seed_check"]["칼럼"].isin(COLUMNS)],
+        "frames": {
+            rank: frame[[c for c in frame.columns if c not in EXCLUSION_REASONS]]
+            for rank, frame in result["frames"].items()
+        },
+    }
     for name in ("memberships", "ties", "summary", "overlaps", "seed_check"):
         result[name].to_csv(OUTPUT / f"{name}.csv", index=False, encoding="utf-8-sig")
     for rank, frame in result["frames"].items():
@@ -263,7 +282,7 @@ def render(result: dict[str, Any]) -> dict[str, Any]:
     tie_rank1 = ties[(ties["순위"] == "1등") & (ties["남은자리"] > 0)]
     full_match = int((seeds["패턴일치시드수"] == seeds["시드수"]).sum())
     lines = [
-        "# 로또 분석 보고서 V3.1",
+        "# 로또 분석 보고서 V3.2",
         "",
         "**큰 질문: 당첨게임수가 매우 많은 회차들의 특징은 무엇인가?**",
         "",
@@ -273,14 +292,13 @@ def render(result: dict[str, Any]) -> dict[str, Any]:
         "- 1,245회를 당첨게임수로 줄 세워 위·아래에서 회차 수 기준 5%(62회)·10%(124회)·25%(311회)를 뽑고, 전체와 함께 7개 그룹을 비교한다. 그룹은 포함 관계다.",
         "- 그림마다 왼쪽부터 하위 5% → 하위 10% → 하위 25% → 전체 → 상위 25% → 상위 10% → 상위 5%다. 바이올린은 분포, 흰 상자는 가중 사분위 범위, 세로선은 최소~최대, 검은 선은 7개 대표 중앙값을, 점선은 7개 최대값·최소값을 이은 것이다.",
         "- 경계값에 동률이 있어 일부 자리만 남으면, 대표 중앙값은 남은 자리를 동률 회차들의 중앙값으로 채워 구하고, 분포는 동률 회차 모두에 `남은 자리 ÷ 동률 수` 가중치를 준다. 그림 아래 'n=62 / 동률 40중 20자리'처럼 표시한다.",
-        "- 숫자는 유효 숫자 최대 4자리로 줄여 쓴다(천·백만·억). 상세 수치는 `analysis_results_v3_1/` CSV에 있다.",
+        "- 숫자는 유효 숫자 최대 4자리로 줄여 쓴다(천·백만·억). 상세 수치는 `analysis_results_v3_2/` CSV에 있다.",
         "- 이 보고서는 그룹 간 분포 차이를 보여 준다. 원인이나 통계적 유의성을 주장하지 않는다.",
         "",
         "## 데이터와 정규화",
         "",
         "- 입력: `lotto_preprocessed_v3_1.csv` (1~1245회). `판매게임수`는 총판매금액 ÷ 게임가격으로 정확한 값이다.",
         "- 1~87회는 게임가격 2,000원 구간으로 `가격구간`·`가격정규화계수` 칼럼이 표시한다.",
-        "- `1000원기준_*` 두 칼럼은 정규화 정의가 확정되지 않아 **보류**로 표시했다. 기준 값(당첨게임수)과 다른 칼럼에는 영향이 없다.",
         "- 당첨번호 특징은 보너스번호를 뺀 6개 번호로 계산한다. `직전회차_겹침수`는 1회가 결측이다.",
         "",
         "## 질문 1. 1·2·3등의 상·하위 회차는 얼마나 겹치는가",
@@ -308,12 +326,11 @@ def render(result: dict[str, Any]) -> dict[str, Any]:
         "",
         "## 질문 2. 당첨게임수가 많은 회차는 다른 칼럼에서 무엇이 다른가",
         "",
-        "칼럼 선별 전 초안이다. 계산한 칼럼을 모두 싣고, 검토 후 본문에 남길 칼럼을 고른다. 첫 칼럼은 그룹을 나눈 기준 값 자체다.",
+        f"V3.1에서 계산한 칼럼 {len(analysis.COMPARE_COLUMNS)}개 중 검토에서 제외한 {len(EXCLUDED)}개를 빼고 {len(COLUMNS)}개를 싣는다. 첫 칼럼은 그룹을 나눈 기준 값 자체다.",
         "",
     ]
-    for index, column in enumerate(analysis.COMPARE_COLUMNS, start=1):
-        pending = " (보류)" if column in analysis.PENDING_COLUMNS else ""
-        lines += [f"### {index:02d}. {column}{pending}", ""]
+    for index, column in enumerate(COLUMNS, start=1):
+        lines += [f"### {index:02d}. {column}", ""]
         for rank in analysis.RANKS:
             path = figures_dir / f"{index:02d}_{rank}.png"
             violin_figure(
@@ -349,7 +366,8 @@ def render(result: dict[str, Any]) -> dict[str, Any]:
         "",
         "## 부록",
         "",
-        "- 칼럼 선별 후 본문에서 빠지는 칼럼의 그림을 이곳으로 옮긴다. (선별 전)",
+        "- V3.1 검토에서 제외한 칼럼(그림은 `../v3_1/lotto_rank_report_v3_1.md`에 있다):",
+        *[f"  - {c}: {reason}" for c, reason in EXCLUSION_REASONS.items()],
         "- CSV: `memberships.csv`(그룹 소속·가중치), `ties.csv`(경계 동률), `summary.csv`(그룹별 대표 중앙값·가중 사분위·최소·최대), `overlaps.csv`(겹침), `seed_check.csv`(시드 확인), `values_<등수>.csv`(회차별 값).",
         "",
     ]
@@ -362,7 +380,7 @@ def render(result: dict[str, Any]) -> dict[str, Any]:
         "figures": figures,
         "embedded_images": text.count("data:image/png;base64,"),
         "seeds": "0~99 (1등 확인용)",
-        "pending_columns": sorted(analysis.PENDING_COLUMNS),
+        "excluded_columns": EXCLUDED,
     }
     (OUTPUT / "manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"

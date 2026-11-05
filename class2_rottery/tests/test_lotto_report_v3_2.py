@@ -3,7 +3,7 @@
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 import lotto_analysis_v3_1 as analysis  # noqa: E402
 import lotto_report_v3_2 as report  # noqa: E402
 

@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 import lotto_analysis_v3_1 as analysis  # noqa: E402
 
 BASE = Path(__file__).resolve().parents[1]
@@ -118,7 +118,7 @@ def test_overlap_table_counts_boundary_ties_as_members():
 
 @pytest.fixture(scope="module")
 def result():
-    return analysis.analyze(BASE / "lotto_preprocessed_v3_1.csv")
+    return analysis.analyze(BASE / "data" / "lotto_preprocessed_v3_1.csv")
 
 
 def test_real_data_groups_have_exact_weighted_size(result):

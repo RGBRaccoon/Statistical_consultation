@@ -4,13 +4,11 @@ API의 총판매금액(wholEpsdSumNtslAmt)은 실제 판매액이고 한 게임 
 총판매금액 ÷ 게임가격은 추정이 아니라 실제 판매게임수다. 나누어떨어지지 않으면 중단한다.
 """
 
-from pathlib import Path
-
 import pandas as pd
+from paths import DATA
 
-BASE = Path(__file__).resolve().parent
-SOURCE = BASE / "lotto_preprocessed_v2.csv"
-TARGET = BASE / "lotto_preprocessed_v3_1.csv"
+SOURCE = DATA / "lotto_preprocessed_v2.csv"
+TARGET = DATA / "lotto_preprocessed_v3_1.csv"
 
 
 def build(source: pd.DataFrame) -> pd.DataFrame:

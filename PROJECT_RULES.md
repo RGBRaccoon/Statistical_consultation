@@ -31,7 +31,7 @@ pyright
 
 ### 로또 보고서 공통 지침
 
-버전별 지침은 각 버전 문서에 둔다(V2 시리즈: `class2_rottery/rules_v2.md`, V3.1: `class2_rottery/plan_v3_1.md`).
+버전별 지침은 각 버전 문서에 둔다(V2 시리즈: `class2_rottery/docs/plans/rules_v2.md`, V3.1: `class2_rottery/docs/plans/plan_v3_1.md`).
 
 - 보고서 본문에 표를 사용하지 않는다. 행·열이 많은 표 대신 그림과 짧은 해석을 제공하고 상세 수치는 별도 CSV로 보존한다.
 - 표본이 부족하면 실제 관측점과 수를 표시하고 분포를 꾸미지 않는다.

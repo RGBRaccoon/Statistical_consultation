@@ -24,6 +24,7 @@ import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 from matplotlib.ticker import FuncFormatter  # noqa: E402
 from PIL import Image, ImageDraw  # noqa: E402
+from paths import DATA, REPORTS  # noqa: E402
 
 RANKS = ("1등", "2등", "3등")
 COLORS = {"1등": "#1768ac", "2등": "#c46100", "3등": "#208251"}
@@ -760,7 +761,7 @@ def make_report(result: dict[str, Any], paths: dict, source_hash: str) -> str:
         "이번 실험은 승인된 질문의 현황·관계·분포를 기록한다. 이론 확률 검정이나 극단값 회차의 원인 규명은 "
         "별도 실험이며 여기서 확정하지 않는다. 단위가 다른 변수의 관계를 비율로 바꾸거나 새로운 주제를 "
         "추가하지 않았다.",
-        "```powershell\npython -X utf8 class2_rottery/lotto_analysis_v2_1_basic.py\npython -X utf8 class2_rottery/verify_lotto_v2_1_basic.py\npython -m pytest -q -p no:cacheprovider\n```",
+        "```powershell\npython -X utf8 class2_rottery/src/lotto_analysis_v2_1_basic.py\npython -X utf8 class2_rottery/src/verify_lotto_v2_1_basic.py\npython -m pytest -q -p no:cacheprovider\n```",
         f"입력: `lotto_preprocessed_v2.csv`, SHA-256 `{source_hash}`. "
         "정정 산출물은 `analysis_results_v2_1_basic`에 저장한다. 기존 12개 편차 초안 결과와 혼합하지 않는다. "
         "표·그림의 수치는 CSV를 코드로 계산한 산출물이다. 해석문과 그래프 선택 이유는 LLM 작성이며 "
@@ -867,7 +868,7 @@ def run(source: str | Path, output: str | Path) -> dict[str, Any]:
         "version": "2.1 corrected basic",
         "status": "passed",
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
-        "command": "python -X utf8 class2_rottery/lotto_analysis_v2_1_basic.py",
+        "command": "python -X utf8 class2_rottery/src/lotto_analysis_v2_1_basic.py",
         "source": str(source),
         "source_sha256": initial_hash,
         "source_rows": len(result["data"]),
@@ -886,18 +887,17 @@ def run(source: str | Path, output: str | Path) -> dict[str, Any]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    base = Path(__file__).resolve().parent
     parser.add_argument(
-        "--source", type=Path, default=base / "lotto_preprocessed_v2.csv"
+        "--source", type=Path, default=DATA / "lotto_preprocessed_v2.csv"
     )
     parser.add_argument(
-        "--output", type=Path, default=base / "analysis_results_v2_1_basic"
+        "--output", type=Path, default=REPORTS / "v2_1" / "analysis_results_v2_1_basic"
     )
     args = parser.parse_args()
     result = run(args.source, args.output)
     for suffix in ("md", "html"):
         name = f"lotto_rank_report_v2_1.{suffix}"
-        (base / name).write_bytes((args.output / name).read_bytes())
+        (REPORTS / "v2_1" / name).write_bytes((args.output / name).read_bytes())
     print(
         json.dumps(
             {
@@ -905,7 +905,7 @@ def main() -> int:
                 "topics": 9,
                 "rank_figures": 27,
                 "violin_figures": 9,
-                "report": str(base / "lotto_rank_report_v2_1.md"),
+                "report": str(REPORTS / "v2_1" / "lotto_rank_report_v2_1.md"),
                 "results": str(args.output),
             },
             ensure_ascii=False,

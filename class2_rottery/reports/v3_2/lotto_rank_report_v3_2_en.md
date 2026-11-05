@@ -191,7 +191,7 @@ Of the 18 columns computed in V3.1, the 6 excluded during review are removed, le
 
 ## Appendix
 
-- Columns excluded during the V3.1 review (their figures are in `lotto_rank_report_v3_1.md`):
+- Columns excluded during the V3.1 review (their figures are in `../v3_1/lotto_rank_report_v3_1.md`):
   - Prize per winning game (1게임당 당첨금): total prize ÷ winning games, so the result is obvious.
   - Total sales amount (총판매금액): the amount mixes in the 2,000 KRW price period; games sold replaces it.
   - 1,000-KRW-normalized prize per game (1000원기준_1게임당당첨금): excluded by decision.

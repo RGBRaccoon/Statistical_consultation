@@ -997,7 +997,7 @@ def report_text(
         "확정 이상 회차로 선언할 수 없다. 사례의 자동·수동 비고는 당첨된 게임의 방식만 알리며 "
         "전체 구매자 방식 비율을 알려주지 않는다. 클러스터링은 수행하지 않았다.",
         "## 재현과 근거",
-        "```powershell\npython -X utf8 class2_rottery/lotto_analysis_v2_1.py\npython -m pytest -q -p no:cacheprovider\n```",
+        "```powershell\npython -X utf8 class2_rottery/src/lotto_analysis_v2_1.py\npython -m pytest -q -p no:cacheprovider\n```",
         "분석별 관측값 CSV와 결과표, 모수, 예측, 검증 JSON 및 파일 해시는 `analysis_results_v2_1`에 저장한다. "
         "문장의 해석은 LLM 직접 작성이며 외부 사실의 근거로 간주하지 않는다. 표·그림의 수치는 "
         "사용자 CSV를 코드로 계산한 산출물이며 계산식·테스트·입력 해시로 추적할 수 있다.",
@@ -1161,7 +1161,7 @@ def run(source: str | Path, output: str | Path) -> dict[str, Any]:
     manifest = {
         "version": "2.1",
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
-        "command": "python -X utf8 class2_rottery/lotto_analysis_v2_1.py",
+        "command": "python -X utf8 class2_rottery/src/lotto_analysis_v2_1.py",
         "input_path": str(source),
         "input_sha256": initial_hash,
         "ranks": list(RANKS),

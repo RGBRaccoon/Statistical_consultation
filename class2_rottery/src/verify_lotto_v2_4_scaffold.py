@@ -10,6 +10,7 @@ from io import BytesIO
 from pathlib import Path
 
 from PIL import Image
+from paths import DATA, REPORTS
 
 BASE = Path(__file__).resolve().parent
 CODES = ("01", "02", "03", "08", "09A", "09B", "09C", "09D", "10")
@@ -37,7 +38,7 @@ def main() -> None:
         help="실제 분석 승인 전 단계에서만 분석 파일 부재까지 검증",
     )
     args = parser.parse_args()
-    output = BASE / "report_scaffold_v2_4"
+    output = REPORTS / "v2_4" / "report_scaffold_v2_4"
     manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
     assert manifest["stage"] == "review_scaffold"
     assert manifest["statistical_analysis_executed"] is False
@@ -45,7 +46,7 @@ def main() -> None:
     assert len(manifest["plot_slots"]) == 99
     assert len(list((output / "placeholders").glob("*.png"))) == 35
     if args.before_analysis:
-        assert not (BASE / "analysis_results_v2_4").exists()
+        assert not (REPORTS / "v2_4" / "analysis_results_v2_4").exists()
         assert not (BASE / "lotto_analysis_v2_4.py").exists()
     source = (BASE / "build_lotto_v2_4_scaffold.py").read_text(encoding="utf-8")
     imports = []
@@ -69,7 +70,7 @@ def main() -> None:
         name = f"lotto_rank_report_v2_4.{suffix}"
         document = (output / name).read_text(encoding="utf-8")
         assert document == (
-            BASE / f"lotto_rank_report_v2_4_scaffold.{suffix}"
+            REPORTS / "v2_4" / f"lotto_rank_report_v2_4_scaffold.{suffix}"
         ).read_text(encoding="utf-8")
         assert "검토 단계" in document and "계산 대기" in document
         assert "원본 SHA-256" in document
@@ -113,15 +114,15 @@ def main() -> None:
         assert digest(path) == artifact["sha256"]
         artifact_count += 1
     prior = json.loads(
-        (BASE / "analysis_results_v2_3" / "independent_audit.json").read_text(
-            encoding="utf-8"
-        )
+        (
+            REPORTS / "v2_3" / "analysis_results_v2_3" / "independent_audit.json"
+        ).read_text(encoding="utf-8")
     )
-    assert digest(BASE / "lotto_rank_1_1245.csv") == prior["raw_source_sha256"]
-    assert digest(BASE / "lotto_preprocessed_v2.csv") == prior["v2_source_sha256"]
+    assert digest(DATA / "lotto_rank_1_1245.csv") == prior["raw_source_sha256"]
+    assert digest(DATA / "lotto_preprocessed_v2.csv") == prior["v2_source_sha256"]
     audit = {
         "status": "passed",
-        "command": "python -X utf8 class2_rottery/verify_lotto_v2_4_scaffold.py",
+        "command": "python -X utf8 class2_rottery/src/verify_lotto_v2_4_scaffold.py",
         "stage": "review_scaffold",
         "statistical_analysis_executed": False,
         "section_count": 9,
@@ -131,7 +132,7 @@ def main() -> None:
         "tables_in_report": 0,
         "source_and_previous_comparison_before_overlap": True,
         "analysis_output_directory_absent": not (
-            BASE / "analysis_results_v2_4"
+            REPORTS / "v2_4" / "analysis_results_v2_4"
         ).exists(),
         "analysis_module_absent": not (BASE / "lotto_analysis_v2_4.py").exists(),
         "analysis_absence_required": args.before_analysis,

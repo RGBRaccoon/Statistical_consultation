@@ -12,8 +12,8 @@ from statistics import median
 import numpy as np
 import pandas as pd
 from PIL import Image
+from paths import DATA, REPORTS
 
-BASE = Path(__file__).resolve().parent
 CODES = ("01", "02", "03", "08", "09A", "09B", "09C", "09D", "10")
 RANKS = ("1등", "2등", "3등")
 TARGET = {
@@ -58,8 +58,8 @@ def close(left: float, right: float) -> None:
 
 
 def main() -> None:
-    output = BASE / "analysis_results_v2_3"
-    raw = pd.read_csv(BASE / "lotto_rank_1_1245.csv", encoding="utf-8-sig")
+    output = REPORTS / "v2_3" / "analysis_results_v2_3"
+    raw = pd.read_csv(DATA / "lotto_rank_1_1245.csv", encoding="utf-8-sig")
     raw = (
         raw[raw["순위"].isin(RANKS)]
         .sort_values(["순위", "회차"])
@@ -258,13 +258,13 @@ def main() -> None:
         path = output / artifact["path"]
         assert path.stat().st_size == artifact["size_bytes"]
         assert digest(path) == artifact["sha256"]
-    assert digest(BASE / "lotto_preprocessed_v2.csv") == manifest["source_sha256"]
-    assert digest(BASE / "lotto_rank_1_1245.csv") == manifest["raw_source_sha256"]
+    assert digest(DATA / "lotto_preprocessed_v2.csv") == manifest["source_sha256"]
+    assert digest(DATA / "lotto_rank_1_1245.csv") == manifest["raw_source_sha256"]
     chart_bytes = {path.read_bytes() for path in (output / "charts").glob("*.png")}
     for extension in ("md", "html"):
         name = f"lotto_rank_report_v2_3.{extension}"
         document = (output / name).read_text(encoding="utf-8")
-        assert document == (BASE / name).read_text(encoding="utf-8")
+        assert document == (REPORTS / "v2_3" / name).read_text(encoding="utf-8")
         payloads = re.findall(r"data:image/png;base64,([A-Za-z0-9+/=]+)", document)
         assert len(payloads) == 46
         for payload in payloads:
@@ -305,9 +305,9 @@ def main() -> None:
             assert displayed == wanted, (code, rank)
     audit = {
         "status": "passed",
-        "command": "python -X utf8 class2_rottery/verify_lotto_v2_3.py",
-        "raw_source_sha256": digest(BASE / "lotto_rank_1_1245.csv"),
-        "v2_source_sha256": digest(BASE / "lotto_preprocessed_v2.csv"),
+        "command": "python -X utf8 class2_rottery/src/verify_lotto_v2_3.py",
+        "raw_source_sha256": digest(DATA / "lotto_rank_1_1245.csv"),
+        "v2_source_sha256": digest(DATA / "lotto_preprocessed_v2.csv"),
         "original_rows_preserved": len(raw),
         "section_rank_rules": len(expected_groups),
         "main_y_and_labels_checked": checked_y,

@@ -16,6 +16,7 @@ from collections.abc import Callable
 from pathlib import Path
 
 import requests
+from paths import DATA
 
 API_URL = "https://www.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do"
 HEADERS = {
@@ -163,7 +164,7 @@ def main() -> None:
     parser.add_argument("--delay", type=float, default=0.5, help="요청 간 대기(초)")
     args = parser.parse_args()
 
-    out = args.out or Path(__file__).parent / f"lotto_rank_{args.start}_{args.end}.csv"
+    out = args.out or DATA / f"lotto_rank_{args.start}_{args.end}.csv"
     rows = crawl(args.start, args.end, delay=args.delay)
     save_csv(rows, out)
     print(f"저장 완료: {out} ({len(rows)}행)")

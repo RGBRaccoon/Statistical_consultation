@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 import lotto_analysis_v2_4 as analysis  # noqa: E402
 
 BASE = Path(__file__).resolve().parents[1]
@@ -15,7 +15,7 @@ BASE = Path(__file__).resolve().parents[1]
 
 @pytest.fixture(scope="module")
 def result():
-    return analysis.analyze(BASE / "lotto_preprocessed_v2.csv")
+    return analysis.analyze(BASE / "data" / "lotto_preprocessed_v2.csv")
 
 
 def select(frame, **criteria):
@@ -52,7 +52,7 @@ def test_section_rule_depends_only_on_own_y():
 
 
 def test_all_money_uses_common_game_price_before_selection(result):
-    raw = pd.read_csv(BASE / "lotto_rank_1_1245.csv", encoding="utf-8-sig")
+    raw = pd.read_csv(BASE / "data" / "lotto_rank_1_1245.csv", encoding="utf-8-sig")
     raw = raw[raw["순위"].isin(["1등", "2등", "3등"])].set_index(["순위", "회차"])
     features = result["features"].set_index(["순위", "회차"])
     for draw in (2, 87, 88, 400, 401, 1245):
@@ -69,7 +69,7 @@ def test_all_money_uses_common_game_price_before_selection(result):
 
 
 def test_transition_delta_normalizes_each_draw_before_subtracting(result):
-    raw = pd.read_csv(BASE / "lotto_rank_1_1245.csv", encoding="utf-8-sig")
+    raw = pd.read_csv(BASE / "data" / "lotto_rank_1_1245.csv", encoding="utf-8-sig")
     raw = raw.set_index(["순위", "회차"])
     observed = select(result["labeled"], 주제="09A", 순위="1등", 회차=88).iloc[0]
     expected = (

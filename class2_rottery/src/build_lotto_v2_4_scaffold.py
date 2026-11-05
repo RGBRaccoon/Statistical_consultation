@@ -11,8 +11,8 @@ from pathlib import Path
 
 import markdown
 from PIL import Image, ImageDraw, ImageFont
+from paths import REPORTS
 
-BASE = Path(__file__).resolve().parent
 RANKS = ("1등", "2등", "3등")
 NORMALIZATION = "금액 × 1,000 / 해당 회차의 1게임 가격"
 TOPICS = (
@@ -238,9 +238,9 @@ def build(output: Path) -> dict:
     assets = output / "placeholders"
     assets.mkdir(exist_ok=True)
     provenance = json.loads(
-        (BASE / "analysis_results_v2_3" / "independent_audit.json").read_text(
-            encoding="utf-8"
-        )
+        (
+            REPORTS / "v2_3" / "analysis_results_v2_3" / "independent_audit.json"
+        ).read_text(encoding="utf-8")
     )
     figures = {}
     for feature, name, unit, _ in FEATURES:
@@ -400,7 +400,7 @@ def build(output: Path) -> dict:
         "stage": "review_scaffold",
         "statistical_analysis_executed": False,
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
-        "command": "python -X utf8 class2_rottery/build_lotto_v2_4_scaffold.py",
+        "command": "python -X utf8 class2_rottery/src/build_lotto_v2_4_scaffold.py",
         "sections": [item[0] for item in TOPICS],
         "comparison_features": [item[0] for item in FEATURES],
         "source_audit": "../analysis_results_v2_3/independent_audit.json",
@@ -436,12 +436,14 @@ def build(output: Path) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=BASE / "report_scaffold_v2_4")
+    parser.add_argument(
+        "--output", type=Path, default=REPORTS / "v2_4" / "report_scaffold_v2_4"
+    )
     args = parser.parse_args()
     manifest = build(args.output)
     for extension in ("md", "html"):
         name = f"lotto_rank_report_v2_4.{extension}"
-        (BASE / f"lotto_rank_report_v2_4_scaffold.{extension}").write_bytes(
+        (REPORTS / "v2_4" / f"lotto_rank_report_v2_4_scaffold.{extension}").write_bytes(
             (args.output / name).read_bytes()
         )
     print(
@@ -452,7 +454,9 @@ def main() -> None:
                 "sections": len(TOPICS),
                 "plot_slots": len(manifest["plot_slots"]),
                 "placeholder_images": manifest["distinct_placeholder_images"],
-                "report": str(BASE / "lotto_rank_report_v2_4_scaffold.html"),
+                "report": str(
+                    REPORTS / "v2_4" / "lotto_rank_report_v2_4_scaffold.html"
+                ),
             },
             ensure_ascii=False,
         )

@@ -12,8 +12,7 @@ import numpy as np
 import pandas as pd
 
 from build_lotto_v2_4_scaffold import FEATURES, RANKS, TARGET_FEATURE, TOPICS
-
-BASE = Path(__file__).resolve().parent
+from paths import DATA, REPORTS
 
 
 def digest(path: Path) -> str:
@@ -273,10 +272,10 @@ def run(source: str | Path, output: str | Path) -> dict:
         "stage": "actual_experiment",
         "output_format": "markdown_only",
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
-        "command": "python -X utf8 class2_rottery/lotto_analysis_v2_4.py",
+        "command": "python -X utf8 class2_rottery/src/lotto_analysis_v2_4.py",
         "source": str(source),
         "source_sha256": before,
-        "raw_source_sha256": digest(BASE / "lotto_rank_1_1245.csv"),
+        "raw_source_sha256": digest(DATA / "lotto_rank_1_1245.csv"),
         "outlier_rows": len(result["outliers"]),
         "unique_rounds": len(result["rounds"]),
         "images": rendered["figure_count"],
@@ -304,14 +303,16 @@ def run(source: str | Path, output: str | Path) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--source", type=Path, default=BASE / "lotto_preprocessed_v2.csv"
+        "--source", type=Path, default=DATA / "lotto_preprocessed_v2.csv"
     )
-    parser.add_argument("--output", type=Path, default=BASE / "analysis_results_v2_4")
+    parser.add_argument(
+        "--output", type=Path, default=REPORTS / "v2_4" / "analysis_results_v2_4"
+    )
     args = parser.parse_args()
     generated = run(args.source, args.output)
     for extension in ("md",):
         name = f"lotto_rank_report_v2_4.{extension}"
-        (BASE / name).write_bytes((args.output / name).read_bytes())
+        (REPORTS / "v2_4" / name).write_bytes((args.output / name).read_bytes())
     print(
         json.dumps(
             {
@@ -319,7 +320,7 @@ def main() -> None:
                 "images": 99,
                 "outlier_rows": len(generated["result"]["outliers"]),
                 "unique_rounds": len(generated["result"]["rounds"]),
-                "report": str(BASE / "lotto_rank_report_v2_4.md"),
+                "report": str(REPORTS / "v2_4" / "lotto_rank_report_v2_4.md"),
             },
             ensure_ascii=False,
         )

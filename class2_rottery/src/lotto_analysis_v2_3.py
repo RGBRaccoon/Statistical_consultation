@@ -18,6 +18,7 @@ import pandas as pd
 from matplotlib.ticker import FuncFormatter
 
 import lotto_analysis_v2_1_basic as basic
+from paths import DATA, REPORTS
 
 RANKS = basic.RANKS
 TOPICS = basic.TOPICS
@@ -663,12 +664,10 @@ def run(source: str | Path, output: str | Path) -> dict:
     manifest = {
         "version": "2.3",
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
-        "command": "python -X utf8 class2_rottery/lotto_analysis_v2_3.py",
+        "command": "python -X utf8 class2_rottery/src/lotto_analysis_v2_3.py",
         "source": str(source),
         "source_sha256": source_hash,
-        "raw_source_sha256": digest(
-            Path(__file__).resolve().parent / "lotto_rank_1_1245.csv"
-        ),
+        "raw_source_sha256": digest(DATA / "lotto_rank_1_1245.csv"),
         "section_rank_rules": 27,
         "images": 46,
         "outlier_rows": len(result["outliers"]),
@@ -685,17 +684,18 @@ def run(source: str | Path, output: str | Path) -> dict:
 
 
 def main() -> None:
-    base = Path(__file__).resolve().parent
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--source", type=Path, default=base / "lotto_preprocessed_v2.csv"
+        "--source", type=Path, default=DATA / "lotto_preprocessed_v2.csv"
     )
-    parser.add_argument("--output", type=Path, default=base / "analysis_results_v2_3")
+    parser.add_argument(
+        "--output", type=Path, default=REPORTS / "v2_3" / "analysis_results_v2_3"
+    )
     args = parser.parse_args()
     result = run(args.source, args.output)
     for extension in ("md", "html"):
         name = f"lotto_rank_report_v2_3.{extension}"
-        (base / name).write_bytes((args.output / name).read_bytes())
+        (REPORTS / "v2_3" / name).write_bytes((args.output / name).read_bytes())
     print(
         json.dumps(
             {
@@ -703,7 +703,7 @@ def main() -> None:
                 "outlier_rows": len(result["result"]["outliers"]),
                 "unique_rounds": len(result["result"]["rounds"]),
                 "images": 46,
-                "report": str(base / "lotto_rank_report_v2_3.md"),
+                "report": str(REPORTS / "v2_3" / "lotto_rank_report_v2_3.md"),
             },
             ensure_ascii=False,
         )

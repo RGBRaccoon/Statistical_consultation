@@ -5,12 +5,11 @@ import hashlib
 from html import escape
 from html.parser import HTMLParser
 import json
-from pathlib import Path
 import re
 
 import markdown
+from paths import DOCS, REPORTS
 
-BASE = Path(__file__).resolve().parent
 STEMS = (
     "lotto_rank_report_v2",
     "lotto_rank_report_v2_1",
@@ -64,7 +63,7 @@ def sha(path):
 def main():
     results = []
     for stem in STEMS:
-        source = BASE / f"{stem}.md"
+        source = REPORTS / stem.removeprefix("lotto_rank_report_") / f"{stem}.md"
         before = sha(source)
         document = source.read_text(encoding="utf-8-sig")
         title = document.splitlines()[0].lstrip("# ")
@@ -75,7 +74,7 @@ def main():
             f"<title>{escape(title)}</title><style>{STYLE}</style></head>"
             f"<body><main>{body}</main></body></html>\n"
         )
-        target = BASE / f"{stem}.html"
+        target = source.with_suffix(".html")
         target.write_text(html, encoding="utf-8")
         saved = target.read_text(encoding="utf-8")
         parser = ResourceCheck()
@@ -101,13 +100,13 @@ def main():
             }
         )
     log = {
-        "command": "python -X utf8 class2_rottery/export_report_html.py",
+        "command": "python -X utf8 class2_rottery/src/export_report_html.py",
         "status": "verified",
         "validation": "Saved HTML parsed; PNG payloads compared to MD and decoded; no external rendering resources.",
         "limitation": "Browser rendering not verified in this execution.",
         "reports": results,
     }
-    (BASE / "html_export_log.json").write_text(
+    (DOCS / "logs" / "html_export_log.json").write_text(
         json.dumps(log, ensure_ascii=False, indent=2), encoding="utf-8"
     )
     print(json.dumps(log, ensure_ascii=False, indent=2))

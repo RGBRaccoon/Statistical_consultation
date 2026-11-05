@@ -15,8 +15,8 @@ from statistics import median
 import numpy as np
 import pandas as pd
 from PIL import Image
+from paths import DATA, REPORTS
 
-BASE = Path(__file__).resolve().parent
 CODES = ("01", "02", "03", "08", "09A", "09B", "09C", "09D", "10")
 RANKS = ("1등", "2등", "3등")
 FEATURES = tuple(
@@ -131,7 +131,7 @@ def expected_from_raw(source: Path):
 
 
 def verify(output: Path, root_reports: bool = True) -> dict:
-    raw, features, groups = expected_from_raw(BASE / "lotto_rank_1_1245.csv")
+    raw, features, groups = expected_from_raw(DATA / "lotto_rank_1_1245.csv")
     tables = {
         name: pd.read_csv(
             output / f"{name}.csv",
@@ -238,8 +238,8 @@ def verify(output: Path, root_reports: bool = True) -> dict:
         path = output / artifact["path"]
         assert path.stat().st_size == artifact["size_bytes"]
         assert digest(path) == artifact["sha256"]
-    assert digest(BASE / "lotto_preprocessed_v2.csv") == manifest["source_sha256"]
-    assert digest(BASE / "lotto_rank_1_1245.csv") == manifest["raw_source_sha256"]
+    assert digest(DATA / "lotto_preprocessed_v2.csv") == manifest["source_sha256"]
+    assert digest(DATA / "lotto_rank_1_1245.csv") == manifest["raw_source_sha256"]
     image_paths = list((output / "figures").glob("*.png"))
     assert len(image_paths) == 99
     images = {p.read_bytes() for p in image_paths}
@@ -248,7 +248,7 @@ def verify(output: Path, root_reports: bool = True) -> dict:
         name = f"lotto_rank_report_v2_4.{extension}"
         document = (output / name).read_text(encoding="utf-8")
         if root_reports:
-            assert document == (BASE / name).read_text(encoding="utf-8")
+            assert document == (REPORTS / "v2_4" / name).read_text(encoding="utf-8")
         payloads = re.findall(r"data:image/png;base64,([A-Za-z0-9+/=]+)", document)
         for payload in payloads:
             binary = base64.b64decode(payload, validate=True)
@@ -301,9 +301,9 @@ def verify(output: Path, root_reports: bool = True) -> dict:
         assert fragment.count("data:image/png;base64,") == 11
     audit = {
         "status": "passed",
-        "command": "python -X utf8 class2_rottery/verify_lotto_v2_4.py",
-        "raw_source_sha256": digest(BASE / "lotto_rank_1_1245.csv"),
-        "v2_source_sha256": digest(BASE / "lotto_preprocessed_v2.csv"),
+        "command": "python -X utf8 class2_rottery/src/verify_lotto_v2_4.py",
+        "raw_source_sha256": digest(DATA / "lotto_rank_1_1245.csv"),
+        "v2_source_sha256": digest(DATA / "lotto_preprocessed_v2.csv"),
         "original_rows": len(raw),
         "independent_section_rank_rules": len(groups),
         "main_xy_and_labels_checked": checked_y,
@@ -328,7 +328,9 @@ def verify(output: Path, root_reports: bool = True) -> dict:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=BASE / "analysis_results_v2_4")
+    parser.add_argument(
+        "--output", type=Path, default=REPORTS / "v2_4" / "analysis_results_v2_4"
+    )
     args = parser.parse_args()
     print(json.dumps(verify(args.output), ensure_ascii=False, indent=2))
 

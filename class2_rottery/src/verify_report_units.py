@@ -11,8 +11,7 @@ import re
 from PIL import Image
 
 from report_units import PROTECTED, convert_text, display_number
-
-ROOT = Path(__file__).resolve().parent
+from paths import DOCS, ROOT
 
 
 def sha(path):
@@ -86,7 +85,7 @@ def main():
             path.write_text(
                 json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
             )
-    log_path = ROOT / "report_units_log.json"
+    log_path = DOCS / "logs" / "report_units_log.json"
     log = json.loads(log_path.read_text(encoding="utf-8"))
     before = {
         str(Path(key)).replace("\\", "/"): value
@@ -98,7 +97,7 @@ def main():
     }
     assert before == after
     log["final_verification"] = {
-        "command": "python -X utf8 class2_rottery/verify_report_units.py",
+        "command": "python -X utf8 class2_rottery/src/verify_report_units.py",
         "status": "passed",
         "format_cases": len(examples),
         "csv_files_unchanged": len(after),

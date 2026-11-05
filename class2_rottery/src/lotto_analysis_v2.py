@@ -5,7 +5,7 @@
 각 등수의 회차별 관측값과 이론적 기준값을 계산한다.
 
 실행 예:
-    python class2_rottery/lotto_analysis_v2.py
+    python class2_rottery/src/lotto_analysis_v2.py
 """
 
 from __future__ import annotations
@@ -26,6 +26,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.ticker import FuncFormatter, PercentFormatter
+from paths import DATA, REPORTS
 
 
 TOTAL_COMBINATIONS = math.comb(45, 6)
@@ -793,7 +794,7 @@ def write_report(
             "둘지 먼저 정해야 한다. 후보 지표는 관측/기대 비율, 등위별 지급률, 1,000원 기준 당첨금이다. "
             "기준 분포·기간 효과·여러 회차를 동시에 검사할 때의 보정 방법은 아직 선택하지 않았다.\n",
             "## 재현 경로\n",
-            "```powershell\npython -X utf8 class2_rottery/lotto_analysis_v2.py\n```\n",
+            "```powershell\npython -X utf8 class2_rottery/src/lotto_analysis_v2.py\n```\n",
             "프로그램 실행 시 전처리 CSV, 검증 JSON, 메타데이터 JSON, Step 1 표, 그림 5개와 이 보고서를 다시 생성한다.\n",
         ]
     )
@@ -888,7 +889,7 @@ def run_v2(
     ]
     metadata = {
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
-        "execution_command": "python -X utf8 class2_rottery/lotto_analysis_v2.py",
+        "execution_command": "python -X utf8 class2_rottery/src/lotto_analysis_v2.py",
         "source_path": str(source_file),
         "input_sha256": sha256_file(source_file),
         "processed_path": str(processed_file),
@@ -919,18 +920,15 @@ def run_v2(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    base_dir = Path(__file__).resolve().parent
+    parser.add_argument("--source", type=Path, default=DATA / "lotto_rank_1_1245.csv")
     parser.add_argument(
-        "--source", type=Path, default=base_dir / "lotto_rank_1_1245.csv"
+        "--processed", type=Path, default=DATA / "lotto_preprocessed_v2.csv"
     )
     parser.add_argument(
-        "--processed", type=Path, default=base_dir / "lotto_preprocessed_v2.csv"
+        "--output-dir", type=Path, default=REPORTS / "v2" / "analysis_results_v2"
     )
     parser.add_argument(
-        "--output-dir", type=Path, default=base_dir / "analysis_results_v2"
-    )
-    parser.add_argument(
-        "--report", type=Path, default=base_dir / "lotto_rank_report_v2.md"
+        "--report", type=Path, default=REPORTS / "v2" / "lotto_rank_report_v2.md"
     )
     args = parser.parse_args()
 

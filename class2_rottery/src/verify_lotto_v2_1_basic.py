@@ -10,6 +10,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from PIL import Image
+from paths import DATA, REPORTS
 
 
 def digest(path: Path) -> str:
@@ -17,9 +18,8 @@ def digest(path: Path) -> str:
 
 
 def main() -> None:
-    base = Path(__file__).resolve().parent
-    output = base / "analysis_results_v2_1_basic"
-    raw = pd.read_csv(base / "lotto_rank_1_1245.csv", encoding="utf-8-sig")
+    output = REPORTS / "v2_1" / "analysis_results_v2_1_basic"
+    raw = pd.read_csv(DATA / "lotto_rank_1_1245.csv", encoding="utf-8-sig")
     raw = (
         raw.loc[raw["순위"].isin(["1등", "2등", "3등"])]
         .sort_values(["순위", "회차"])
@@ -92,8 +92,10 @@ def main() -> None:
         rtol=1e-10,
         atol=1e-10,
     )
-    md = (base / "lotto_rank_report_v2_1.md").read_text(encoding="utf-8")
-    html = (base / "lotto_rank_report_v2_1.html").read_text(encoding="utf-8")
+    md = (REPORTS / "v2_1" / "lotto_rank_report_v2_1.md").read_text(encoding="utf-8")
+    html = (REPORTS / "v2_1" / "lotto_rank_report_v2_1.html").read_text(
+        encoding="utf-8"
+    )
     assert md == (output / "lotto_rank_report_v2_1.md").read_text(encoding="utf-8")
     assert html == (output / "lotto_rank_report_v2_1.html").read_text(encoding="utf-8")
     for document in (md, html):
@@ -131,9 +133,9 @@ def main() -> None:
         assert digest(path) == item["sha256"]
     result = {
         "status": "passed",
-        "command": "python -X utf8 class2_rottery/verify_lotto_v2_1_basic.py",
-        "original_source_sha256": digest(base / "lotto_rank_1_1245.csv"),
-        "v2_input_sha256": digest(base / "lotto_preprocessed_v2.csv"),
+        "command": "python -X utf8 class2_rottery/src/verify_lotto_v2_1_basic.py",
+        "original_source_sha256": digest(DATA / "lotto_rank_1_1245.csv"),
+        "v2_input_sha256": digest(DATA / "lotto_preprocessed_v2.csv"),
         "source_rows_preserved": len(raw),
         "approved_topic_ids": codes,
         "independently_verified_xy_and_comparison_rows": checked,

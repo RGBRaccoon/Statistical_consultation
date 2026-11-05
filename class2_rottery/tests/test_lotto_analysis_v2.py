@@ -7,12 +7,12 @@ from pathlib import Path
 
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import lotto_analysis_v2 as v2  # noqa: E402
 
 
-SOURCE_PATH = Path(__file__).resolve().parents[1] / "lotto_rank_1_1245.csv"
+SOURCE_PATH = Path(__file__).resolve().parents[1] / "data" / "lotto_rank_1_1245.csv"
 
 
 def test_game_price_boundary_uses_round_88_change():

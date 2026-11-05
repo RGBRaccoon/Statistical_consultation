@@ -12,11 +12,11 @@ import pytest
 from scipy.stats import skew
 from statsmodels.stats.multitest import multipletests
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 import lotto_analysis_v2_1 as analysis  # noqa: E402
 
 BASE = Path(__file__).resolve().parents[1]
-SOURCE = BASE / "lotto_preprocessed_v2.csv"
+SOURCE = BASE / "data" / "lotto_preprocessed_v2.csv"
 
 
 def test_z_score_preserves_skew_and_does_not_force_normality():

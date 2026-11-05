@@ -7,11 +7,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 import lotto_analysis_v2_3 as analysis  # noqa: E402
 
 BASE = Path(__file__).resolve().parents[1]
-SOURCE = BASE / "lotto_preprocessed_v2.csv"
+SOURCE = BASE / "data" / "lotto_preprocessed_v2.csv"
 
 
 def test_rule_is_upper_only_and_boundaries_are_strict():

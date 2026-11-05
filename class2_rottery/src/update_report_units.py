@@ -1,22 +1,21 @@
 """저장된 결과로 그림 표시만 갱신하고 모든 보고서 MD에 다시 임베딩한다.
 
-실행: python -X utf8 class2_rottery/update_report_units.py
+실행: python -X utf8 class2_rottery/src/update_report_units.py
 분석 엔진을 재실행하지 않으며 CSV 및 HTML은 변경하지 않는다.
 """
 
 import base64
 import hashlib
 import json
-from pathlib import Path
 import re
 import time
 
 import pandas as pd
 
 from report_units import convert_text
+from paths import DATA, DOCS, REPORTS, ROOT
 
-ROOT = Path(__file__).resolve().parent
-LOG = ROOT / "report_units_log.json"
+LOG = DOCS / "logs" / "report_units_log.json"
 IMAGE = re.compile(r"data:image/png;base64,([A-Za-z0-9+/=]+)")
 
 
@@ -36,7 +35,7 @@ def load_results(directory):
 def main():
     log = json.loads(LOG.read_text(encoding="utf-8"))
     log["commands"] = [
-        "python -X utf8 class2_rottery/update_report_units.py",
+        "python -X utf8 class2_rottery/src/update_report_units.py",
         "초기 본문 변환: python -X utf8 -c 에서 report_units.convert_text 실행. 도구 실행 결과 eb04cb 참조.",
     ]
     # 원본 데이터는 저장된 CSV에서 직접 읽고 표시만 변경한다.
@@ -59,23 +58,27 @@ def main():
         regenerated.extend(str(path.relative_to(ROOT)) for path in paths)
         print(f"{name}: {len(paths)} figures rendered", flush=True)
 
-    crowd_path = ROOT / "analysis_results" / "charts" / "04_crowd_patterns.png"
+    crowd_path = (
+        REPORTS / "v1" / "analysis_results" / "charts" / "04_crowd_patterns.png"
+    )
     v1.configure_plots()
     v1._plot_crowd(
-        pd.read_csv(ROOT / "analysis_results" / "04_crowd_pattern_comparison.csv"),
+        pd.read_csv(
+            REPORTS / "v1" / "analysis_results" / "04_crowd_pattern_comparison.csv"
+        ),
         crowd_path,
     )
     record([crowd_path], "V1 단위 문구")
 
     record(
         v2.create_step1_charts(
-            pd.read_csv(ROOT / "lotto_preprocessed_v2.csv"),
-            ROOT / "analysis_results_v2" / "charts",
+            pd.read_csv(DATA / "lotto_preprocessed_v2.csv"),
+            REPORTS / "v2" / "analysis_results_v2" / "charts",
         ),
         "V2",
     )
     for folder in ("analysis_results_v2_1_basic", "analysis_results_v2_3"):
-        output = ROOT / folder
+        output = REPORTS / ("v2_1" if "v2_1" in folder else "v2_3") / folder
         result = load_results(output)
         record(list(basic.draw(result, output / "charts").values()), folder)
         if folder.endswith("v2_3"):
@@ -84,7 +87,7 @@ def main():
                 "V2.3 followups",
             )
 
-    output = ROOT / "analysis_results_v2_4"
+    output = REPORTS / "v2_4" / "analysis_results_v2_4"
     result = load_results(output)
     charts = output / "figures"
     plt.rcParams.update(

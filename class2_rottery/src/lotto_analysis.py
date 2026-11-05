@@ -25,6 +25,7 @@ import pandas as pd
 import statsmodels.api as sm
 from matplotlib.ticker import FuncFormatter
 from scipy.stats import binomtest, chi2, kruskal, mannwhitneyu, spearmanr
+from paths import DATA, REPORTS
 
 TOTAL_COMBINATIONS = math.comb(45, 6)
 RANK_FAVORABLE_COMBINATIONS = {
@@ -1190,7 +1191,7 @@ def write_report(
         "## 10. 재현 방법과 공식 기준",
         "",
         "```bash",
-        "python class2_rottery/lotto_analysis.py",
+        "python class2_rottery/src/lotto_analysis.py",
         "```",
         "",
         "- [동행복권 로또6/45 소개 및 당첨구조](https://www.dhlottery.co.kr/lt645/intro)",
@@ -1643,7 +1644,7 @@ def write_english_report(
         "## 10. Reproduction and Official References",
         "",
         "```bash",
-        "python class2_rottery/lotto_analysis.py",
+        "python class2_rottery/src/lotto_analysis.py",
         "```",
         "",
         "- [Donghaeng Lottery: Lotto 6/45 rules and prize structure](https://www.dhlottery.co.kr/lt645/intro)",
@@ -1830,12 +1831,15 @@ def run_analysis(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="로또 기대수익 분석 보고서 생성")
-    base = Path(__file__).resolve().parent
-    parser.add_argument("--csv", type=Path, default=base / "lotto_rank_1_1245.csv")
-    parser.add_argument("--output", type=Path, default=base / "analysis_results")
-    parser.add_argument("--report", type=Path, default=base / "lotto_rank_report.md")
+    parser.add_argument("--csv", type=Path, default=DATA / "lotto_rank_1_1245.csv")
     parser.add_argument(
-        "--report-en", type=Path, default=base / "lotto_rank_report_en.md"
+        "--output", type=Path, default=REPORTS / "v1" / "analysis_results"
+    )
+    parser.add_argument(
+        "--report", type=Path, default=REPORTS / "v1" / "lotto_rank_report.md"
+    )
+    parser.add_argument(
+        "--report-en", type=Path, default=REPORTS / "v1" / "lotto_rank_report_en.md"
     )
     args = parser.parse_args()
     summary = run_analysis(args.csv, args.output, args.report, args.report_en)
