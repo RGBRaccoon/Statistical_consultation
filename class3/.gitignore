@@ -1,0 +1,7 @@
+__pycache__/
+.test-tmp/
+data/*.state.json
+data/*.errors.jsonl
+data/*.tmp
+*_sample.html
+*_sample.js
