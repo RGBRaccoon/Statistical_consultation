@@ -34,6 +34,21 @@ python class3/yes24_crawler.py --list-only --delay 3
 `--max-pages 1 --out class3/data/list_probe.csv`를 추가하면 별도 파일로 한 페이지만 시험할 수 있다.
 목록도 접근 제한이 발생할 수 있으며, 차단 응답이면 자동 중단한다.
 
+### 여러 PC에서 수집 이어가기
+
+`data/`의 CSV와 엑셀 파일(`.xlsx`, `.xls`), 목록·상세 체크포인트(`.state.json`)는 Git에 함께 보관한다.
+오류 로그(`.errors.jsonl`)와 임시 파일(`.tmp`)은 제외한다. 현재 수집 결과는 엑셀이 아닌 CSV다.
+
+1. 사용 중인 PC에서 수집을 정상 중단하고 프로세스가 종료될 때까지 기다린다.
+2. CSV와 같은 이름의 체크포인트를 함께 `git add`하고 커밋한 뒤 push한다.
+3. 다른 PC에서 작업 트리가 깨끗한지 확인하고 pull한 뒤, 같은 옵션과 출력 경로로 수집을 재개한다.
+
+목록 수집의 인계 대상은 `data/yes24_it_mobile_list.csv`와
+`data/yes24_it_mobile_list.list.state.json`이다. 엑셀로 가공한 파일만으로는 재개할 수 없다.
+한 번에 한 PC에서만 같은 데이터를 수집한다. 수집 중에는 커밋하지 않는다.
+CSV나 체크포인트에 충돌이 생기면 자동으로 줄을 합치지 말고, 동일한 수집 상태의 파일 쌍을 선택한다.
+다른 PC에서 재개해도 사이트 접근 제한이나 수집 도중 목록 변동에 따른 중단은 발생할 수 있다.
+
 ### 소개 전문·목차·상세 카테고리 수집
 
 기본 정보와 함께 `description`(책 소개 전문), `table_of_contents`(목차),
