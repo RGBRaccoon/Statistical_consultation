@@ -156,6 +156,71 @@ def test_parallel_details_only_preserves_discovery_and_csv(tmp_path):
     assert len(client.detail_calls) == 1
 
 
+def test_save_state_retries_permission_error(tmp_path, monkeypatch):
+    path = tmp_path / "state.json"
+    path.write_text('{"old": true}', encoding="utf-8")
+    original = Path.replace
+    attempts = []
+    waits = []
+
+    def replace(source, target):
+        attempts.append(target)
+        if len(attempts) < 3:
+            raise PermissionError("일시적 파일 잠금")
+        return original(source, target)
+
+    monkeypatch.setattr(Path, "replace", replace)
+    monkeypatch.setattr(crawler.time, "sleep", waits.append)
+    crawler.save_state(path, {"new": True})
+    assert json.loads(path.read_text(encoding="utf-8")) == {"new": True}
+    assert len(attempts) == 3
+    assert len(waits) == 2
+
+
+def test_save_state_persistent_lock_preserves_files(tmp_path, monkeypatch):
+    path = tmp_path / "state.json"
+    path.write_text('{"old": true}', encoding="utf-8")
+    attempts = []
+
+    def replace(source, target):
+        attempts.append(target)
+        raise PermissionError("파일 잠금")
+
+    monkeypatch.setattr(Path, "replace", replace)
+    monkeypatch.setattr(crawler.time, "sleep", lambda _: None)
+    with pytest.raises(PermissionError):
+        crawler.save_state(path, {"new": True})
+    assert 1 < len(attempts) <= 6
+    assert json.loads(path.read_text(encoding="utf-8")) == {"old": True}
+    assert json.loads(path.with_suffix(".tmp").read_text(encoding="utf-8")) == {
+        "new": True
+    }
+
+
+def test_list_resumes_after_checkpoint_failure_without_duplicates(
+    tmp_path, monkeypatch
+):
+    out = tmp_path / "list.csv"
+    original = crawler.save_state
+    calls = []
+
+    def save(path, state):
+        calls.append(path)
+        if len(calls) == 2:
+            raise PermissionError("파일 잠금")
+        original(path, state)
+
+    monkeypatch.setattr(crawler, "save_state", save)
+    with pytest.raises(PermissionError):
+        crawler.run_list(FakeClient(), out, page_size=2)
+    monkeypatch.setattr(crawler, "save_state", original)
+    client = FakeClient()
+    assert crawler.run_list(client, out, page_size=2)
+    with out.open(encoding="utf-8-sig", newline="") as handle:
+        assert [r["product_id"] for r in csv.DictReader(handle)] == ["1", "2", "3", "4"]
+    assert not client.detail_calls
+
+
 class FakeClient:
     def __init__(self):
         self.detail_calls = []

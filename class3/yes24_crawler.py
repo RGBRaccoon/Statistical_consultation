@@ -248,7 +248,15 @@ def save_state(path, state):
     temporary.write_text(
         json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    temporary.replace(path)
+    for attempt in range(6):
+        try:
+            temporary.replace(path)
+            return
+        except PermissionError:
+            if attempt == 5:
+                raise
+            logging.warning("체크포인트 교체 접근 거부. 잠시 후 재시도: %s", path)
+            time.sleep(min(0.5 * 2**attempt, 4))
 
 
 def detail_results(client, product_ids, workers):
@@ -715,6 +723,13 @@ def main():
             args.details_only,
         )
         return 0 if complete else 2
+    except PermissionError as exc:
+        logging.error(
+            "파일 접근 거부로 수집 중단: %s. 파일을 사용하는 프로그램과 중복 실행을 "
+            "확인하세요. CSV와 체크포인트를 보존하고 같은 명령으로 재개하세요.",
+            exc,
+        )
+        return 1
     except (requests.RequestException, ValueError, RuntimeError) as exc:
         logging.error("수집 중단: %s", exc)
         return 1
