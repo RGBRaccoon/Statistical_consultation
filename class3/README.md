@@ -115,8 +115,8 @@ python -m ruff check class3
 python -m ruff format --check class3
 ```
 
-`class3/data/yes24_it_mobile_sample.csv`는 실사이트 검증용 **도서 3권**의 샘플이며 전체 자료가 아니다.
-전체 수집기는 기본 출력 경로를 따로 사용한다.
+실사이트 검증에 사용했던 3권 샘플은 상세 수집 자료에 포함되어 별도 파일을 정리했다.
+현재 보관 자료와 수집 상태는 [data/README.md](data/README.md)를 참고한다.
 
 ## 수집 가능 정보 조사
 

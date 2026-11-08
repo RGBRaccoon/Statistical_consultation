@@ -3,5 +3,7 @@ __pycache__/
 # 다른 PC에서 수집을 재개할 수 있도록 CSV와 체크포인트는 함께 추적한다.
 data/*.errors.jsonl
 data/*.tmp
+data/*.log
+data/*.pid
 *_sample.html
 *_sample.js
