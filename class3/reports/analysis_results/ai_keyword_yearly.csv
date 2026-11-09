@@ -1,0 +1,2237 @@
+﻿group,year,keyword,count,group_count,pct_within_group
+technical,1980,AI 에이전트,0,0,
+technical,1980,LLM,0,0,
+technical,1980,RAG,0,0,
+technical,1980,Transformer,0,0,
+technical,1980,강화학습,0,0,
+technical,1980,딥러닝,0,0,
+technical,1980,머신러닝,0,0,
+technical,1980,생성형 AI,0,0,
+technical,1980,신경망,0,0,
+technical,1980,자연어 처리,0,0,
+technical,1980,컴퓨터 비전,0,0,
+technical,1980,프롬프트 엔지니어링,0,0,
+technical,1980,확산 모델,0,0,
+technical,1983,AI 에이전트,0,0,
+technical,1983,LLM,0,0,
+technical,1983,RAG,0,0,
+technical,1983,Transformer,0,0,
+technical,1983,강화학습,0,0,
+technical,1983,딥러닝,0,0,
+technical,1983,머신러닝,0,0,
+technical,1983,생성형 AI,0,0,
+technical,1983,신경망,0,0,
+technical,1983,자연어 처리,0,0,
+technical,1983,컴퓨터 비전,0,0,
+technical,1983,프롬프트 엔지니어링,0,0,
+technical,1983,확산 모델,0,0,
+technical,1985,AI 에이전트,0,0,
+technical,1985,LLM,0,0,
+technical,1985,RAG,0,0,
+technical,1985,Transformer,0,0,
+technical,1985,강화학습,0,0,
+technical,1985,딥러닝,0,0,
+technical,1985,머신러닝,0,0,
+technical,1985,생성형 AI,0,0,
+technical,1985,신경망,0,0,
+technical,1985,자연어 처리,0,0,
+technical,1985,컴퓨터 비전,0,0,
+technical,1985,프롬프트 엔지니어링,0,0,
+technical,1985,확산 모델,0,0,
+technical,1986,AI 에이전트,0,0,
+technical,1986,LLM,0,0,
+technical,1986,RAG,0,0,
+technical,1986,Transformer,0,0,
+technical,1986,강화학습,0,0,
+technical,1986,딥러닝,0,0,
+technical,1986,머신러닝,0,0,
+technical,1986,생성형 AI,0,0,
+technical,1986,신경망,0,0,
+technical,1986,자연어 처리,0,0,
+technical,1986,컴퓨터 비전,0,0,
+technical,1986,프롬프트 엔지니어링,0,0,
+technical,1986,확산 모델,0,0,
+technical,1988,AI 에이전트,0,0,
+technical,1988,LLM,0,0,
+technical,1988,RAG,0,0,
+technical,1988,Transformer,0,0,
+technical,1988,강화학습,0,0,
+technical,1988,딥러닝,0,0,
+technical,1988,머신러닝,0,0,
+technical,1988,생성형 AI,0,0,
+technical,1988,신경망,0,0,
+technical,1988,자연어 처리,0,0,
+technical,1988,컴퓨터 비전,0,0,
+technical,1988,프롬프트 엔지니어링,0,0,
+technical,1988,확산 모델,0,0,
+technical,1989,AI 에이전트,0,0,
+technical,1989,LLM,0,0,
+technical,1989,RAG,0,0,
+technical,1989,Transformer,0,0,
+technical,1989,강화학습,0,0,
+technical,1989,딥러닝,0,0,
+technical,1989,머신러닝,0,0,
+technical,1989,생성형 AI,0,0,
+technical,1989,신경망,0,0,
+technical,1989,자연어 처리,0,0,
+technical,1989,컴퓨터 비전,0,0,
+technical,1989,프롬프트 엔지니어링,0,0,
+technical,1989,확산 모델,0,0,
+technical,1990,AI 에이전트,0,0,
+technical,1990,LLM,0,0,
+technical,1990,RAG,0,0,
+technical,1990,Transformer,0,0,
+technical,1990,강화학습,0,0,
+technical,1990,딥러닝,0,0,
+technical,1990,머신러닝,0,0,
+technical,1990,생성형 AI,0,0,
+technical,1990,신경망,0,0,
+technical,1990,자연어 처리,0,0,
+technical,1990,컴퓨터 비전,0,0,
+technical,1990,프롬프트 엔지니어링,0,0,
+technical,1990,확산 모델,0,0,
+technical,1991,AI 에이전트,0,0,
+technical,1991,LLM,0,0,
+technical,1991,RAG,0,0,
+technical,1991,Transformer,0,0,
+technical,1991,강화학습,0,0,
+technical,1991,딥러닝,0,0,
+technical,1991,머신러닝,0,0,
+technical,1991,생성형 AI,0,0,
+technical,1991,신경망,0,0,
+technical,1991,자연어 처리,0,0,
+technical,1991,컴퓨터 비전,0,0,
+technical,1991,프롬프트 엔지니어링,0,0,
+technical,1991,확산 모델,0,0,
+technical,1992,AI 에이전트,0,0,
+technical,1992,LLM,0,0,
+technical,1992,RAG,0,0,
+technical,1992,Transformer,0,0,
+technical,1992,강화학습,0,0,
+technical,1992,딥러닝,0,0,
+technical,1992,머신러닝,0,0,
+technical,1992,생성형 AI,0,0,
+technical,1992,신경망,0,0,
+technical,1992,자연어 처리,0,0,
+technical,1992,컴퓨터 비전,0,0,
+technical,1992,프롬프트 엔지니어링,0,0,
+technical,1992,확산 모델,0,0,
+technical,1993,AI 에이전트,0,1,0.0
+technical,1993,LLM,0,1,0.0
+technical,1993,RAG,0,1,0.0
+technical,1993,Transformer,0,1,0.0
+technical,1993,강화학습,0,1,0.0
+technical,1993,딥러닝,0,1,0.0
+technical,1993,머신러닝,0,1,0.0
+technical,1993,생성형 AI,0,1,0.0
+technical,1993,신경망,1,1,100.0
+technical,1993,자연어 처리,0,1,0.0
+technical,1993,컴퓨터 비전,0,1,0.0
+technical,1993,프롬프트 엔지니어링,0,1,0.0
+technical,1993,확산 모델,0,1,0.0
+technical,1994,AI 에이전트,0,0,
+technical,1994,LLM,0,0,
+technical,1994,RAG,0,0,
+technical,1994,Transformer,0,0,
+technical,1994,강화학습,0,0,
+technical,1994,딥러닝,0,0,
+technical,1994,머신러닝,0,0,
+technical,1994,생성형 AI,0,0,
+technical,1994,신경망,0,0,
+technical,1994,자연어 처리,0,0,
+technical,1994,컴퓨터 비전,0,0,
+technical,1994,프롬프트 엔지니어링,0,0,
+technical,1994,확산 모델,0,0,
+technical,1995,AI 에이전트,0,0,
+technical,1995,LLM,0,0,
+technical,1995,RAG,0,0,
+technical,1995,Transformer,0,0,
+technical,1995,강화학습,0,0,
+technical,1995,딥러닝,0,0,
+technical,1995,머신러닝,0,0,
+technical,1995,생성형 AI,0,0,
+technical,1995,신경망,0,0,
+technical,1995,자연어 처리,0,0,
+technical,1995,컴퓨터 비전,0,0,
+technical,1995,프롬프트 엔지니어링,0,0,
+technical,1995,확산 모델,0,0,
+technical,1996,AI 에이전트,0,0,
+technical,1996,LLM,0,0,
+technical,1996,RAG,0,0,
+technical,1996,Transformer,0,0,
+technical,1996,강화학습,0,0,
+technical,1996,딥러닝,0,0,
+technical,1996,머신러닝,0,0,
+technical,1996,생성형 AI,0,0,
+technical,1996,신경망,0,0,
+technical,1996,자연어 처리,0,0,
+technical,1996,컴퓨터 비전,0,0,
+technical,1996,프롬프트 엔지니어링,0,0,
+technical,1996,확산 모델,0,0,
+technical,1997,AI 에이전트,0,1,0.0
+technical,1997,LLM,0,1,0.0
+technical,1997,RAG,0,1,0.0
+technical,1997,Transformer,0,1,0.0
+technical,1997,강화학습,0,1,0.0
+technical,1997,딥러닝,0,1,0.0
+technical,1997,머신러닝,0,1,0.0
+technical,1997,생성형 AI,0,1,0.0
+technical,1997,신경망,1,1,100.0
+technical,1997,자연어 처리,0,1,0.0
+technical,1997,컴퓨터 비전,0,1,0.0
+technical,1997,프롬프트 엔지니어링,0,1,0.0
+technical,1997,확산 모델,0,1,0.0
+technical,1998,AI 에이전트,0,0,
+technical,1998,LLM,0,0,
+technical,1998,RAG,0,0,
+technical,1998,Transformer,0,0,
+technical,1998,강화학습,0,0,
+technical,1998,딥러닝,0,0,
+technical,1998,머신러닝,0,0,
+technical,1998,생성형 AI,0,0,
+technical,1998,신경망,0,0,
+technical,1998,자연어 처리,0,0,
+technical,1998,컴퓨터 비전,0,0,
+technical,1998,프롬프트 엔지니어링,0,0,
+technical,1998,확산 모델,0,0,
+technical,1999,AI 에이전트,0,2,0.0
+technical,1999,LLM,0,2,0.0
+technical,1999,RAG,0,2,0.0
+technical,1999,Transformer,0,2,0.0
+technical,1999,강화학습,0,2,0.0
+technical,1999,딥러닝,0,2,0.0
+technical,1999,머신러닝,0,2,0.0
+technical,1999,생성형 AI,0,2,0.0
+technical,1999,신경망,2,2,100.0
+technical,1999,자연어 처리,0,2,0.0
+technical,1999,컴퓨터 비전,0,2,0.0
+technical,1999,프롬프트 엔지니어링,0,2,0.0
+technical,1999,확산 모델,0,2,0.0
+technical,2000,AI 에이전트,0,0,
+technical,2000,LLM,0,0,
+technical,2000,RAG,0,0,
+technical,2000,Transformer,0,0,
+technical,2000,강화학습,0,0,
+technical,2000,딥러닝,0,0,
+technical,2000,머신러닝,0,0,
+technical,2000,생성형 AI,0,0,
+technical,2000,신경망,0,0,
+technical,2000,자연어 처리,0,0,
+technical,2000,컴퓨터 비전,0,0,
+technical,2000,프롬프트 엔지니어링,0,0,
+technical,2000,확산 모델,0,0,
+technical,2001,AI 에이전트,0,1,0.0
+technical,2001,LLM,0,1,0.0
+technical,2001,RAG,0,1,0.0
+technical,2001,Transformer,0,1,0.0
+technical,2001,강화학습,0,1,0.0
+technical,2001,딥러닝,0,1,0.0
+technical,2001,머신러닝,0,1,0.0
+technical,2001,생성형 AI,0,1,0.0
+technical,2001,신경망,1,1,100.0
+technical,2001,자연어 처리,0,1,0.0
+technical,2001,컴퓨터 비전,0,1,0.0
+technical,2001,프롬프트 엔지니어링,0,1,0.0
+technical,2001,확산 모델,0,1,0.0
+technical,2002,AI 에이전트,0,0,
+technical,2002,LLM,0,0,
+technical,2002,RAG,0,0,
+technical,2002,Transformer,0,0,
+technical,2002,강화학습,0,0,
+technical,2002,딥러닝,0,0,
+technical,2002,머신러닝,0,0,
+technical,2002,생성형 AI,0,0,
+technical,2002,신경망,0,0,
+technical,2002,자연어 처리,0,0,
+technical,2002,컴퓨터 비전,0,0,
+technical,2002,프롬프트 엔지니어링,0,0,
+technical,2002,확산 모델,0,0,
+technical,2003,AI 에이전트,0,0,
+technical,2003,LLM,0,0,
+technical,2003,RAG,0,0,
+technical,2003,Transformer,0,0,
+technical,2003,강화학습,0,0,
+technical,2003,딥러닝,0,0,
+technical,2003,머신러닝,0,0,
+technical,2003,생성형 AI,0,0,
+technical,2003,신경망,0,0,
+technical,2003,자연어 처리,0,0,
+technical,2003,컴퓨터 비전,0,0,
+technical,2003,프롬프트 엔지니어링,0,0,
+technical,2003,확산 모델,0,0,
+technical,2004,AI 에이전트,0,0,
+technical,2004,LLM,0,0,
+technical,2004,RAG,0,0,
+technical,2004,Transformer,0,0,
+technical,2004,강화학습,0,0,
+technical,2004,딥러닝,0,0,
+technical,2004,머신러닝,0,0,
+technical,2004,생성형 AI,0,0,
+technical,2004,신경망,0,0,
+technical,2004,자연어 처리,0,0,
+technical,2004,컴퓨터 비전,0,0,
+technical,2004,프롬프트 엔지니어링,0,0,
+technical,2004,확산 모델,0,0,
+technical,2005,AI 에이전트,0,1,0.0
+technical,2005,LLM,0,1,0.0
+technical,2005,RAG,0,1,0.0
+technical,2005,Transformer,0,1,0.0
+technical,2005,강화학습,0,1,0.0
+technical,2005,딥러닝,0,1,0.0
+technical,2005,머신러닝,0,1,0.0
+technical,2005,생성형 AI,0,1,0.0
+technical,2005,신경망,1,1,100.0
+technical,2005,자연어 처리,0,1,0.0
+technical,2005,컴퓨터 비전,0,1,0.0
+technical,2005,프롬프트 엔지니어링,0,1,0.0
+technical,2005,확산 모델,0,1,0.0
+technical,2006,AI 에이전트,0,0,
+technical,2006,LLM,0,0,
+technical,2006,RAG,0,0,
+technical,2006,Transformer,0,0,
+technical,2006,강화학습,0,0,
+technical,2006,딥러닝,0,0,
+technical,2006,머신러닝,0,0,
+technical,2006,생성형 AI,0,0,
+technical,2006,신경망,0,0,
+technical,2006,자연어 처리,0,0,
+technical,2006,컴퓨터 비전,0,0,
+technical,2006,프롬프트 엔지니어링,0,0,
+technical,2006,확산 모델,0,0,
+technical,2007,AI 에이전트,0,1,0.0
+technical,2007,LLM,0,1,0.0
+technical,2007,RAG,0,1,0.0
+technical,2007,Transformer,0,1,0.0
+technical,2007,강화학습,0,1,0.0
+technical,2007,딥러닝,0,1,0.0
+technical,2007,머신러닝,0,1,0.0
+technical,2007,생성형 AI,0,1,0.0
+technical,2007,신경망,0,1,0.0
+technical,2007,자연어 처리,0,1,0.0
+technical,2007,컴퓨터 비전,1,1,100.0
+technical,2007,프롬프트 엔지니어링,0,1,0.0
+technical,2007,확산 모델,0,1,0.0
+technical,2008,AI 에이전트,0,0,
+technical,2008,LLM,0,0,
+technical,2008,RAG,0,0,
+technical,2008,Transformer,0,0,
+technical,2008,강화학습,0,0,
+technical,2008,딥러닝,0,0,
+technical,2008,머신러닝,0,0,
+technical,2008,생성형 AI,0,0,
+technical,2008,신경망,0,0,
+technical,2008,자연어 처리,0,0,
+technical,2008,컴퓨터 비전,0,0,
+technical,2008,프롬프트 엔지니어링,0,0,
+technical,2008,확산 모델,0,0,
+technical,2009,AI 에이전트,0,0,
+technical,2009,LLM,0,0,
+technical,2009,RAG,0,0,
+technical,2009,Transformer,0,0,
+technical,2009,강화학습,0,0,
+technical,2009,딥러닝,0,0,
+technical,2009,머신러닝,0,0,
+technical,2009,생성형 AI,0,0,
+technical,2009,신경망,0,0,
+technical,2009,자연어 처리,0,0,
+technical,2009,컴퓨터 비전,0,0,
+technical,2009,프롬프트 엔지니어링,0,0,
+technical,2009,확산 모델,0,0,
+technical,2010,AI 에이전트,0,1,0.0
+technical,2010,LLM,0,1,0.0
+technical,2010,RAG,0,1,0.0
+technical,2010,Transformer,1,1,100.0
+technical,2010,강화학습,0,1,0.0
+technical,2010,딥러닝,0,1,0.0
+technical,2010,머신러닝,0,1,0.0
+technical,2010,생성형 AI,0,1,0.0
+technical,2010,신경망,0,1,0.0
+technical,2010,자연어 처리,0,1,0.0
+technical,2010,컴퓨터 비전,0,1,0.0
+technical,2010,프롬프트 엔지니어링,0,1,0.0
+technical,2010,확산 모델,0,1,0.0
+technical,2011,AI 에이전트,0,0,
+technical,2011,LLM,0,0,
+technical,2011,RAG,0,0,
+technical,2011,Transformer,0,0,
+technical,2011,강화학습,0,0,
+technical,2011,딥러닝,0,0,
+technical,2011,머신러닝,0,0,
+technical,2011,생성형 AI,0,0,
+technical,2011,신경망,0,0,
+technical,2011,자연어 처리,0,0,
+technical,2011,컴퓨터 비전,0,0,
+technical,2011,프롬프트 엔지니어링,0,0,
+technical,2011,확산 모델,0,0,
+technical,2012,AI 에이전트,0,4,0.0
+technical,2012,LLM,0,4,0.0
+technical,2012,RAG,0,4,0.0
+technical,2012,Transformer,0,4,0.0
+technical,2012,강화학습,0,4,0.0
+technical,2012,딥러닝,0,4,0.0
+technical,2012,머신러닝,2,4,50.0
+technical,2012,생성형 AI,0,4,0.0
+technical,2012,신경망,1,4,25.0
+technical,2012,자연어 처리,0,4,0.0
+technical,2012,컴퓨터 비전,1,4,25.0
+technical,2012,프롬프트 엔지니어링,0,4,0.0
+technical,2012,확산 모델,0,4,0.0
+technical,2013,AI 에이전트,0,3,0.0
+technical,2013,LLM,0,3,0.0
+technical,2013,RAG,0,3,0.0
+technical,2013,Transformer,0,3,0.0
+technical,2013,강화학습,0,3,0.0
+technical,2013,딥러닝,0,3,0.0
+technical,2013,머신러닝,2,3,66.66666666666667
+technical,2013,생성형 AI,0,3,0.0
+technical,2013,신경망,0,3,0.0
+technical,2013,자연어 처리,0,3,0.0
+technical,2013,컴퓨터 비전,1,3,33.333333333333336
+technical,2013,프롬프트 엔지니어링,0,3,0.0
+technical,2013,확산 모델,0,3,0.0
+technical,2014,AI 에이전트,0,8,0.0
+technical,2014,LLM,0,8,0.0
+technical,2014,RAG,0,8,0.0
+technical,2014,Transformer,0,8,0.0
+technical,2014,강화학습,0,8,0.0
+technical,2014,딥러닝,0,8,0.0
+technical,2014,머신러닝,5,8,62.5
+technical,2014,생성형 AI,0,8,0.0
+technical,2014,신경망,0,8,0.0
+technical,2014,자연어 처리,0,8,0.0
+technical,2014,컴퓨터 비전,3,8,37.5
+technical,2014,프롬프트 엔지니어링,0,8,0.0
+technical,2014,확산 모델,0,8,0.0
+technical,2015,AI 에이전트,0,8,0.0
+technical,2015,LLM,0,8,0.0
+technical,2015,RAG,0,8,0.0
+technical,2015,Transformer,0,8,0.0
+technical,2015,강화학습,0,8,0.0
+technical,2015,딥러닝,0,8,0.0
+technical,2015,머신러닝,6,8,75.0
+technical,2015,생성형 AI,0,8,0.0
+technical,2015,신경망,0,8,0.0
+technical,2015,자연어 처리,0,8,0.0
+technical,2015,컴퓨터 비전,2,8,25.0
+technical,2015,프롬프트 엔지니어링,0,8,0.0
+technical,2015,확산 모델,0,8,0.0
+technical,2016,AI 에이전트,0,22,0.0
+technical,2016,LLM,0,22,0.0
+technical,2016,RAG,0,22,0.0
+technical,2016,Transformer,0,22,0.0
+technical,2016,강화학습,0,22,0.0
+technical,2016,딥러닝,7,22,31.818181818181817
+technical,2016,머신러닝,17,22,77.27272727272727
+technical,2016,생성형 AI,0,22,0.0
+technical,2016,신경망,1,22,4.545454545454546
+technical,2016,자연어 처리,1,22,4.545454545454546
+technical,2016,컴퓨터 비전,1,22,4.545454545454546
+technical,2016,프롬프트 엔지니어링,0,22,0.0
+technical,2016,확산 모델,0,22,0.0
+technical,2017,AI 에이전트,0,56,0.0
+technical,2017,LLM,0,56,0.0
+technical,2017,RAG,0,56,0.0
+technical,2017,Transformer,0,56,0.0
+technical,2017,강화학습,5,56,8.928571428571429
+technical,2017,딥러닝,24,56,42.857142857142854
+technical,2017,머신러닝,28,56,50.0
+technical,2017,생성형 AI,0,56,0.0
+technical,2017,신경망,6,56,10.714285714285714
+technical,2017,자연어 처리,1,56,1.7857142857142858
+technical,2017,컴퓨터 비전,5,56,8.928571428571429
+technical,2017,프롬프트 엔지니어링,0,56,0.0
+technical,2017,확산 모델,0,56,0.0
+technical,2018,AI 에이전트,0,73,0.0
+technical,2018,LLM,0,73,0.0
+technical,2018,RAG,0,73,0.0
+technical,2018,Transformer,0,73,0.0
+technical,2018,강화학습,6,73,8.219178082191782
+technical,2018,딥러닝,36,73,49.31506849315068
+technical,2018,머신러닝,43,73,58.9041095890411
+technical,2018,생성형 AI,0,73,0.0
+technical,2018,신경망,5,73,6.8493150684931505
+technical,2018,자연어 처리,2,73,2.73972602739726
+technical,2018,컴퓨터 비전,4,73,5.47945205479452
+technical,2018,프롬프트 엔지니어링,0,73,0.0
+technical,2018,확산 모델,0,73,0.0
+technical,2019,AI 에이전트,0,79,0.0
+technical,2019,LLM,0,79,0.0
+technical,2019,RAG,0,79,0.0
+technical,2019,Transformer,1,79,1.2658227848101267
+technical,2019,강화학습,5,79,6.329113924050633
+technical,2019,딥러닝,45,79,56.962025316455694
+technical,2019,머신러닝,37,79,46.835443037974684
+technical,2019,생성형 AI,0,79,0.0
+technical,2019,신경망,8,79,10.126582278481013
+technical,2019,자연어 처리,8,79,10.126582278481013
+technical,2019,컴퓨터 비전,3,79,3.7974683544303796
+technical,2019,프롬프트 엔지니어링,0,79,0.0
+technical,2019,확산 모델,0,79,0.0
+technical,2020,AI 에이전트,0,90,0.0
+technical,2020,LLM,0,90,0.0
+technical,2020,RAG,0,90,0.0
+technical,2020,Transformer,0,90,0.0
+technical,2020,강화학습,10,90,11.11111111111111
+technical,2020,딥러닝,48,90,53.333333333333336
+technical,2020,머신러닝,41,90,45.55555555555556
+technical,2020,생성형 AI,0,90,0.0
+technical,2020,신경망,7,90,7.777777777777778
+technical,2020,자연어 처리,9,90,10.0
+technical,2020,컴퓨터 비전,1,90,1.1111111111111112
+technical,2020,프롬프트 엔지니어링,0,90,0.0
+technical,2020,확산 모델,0,90,0.0
+technical,2021,AI 에이전트,0,106,0.0
+technical,2021,LLM,0,106,0.0
+technical,2021,RAG,0,106,0.0
+technical,2021,Transformer,1,106,0.9433962264150944
+technical,2021,강화학습,9,106,8.49056603773585
+technical,2021,딥러닝,40,106,37.735849056603776
+technical,2021,머신러닝,66,106,62.264150943396224
+technical,2021,생성형 AI,0,106,0.0
+technical,2021,신경망,5,106,4.716981132075472
+technical,2021,자연어 처리,7,106,6.60377358490566
+technical,2021,컴퓨터 비전,7,106,6.60377358490566
+technical,2021,프롬프트 엔지니어링,0,106,0.0
+technical,2021,확산 모델,0,106,0.0
+technical,2022,AI 에이전트,0,75,0.0
+technical,2022,LLM,0,75,0.0
+technical,2022,RAG,0,75,0.0
+technical,2022,Transformer,3,75,4.0
+technical,2022,강화학습,6,75,8.0
+technical,2022,딥러닝,29,75,38.666666666666664
+technical,2022,머신러닝,38,75,50.666666666666664
+technical,2022,생성형 AI,0,75,0.0
+technical,2022,신경망,10,75,13.333333333333334
+technical,2022,자연어 처리,11,75,14.666666666666666
+technical,2022,컴퓨터 비전,4,75,5.333333333333333
+technical,2022,프롬프트 엔지니어링,0,75,0.0
+technical,2022,확산 모델,0,75,0.0
+technical,2023,AI 에이전트,0,87,0.0
+technical,2023,LLM,1,87,1.1494252873563218
+technical,2023,RAG,0,87,0.0
+technical,2023,Transformer,7,87,8.045977011494253
+technical,2023,강화학습,7,87,8.045977011494253
+technical,2023,딥러닝,25,87,28.735632183908045
+technical,2023,머신러닝,36,87,41.37931034482759
+technical,2023,생성형 AI,13,87,14.942528735632184
+technical,2023,신경망,1,87,1.1494252873563218
+technical,2023,자연어 처리,5,87,5.747126436781609
+technical,2023,컴퓨터 비전,4,87,4.597701149425287
+technical,2023,프롬프트 엔지니어링,5,87,5.747126436781609
+technical,2023,확산 모델,0,87,0.0
+technical,2024,AI 에이전트,3,148,2.027027027027027
+technical,2024,LLM,25,148,16.89189189189189
+technical,2024,RAG,9,148,6.081081081081081
+technical,2024,Transformer,1,148,0.6756756756756757
+technical,2024,강화학습,3,148,2.027027027027027
+technical,2024,딥러닝,26,148,17.56756756756757
+technical,2024,머신러닝,31,148,20.945945945945947
+technical,2024,생성형 AI,55,148,37.16216216216216
+technical,2024,신경망,3,148,2.027027027027027
+technical,2024,자연어 처리,5,148,3.3783783783783785
+technical,2024,컴퓨터 비전,7,148,4.72972972972973
+technical,2024,프롬프트 엔지니어링,11,148,7.4324324324324325
+technical,2024,확산 모델,3,148,2.027027027027027
+technical,2025,AI 에이전트,34,201,16.915422885572138
+technical,2025,LLM,45,201,22.388059701492537
+technical,2025,RAG,24,201,11.940298507462687
+technical,2025,Transformer,8,201,3.9800995024875623
+technical,2025,강화학습,7,201,3.482587064676617
+technical,2025,딥러닝,20,201,9.950248756218905
+technical,2025,머신러닝,18,201,8.955223880597014
+technical,2025,생성형 AI,90,201,44.776119402985074
+technical,2025,신경망,1,201,0.4975124378109453
+technical,2025,자연어 처리,4,201,1.9900497512437811
+technical,2025,컴퓨터 비전,2,201,0.9950248756218906
+technical,2025,프롬프트 엔지니어링,16,201,7.960199004975125
+technical,2025,확산 모델,1,201,0.4975124378109453
+technical,2026,AI 에이전트,80,241,33.19502074688797
+technical,2026,LLM,37,241,15.352697095435685
+technical,2026,RAG,30,241,12.448132780082988
+technical,2026,Transformer,4,241,1.6597510373443984
+technical,2026,강화학습,1,241,0.4149377593360996
+technical,2026,딥러닝,10,241,4.149377593360996
+technical,2026,머신러닝,23,241,9.54356846473029
+technical,2026,생성형 AI,94,241,39.004149377593365
+technical,2026,신경망,0,241,0.0
+technical,2026,자연어 처리,0,241,0.0
+technical,2026,컴퓨터 비전,0,241,0.0
+technical,2026,프롬프트 엔지니어링,11,241,4.564315352697095
+technical,2026,확산 모델,0,241,0.0
+service,1980,Adobe Firefly,0,0,
+service,1980,CLOVA X,0,0,
+service,1980,Canva AI,0,0,
+service,1980,CapCut AI,0,0,
+service,1980,ChatGPT/GPT,0,0,
+service,1980,Claude,0,0,
+service,1980,Codex,0,0,
+service,1980,Copilot,0,0,
+service,1980,Cursor AI,0,0,
+service,1980,DALL-E,0,0,
+service,1980,DeepSeek,0,0,
+service,1980,Dify,0,0,
+service,1980,ElevenLabs,0,0,
+service,1980,Gamma,0,0,
+service,1980,Gemini,0,0,
+service,1980,Genspark,0,0,
+service,1980,Google AI Studio,0,0,
+service,1980,Google Flow,0,0,
+service,1980,Grok,0,0,
+service,1980,ImageFX,0,0,
+service,1980,Kling AI,0,0,
+service,1980,Lovable,0,0,
+service,1980,Luma AI,0,0,
+service,1980,Midjourney,0,0,
+service,1980,Nano Banana,0,0,
+service,1980,NotebookLM,0,0,
+service,1980,Notion AI,0,0,
+service,1980,Perplexity,0,0,
+service,1980,Runway,0,0,
+service,1980,Sora,0,0,
+service,1980,Stable Diffusion,0,0,
+service,1980,Suno,0,0,
+service,1980,Typecast,0,0,
+service,1980,Veo,0,0,
+service,1980,Vertex AI,0,0,
+service,1980,Vrew,0,0,
+service,1980,Whisk,0,0,
+service,1980,Wrtn,0,0,
+service,1980,v0,0,0,
+service,1983,Adobe Firefly,0,0,
+service,1983,CLOVA X,0,0,
+service,1983,Canva AI,0,0,
+service,1983,CapCut AI,0,0,
+service,1983,ChatGPT/GPT,0,0,
+service,1983,Claude,0,0,
+service,1983,Codex,0,0,
+service,1983,Copilot,0,0,
+service,1983,Cursor AI,0,0,
+service,1983,DALL-E,0,0,
+service,1983,DeepSeek,0,0,
+service,1983,Dify,0,0,
+service,1983,ElevenLabs,0,0,
+service,1983,Gamma,0,0,
+service,1983,Gemini,0,0,
+service,1983,Genspark,0,0,
+service,1983,Google AI Studio,0,0,
+service,1983,Google Flow,0,0,
+service,1983,Grok,0,0,
+service,1983,ImageFX,0,0,
+service,1983,Kling AI,0,0,
+service,1983,Lovable,0,0,
+service,1983,Luma AI,0,0,
+service,1983,Midjourney,0,0,
+service,1983,Nano Banana,0,0,
+service,1983,NotebookLM,0,0,
+service,1983,Notion AI,0,0,
+service,1983,Perplexity,0,0,
+service,1983,Runway,0,0,
+service,1983,Sora,0,0,
+service,1983,Stable Diffusion,0,0,
+service,1983,Suno,0,0,
+service,1983,Typecast,0,0,
+service,1983,Veo,0,0,
+service,1983,Vertex AI,0,0,
+service,1983,Vrew,0,0,
+service,1983,Whisk,0,0,
+service,1983,Wrtn,0,0,
+service,1983,v0,0,0,
+service,1985,Adobe Firefly,0,0,
+service,1985,CLOVA X,0,0,
+service,1985,Canva AI,0,0,
+service,1985,CapCut AI,0,0,
+service,1985,ChatGPT/GPT,0,0,
+service,1985,Claude,0,0,
+service,1985,Codex,0,0,
+service,1985,Copilot,0,0,
+service,1985,Cursor AI,0,0,
+service,1985,DALL-E,0,0,
+service,1985,DeepSeek,0,0,
+service,1985,Dify,0,0,
+service,1985,ElevenLabs,0,0,
+service,1985,Gamma,0,0,
+service,1985,Gemini,0,0,
+service,1985,Genspark,0,0,
+service,1985,Google AI Studio,0,0,
+service,1985,Google Flow,0,0,
+service,1985,Grok,0,0,
+service,1985,ImageFX,0,0,
+service,1985,Kling AI,0,0,
+service,1985,Lovable,0,0,
+service,1985,Luma AI,0,0,
+service,1985,Midjourney,0,0,
+service,1985,Nano Banana,0,0,
+service,1985,NotebookLM,0,0,
+service,1985,Notion AI,0,0,
+service,1985,Perplexity,0,0,
+service,1985,Runway,0,0,
+service,1985,Sora,0,0,
+service,1985,Stable Diffusion,0,0,
+service,1985,Suno,0,0,
+service,1985,Typecast,0,0,
+service,1985,Veo,0,0,
+service,1985,Vertex AI,0,0,
+service,1985,Vrew,0,0,
+service,1985,Whisk,0,0,
+service,1985,Wrtn,0,0,
+service,1985,v0,0,0,
+service,1986,Adobe Firefly,0,0,
+service,1986,CLOVA X,0,0,
+service,1986,Canva AI,0,0,
+service,1986,CapCut AI,0,0,
+service,1986,ChatGPT/GPT,0,0,
+service,1986,Claude,0,0,
+service,1986,Codex,0,0,
+service,1986,Copilot,0,0,
+service,1986,Cursor AI,0,0,
+service,1986,DALL-E,0,0,
+service,1986,DeepSeek,0,0,
+service,1986,Dify,0,0,
+service,1986,ElevenLabs,0,0,
+service,1986,Gamma,0,0,
+service,1986,Gemini,0,0,
+service,1986,Genspark,0,0,
+service,1986,Google AI Studio,0,0,
+service,1986,Google Flow,0,0,
+service,1986,Grok,0,0,
+service,1986,ImageFX,0,0,
+service,1986,Kling AI,0,0,
+service,1986,Lovable,0,0,
+service,1986,Luma AI,0,0,
+service,1986,Midjourney,0,0,
+service,1986,Nano Banana,0,0,
+service,1986,NotebookLM,0,0,
+service,1986,Notion AI,0,0,
+service,1986,Perplexity,0,0,
+service,1986,Runway,0,0,
+service,1986,Sora,0,0,
+service,1986,Stable Diffusion,0,0,
+service,1986,Suno,0,0,
+service,1986,Typecast,0,0,
+service,1986,Veo,0,0,
+service,1986,Vertex AI,0,0,
+service,1986,Vrew,0,0,
+service,1986,Whisk,0,0,
+service,1986,Wrtn,0,0,
+service,1986,v0,0,0,
+service,1988,Adobe Firefly,0,0,
+service,1988,CLOVA X,0,0,
+service,1988,Canva AI,0,0,
+service,1988,CapCut AI,0,0,
+service,1988,ChatGPT/GPT,0,0,
+service,1988,Claude,0,0,
+service,1988,Codex,0,0,
+service,1988,Copilot,0,0,
+service,1988,Cursor AI,0,0,
+service,1988,DALL-E,0,0,
+service,1988,DeepSeek,0,0,
+service,1988,Dify,0,0,
+service,1988,ElevenLabs,0,0,
+service,1988,Gamma,0,0,
+service,1988,Gemini,0,0,
+service,1988,Genspark,0,0,
+service,1988,Google AI Studio,0,0,
+service,1988,Google Flow,0,0,
+service,1988,Grok,0,0,
+service,1988,ImageFX,0,0,
+service,1988,Kling AI,0,0,
+service,1988,Lovable,0,0,
+service,1988,Luma AI,0,0,
+service,1988,Midjourney,0,0,
+service,1988,Nano Banana,0,0,
+service,1988,NotebookLM,0,0,
+service,1988,Notion AI,0,0,
+service,1988,Perplexity,0,0,
+service,1988,Runway,0,0,
+service,1988,Sora,0,0,
+service,1988,Stable Diffusion,0,0,
+service,1988,Suno,0,0,
+service,1988,Typecast,0,0,
+service,1988,Veo,0,0,
+service,1988,Vertex AI,0,0,
+service,1988,Vrew,0,0,
+service,1988,Whisk,0,0,
+service,1988,Wrtn,0,0,
+service,1988,v0,0,0,
+service,1989,Adobe Firefly,0,0,
+service,1989,CLOVA X,0,0,
+service,1989,Canva AI,0,0,
+service,1989,CapCut AI,0,0,
+service,1989,ChatGPT/GPT,0,0,
+service,1989,Claude,0,0,
+service,1989,Codex,0,0,
+service,1989,Copilot,0,0,
+service,1989,Cursor AI,0,0,
+service,1989,DALL-E,0,0,
+service,1989,DeepSeek,0,0,
+service,1989,Dify,0,0,
+service,1989,ElevenLabs,0,0,
+service,1989,Gamma,0,0,
+service,1989,Gemini,0,0,
+service,1989,Genspark,0,0,
+service,1989,Google AI Studio,0,0,
+service,1989,Google Flow,0,0,
+service,1989,Grok,0,0,
+service,1989,ImageFX,0,0,
+service,1989,Kling AI,0,0,
+service,1989,Lovable,0,0,
+service,1989,Luma AI,0,0,
+service,1989,Midjourney,0,0,
+service,1989,Nano Banana,0,0,
+service,1989,NotebookLM,0,0,
+service,1989,Notion AI,0,0,
+service,1989,Perplexity,0,0,
+service,1989,Runway,0,0,
+service,1989,Sora,0,0,
+service,1989,Stable Diffusion,0,0,
+service,1989,Suno,0,0,
+service,1989,Typecast,0,0,
+service,1989,Veo,0,0,
+service,1989,Vertex AI,0,0,
+service,1989,Vrew,0,0,
+service,1989,Whisk,0,0,
+service,1989,Wrtn,0,0,
+service,1989,v0,0,0,
+service,1990,Adobe Firefly,0,0,
+service,1990,CLOVA X,0,0,
+service,1990,Canva AI,0,0,
+service,1990,CapCut AI,0,0,
+service,1990,ChatGPT/GPT,0,0,
+service,1990,Claude,0,0,
+service,1990,Codex,0,0,
+service,1990,Copilot,0,0,
+service,1990,Cursor AI,0,0,
+service,1990,DALL-E,0,0,
+service,1990,DeepSeek,0,0,
+service,1990,Dify,0,0,
+service,1990,ElevenLabs,0,0,
+service,1990,Gamma,0,0,
+service,1990,Gemini,0,0,
+service,1990,Genspark,0,0,
+service,1990,Google AI Studio,0,0,
+service,1990,Google Flow,0,0,
+service,1990,Grok,0,0,
+service,1990,ImageFX,0,0,
+service,1990,Kling AI,0,0,
+service,1990,Lovable,0,0,
+service,1990,Luma AI,0,0,
+service,1990,Midjourney,0,0,
+service,1990,Nano Banana,0,0,
+service,1990,NotebookLM,0,0,
+service,1990,Notion AI,0,0,
+service,1990,Perplexity,0,0,
+service,1990,Runway,0,0,
+service,1990,Sora,0,0,
+service,1990,Stable Diffusion,0,0,
+service,1990,Suno,0,0,
+service,1990,Typecast,0,0,
+service,1990,Veo,0,0,
+service,1990,Vertex AI,0,0,
+service,1990,Vrew,0,0,
+service,1990,Whisk,0,0,
+service,1990,Wrtn,0,0,
+service,1990,v0,0,0,
+service,1991,Adobe Firefly,0,0,
+service,1991,CLOVA X,0,0,
+service,1991,Canva AI,0,0,
+service,1991,CapCut AI,0,0,
+service,1991,ChatGPT/GPT,0,0,
+service,1991,Claude,0,0,
+service,1991,Codex,0,0,
+service,1991,Copilot,0,0,
+service,1991,Cursor AI,0,0,
+service,1991,DALL-E,0,0,
+service,1991,DeepSeek,0,0,
+service,1991,Dify,0,0,
+service,1991,ElevenLabs,0,0,
+service,1991,Gamma,0,0,
+service,1991,Gemini,0,0,
+service,1991,Genspark,0,0,
+service,1991,Google AI Studio,0,0,
+service,1991,Google Flow,0,0,
+service,1991,Grok,0,0,
+service,1991,ImageFX,0,0,
+service,1991,Kling AI,0,0,
+service,1991,Lovable,0,0,
+service,1991,Luma AI,0,0,
+service,1991,Midjourney,0,0,
+service,1991,Nano Banana,0,0,
+service,1991,NotebookLM,0,0,
+service,1991,Notion AI,0,0,
+service,1991,Perplexity,0,0,
+service,1991,Runway,0,0,
+service,1991,Sora,0,0,
+service,1991,Stable Diffusion,0,0,
+service,1991,Suno,0,0,
+service,1991,Typecast,0,0,
+service,1991,Veo,0,0,
+service,1991,Vertex AI,0,0,
+service,1991,Vrew,0,0,
+service,1991,Whisk,0,0,
+service,1991,Wrtn,0,0,
+service,1991,v0,0,0,
+service,1992,Adobe Firefly,0,0,
+service,1992,CLOVA X,0,0,
+service,1992,Canva AI,0,0,
+service,1992,CapCut AI,0,0,
+service,1992,ChatGPT/GPT,0,0,
+service,1992,Claude,0,0,
+service,1992,Codex,0,0,
+service,1992,Copilot,0,0,
+service,1992,Cursor AI,0,0,
+service,1992,DALL-E,0,0,
+service,1992,DeepSeek,0,0,
+service,1992,Dify,0,0,
+service,1992,ElevenLabs,0,0,
+service,1992,Gamma,0,0,
+service,1992,Gemini,0,0,
+service,1992,Genspark,0,0,
+service,1992,Google AI Studio,0,0,
+service,1992,Google Flow,0,0,
+service,1992,Grok,0,0,
+service,1992,ImageFX,0,0,
+service,1992,Kling AI,0,0,
+service,1992,Lovable,0,0,
+service,1992,Luma AI,0,0,
+service,1992,Midjourney,0,0,
+service,1992,Nano Banana,0,0,
+service,1992,NotebookLM,0,0,
+service,1992,Notion AI,0,0,
+service,1992,Perplexity,0,0,
+service,1992,Runway,0,0,
+service,1992,Sora,0,0,
+service,1992,Stable Diffusion,0,0,
+service,1992,Suno,0,0,
+service,1992,Typecast,0,0,
+service,1992,Veo,0,0,
+service,1992,Vertex AI,0,0,
+service,1992,Vrew,0,0,
+service,1992,Whisk,0,0,
+service,1992,Wrtn,0,0,
+service,1992,v0,0,0,
+service,1993,Adobe Firefly,0,0,
+service,1993,CLOVA X,0,0,
+service,1993,Canva AI,0,0,
+service,1993,CapCut AI,0,0,
+service,1993,ChatGPT/GPT,0,0,
+service,1993,Claude,0,0,
+service,1993,Codex,0,0,
+service,1993,Copilot,0,0,
+service,1993,Cursor AI,0,0,
+service,1993,DALL-E,0,0,
+service,1993,DeepSeek,0,0,
+service,1993,Dify,0,0,
+service,1993,ElevenLabs,0,0,
+service,1993,Gamma,0,0,
+service,1993,Gemini,0,0,
+service,1993,Genspark,0,0,
+service,1993,Google AI Studio,0,0,
+service,1993,Google Flow,0,0,
+service,1993,Grok,0,0,
+service,1993,ImageFX,0,0,
+service,1993,Kling AI,0,0,
+service,1993,Lovable,0,0,
+service,1993,Luma AI,0,0,
+service,1993,Midjourney,0,0,
+service,1993,Nano Banana,0,0,
+service,1993,NotebookLM,0,0,
+service,1993,Notion AI,0,0,
+service,1993,Perplexity,0,0,
+service,1993,Runway,0,0,
+service,1993,Sora,0,0,
+service,1993,Stable Diffusion,0,0,
+service,1993,Suno,0,0,
+service,1993,Typecast,0,0,
+service,1993,Veo,0,0,
+service,1993,Vertex AI,0,0,
+service,1993,Vrew,0,0,
+service,1993,Whisk,0,0,
+service,1993,Wrtn,0,0,
+service,1993,v0,0,0,
+service,1994,Adobe Firefly,0,0,
+service,1994,CLOVA X,0,0,
+service,1994,Canva AI,0,0,
+service,1994,CapCut AI,0,0,
+service,1994,ChatGPT/GPT,0,0,
+service,1994,Claude,0,0,
+service,1994,Codex,0,0,
+service,1994,Copilot,0,0,
+service,1994,Cursor AI,0,0,
+service,1994,DALL-E,0,0,
+service,1994,DeepSeek,0,0,
+service,1994,Dify,0,0,
+service,1994,ElevenLabs,0,0,
+service,1994,Gamma,0,0,
+service,1994,Gemini,0,0,
+service,1994,Genspark,0,0,
+service,1994,Google AI Studio,0,0,
+service,1994,Google Flow,0,0,
+service,1994,Grok,0,0,
+service,1994,ImageFX,0,0,
+service,1994,Kling AI,0,0,
+service,1994,Lovable,0,0,
+service,1994,Luma AI,0,0,
+service,1994,Midjourney,0,0,
+service,1994,Nano Banana,0,0,
+service,1994,NotebookLM,0,0,
+service,1994,Notion AI,0,0,
+service,1994,Perplexity,0,0,
+service,1994,Runway,0,0,
+service,1994,Sora,0,0,
+service,1994,Stable Diffusion,0,0,
+service,1994,Suno,0,0,
+service,1994,Typecast,0,0,
+service,1994,Veo,0,0,
+service,1994,Vertex AI,0,0,
+service,1994,Vrew,0,0,
+service,1994,Whisk,0,0,
+service,1994,Wrtn,0,0,
+service,1994,v0,0,0,
+service,1995,Adobe Firefly,0,0,
+service,1995,CLOVA X,0,0,
+service,1995,Canva AI,0,0,
+service,1995,CapCut AI,0,0,
+service,1995,ChatGPT/GPT,0,0,
+service,1995,Claude,0,0,
+service,1995,Codex,0,0,
+service,1995,Copilot,0,0,
+service,1995,Cursor AI,0,0,
+service,1995,DALL-E,0,0,
+service,1995,DeepSeek,0,0,
+service,1995,Dify,0,0,
+service,1995,ElevenLabs,0,0,
+service,1995,Gamma,0,0,
+service,1995,Gemini,0,0,
+service,1995,Genspark,0,0,
+service,1995,Google AI Studio,0,0,
+service,1995,Google Flow,0,0,
+service,1995,Grok,0,0,
+service,1995,ImageFX,0,0,
+service,1995,Kling AI,0,0,
+service,1995,Lovable,0,0,
+service,1995,Luma AI,0,0,
+service,1995,Midjourney,0,0,
+service,1995,Nano Banana,0,0,
+service,1995,NotebookLM,0,0,
+service,1995,Notion AI,0,0,
+service,1995,Perplexity,0,0,
+service,1995,Runway,0,0,
+service,1995,Sora,0,0,
+service,1995,Stable Diffusion,0,0,
+service,1995,Suno,0,0,
+service,1995,Typecast,0,0,
+service,1995,Veo,0,0,
+service,1995,Vertex AI,0,0,
+service,1995,Vrew,0,0,
+service,1995,Whisk,0,0,
+service,1995,Wrtn,0,0,
+service,1995,v0,0,0,
+service,1996,Adobe Firefly,0,0,
+service,1996,CLOVA X,0,0,
+service,1996,Canva AI,0,0,
+service,1996,CapCut AI,0,0,
+service,1996,ChatGPT/GPT,0,0,
+service,1996,Claude,0,0,
+service,1996,Codex,0,0,
+service,1996,Copilot,0,0,
+service,1996,Cursor AI,0,0,
+service,1996,DALL-E,0,0,
+service,1996,DeepSeek,0,0,
+service,1996,Dify,0,0,
+service,1996,ElevenLabs,0,0,
+service,1996,Gamma,0,0,
+service,1996,Gemini,0,0,
+service,1996,Genspark,0,0,
+service,1996,Google AI Studio,0,0,
+service,1996,Google Flow,0,0,
+service,1996,Grok,0,0,
+service,1996,ImageFX,0,0,
+service,1996,Kling AI,0,0,
+service,1996,Lovable,0,0,
+service,1996,Luma AI,0,0,
+service,1996,Midjourney,0,0,
+service,1996,Nano Banana,0,0,
+service,1996,NotebookLM,0,0,
+service,1996,Notion AI,0,0,
+service,1996,Perplexity,0,0,
+service,1996,Runway,0,0,
+service,1996,Sora,0,0,
+service,1996,Stable Diffusion,0,0,
+service,1996,Suno,0,0,
+service,1996,Typecast,0,0,
+service,1996,Veo,0,0,
+service,1996,Vertex AI,0,0,
+service,1996,Vrew,0,0,
+service,1996,Whisk,0,0,
+service,1996,Wrtn,0,0,
+service,1996,v0,0,0,
+service,1997,Adobe Firefly,0,0,
+service,1997,CLOVA X,0,0,
+service,1997,Canva AI,0,0,
+service,1997,CapCut AI,0,0,
+service,1997,ChatGPT/GPT,0,0,
+service,1997,Claude,0,0,
+service,1997,Codex,0,0,
+service,1997,Copilot,0,0,
+service,1997,Cursor AI,0,0,
+service,1997,DALL-E,0,0,
+service,1997,DeepSeek,0,0,
+service,1997,Dify,0,0,
+service,1997,ElevenLabs,0,0,
+service,1997,Gamma,0,0,
+service,1997,Gemini,0,0,
+service,1997,Genspark,0,0,
+service,1997,Google AI Studio,0,0,
+service,1997,Google Flow,0,0,
+service,1997,Grok,0,0,
+service,1997,ImageFX,0,0,
+service,1997,Kling AI,0,0,
+service,1997,Lovable,0,0,
+service,1997,Luma AI,0,0,
+service,1997,Midjourney,0,0,
+service,1997,Nano Banana,0,0,
+service,1997,NotebookLM,0,0,
+service,1997,Notion AI,0,0,
+service,1997,Perplexity,0,0,
+service,1997,Runway,0,0,
+service,1997,Sora,0,0,
+service,1997,Stable Diffusion,0,0,
+service,1997,Suno,0,0,
+service,1997,Typecast,0,0,
+service,1997,Veo,0,0,
+service,1997,Vertex AI,0,0,
+service,1997,Vrew,0,0,
+service,1997,Whisk,0,0,
+service,1997,Wrtn,0,0,
+service,1997,v0,0,0,
+service,1998,Adobe Firefly,0,0,
+service,1998,CLOVA X,0,0,
+service,1998,Canva AI,0,0,
+service,1998,CapCut AI,0,0,
+service,1998,ChatGPT/GPT,0,0,
+service,1998,Claude,0,0,
+service,1998,Codex,0,0,
+service,1998,Copilot,0,0,
+service,1998,Cursor AI,0,0,
+service,1998,DALL-E,0,0,
+service,1998,DeepSeek,0,0,
+service,1998,Dify,0,0,
+service,1998,ElevenLabs,0,0,
+service,1998,Gamma,0,0,
+service,1998,Gemini,0,0,
+service,1998,Genspark,0,0,
+service,1998,Google AI Studio,0,0,
+service,1998,Google Flow,0,0,
+service,1998,Grok,0,0,
+service,1998,ImageFX,0,0,
+service,1998,Kling AI,0,0,
+service,1998,Lovable,0,0,
+service,1998,Luma AI,0,0,
+service,1998,Midjourney,0,0,
+service,1998,Nano Banana,0,0,
+service,1998,NotebookLM,0,0,
+service,1998,Notion AI,0,0,
+service,1998,Perplexity,0,0,
+service,1998,Runway,0,0,
+service,1998,Sora,0,0,
+service,1998,Stable Diffusion,0,0,
+service,1998,Suno,0,0,
+service,1998,Typecast,0,0,
+service,1998,Veo,0,0,
+service,1998,Vertex AI,0,0,
+service,1998,Vrew,0,0,
+service,1998,Whisk,0,0,
+service,1998,Wrtn,0,0,
+service,1998,v0,0,0,
+service,1999,Adobe Firefly,0,0,
+service,1999,CLOVA X,0,0,
+service,1999,Canva AI,0,0,
+service,1999,CapCut AI,0,0,
+service,1999,ChatGPT/GPT,0,0,
+service,1999,Claude,0,0,
+service,1999,Codex,0,0,
+service,1999,Copilot,0,0,
+service,1999,Cursor AI,0,0,
+service,1999,DALL-E,0,0,
+service,1999,DeepSeek,0,0,
+service,1999,Dify,0,0,
+service,1999,ElevenLabs,0,0,
+service,1999,Gamma,0,0,
+service,1999,Gemini,0,0,
+service,1999,Genspark,0,0,
+service,1999,Google AI Studio,0,0,
+service,1999,Google Flow,0,0,
+service,1999,Grok,0,0,
+service,1999,ImageFX,0,0,
+service,1999,Kling AI,0,0,
+service,1999,Lovable,0,0,
+service,1999,Luma AI,0,0,
+service,1999,Midjourney,0,0,
+service,1999,Nano Banana,0,0,
+service,1999,NotebookLM,0,0,
+service,1999,Notion AI,0,0,
+service,1999,Perplexity,0,0,
+service,1999,Runway,0,0,
+service,1999,Sora,0,0,
+service,1999,Stable Diffusion,0,0,
+service,1999,Suno,0,0,
+service,1999,Typecast,0,0,
+service,1999,Veo,0,0,
+service,1999,Vertex AI,0,0,
+service,1999,Vrew,0,0,
+service,1999,Whisk,0,0,
+service,1999,Wrtn,0,0,
+service,1999,v0,0,0,
+service,2000,Adobe Firefly,0,0,
+service,2000,CLOVA X,0,0,
+service,2000,Canva AI,0,0,
+service,2000,CapCut AI,0,0,
+service,2000,ChatGPT/GPT,0,0,
+service,2000,Claude,0,0,
+service,2000,Codex,0,0,
+service,2000,Copilot,0,0,
+service,2000,Cursor AI,0,0,
+service,2000,DALL-E,0,0,
+service,2000,DeepSeek,0,0,
+service,2000,Dify,0,0,
+service,2000,ElevenLabs,0,0,
+service,2000,Gamma,0,0,
+service,2000,Gemini,0,0,
+service,2000,Genspark,0,0,
+service,2000,Google AI Studio,0,0,
+service,2000,Google Flow,0,0,
+service,2000,Grok,0,0,
+service,2000,ImageFX,0,0,
+service,2000,Kling AI,0,0,
+service,2000,Lovable,0,0,
+service,2000,Luma AI,0,0,
+service,2000,Midjourney,0,0,
+service,2000,Nano Banana,0,0,
+service,2000,NotebookLM,0,0,
+service,2000,Notion AI,0,0,
+service,2000,Perplexity,0,0,
+service,2000,Runway,0,0,
+service,2000,Sora,0,0,
+service,2000,Stable Diffusion,0,0,
+service,2000,Suno,0,0,
+service,2000,Typecast,0,0,
+service,2000,Veo,0,0,
+service,2000,Vertex AI,0,0,
+service,2000,Vrew,0,0,
+service,2000,Whisk,0,0,
+service,2000,Wrtn,0,0,
+service,2000,v0,0,0,
+service,2001,Adobe Firefly,0,0,
+service,2001,CLOVA X,0,0,
+service,2001,Canva AI,0,0,
+service,2001,CapCut AI,0,0,
+service,2001,ChatGPT/GPT,0,0,
+service,2001,Claude,0,0,
+service,2001,Codex,0,0,
+service,2001,Copilot,0,0,
+service,2001,Cursor AI,0,0,
+service,2001,DALL-E,0,0,
+service,2001,DeepSeek,0,0,
+service,2001,Dify,0,0,
+service,2001,ElevenLabs,0,0,
+service,2001,Gamma,0,0,
+service,2001,Gemini,0,0,
+service,2001,Genspark,0,0,
+service,2001,Google AI Studio,0,0,
+service,2001,Google Flow,0,0,
+service,2001,Grok,0,0,
+service,2001,ImageFX,0,0,
+service,2001,Kling AI,0,0,
+service,2001,Lovable,0,0,
+service,2001,Luma AI,0,0,
+service,2001,Midjourney,0,0,
+service,2001,Nano Banana,0,0,
+service,2001,NotebookLM,0,0,
+service,2001,Notion AI,0,0,
+service,2001,Perplexity,0,0,
+service,2001,Runway,0,0,
+service,2001,Sora,0,0,
+service,2001,Stable Diffusion,0,0,
+service,2001,Suno,0,0,
+service,2001,Typecast,0,0,
+service,2001,Veo,0,0,
+service,2001,Vertex AI,0,0,
+service,2001,Vrew,0,0,
+service,2001,Whisk,0,0,
+service,2001,Wrtn,0,0,
+service,2001,v0,0,0,
+service,2002,Adobe Firefly,0,0,
+service,2002,CLOVA X,0,0,
+service,2002,Canva AI,0,0,
+service,2002,CapCut AI,0,0,
+service,2002,ChatGPT/GPT,0,0,
+service,2002,Claude,0,0,
+service,2002,Codex,0,0,
+service,2002,Copilot,0,0,
+service,2002,Cursor AI,0,0,
+service,2002,DALL-E,0,0,
+service,2002,DeepSeek,0,0,
+service,2002,Dify,0,0,
+service,2002,ElevenLabs,0,0,
+service,2002,Gamma,0,0,
+service,2002,Gemini,0,0,
+service,2002,Genspark,0,0,
+service,2002,Google AI Studio,0,0,
+service,2002,Google Flow,0,0,
+service,2002,Grok,0,0,
+service,2002,ImageFX,0,0,
+service,2002,Kling AI,0,0,
+service,2002,Lovable,0,0,
+service,2002,Luma AI,0,0,
+service,2002,Midjourney,0,0,
+service,2002,Nano Banana,0,0,
+service,2002,NotebookLM,0,0,
+service,2002,Notion AI,0,0,
+service,2002,Perplexity,0,0,
+service,2002,Runway,0,0,
+service,2002,Sora,0,0,
+service,2002,Stable Diffusion,0,0,
+service,2002,Suno,0,0,
+service,2002,Typecast,0,0,
+service,2002,Veo,0,0,
+service,2002,Vertex AI,0,0,
+service,2002,Vrew,0,0,
+service,2002,Whisk,0,0,
+service,2002,Wrtn,0,0,
+service,2002,v0,0,0,
+service,2003,Adobe Firefly,0,0,
+service,2003,CLOVA X,0,0,
+service,2003,Canva AI,0,0,
+service,2003,CapCut AI,0,0,
+service,2003,ChatGPT/GPT,0,0,
+service,2003,Claude,0,0,
+service,2003,Codex,0,0,
+service,2003,Copilot,0,0,
+service,2003,Cursor AI,0,0,
+service,2003,DALL-E,0,0,
+service,2003,DeepSeek,0,0,
+service,2003,Dify,0,0,
+service,2003,ElevenLabs,0,0,
+service,2003,Gamma,0,0,
+service,2003,Gemini,0,0,
+service,2003,Genspark,0,0,
+service,2003,Google AI Studio,0,0,
+service,2003,Google Flow,0,0,
+service,2003,Grok,0,0,
+service,2003,ImageFX,0,0,
+service,2003,Kling AI,0,0,
+service,2003,Lovable,0,0,
+service,2003,Luma AI,0,0,
+service,2003,Midjourney,0,0,
+service,2003,Nano Banana,0,0,
+service,2003,NotebookLM,0,0,
+service,2003,Notion AI,0,0,
+service,2003,Perplexity,0,0,
+service,2003,Runway,0,0,
+service,2003,Sora,0,0,
+service,2003,Stable Diffusion,0,0,
+service,2003,Suno,0,0,
+service,2003,Typecast,0,0,
+service,2003,Veo,0,0,
+service,2003,Vertex AI,0,0,
+service,2003,Vrew,0,0,
+service,2003,Whisk,0,0,
+service,2003,Wrtn,0,0,
+service,2003,v0,0,0,
+service,2004,Adobe Firefly,0,0,
+service,2004,CLOVA X,0,0,
+service,2004,Canva AI,0,0,
+service,2004,CapCut AI,0,0,
+service,2004,ChatGPT/GPT,0,0,
+service,2004,Claude,0,0,
+service,2004,Codex,0,0,
+service,2004,Copilot,0,0,
+service,2004,Cursor AI,0,0,
+service,2004,DALL-E,0,0,
+service,2004,DeepSeek,0,0,
+service,2004,Dify,0,0,
+service,2004,ElevenLabs,0,0,
+service,2004,Gamma,0,0,
+service,2004,Gemini,0,0,
+service,2004,Genspark,0,0,
+service,2004,Google AI Studio,0,0,
+service,2004,Google Flow,0,0,
+service,2004,Grok,0,0,
+service,2004,ImageFX,0,0,
+service,2004,Kling AI,0,0,
+service,2004,Lovable,0,0,
+service,2004,Luma AI,0,0,
+service,2004,Midjourney,0,0,
+service,2004,Nano Banana,0,0,
+service,2004,NotebookLM,0,0,
+service,2004,Notion AI,0,0,
+service,2004,Perplexity,0,0,
+service,2004,Runway,0,0,
+service,2004,Sora,0,0,
+service,2004,Stable Diffusion,0,0,
+service,2004,Suno,0,0,
+service,2004,Typecast,0,0,
+service,2004,Veo,0,0,
+service,2004,Vertex AI,0,0,
+service,2004,Vrew,0,0,
+service,2004,Whisk,0,0,
+service,2004,Wrtn,0,0,
+service,2004,v0,0,0,
+service,2005,Adobe Firefly,0,0,
+service,2005,CLOVA X,0,0,
+service,2005,Canva AI,0,0,
+service,2005,CapCut AI,0,0,
+service,2005,ChatGPT/GPT,0,0,
+service,2005,Claude,0,0,
+service,2005,Codex,0,0,
+service,2005,Copilot,0,0,
+service,2005,Cursor AI,0,0,
+service,2005,DALL-E,0,0,
+service,2005,DeepSeek,0,0,
+service,2005,Dify,0,0,
+service,2005,ElevenLabs,0,0,
+service,2005,Gamma,0,0,
+service,2005,Gemini,0,0,
+service,2005,Genspark,0,0,
+service,2005,Google AI Studio,0,0,
+service,2005,Google Flow,0,0,
+service,2005,Grok,0,0,
+service,2005,ImageFX,0,0,
+service,2005,Kling AI,0,0,
+service,2005,Lovable,0,0,
+service,2005,Luma AI,0,0,
+service,2005,Midjourney,0,0,
+service,2005,Nano Banana,0,0,
+service,2005,NotebookLM,0,0,
+service,2005,Notion AI,0,0,
+service,2005,Perplexity,0,0,
+service,2005,Runway,0,0,
+service,2005,Sora,0,0,
+service,2005,Stable Diffusion,0,0,
+service,2005,Suno,0,0,
+service,2005,Typecast,0,0,
+service,2005,Veo,0,0,
+service,2005,Vertex AI,0,0,
+service,2005,Vrew,0,0,
+service,2005,Whisk,0,0,
+service,2005,Wrtn,0,0,
+service,2005,v0,0,0,
+service,2006,Adobe Firefly,0,0,
+service,2006,CLOVA X,0,0,
+service,2006,Canva AI,0,0,
+service,2006,CapCut AI,0,0,
+service,2006,ChatGPT/GPT,0,0,
+service,2006,Claude,0,0,
+service,2006,Codex,0,0,
+service,2006,Copilot,0,0,
+service,2006,Cursor AI,0,0,
+service,2006,DALL-E,0,0,
+service,2006,DeepSeek,0,0,
+service,2006,Dify,0,0,
+service,2006,ElevenLabs,0,0,
+service,2006,Gamma,0,0,
+service,2006,Gemini,0,0,
+service,2006,Genspark,0,0,
+service,2006,Google AI Studio,0,0,
+service,2006,Google Flow,0,0,
+service,2006,Grok,0,0,
+service,2006,ImageFX,0,0,
+service,2006,Kling AI,0,0,
+service,2006,Lovable,0,0,
+service,2006,Luma AI,0,0,
+service,2006,Midjourney,0,0,
+service,2006,Nano Banana,0,0,
+service,2006,NotebookLM,0,0,
+service,2006,Notion AI,0,0,
+service,2006,Perplexity,0,0,
+service,2006,Runway,0,0,
+service,2006,Sora,0,0,
+service,2006,Stable Diffusion,0,0,
+service,2006,Suno,0,0,
+service,2006,Typecast,0,0,
+service,2006,Veo,0,0,
+service,2006,Vertex AI,0,0,
+service,2006,Vrew,0,0,
+service,2006,Whisk,0,0,
+service,2006,Wrtn,0,0,
+service,2006,v0,0,0,
+service,2007,Adobe Firefly,0,0,
+service,2007,CLOVA X,0,0,
+service,2007,Canva AI,0,0,
+service,2007,CapCut AI,0,0,
+service,2007,ChatGPT/GPT,0,0,
+service,2007,Claude,0,0,
+service,2007,Codex,0,0,
+service,2007,Copilot,0,0,
+service,2007,Cursor AI,0,0,
+service,2007,DALL-E,0,0,
+service,2007,DeepSeek,0,0,
+service,2007,Dify,0,0,
+service,2007,ElevenLabs,0,0,
+service,2007,Gamma,0,0,
+service,2007,Gemini,0,0,
+service,2007,Genspark,0,0,
+service,2007,Google AI Studio,0,0,
+service,2007,Google Flow,0,0,
+service,2007,Grok,0,0,
+service,2007,ImageFX,0,0,
+service,2007,Kling AI,0,0,
+service,2007,Lovable,0,0,
+service,2007,Luma AI,0,0,
+service,2007,Midjourney,0,0,
+service,2007,Nano Banana,0,0,
+service,2007,NotebookLM,0,0,
+service,2007,Notion AI,0,0,
+service,2007,Perplexity,0,0,
+service,2007,Runway,0,0,
+service,2007,Sora,0,0,
+service,2007,Stable Diffusion,0,0,
+service,2007,Suno,0,0,
+service,2007,Typecast,0,0,
+service,2007,Veo,0,0,
+service,2007,Vertex AI,0,0,
+service,2007,Vrew,0,0,
+service,2007,Whisk,0,0,
+service,2007,Wrtn,0,0,
+service,2007,v0,0,0,
+service,2008,Adobe Firefly,0,0,
+service,2008,CLOVA X,0,0,
+service,2008,Canva AI,0,0,
+service,2008,CapCut AI,0,0,
+service,2008,ChatGPT/GPT,0,0,
+service,2008,Claude,0,0,
+service,2008,Codex,0,0,
+service,2008,Copilot,0,0,
+service,2008,Cursor AI,0,0,
+service,2008,DALL-E,0,0,
+service,2008,DeepSeek,0,0,
+service,2008,Dify,0,0,
+service,2008,ElevenLabs,0,0,
+service,2008,Gamma,0,0,
+service,2008,Gemini,0,0,
+service,2008,Genspark,0,0,
+service,2008,Google AI Studio,0,0,
+service,2008,Google Flow,0,0,
+service,2008,Grok,0,0,
+service,2008,ImageFX,0,0,
+service,2008,Kling AI,0,0,
+service,2008,Lovable,0,0,
+service,2008,Luma AI,0,0,
+service,2008,Midjourney,0,0,
+service,2008,Nano Banana,0,0,
+service,2008,NotebookLM,0,0,
+service,2008,Notion AI,0,0,
+service,2008,Perplexity,0,0,
+service,2008,Runway,0,0,
+service,2008,Sora,0,0,
+service,2008,Stable Diffusion,0,0,
+service,2008,Suno,0,0,
+service,2008,Typecast,0,0,
+service,2008,Veo,0,0,
+service,2008,Vertex AI,0,0,
+service,2008,Vrew,0,0,
+service,2008,Whisk,0,0,
+service,2008,Wrtn,0,0,
+service,2008,v0,0,0,
+service,2009,Adobe Firefly,0,0,
+service,2009,CLOVA X,0,0,
+service,2009,Canva AI,0,0,
+service,2009,CapCut AI,0,0,
+service,2009,ChatGPT/GPT,0,0,
+service,2009,Claude,0,0,
+service,2009,Codex,0,0,
+service,2009,Copilot,0,0,
+service,2009,Cursor AI,0,0,
+service,2009,DALL-E,0,0,
+service,2009,DeepSeek,0,0,
+service,2009,Dify,0,0,
+service,2009,ElevenLabs,0,0,
+service,2009,Gamma,0,0,
+service,2009,Gemini,0,0,
+service,2009,Genspark,0,0,
+service,2009,Google AI Studio,0,0,
+service,2009,Google Flow,0,0,
+service,2009,Grok,0,0,
+service,2009,ImageFX,0,0,
+service,2009,Kling AI,0,0,
+service,2009,Lovable,0,0,
+service,2009,Luma AI,0,0,
+service,2009,Midjourney,0,0,
+service,2009,Nano Banana,0,0,
+service,2009,NotebookLM,0,0,
+service,2009,Notion AI,0,0,
+service,2009,Perplexity,0,0,
+service,2009,Runway,0,0,
+service,2009,Sora,0,0,
+service,2009,Stable Diffusion,0,0,
+service,2009,Suno,0,0,
+service,2009,Typecast,0,0,
+service,2009,Veo,0,0,
+service,2009,Vertex AI,0,0,
+service,2009,Vrew,0,0,
+service,2009,Whisk,0,0,
+service,2009,Wrtn,0,0,
+service,2009,v0,0,0,
+service,2010,Adobe Firefly,0,0,
+service,2010,CLOVA X,0,0,
+service,2010,Canva AI,0,0,
+service,2010,CapCut AI,0,0,
+service,2010,ChatGPT/GPT,0,0,
+service,2010,Claude,0,0,
+service,2010,Codex,0,0,
+service,2010,Copilot,0,0,
+service,2010,Cursor AI,0,0,
+service,2010,DALL-E,0,0,
+service,2010,DeepSeek,0,0,
+service,2010,Dify,0,0,
+service,2010,ElevenLabs,0,0,
+service,2010,Gamma,0,0,
+service,2010,Gemini,0,0,
+service,2010,Genspark,0,0,
+service,2010,Google AI Studio,0,0,
+service,2010,Google Flow,0,0,
+service,2010,Grok,0,0,
+service,2010,ImageFX,0,0,
+service,2010,Kling AI,0,0,
+service,2010,Lovable,0,0,
+service,2010,Luma AI,0,0,
+service,2010,Midjourney,0,0,
+service,2010,Nano Banana,0,0,
+service,2010,NotebookLM,0,0,
+service,2010,Notion AI,0,0,
+service,2010,Perplexity,0,0,
+service,2010,Runway,0,0,
+service,2010,Sora,0,0,
+service,2010,Stable Diffusion,0,0,
+service,2010,Suno,0,0,
+service,2010,Typecast,0,0,
+service,2010,Veo,0,0,
+service,2010,Vertex AI,0,0,
+service,2010,Vrew,0,0,
+service,2010,Whisk,0,0,
+service,2010,Wrtn,0,0,
+service,2010,v0,0,0,
+service,2011,Adobe Firefly,0,0,
+service,2011,CLOVA X,0,0,
+service,2011,Canva AI,0,0,
+service,2011,CapCut AI,0,0,
+service,2011,ChatGPT/GPT,0,0,
+service,2011,Claude,0,0,
+service,2011,Codex,0,0,
+service,2011,Copilot,0,0,
+service,2011,Cursor AI,0,0,
+service,2011,DALL-E,0,0,
+service,2011,DeepSeek,0,0,
+service,2011,Dify,0,0,
+service,2011,ElevenLabs,0,0,
+service,2011,Gamma,0,0,
+service,2011,Gemini,0,0,
+service,2011,Genspark,0,0,
+service,2011,Google AI Studio,0,0,
+service,2011,Google Flow,0,0,
+service,2011,Grok,0,0,
+service,2011,ImageFX,0,0,
+service,2011,Kling AI,0,0,
+service,2011,Lovable,0,0,
+service,2011,Luma AI,0,0,
+service,2011,Midjourney,0,0,
+service,2011,Nano Banana,0,0,
+service,2011,NotebookLM,0,0,
+service,2011,Notion AI,0,0,
+service,2011,Perplexity,0,0,
+service,2011,Runway,0,0,
+service,2011,Sora,0,0,
+service,2011,Stable Diffusion,0,0,
+service,2011,Suno,0,0,
+service,2011,Typecast,0,0,
+service,2011,Veo,0,0,
+service,2011,Vertex AI,0,0,
+service,2011,Vrew,0,0,
+service,2011,Whisk,0,0,
+service,2011,Wrtn,0,0,
+service,2011,v0,0,0,
+service,2012,Adobe Firefly,0,0,
+service,2012,CLOVA X,0,0,
+service,2012,Canva AI,0,0,
+service,2012,CapCut AI,0,0,
+service,2012,ChatGPT/GPT,0,0,
+service,2012,Claude,0,0,
+service,2012,Codex,0,0,
+service,2012,Copilot,0,0,
+service,2012,Cursor AI,0,0,
+service,2012,DALL-E,0,0,
+service,2012,DeepSeek,0,0,
+service,2012,Dify,0,0,
+service,2012,ElevenLabs,0,0,
+service,2012,Gamma,0,0,
+service,2012,Gemini,0,0,
+service,2012,Genspark,0,0,
+service,2012,Google AI Studio,0,0,
+service,2012,Google Flow,0,0,
+service,2012,Grok,0,0,
+service,2012,ImageFX,0,0,
+service,2012,Kling AI,0,0,
+service,2012,Lovable,0,0,
+service,2012,Luma AI,0,0,
+service,2012,Midjourney,0,0,
+service,2012,Nano Banana,0,0,
+service,2012,NotebookLM,0,0,
+service,2012,Notion AI,0,0,
+service,2012,Perplexity,0,0,
+service,2012,Runway,0,0,
+service,2012,Sora,0,0,
+service,2012,Stable Diffusion,0,0,
+service,2012,Suno,0,0,
+service,2012,Typecast,0,0,
+service,2012,Veo,0,0,
+service,2012,Vertex AI,0,0,
+service,2012,Vrew,0,0,
+service,2012,Whisk,0,0,
+service,2012,Wrtn,0,0,
+service,2012,v0,0,0,
+service,2013,Adobe Firefly,0,0,
+service,2013,CLOVA X,0,0,
+service,2013,Canva AI,0,0,
+service,2013,CapCut AI,0,0,
+service,2013,ChatGPT/GPT,0,0,
+service,2013,Claude,0,0,
+service,2013,Codex,0,0,
+service,2013,Copilot,0,0,
+service,2013,Cursor AI,0,0,
+service,2013,DALL-E,0,0,
+service,2013,DeepSeek,0,0,
+service,2013,Dify,0,0,
+service,2013,ElevenLabs,0,0,
+service,2013,Gamma,0,0,
+service,2013,Gemini,0,0,
+service,2013,Genspark,0,0,
+service,2013,Google AI Studio,0,0,
+service,2013,Google Flow,0,0,
+service,2013,Grok,0,0,
+service,2013,ImageFX,0,0,
+service,2013,Kling AI,0,0,
+service,2013,Lovable,0,0,
+service,2013,Luma AI,0,0,
+service,2013,Midjourney,0,0,
+service,2013,Nano Banana,0,0,
+service,2013,NotebookLM,0,0,
+service,2013,Notion AI,0,0,
+service,2013,Perplexity,0,0,
+service,2013,Runway,0,0,
+service,2013,Sora,0,0,
+service,2013,Stable Diffusion,0,0,
+service,2013,Suno,0,0,
+service,2013,Typecast,0,0,
+service,2013,Veo,0,0,
+service,2013,Vertex AI,0,0,
+service,2013,Vrew,0,0,
+service,2013,Whisk,0,0,
+service,2013,Wrtn,0,0,
+service,2013,v0,0,0,
+service,2014,Adobe Firefly,0,0,
+service,2014,CLOVA X,0,0,
+service,2014,Canva AI,0,0,
+service,2014,CapCut AI,0,0,
+service,2014,ChatGPT/GPT,0,0,
+service,2014,Claude,0,0,
+service,2014,Codex,0,0,
+service,2014,Copilot,0,0,
+service,2014,Cursor AI,0,0,
+service,2014,DALL-E,0,0,
+service,2014,DeepSeek,0,0,
+service,2014,Dify,0,0,
+service,2014,ElevenLabs,0,0,
+service,2014,Gamma,0,0,
+service,2014,Gemini,0,0,
+service,2014,Genspark,0,0,
+service,2014,Google AI Studio,0,0,
+service,2014,Google Flow,0,0,
+service,2014,Grok,0,0,
+service,2014,ImageFX,0,0,
+service,2014,Kling AI,0,0,
+service,2014,Lovable,0,0,
+service,2014,Luma AI,0,0,
+service,2014,Midjourney,0,0,
+service,2014,Nano Banana,0,0,
+service,2014,NotebookLM,0,0,
+service,2014,Notion AI,0,0,
+service,2014,Perplexity,0,0,
+service,2014,Runway,0,0,
+service,2014,Sora,0,0,
+service,2014,Stable Diffusion,0,0,
+service,2014,Suno,0,0,
+service,2014,Typecast,0,0,
+service,2014,Veo,0,0,
+service,2014,Vertex AI,0,0,
+service,2014,Vrew,0,0,
+service,2014,Whisk,0,0,
+service,2014,Wrtn,0,0,
+service,2014,v0,0,0,
+service,2015,Adobe Firefly,0,0,
+service,2015,CLOVA X,0,0,
+service,2015,Canva AI,0,0,
+service,2015,CapCut AI,0,0,
+service,2015,ChatGPT/GPT,0,0,
+service,2015,Claude,0,0,
+service,2015,Codex,0,0,
+service,2015,Copilot,0,0,
+service,2015,Cursor AI,0,0,
+service,2015,DALL-E,0,0,
+service,2015,DeepSeek,0,0,
+service,2015,Dify,0,0,
+service,2015,ElevenLabs,0,0,
+service,2015,Gamma,0,0,
+service,2015,Gemini,0,0,
+service,2015,Genspark,0,0,
+service,2015,Google AI Studio,0,0,
+service,2015,Google Flow,0,0,
+service,2015,Grok,0,0,
+service,2015,ImageFX,0,0,
+service,2015,Kling AI,0,0,
+service,2015,Lovable,0,0,
+service,2015,Luma AI,0,0,
+service,2015,Midjourney,0,0,
+service,2015,Nano Banana,0,0,
+service,2015,NotebookLM,0,0,
+service,2015,Notion AI,0,0,
+service,2015,Perplexity,0,0,
+service,2015,Runway,0,0,
+service,2015,Sora,0,0,
+service,2015,Stable Diffusion,0,0,
+service,2015,Suno,0,0,
+service,2015,Typecast,0,0,
+service,2015,Veo,0,0,
+service,2015,Vertex AI,0,0,
+service,2015,Vrew,0,0,
+service,2015,Whisk,0,0,
+service,2015,Wrtn,0,0,
+service,2015,v0,0,0,
+service,2016,Adobe Firefly,0,0,
+service,2016,CLOVA X,0,0,
+service,2016,Canva AI,0,0,
+service,2016,CapCut AI,0,0,
+service,2016,ChatGPT/GPT,0,0,
+service,2016,Claude,0,0,
+service,2016,Codex,0,0,
+service,2016,Copilot,0,0,
+service,2016,Cursor AI,0,0,
+service,2016,DALL-E,0,0,
+service,2016,DeepSeek,0,0,
+service,2016,Dify,0,0,
+service,2016,ElevenLabs,0,0,
+service,2016,Gamma,0,0,
+service,2016,Gemini,0,0,
+service,2016,Genspark,0,0,
+service,2016,Google AI Studio,0,0,
+service,2016,Google Flow,0,0,
+service,2016,Grok,0,0,
+service,2016,ImageFX,0,0,
+service,2016,Kling AI,0,0,
+service,2016,Lovable,0,0,
+service,2016,Luma AI,0,0,
+service,2016,Midjourney,0,0,
+service,2016,Nano Banana,0,0,
+service,2016,NotebookLM,0,0,
+service,2016,Notion AI,0,0,
+service,2016,Perplexity,0,0,
+service,2016,Runway,0,0,
+service,2016,Sora,0,0,
+service,2016,Stable Diffusion,0,0,
+service,2016,Suno,0,0,
+service,2016,Typecast,0,0,
+service,2016,Veo,0,0,
+service,2016,Vertex AI,0,0,
+service,2016,Vrew,0,0,
+service,2016,Whisk,0,0,
+service,2016,Wrtn,0,0,
+service,2016,v0,0,0,
+service,2017,Adobe Firefly,0,0,
+service,2017,CLOVA X,0,0,
+service,2017,Canva AI,0,0,
+service,2017,CapCut AI,0,0,
+service,2017,ChatGPT/GPT,0,0,
+service,2017,Claude,0,0,
+service,2017,Codex,0,0,
+service,2017,Copilot,0,0,
+service,2017,Cursor AI,0,0,
+service,2017,DALL-E,0,0,
+service,2017,DeepSeek,0,0,
+service,2017,Dify,0,0,
+service,2017,ElevenLabs,0,0,
+service,2017,Gamma,0,0,
+service,2017,Gemini,0,0,
+service,2017,Genspark,0,0,
+service,2017,Google AI Studio,0,0,
+service,2017,Google Flow,0,0,
+service,2017,Grok,0,0,
+service,2017,ImageFX,0,0,
+service,2017,Kling AI,0,0,
+service,2017,Lovable,0,0,
+service,2017,Luma AI,0,0,
+service,2017,Midjourney,0,0,
+service,2017,Nano Banana,0,0,
+service,2017,NotebookLM,0,0,
+service,2017,Notion AI,0,0,
+service,2017,Perplexity,0,0,
+service,2017,Runway,0,0,
+service,2017,Sora,0,0,
+service,2017,Stable Diffusion,0,0,
+service,2017,Suno,0,0,
+service,2017,Typecast,0,0,
+service,2017,Veo,0,0,
+service,2017,Vertex AI,0,0,
+service,2017,Vrew,0,0,
+service,2017,Whisk,0,0,
+service,2017,Wrtn,0,0,
+service,2017,v0,0,0,
+service,2018,Adobe Firefly,0,0,
+service,2018,CLOVA X,0,0,
+service,2018,Canva AI,0,0,
+service,2018,CapCut AI,0,0,
+service,2018,ChatGPT/GPT,0,0,
+service,2018,Claude,0,0,
+service,2018,Codex,0,0,
+service,2018,Copilot,0,0,
+service,2018,Cursor AI,0,0,
+service,2018,DALL-E,0,0,
+service,2018,DeepSeek,0,0,
+service,2018,Dify,0,0,
+service,2018,ElevenLabs,0,0,
+service,2018,Gamma,0,0,
+service,2018,Gemini,0,0,
+service,2018,Genspark,0,0,
+service,2018,Google AI Studio,0,0,
+service,2018,Google Flow,0,0,
+service,2018,Grok,0,0,
+service,2018,ImageFX,0,0,
+service,2018,Kling AI,0,0,
+service,2018,Lovable,0,0,
+service,2018,Luma AI,0,0,
+service,2018,Midjourney,0,0,
+service,2018,Nano Banana,0,0,
+service,2018,NotebookLM,0,0,
+service,2018,Notion AI,0,0,
+service,2018,Perplexity,0,0,
+service,2018,Runway,0,0,
+service,2018,Sora,0,0,
+service,2018,Stable Diffusion,0,0,
+service,2018,Suno,0,0,
+service,2018,Typecast,0,0,
+service,2018,Veo,0,0,
+service,2018,Vertex AI,0,0,
+service,2018,Vrew,0,0,
+service,2018,Whisk,0,0,
+service,2018,Wrtn,0,0,
+service,2018,v0,0,0,
+service,2019,Adobe Firefly,0,0,
+service,2019,CLOVA X,0,0,
+service,2019,Canva AI,0,0,
+service,2019,CapCut AI,0,0,
+service,2019,ChatGPT/GPT,0,0,
+service,2019,Claude,0,0,
+service,2019,Codex,0,0,
+service,2019,Copilot,0,0,
+service,2019,Cursor AI,0,0,
+service,2019,DALL-E,0,0,
+service,2019,DeepSeek,0,0,
+service,2019,Dify,0,0,
+service,2019,ElevenLabs,0,0,
+service,2019,Gamma,0,0,
+service,2019,Gemini,0,0,
+service,2019,Genspark,0,0,
+service,2019,Google AI Studio,0,0,
+service,2019,Google Flow,0,0,
+service,2019,Grok,0,0,
+service,2019,ImageFX,0,0,
+service,2019,Kling AI,0,0,
+service,2019,Lovable,0,0,
+service,2019,Luma AI,0,0,
+service,2019,Midjourney,0,0,
+service,2019,Nano Banana,0,0,
+service,2019,NotebookLM,0,0,
+service,2019,Notion AI,0,0,
+service,2019,Perplexity,0,0,
+service,2019,Runway,0,0,
+service,2019,Sora,0,0,
+service,2019,Stable Diffusion,0,0,
+service,2019,Suno,0,0,
+service,2019,Typecast,0,0,
+service,2019,Veo,0,0,
+service,2019,Vertex AI,0,0,
+service,2019,Vrew,0,0,
+service,2019,Whisk,0,0,
+service,2019,Wrtn,0,0,
+service,2019,v0,0,0,
+service,2020,Adobe Firefly,0,2,0.0
+service,2020,CLOVA X,0,2,0.0
+service,2020,Canva AI,0,2,0.0
+service,2020,CapCut AI,0,2,0.0
+service,2020,ChatGPT/GPT,1,2,50.0
+service,2020,Claude,0,2,0.0
+service,2020,Codex,0,2,0.0
+service,2020,Copilot,0,2,0.0
+service,2020,Cursor AI,0,2,0.0
+service,2020,DALL-E,0,2,0.0
+service,2020,DeepSeek,0,2,0.0
+service,2020,Dify,0,2,0.0
+service,2020,ElevenLabs,0,2,0.0
+service,2020,Gamma,0,2,0.0
+service,2020,Gemini,0,2,0.0
+service,2020,Genspark,0,2,0.0
+service,2020,Google AI Studio,0,2,0.0
+service,2020,Google Flow,0,2,0.0
+service,2020,Grok,0,2,0.0
+service,2020,ImageFX,0,2,0.0
+service,2020,Kling AI,0,2,0.0
+service,2020,Lovable,0,2,0.0
+service,2020,Luma AI,0,2,0.0
+service,2020,Midjourney,0,2,0.0
+service,2020,Nano Banana,0,2,0.0
+service,2020,NotebookLM,0,2,0.0
+service,2020,Notion AI,0,2,0.0
+service,2020,Perplexity,0,2,0.0
+service,2020,Runway,0,2,0.0
+service,2020,Sora,0,2,0.0
+service,2020,Stable Diffusion,0,2,0.0
+service,2020,Suno,0,2,0.0
+service,2020,Typecast,1,2,50.0
+service,2020,Veo,0,2,0.0
+service,2020,Vertex AI,0,2,0.0
+service,2020,Vrew,1,2,50.0
+service,2020,Whisk,0,2,0.0
+service,2020,Wrtn,0,2,0.0
+service,2020,v0,0,2,0.0
+service,2021,Adobe Firefly,0,2,0.0
+service,2021,CLOVA X,0,2,0.0
+service,2021,Canva AI,0,2,0.0
+service,2021,CapCut AI,0,2,0.0
+service,2021,ChatGPT/GPT,2,2,100.0
+service,2021,Claude,0,2,0.0
+service,2021,Codex,0,2,0.0
+service,2021,Copilot,0,2,0.0
+service,2021,Cursor AI,0,2,0.0
+service,2021,DALL-E,0,2,0.0
+service,2021,DeepSeek,0,2,0.0
+service,2021,Dify,0,2,0.0
+service,2021,ElevenLabs,0,2,0.0
+service,2021,Gamma,0,2,0.0
+service,2021,Gemini,0,2,0.0
+service,2021,Genspark,0,2,0.0
+service,2021,Google AI Studio,0,2,0.0
+service,2021,Google Flow,0,2,0.0
+service,2021,Grok,0,2,0.0
+service,2021,ImageFX,0,2,0.0
+service,2021,Kling AI,0,2,0.0
+service,2021,Lovable,0,2,0.0
+service,2021,Luma AI,0,2,0.0
+service,2021,Midjourney,0,2,0.0
+service,2021,Nano Banana,0,2,0.0
+service,2021,NotebookLM,0,2,0.0
+service,2021,Notion AI,0,2,0.0
+service,2021,Perplexity,0,2,0.0
+service,2021,Runway,0,2,0.0
+service,2021,Sora,0,2,0.0
+service,2021,Stable Diffusion,0,2,0.0
+service,2021,Suno,0,2,0.0
+service,2021,Typecast,0,2,0.0
+service,2021,Veo,0,2,0.0
+service,2021,Vertex AI,0,2,0.0
+service,2021,Vrew,0,2,0.0
+service,2021,Whisk,0,2,0.0
+service,2021,Wrtn,0,2,0.0
+service,2021,v0,0,2,0.0
+service,2022,Adobe Firefly,0,1,0.0
+service,2022,CLOVA X,0,1,0.0
+service,2022,Canva AI,0,1,0.0
+service,2022,CapCut AI,0,1,0.0
+service,2022,ChatGPT/GPT,1,1,100.0
+service,2022,Claude,0,1,0.0
+service,2022,Codex,0,1,0.0
+service,2022,Copilot,0,1,0.0
+service,2022,Cursor AI,0,1,0.0
+service,2022,DALL-E,0,1,0.0
+service,2022,DeepSeek,0,1,0.0
+service,2022,Dify,0,1,0.0
+service,2022,ElevenLabs,0,1,0.0
+service,2022,Gamma,0,1,0.0
+service,2022,Gemini,0,1,0.0
+service,2022,Genspark,0,1,0.0
+service,2022,Google AI Studio,0,1,0.0
+service,2022,Google Flow,0,1,0.0
+service,2022,Grok,0,1,0.0
+service,2022,ImageFX,0,1,0.0
+service,2022,Kling AI,0,1,0.0
+service,2022,Lovable,0,1,0.0
+service,2022,Luma AI,0,1,0.0
+service,2022,Midjourney,0,1,0.0
+service,2022,Nano Banana,0,1,0.0
+service,2022,NotebookLM,0,1,0.0
+service,2022,Notion AI,0,1,0.0
+service,2022,Perplexity,0,1,0.0
+service,2022,Runway,0,1,0.0
+service,2022,Sora,0,1,0.0
+service,2022,Stable Diffusion,0,1,0.0
+service,2022,Suno,0,1,0.0
+service,2022,Typecast,0,1,0.0
+service,2022,Veo,0,1,0.0
+service,2022,Vertex AI,0,1,0.0
+service,2022,Vrew,0,1,0.0
+service,2022,Whisk,0,1,0.0
+service,2022,Wrtn,0,1,0.0
+service,2022,v0,0,1,0.0
+service,2023,Adobe Firefly,0,149,0.0
+service,2023,CLOVA X,6,149,4.026845637583893
+service,2023,Canva AI,0,149,0.0
+service,2023,CapCut AI,0,149,0.0
+service,2023,ChatGPT/GPT,139,149,93.28859060402685
+service,2023,Claude,0,149,0.0
+service,2023,Codex,0,149,0.0
+service,2023,Copilot,2,149,1.342281879194631
+service,2023,Cursor AI,0,149,0.0
+service,2023,DALL-E,2,149,1.342281879194631
+service,2023,DeepSeek,0,149,0.0
+service,2023,Dify,0,149,0.0
+service,2023,ElevenLabs,0,149,0.0
+service,2023,Gamma,0,149,0.0
+service,2023,Gemini,0,149,0.0
+service,2023,Genspark,0,149,0.0
+service,2023,Google AI Studio,0,149,0.0
+service,2023,Google Flow,0,149,0.0
+service,2023,Grok,0,149,0.0
+service,2023,ImageFX,0,149,0.0
+service,2023,Kling AI,0,149,0.0
+service,2023,Lovable,0,149,0.0
+service,2023,Luma AI,0,149,0.0
+service,2023,Midjourney,10,149,6.7114093959731544
+service,2023,Nano Banana,0,149,0.0
+service,2023,NotebookLM,0,149,0.0
+service,2023,Notion AI,1,149,0.6711409395973155
+service,2023,Perplexity,0,149,0.0
+service,2023,Runway,0,149,0.0
+service,2023,Sora,0,149,0.0
+service,2023,Stable Diffusion,5,149,3.3557046979865772
+service,2023,Suno,0,149,0.0
+service,2023,Typecast,0,149,0.0
+service,2023,Veo,0,149,0.0
+service,2023,Vertex AI,0,149,0.0
+service,2023,Vrew,0,149,0.0
+service,2023,Whisk,0,149,0.0
+service,2023,Wrtn,2,149,1.342281879194631
+service,2023,v0,0,149,0.0
+service,2024,Adobe Firefly,0,136,0.0
+service,2024,CLOVA X,1,136,0.7352941176470589
+service,2024,Canva AI,0,136,0.0
+service,2024,CapCut AI,0,136,0.0
+service,2024,ChatGPT/GPT,119,136,87.5
+service,2024,Claude,2,136,1.4705882352941178
+service,2024,Codex,0,136,0.0
+service,2024,Copilot,8,136,5.882352941176471
+service,2024,Cursor AI,0,136,0.0
+service,2024,DALL-E,3,136,2.2058823529411766
+service,2024,DeepSeek,0,136,0.0
+service,2024,Dify,0,136,0.0
+service,2024,ElevenLabs,1,136,0.7352941176470589
+service,2024,Gamma,0,136,0.0
+service,2024,Gemini,1,136,0.7352941176470589
+service,2024,Genspark,0,136,0.0
+service,2024,Google AI Studio,0,136,0.0
+service,2024,Google Flow,0,136,0.0
+service,2024,Grok,0,136,0.0
+service,2024,ImageFX,0,136,0.0
+service,2024,Kling AI,0,136,0.0
+service,2024,Lovable,0,136,0.0
+service,2024,Luma AI,1,136,0.7352941176470589
+service,2024,Midjourney,14,136,10.294117647058824
+service,2024,Nano Banana,0,136,0.0
+service,2024,NotebookLM,0,136,0.0
+service,2024,Notion AI,0,136,0.0
+service,2024,Perplexity,1,136,0.7352941176470589
+service,2024,Runway,2,136,1.4705882352941178
+service,2024,Sora,0,136,0.0
+service,2024,Stable Diffusion,7,136,5.147058823529412
+service,2024,Suno,2,136,1.4705882352941178
+service,2024,Typecast,1,136,0.7352941176470589
+service,2024,Veo,0,136,0.0
+service,2024,Vertex AI,0,136,0.0
+service,2024,Vrew,1,136,0.7352941176470589
+service,2024,Whisk,0,136,0.0
+service,2024,Wrtn,2,136,1.4705882352941178
+service,2024,v0,0,136,0.0
+service,2025,Adobe Firefly,0,220,0.0
+service,2025,CLOVA X,2,220,0.9090909090909091
+service,2025,Canva AI,1,220,0.45454545454545453
+service,2025,CapCut AI,1,220,0.45454545454545453
+service,2025,ChatGPT/GPT,157,220,71.36363636363636
+service,2025,Claude,18,220,8.181818181818182
+service,2025,Codex,0,220,0.0
+service,2025,Copilot,15,220,6.818181818181818
+service,2025,Cursor AI,13,220,5.909090909090909
+service,2025,DALL-E,2,220,0.9090909090909091
+service,2025,DeepSeek,7,220,3.1818181818181817
+service,2025,Dify,2,220,0.9090909090909091
+service,2025,ElevenLabs,1,220,0.45454545454545453
+service,2025,Gamma,1,220,0.45454545454545453
+service,2025,Gemini,26,220,11.818181818181818
+service,2025,Genspark,2,220,0.9090909090909091
+service,2025,Google AI Studio,1,220,0.45454545454545453
+service,2025,Google Flow,0,220,0.0
+service,2025,Grok,1,220,0.45454545454545453
+service,2025,ImageFX,0,220,0.0
+service,2025,Kling AI,1,220,0.45454545454545453
+service,2025,Lovable,1,220,0.45454545454545453
+service,2025,Luma AI,0,220,0.0
+service,2025,Midjourney,22,220,10.0
+service,2025,Nano Banana,7,220,3.1818181818181817
+service,2025,NotebookLM,6,220,2.727272727272727
+service,2025,Notion AI,2,220,0.9090909090909091
+service,2025,Perplexity,8,220,3.6363636363636362
+service,2025,Runway,5,220,2.272727272727273
+service,2025,Sora,2,220,0.9090909090909091
+service,2025,Stable Diffusion,8,220,3.6363636363636362
+service,2025,Suno,13,220,5.909090909090909
+service,2025,Typecast,0,220,0.0
+service,2025,Veo,1,220,0.45454545454545453
+service,2025,Vertex AI,0,220,0.0
+service,2025,Vrew,0,220,0.0
+service,2025,Whisk,2,220,0.9090909090909091
+service,2025,Wrtn,3,220,1.3636363636363635
+service,2025,v0,0,220,0.0
+service,2026,Adobe Firefly,1,299,0.33444816053511706
+service,2026,CLOVA X,0,299,0.0
+service,2026,Canva AI,5,299,1.6722408026755853
+service,2026,CapCut AI,3,299,1.0033444816053512
+service,2026,ChatGPT/GPT,91,299,30.434782608695652
+service,2026,Claude,107,299,35.785953177257525
+service,2026,Codex,7,299,2.3411371237458196
+service,2026,Copilot,6,299,2.0066889632107023
+service,2026,Cursor AI,7,299,2.3411371237458196
+service,2026,DALL-E,1,299,0.33444816053511706
+service,2026,DeepSeek,1,299,0.33444816053511706
+service,2026,Dify,4,299,1.3377926421404682
+service,2026,ElevenLabs,1,299,0.33444816053511706
+service,2026,Gamma,3,299,1.0033444816053512
+service,2026,Gemini,95,299,31.77257525083612
+service,2026,Genspark,3,299,1.0033444816053512
+service,2026,Google AI Studio,9,299,3.0100334448160537
+service,2026,Google Flow,1,299,0.33444816053511706
+service,2026,Grok,8,299,2.6755852842809364
+service,2026,ImageFX,1,299,0.33444816053511706
+service,2026,Kling AI,4,299,1.3377926421404682
+service,2026,Lovable,4,299,1.3377926421404682
+service,2026,Luma AI,0,299,0.0
+service,2026,Midjourney,9,299,3.0100334448160537
+service,2026,Nano Banana,37,299,12.37458193979933
+service,2026,NotebookLM,35,299,11.705685618729097
+service,2026,Notion AI,6,299,2.0066889632107023
+service,2026,Perplexity,7,299,2.3411371237458196
+service,2026,Runway,1,299,0.33444816053511706
+service,2026,Sora,0,299,0.0
+service,2026,Stable Diffusion,2,299,0.6688963210702341
+service,2026,Suno,20,299,6.688963210702341
+service,2026,Typecast,1,299,0.33444816053511706
+service,2026,Veo,9,299,3.0100334448160537
+service,2026,Vertex AI,1,299,0.33444816053511706
+service,2026,Vrew,1,299,0.33444816053511706
+service,2026,Whisk,0,299,0.0
+service,2026,Wrtn,0,299,0.0
+service,2026,v0,1,299,0.33444816053511706

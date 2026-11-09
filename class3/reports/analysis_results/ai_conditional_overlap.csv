@@ -1,0 +1,7 @@
+﻿denominator,other,denominator_count,overlap_count,overlap_pct
+general,technical,4300,523,12.162790697674419
+general,service,4300,490,11.395348837209303
+technical,general,1209,523,43.25889164598842
+technical,service,1209,145,11.993382961124897
+service,general,809,490,60.568603213844256
+service,technical,809,145,17.92336217552534
