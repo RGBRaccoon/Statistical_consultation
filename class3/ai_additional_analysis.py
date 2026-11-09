@@ -11,7 +11,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from ai_trend_analysis import MONTH_PATTERN, KeywordClassifier, load_books, write_csv
-from ai_trend_charts import configure_korean_font
+from ai_trend_charts import configure_korean_font, year_tick_label
 
 BASE = Path(__file__).resolve().parent
 OUTPUT = BASE / "reports" / "analysis_results"
@@ -315,9 +315,8 @@ def draw_market_context(rows):
                 )
     axis.set_xticks(
         positions,
-        [f"{row['year']}{'*' if row['partial_year'] else ''}" for row in selected],
-        rotation=45,
-        ha="right",
+        [year_tick_label(row["year"], partial=row["partial_year"]) for row in selected],
+        fontsize=8,
     )
     axis.set_ylim(0, max(totals) * 1.19)
     axis.set_ylabel("도서 상품 수(개)")
@@ -426,14 +425,16 @@ def draw_composition(rows):
                 )
         bottom = [base + value for base, value in zip(bottom, values, strict=True)]
     labels = [
-        f"{row['year']}{'*' if row['year'] == 2026 else ''}\nn={row['ai_count']:,}"
+        year_tick_label(
+            row["year"], partial=row["year"] == 2026, sample_size=row["ai_count"]
+        )
         for row in selected
     ]
-    axis.set_xticks(positions, labels)
+    axis.set_xticks(positions, labels, fontsize=8)
     axis.set_ylim(0, 100)
     axis.set_ylabel("해당 연도 AI 도서 중 비율(%)")
     axis.set_title("AI 관련 도서 내부 구성의 변화")
-    axis.legend(loc="upper center", bbox_to_anchor=(0.5, -0.1), ncol=2, frameon=False)
+    axis.legend(loc="upper center", bbox_to_anchor=(0.5, -0.24), ncol=2, frameon=False)
     save_figure(
         figure,
         "ai_composition.png",
@@ -463,9 +464,14 @@ def draw_keywords(rows, group, start, end, top_n):
     axis.set_xticks(
         range(len(years)),
         [
-            f"{year}{'*' if year == 2026 else ''}\nn={lookup[labels[0], year]['group_count']}"
+            year_tick_label(
+                year,
+                partial=year == 2026,
+                sample_size=lookup[labels[0], year]["group_count"],
+            )
             for year in years
         ],
+        fontsize=8,
     )
     for y, label in enumerate(labels):
         for x, year in enumerate(years):
@@ -526,7 +532,8 @@ def draw_sensitivity(rows):
     axis.set_title("검색 범위와 상품 형태에 따른 AI 도서 비율 변화")
     axis.set_xticks(
         list(range(2020, 2027)),
-        [str(year) + ("*" if year == 2026 else "") for year in range(2020, 2027)],
+        [year_tick_label(year, partial=year == 2026) for year in range(2020, 2027)],
+        fontsize=8,
     )
     axis.set_ylabel("각 시나리오의 분석 대상 중 AI 도서 비율(%)")
     axis.set_ylim(0, 85)

@@ -1,5 +1,6 @@
 import argparse
 import csv
+import unicodedata
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -25,6 +26,34 @@ PERCENT_SERIES = [
     {"field": "ai_technical_pct", "label": "기술"},
     {"field": "ai_service_pct", "label": "서비스"},
 ]
+
+# 공개·발표 시점이다. 짧은 축 표기의 전체 명칭과 출처는 보고서 3.1에 둔다.
+AI_EVENTS = (
+    (2016, 3, "알파고 대국"),
+    (2017, 6, "Transformer"),
+    (2022, 11, "ChatGPT"),
+    (2023, 3, "GPT-4"),
+    (2023, 12, "Gemini"),
+    (2024, 3, "Opus"),
+    (2025, 8, "나노 바나나"),
+    (2026, 6, "Fable 5"),
+)
+
+
+def year_tick_label(year, *, partial=False, sample_size=None):
+    """연도·기존 표본 수 아래에 해당 연도의 사건을 월순으로 표시한다."""
+    lines = [f"{year}{'*' if partial else ''}"]
+    if sample_size is not None:
+        lines.append(f"n={sample_size:,}")
+    for event_year, month, label in AI_EVENTS:
+        if event_year != year:
+            continue
+        event = f"{month}월 {label}"
+        columns = sum(
+            2 if unicodedata.east_asian_width(char) in "WF" else 1 for char in event
+        )
+        lines.append(event if columns <= 14 else f"{month}월\n{label}")
+    return "\n".join(lines)
 
 
 def configure_korean_font():
@@ -131,10 +160,9 @@ def render_grouped_chart(rows, series, output, title, y_label, percentage=False)
         axis.axvspan(position - 0.5, position + 0.5, color="#777777", alpha=0.08)
 
     tick_labels = [
-        f"{row['year']}*" if row["is_partial_year"] else str(row["year"])
-        for row in rows
+        year_tick_label(row["year"], partial=row["is_partial_year"]) for row in rows
     ]
-    axis.set_xticks(positions, tick_labels, rotation=45, ha="right")
+    axis.set_xticks(positions, tick_labels, fontsize=8)
     axis.set_title(title, fontsize=18, fontweight="bold", pad=22)
     axis.set_xlabel("발행연도")
     axis.set_ylabel(y_label)

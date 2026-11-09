@@ -127,3 +127,50 @@ def test_market_context_rejects_a_stack_that_does_not_equal_the_total():
     ]
     with pytest.raises(ValueError, match="합계"):
         analysis.market_context_series(rows)
+
+
+@pytest.mark.parametrize(
+    "kind", ["composition", "market", "technical", "service", "sensitivity"]
+)
+def test_time_charts_keep_events_and_partial_year_on_ticks(kind, monkeypatch):
+    classifier = classifier_module.KeywordClassifier.from_json(
+        MODULE_DIR / "ai_keywords.json"
+    )
+    records = analysis.classify_books(
+        [
+            {
+                "title": "AI LLM ChatGPT",
+                "subtitle": "",
+                "publication_month": f"{year}-01",
+            }
+            for year in range(2020, 2027)
+        ],
+        classifier,
+    )
+    tables = analysis.compute_tables(records)
+    captured = []
+
+    def capture(figure, *args):
+        captured.extend(tick.get_text() for tick in figure.axes[0].get_xticklabels())
+        analysis.plt.close(figure)
+
+    monkeypatch.setattr(analysis, "save_figure", capture)
+    if kind == "composition":
+        analysis.draw_composition(tables["ai_composition"])
+    elif kind == "market":
+        analysis.draw_market_context(tables["ai_growth"])
+    elif kind == "sensitivity":
+        analysis.draw_sensitivity(tables["ai_sensitivity"])
+    else:
+        analysis.draw_keywords(tables["ai_keyword_yearly"], kind, 2023, 2026, 10)
+    year_2023 = next(label for label in captured if label.startswith("2023"))
+    year_2026 = next(label for label in captured if label.startswith("2026"))
+    assert year_2023.endswith("3월 GPT-4\n12월 Gemini")
+    assert year_2026.startswith("2026*")
+    assert year_2026.endswith("6월 Fable 5")
+    if kind in {"composition", "technical", "service"}:
+        assert year_2023.splitlines()[1] == "n=1"
+    if kind in {"technical", "service"}:
+        assert all(
+            "알파고" not in label and "Transformer" not in label for label in captured
+        )

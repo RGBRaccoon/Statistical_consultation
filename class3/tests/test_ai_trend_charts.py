@@ -32,3 +32,43 @@ def test_chart_series_has_union_and_three_groups():
         "ai_technical_pct",
         "ai_service_pct",
     ]
+
+
+def test_year_label_keeps_both_events_of_the_same_year_in_order():
+    label = charts.year_tick_label(2023, sample_size=149)
+    assert label.splitlines() == ["2023", "n=149", "3월 GPT-4", "12월 Gemini"]
+    assert "ChatGPT" not in label
+
+
+def test_year_label_preserves_partial_year_and_sample_size():
+    label = charts.year_tick_label(2026, partial=True, sample_size=0)
+    assert label.splitlines() == ["2026*", "n=0", "6월 Fable 5"]
+    assert charts.year_tick_label(2021) == "2021"
+
+
+def test_grouped_chart_displays_events_below_the_year(monkeypatch):
+    captured = []
+
+    def capture(figure, *args, **kwargs):
+        captured.extend(tick.get_text() for tick in figure.axes[0].get_xticklabels())
+
+    monkeypatch.setattr(charts.plt.Figure, "savefig", capture)
+    rows = [
+        {
+            "year": year,
+            "is_partial_year": year == 2026,
+            **{item["field"]: 10 for item in charts.COUNT_SERIES},
+        }
+        for year in (2023, 2026)
+    ]
+    charts.render_grouped_chart(
+        rows,
+        charts.COUNT_SERIES,
+        MODULE.parent / "reports" / "figures" / "unused.png",
+        "테스트",
+        "권수",
+    )
+    assert captured == [
+        "2023\n3월 GPT-4\n12월 Gemini",
+        "2026*\n6월 Fable 5",
+    ]

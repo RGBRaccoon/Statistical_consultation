@@ -87,6 +87,21 @@
 
 분석 대상과 그림별 기간은 2.4절에 정리했다. 3.2·3.3의 막대는 해당 연도의 관측값이고 실선은 분류별 3년 후행 이동평균이다.
 
+**주요 사건 표시:** 모든 시계열 그림의 연도 아래에 다음 사건을 같은 기준으로 표시했다. 표본 수가 있는 그림은 `연도 → n → 사건` 순서이며, 표시 기간 밖의 사건은 넣지 않았다. 같은 해의 사건은 월순으로 나열하고 긴 표기는 월과 이름을 두 줄로 나눈다. 사건은 시점을 비교하기 위한 참고이며 도서 증감의 원인으로 판정한 것은 아니다.
+
+| 시점 | 사건·공식 출처 | 그림의 짧은 표기 |
+|---|---|---|
+| 2016.03 | [알파고–이세돌 대국](https://deepmind.google/research/alphago/) | 3월 알파고 대국 |
+| 2017.06 | [Transformer 논문 공개](https://arxiv.org/abs/1706.03762) | 6월 Transformer |
+| 2022.11 | [ChatGPT 공개](https://openai.com/index/chatgpt/) | 11월 ChatGPT |
+| 2023.03 | [GPT-4 발표](https://openai.com/index/gpt-4-research/) | 3월 GPT-4 |
+| 2023.12 | [Gemini 모델 발표](https://blog.google/innovation-and-ai/technology/ai/google-gemini-ai/) | 12월 Gemini |
+| 2024.03 | [Claude 3 Opus 공개](https://www.anthropic.com/research/claude-3-family) | 3월 Opus |
+| 2025.08 | [Nano Banana 공개](https://blog.google/products-and-platforms/products/gemini/updated-image-editing-model/) | 8월 나노 바나나 |
+| 2026.06 | [Claude Fable 5 공개](https://www.anthropic.com/news/claude-fable-5-mythos-5) | 6월 Fable 5 |
+
+Gemini는 2024년 서비스 개칭이 아니라 2023년 모델 발표를, Opus는 첫 등장인 Claude 3 Opus를 기준으로 삼았다. 시간축이 없는 부록 A의 중복 그림에는 사건을 붙이지 않고 위 목록을 공통 참고로 둔다.
+
 ### 3.2 연도별 AI 관련 도서 수
 
 ![연도별 AI 관련 도서 수](figures/ai_books_yearly_count.png)
