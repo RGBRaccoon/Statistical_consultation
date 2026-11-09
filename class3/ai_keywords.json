@@ -1,0 +1,271 @@
+{
+  "general": [
+    {
+      "label": "인공지능",
+      "patterns": ["인공지능", "artificial\\s+intelligence"]
+    },
+    {
+      "label": "AI",
+      "patterns": ["(?<![A-Za-z0-9])A\\.?I\\.?(?![A-Za-z0-9])"]
+    }
+  ],
+  "technical": [
+    {
+      "label": "생성형 AI",
+      "patterns": ["생성형\\s*(?:AI|인공지능)", "generative\\s+AI"]
+    },
+    {
+      "label": "머신러닝",
+      "patterns": ["머신\\s*러닝", "기계\\s*학습", "machine\\s+learning"]
+    },
+    {
+      "label": "딥러닝",
+      "patterns": ["딥\\s*러닝", "deep\\s+learning"]
+    },
+    {
+      "label": "LLM",
+      "patterns": [
+        "(?<![A-Za-z0-9])LLM(?:s)?(?![A-Za-z0-9])",
+        "large\\s+language\\s+models?",
+        "(?:거대|대규모)\\s*언어\\s*모델"
+      ]
+    },
+    {
+      "label": "신경망",
+      "patterns": ["신경망", "neural\\s+networks?"]
+    },
+    {
+      "label": "강화학습",
+      "patterns": ["강화\\s*학습", "reinforcement\\s+learning"]
+    },
+    {
+      "label": "자연어 처리",
+      "patterns": [
+        "자연어\\s*처리",
+        "natural\\s+language\\s+processing",
+        "(?<![A-Za-z0-9])NLP(?![A-Za-z0-9])"
+      ]
+    },
+    {
+      "label": "컴퓨터 비전",
+      "patterns": ["컴퓨터\\s*비전", "computer\\s+vision"]
+    },
+    {
+      "label": "Transformer",
+      "patterns": ["트랜스포머", "(?<![A-Za-z])transformers?(?![A-Za-z])"]
+    },
+    {
+      "label": "RAG",
+      "patterns": [
+        "(?<![A-Za-z0-9])RAG(?![A-Za-z0-9])",
+        "retrieval[ -]+augmented\\s+generation",
+        "검색\\s*증강\\s*생성"
+      ]
+    },
+    {
+      "label": "프롬프트 엔지니어링",
+      "patterns": ["프롬프트\\s*엔지니어링", "prompt\\s+engineering"]
+    },
+    {
+      "label": "AI 에이전트",
+      "patterns": [
+        "(?:AI|인공지능)\\s*에이전트",
+        "에이전틱\\s*AI",
+        "agentic\\s+AI"
+      ]
+    },
+    {
+      "label": "확산 모델",
+      "patterns": ["확산\\s*모델", "diffusion\\s+models?"]
+    }
+  ],
+  "service": [
+    {
+      "label": "ChatGPT",
+      "patterns": ["(?<![A-Za-z])Chat\\s*GPT(?![A-Za-z])", "챗\\s*GPT", "챗지피티"]
+    },
+    {
+      "label": "GPT",
+      "patterns": [
+        "(?<![A-Za-z])GPT(?:s|-?\\d+(?:\\.\\d+)?[A-Za-z]?)?(?![A-Za-z])",
+        "지피티"
+      ]
+    },
+    {
+      "label": "Gemini",
+      "patterns": ["(?<![A-Za-z])Gemini(?![A-Za-z])", "제미나이"]
+    },
+    {
+      "label": "Bard",
+      "patterns": ["Google\\s*Bard", "구글\\s*바드"]
+    },
+    {
+      "label": "Claude",
+      "patterns": ["(?<![A-Za-z])Claude(?![A-Za-z])", "클로드"]
+    },
+    {
+      "label": "Copilot",
+      "patterns": ["(?<![A-Za-z])Co-?pilot(?![A-Za-z])", "코파일럿"]
+    },
+    {
+      "label": "Grok",
+      "patterns": ["(?<![A-Za-z])Grok(?![A-Za-z])", "그록"]
+    },
+    {
+      "label": "Perplexity",
+      "patterns": ["(?<![A-Za-z])Perplexity(?![A-Za-z])", "퍼플렉시티"]
+    },
+    {
+      "label": "DeepSeek",
+      "patterns": ["Deep\\s*Seek", "딥시크"]
+    },
+    {
+      "label": "NotebookLM",
+      "patterns": ["Notebook\\s*LM", "노트북\\s*LM", "Gemini\\s*Notebook"]
+    },
+    {
+      "label": "CLOVA X",
+      "patterns": ["CLOVA\\s*X", "클로바\\s*X", "Hyper\\s*CLOVA", "하이퍼클로바"]
+    },
+    {
+      "label": "Wrtn",
+      "patterns": ["(?<![A-Za-z])Wrtn(?![A-Za-z])", "뤼튼"]
+    },
+    {
+      "label": "Genspark",
+      "patterns": ["Gen\\s*spark", "젠스파크"]
+    },
+    {
+      "label": "Midjourney",
+      "patterns": ["Mid\\s*journey", "미드저니"]
+    },
+    {
+      "label": "DALL-E",
+      "patterns": ["DALL[\\s·.\\-]*E", "(?<![가-힣])달리\\s*[23](?![가-힣])"]
+    },
+    {
+      "label": "Stable Diffusion",
+      "patterns": ["Stable\\s*Diffusion", "스테이블\\s*디퓨전"]
+    },
+    {
+      "label": "Adobe Firefly",
+      "patterns": ["(?:Adobe\\s*)?Firefly", "어도비\\s*파이어플라이"]
+    },
+    {
+      "label": "Sora",
+      "patterns": [
+        "(?<![A-Za-z])Sora(?![A-Za-z])",
+        "(?:OpenAI|오픈AI|AI)\\s*소라",
+        "소라\\s*(?:OpenAI|오픈AI|AI)"
+      ]
+    },
+    {
+      "label": "Runway",
+      "patterns": ["(?<![A-Za-z])Runway(?:ML)?(?![A-Za-z])", "런웨이"]
+    },
+    {
+      "label": "Suno",
+      "patterns": ["(?<![A-Za-z])Suno(?![A-Za-z])", "수노"]
+    },
+    {
+      "label": "Nano Banana",
+      "patterns": ["Nano\\s*Banana", "나노\\s*바나나"]
+    },
+    {
+      "label": "Veo",
+      "patterns": ["(?<![A-Za-z])Veo\\s*[23]?(?![A-Za-z])", "비오\\s*[23]"]
+    },
+    {
+      "label": "Kling AI",
+      "patterns": ["Kling\\s*AI", "클링\\s*AI"]
+    },
+    {
+      "label": "Luma AI",
+      "patterns": ["Luma\\s*(?:AI|Dream\\s*Machine)", "루마\\s*(?:AI|드림\\s*머신)"]
+    },
+    {
+      "label": "ElevenLabs",
+      "patterns": ["Eleven\\s*Labs", "일레븐랩스"]
+    },
+    {
+      "label": "Vrew",
+      "patterns": ["(?<![A-Za-z])Vrew(?![A-Za-z])", "브루\\s*(?:AI|영상)"]
+    },
+    {
+      "label": "Canva AI",
+      "patterns": ["Canva\\s*AI", "캔바\\s*AI"]
+    },
+    {
+      "label": "CapCut AI",
+      "patterns": ["CapCut\\s*AI", "캡컷\\s*AI"]
+    },
+    {
+      "label": "Google Flow",
+      "patterns": ["Google\\s*Flow", "구글\\s*플로우"]
+    },
+    {
+      "label": "ImageFX",
+      "patterns": ["Image\\s*FX", "이미지\\s*FX"]
+    },
+    {
+      "label": "Whisk",
+      "patterns": ["(?<![A-Za-z])Whisk(?![A-Za-z])", "위스크"]
+    },
+    {
+      "label": "Typecast",
+      "patterns": ["(?<![A-Za-z])Typecast(?![A-Za-z])", "타입캐스트"]
+    },
+    {
+      "label": "Gamma",
+      "patterns": [
+        "(?:Gamma|감마).{0,12}(?:AI|활용)",
+        "(?:AI|생성형).{0,12}(?:Gamma|감마)"
+      ]
+    },
+    {
+      "label": "Notion AI",
+      "patterns": ["Notion\\s*AI", "노션\\s*AI"]
+    },
+    {
+      "label": "Cursor AI",
+      "patterns": [
+        "(?:Cursor|커서).{0,12}(?:AI|바이브\\s*코딩)",
+        "(?:AI|바이브\\s*코딩).{0,12}(?:Cursor|커서)"
+      ]
+    },
+    {
+      "label": "Codex",
+      "patterns": [
+        "OpenAI\\s*Codex",
+        "Codex.{0,12}(?:AI|coding|코딩)",
+        "(?:AI|coding|코딩).{0,12}Codex",
+        "코덱스.{0,12}(?:AI|코딩|바이브)",
+        "(?:AI|코딩|바이브).{0,12}코덱스"
+      ]
+    },
+    {
+      "label": "Google AI Studio",
+      "patterns": ["Google\\s*AI\\s*Studio", "구글\\s*AI\\s*스튜디오"]
+    },
+    {
+      "label": "Vertex AI",
+      "patterns": ["Vertex\\s*AI", "버텍스\\s*AI"]
+    },
+    {
+      "label": "Dify",
+      "patterns": [
+        "(?<![A-Za-z])Dify(?![A-Za-z])",
+        "(?:AI|인공지능|앱|코딩).{0,15}디파이",
+        "디파이.{0,15}(?:AI|인공지능|앱|코딩)"
+      ]
+    },
+    {
+      "label": "Lovable",
+      "patterns": ["(?<![A-Za-z])Lovable(?![A-Za-z])", "러버블"]
+    },
+    {
+      "label": "v0",
+      "patterns": ["(?<![A-Za-z0-9])v0\\.dev(?![A-Za-z0-9])", "바이브\\s*코딩.{0,12}(?<![A-Za-z0-9])v0(?![A-Za-z0-9])"]
+    }
+  ]
+}
