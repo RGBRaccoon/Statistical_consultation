@@ -2,6 +2,8 @@ import importlib
 import sys
 from pathlib import Path
 
+import pytest
+
 MODULE_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(MODULE_DIR))
 
@@ -78,3 +80,50 @@ def test_tables_partition_ai_and_recompute_sensitivity_denominators():
     assert filtered["ai_count"] == 2
     assert filtered["excluded_ai_count"] == 1
     assert tables["ai_growth"][-1]["ai_yoy_pct"] is None
+
+
+def test_market_context_preserves_total_and_partial_year():
+    rows = [
+        {
+            "year": 2009,
+            "total": 10,
+            "ai_count": 1,
+            "non_ai_count": 9,
+            "partial_year": False,
+        },
+        {
+            "year": 2025,
+            "total": 100,
+            "ai_count": 60,
+            "non_ai_count": 40,
+            "partial_year": False,
+        },
+        {
+            "year": 2026,
+            "total": 80,
+            "ai_count": 50,
+            "non_ai_count": 30,
+            "partial_year": True,
+        },
+    ]
+    selected = analysis.market_context_series(rows, 2010, 2026)
+    assert [row["year"] for row in selected] == [2025, 2026]
+    assert all(
+        row["ai_count"] + row["non_ai_count"] == row["total"] for row in selected
+    )
+    assert selected[0]["ai_share_pct"] == 60
+    assert selected[1]["partial_year"] is True
+
+
+def test_market_context_rejects_a_stack_that_does_not_equal_the_total():
+    rows = [
+        {
+            "year": 2025,
+            "total": 100,
+            "ai_count": 60,
+            "non_ai_count": 50,
+            "partial_year": False,
+        }
+    ]
+    with pytest.raises(ValueError, match="합계"):
+        analysis.market_context_series(rows)

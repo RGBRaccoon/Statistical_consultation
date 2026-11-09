@@ -1,4 +1,4 @@
-"""기존 AI 키워드 사전을 유지하며 추가 분석 6개의 CSV와 그림을 생성한다."""
+"""기존 AI 키워드 사전을 유지하며 추가 분석과 보조 민감도 결과를 생성한다."""
 
 import json
 import re
@@ -215,6 +215,125 @@ def save_figure(figure, name, footnote):
     FIGURES.mkdir(parents=True, exist_ok=True)
     figure.savefig(FIGURES / name, dpi=160, bbox_inches="tight", facecolor="white")
     plt.close(figure)
+
+
+def market_context_series(rows, start=2010, end=2026):
+    selected = []
+    for row in sorted(rows, key=lambda item: item["year"]):
+        if not start <= row["year"] <= end:
+            continue
+        total = row["total"]
+        ai_count = row["ai_count"]
+        other_count = row["non_ai_count"]
+        if min(total, ai_count, other_count) < 0 or ai_count + other_count != total:
+            raise ValueError(f"{row['year']}년 누적 합계가 전체 상품 수와 다릅니다.")
+        selected.append({**row, "ai_share_pct": pct(ai_count, total)})
+    return selected
+
+
+def draw_market_context(rows):
+    selected = market_context_series(rows)
+    if not selected:
+        raise ValueError("전체 규모 그림에 표시할 자료가 없습니다.")
+    positions = list(range(len(selected)))
+    ai_counts = [row["ai_count"] for row in selected]
+    totals = [row["total"] for row in selected]
+    figure, axis = plt.subplots(figsize=(15, 8))
+    ai_bars = axis.bar(
+        positions,
+        ai_counts,
+        width=0.64,
+        color=PALETTE[1],
+        label="AI 키워드 일치 상품",
+        edgecolor="white",
+        linewidth=0.5,
+    )
+    other_bars = axis.bar(
+        positions,
+        [row["non_ai_count"] for row in selected],
+        bottom=ai_counts,
+        width=0.64,
+        color="#d9dfe5",
+        label="AI 키워드 미검출 상품",
+        edgecolor="white",
+        linewidth=0.5,
+    )
+    complete_positions = [
+        i for i, row in enumerate(selected) if not row["partial_year"]
+    ]
+    axis.plot(
+        complete_positions,
+        [totals[i] for i in complete_positions],
+        color="#465564",
+        marker="o",
+        markersize=4,
+        linewidth=1.7,
+        label="전체 IT·모바일 상품 수",
+        zorder=4,
+    )
+    for index, (ai_bar, other_bar, row) in enumerate(
+        zip(ai_bars, other_bars, selected, strict=True)
+    ):
+        axis.text(
+            index,
+            row["total"] + 38,
+            f"{row['total']:,}",
+            ha="center",
+            va="bottom",
+            fontsize=9,
+            color="#344454",
+        )
+        if row["ai_count"]:
+            large_segment = row["ai_count"] >= 200
+            axis.text(
+                index,
+                row["ai_count"] / 2 if large_segment else row["ai_count"] + 18,
+                f"AI\n{row['ai_count']:,}"
+                if large_segment
+                else f"AI {row['ai_count']}",
+                ha="center",
+                va="center" if large_segment else "bottom",
+                color="white" if large_segment else "#176b63",
+                fontsize=9 if large_segment else 8,
+                bbox={"facecolor": PALETTE[1], "edgecolor": "none", "pad": 1}
+                if large_segment
+                else None,
+            )
+        if row["partial_year"]:
+            ai_bar.set_hatch("///")
+            other_bar.set_hatch("///")
+            axis.axvspan(index - 0.48, index + 0.48, color="#777777", alpha=0.06)
+            if index:
+                axis.plot(
+                    [index - 1, index],
+                    [totals[index - 1], row["total"]],
+                    color="#465564",
+                    linestyle="--",
+                    linewidth=1.2,
+                    marker="o",
+                    markersize=4,
+                )
+    axis.set_xticks(
+        positions,
+        [f"{row['year']}{'*' if row['partial_year'] else ''}" for row in selected],
+        rotation=45,
+        ha="right",
+    )
+    axis.set_ylim(0, max(totals) * 1.19)
+    axis.set_ylabel("도서 상품 수(개)")
+    axis.set_xlabel("표시 발행연도")
+    axis.set_title(
+        "전체 IT·모바일 상품 규모와 그 안의 AI 관련 상품", fontsize=17, pad=18
+    )
+    axis.legend(loc="upper left", ncol=3, frameon=False)
+    axis.grid(axis="y", alpha=0.2, linestyle="--")
+    axis.set_axisbelow(True)
+    save_figure(
+        figure,
+        "ai_market_context.png",
+        "연도별 막대 높이=전체 상품 수, 녹색=AI 일치 상품. 선은 전체 관측값을 연결한 것. "
+        "*2026년은 11월 8일 수집 당시 1~11월 표시 상품(출간 예정 포함).",
+    )
 
 
 def draw_growth(rows):
@@ -436,12 +555,13 @@ def main():
     draw_keywords(tables["ai_keyword_yearly"], "technical", 2016, 2026, 10)
     draw_keywords(tables["ai_keyword_yearly"], "service", 2023, 2026, 10)
     draw_sensitivity(tables["ai_sensitivity"])
+    draw_market_context(tables["ai_growth"])
     print(
         json.dumps(
             {
                 "eligible": len(records),
                 "ai_count": sum(row["any"] for row in records),
-                "figures": 6,
+                "figures": 7,
                 "csv_files": len(tables),
             },
             ensure_ascii=False,
