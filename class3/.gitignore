@@ -7,3 +7,8 @@ data/*.log
 data/*.pid
 *_sample.html
 *_sample.js
+# 상세 수집의 실행 잠금과 SQLite 운영 상태. 결과 CSV/진행 요약은 유지한다.
+data/*.lock
+data/*.sqlite3
+data/*.sqlite3-wal
+data/*.sqlite3-shm

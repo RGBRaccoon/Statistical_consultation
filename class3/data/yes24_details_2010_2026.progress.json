@@ -1,0 +1,27 @@
+{
+  "updated_at": "2026-11-13T13:37:53+00:00",
+  "status": "paused_manual",
+  "counts": {
+    "complete": 95,
+    "pending": 27728,
+    "review": 1,
+    "reused": 86,
+    "total": 27824
+  },
+  "pacing": {
+    "remaining": 138,
+    "batch": 1,
+    "requests": 12,
+    "next_at": 1794577083.0395374
+  },
+  "last_request": {
+    "at": "2026-11-13T13:37:50+00:00",
+    "path": "/product/goods/184400269",
+    "status": 200,
+    "attempt": 1,
+    "redirect_host": "",
+    "redirect_path": ""
+  },
+  "last_error": null,
+  "pilot_passed": true
+}
