@@ -1,22 +1,22 @@
 {
-  "updated_at": "2026-11-13T13:37:53+00:00",
-  "status": "paused_manual",
+  "updated_at": "2026-11-13T18:40:28+00:00",
+  "status": "paused_for_partition",
   "counts": {
-    "complete": 95,
-    "pending": 27728,
-    "review": 1,
-    "reused": 86,
+    "complete": 1710,
+    "pending": 26034,
+    "review": 80,
+    "reused": 812,
     "total": 27824
   },
   "pacing": {
-    "remaining": 138,
-    "batch": 1,
-    "requests": 12,
-    "next_at": 1794577083.0395374
+    "remaining": 74,
+    "batch": 8,
+    "requests": 981,
+    "next_at": 1794595239.1609957
   },
   "last_request": {
-    "at": "2026-11-13T13:37:50+00:00",
-    "path": "/product/goods/184400269",
+    "at": "2026-11-13T18:40:24+00:00",
+    "path": "/product/goods/16511456",
     "status": 200,
     "attempt": 1,
     "redirect_host": "",

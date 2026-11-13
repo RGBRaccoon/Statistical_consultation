@@ -24,6 +24,10 @@ from bs4 import BeautifulSoup
 BASE = "https://www.yes24.com"
 ROOT = Path(__file__).resolve().parent
 USER_AGENT = "Class3BookResearch/2.0"
+REQUEST_DELAY = (2, 5)
+BATCH_SIZE = (200, 300)
+BATCH_REST = (180, 300)
+SNAPSHOT = ROOT / "data/yes24_details_2010_2026.resume.jsonl"
 COLUMNS = [
     "product_id",
     "product_url",
@@ -72,6 +76,90 @@ def select_targets(rows):
     if any(not product_id.isdigit() for product_id in ids):
         raise ValueError("상품 ID 형식 오류")
     return selected
+
+
+def target_fingerprint(rows):
+    payload = sorted(
+        (r["product_id"], r["publication_month"], r.get("source_category", ""))
+        for r in rows
+    )
+    return hashlib.sha256(json.dumps(payload).encode()).hexdigest()
+
+
+def partition_targets(rows, part, parts):
+    if parts < 1 or not 1 <= part <= parts:
+        raise ValueError("파트 번호는 1 이상 전체 파트 수 이하여야 합니다.")
+    return [
+        row
+        for row in rows
+        if int.from_bytes(
+            hashlib.sha256(row["product_id"].encode()).digest()[:8], "big"
+        )
+        % parts
+        + 1
+        == part
+    ]
+
+
+def export_snapshot(source, output):
+    """중단된 통합 작업의 결과·분류·결측 사유를 다른 PC에 옮길 수 있게 저장한다."""
+    connection = sqlite3.connect(Path(source).resolve().as_uri() + "?mode=ro", uri=True)
+    connection.row_factory = sqlite3.Row
+    try:
+        connection.execute("BEGIN")
+        meta = {
+            r["key"]: json.loads(r["value"])
+            for r in connection.execute("SELECT * FROM meta")
+        }
+        if meta.get("run_status") in ("blocked", "structure_error", "running"):
+            raise BlockedError(
+                "기존 수집을 정상적으로 저장·중단한 뒤 파트를 준비하세요. 접근 제한 상태를 분할로 초기화하지 않습니다."
+            )
+        nodes = [
+            {
+                "code": r["code"],
+                "name": r["name"],
+                "parent_code": r["parent_code"],
+                "path": json.loads(r["path_json"]),
+            }
+            for r in connection.execute("SELECT * FROM categories ORDER BY code")
+        ]
+        header = {
+            "type": "metadata",
+            "version": 1,
+            "columns": COLUMNS,
+            "source_fingerprint": meta.get("target_fingerprint"),
+            "source_status": meta.get("run_status"),
+            "created_at": now_iso(),
+            "pilot_passed": meta.get("pilot_passed", False),
+            "not_before": (meta.get("pacing") or {}).get("next_at", 0),
+            "categories": nodes,
+        }
+        output = Path(output)
+        temporary = output.with_suffix(".tmp")
+        count = 0
+        with temporary.open("w", encoding="utf-8", newline="\n") as handle:
+            handle.write(json.dumps(header, ensure_ascii=False) + "\n")
+            for row in connection.execute(
+                "SELECT status,data_json,metadata_json FROM jobs WHERE data_json IS NOT NULL ORDER BY position"
+            ):
+                handle.write(
+                    json.dumps(
+                        {
+                            "type": "result",
+                            "status": row["status"],
+                            "data": json.loads(row["data_json"]),
+                            "metadata": json.loads(row["metadata_json"]),
+                        },
+                        ensure_ascii=False,
+                    )
+                    + "\n"
+                )
+                count += 1
+        temporary.replace(output)
+        return count
+    finally:
+        connection.close()
 
 
 def node_text(node):
@@ -236,18 +324,7 @@ class Store:
             )
 
     def initialize(self, targets, rng, pilot_ids=()):
-        fingerprint = hashlib.sha256(
-            json.dumps(
-                sorted(
-                    (
-                        r["product_id"],
-                        r["publication_month"],
-                        r.get("source_category", ""),
-                    )
-                    for r in targets
-                )
-            ).encode()
-        ).hexdigest()
+        fingerprint = target_fingerprint(targets)
         existing = self.get_meta("target_fingerprint")
         if existing:
             if existing != fingerprint:
@@ -347,12 +424,96 @@ class Store:
             }
         )
         result["reused"] = self.connection.execute(
-            "SELECT count(*) FROM jobs WHERE json_extract(metadata_json,'$.source')='legacy'"
+            "SELECT count(*) FROM jobs WHERE json_extract(metadata_json,'$.source') IN ('legacy','snapshot')"
         ).fetchone()[0]
         result["total"] = self.connection.execute(
             "SELECT count(*) FROM jobs"
         ).fetchone()[0]
         return result
+
+    def phase_counts(self):
+        result = {}
+        for name, condition in (
+            ("2010_2016", "publication_month <= '2016-12'"),
+            ("2017_2026", "publication_month > '2016-12'"),
+        ):
+            counts = Counter(
+                {
+                    key: 0
+                    for key in ("pending", "complete", "review", "failed", "not_found")
+                }
+            )
+            counts.update(
+                dict(
+                    self.connection.execute(
+                        f"SELECT status,count(*) FROM jobs WHERE {condition} GROUP BY status"
+                    )
+                )
+            )
+            counts["total"] = sum(counts.values())
+            result[name] = dict(counts)
+        return result
+
+    def import_snapshot(self, path, expected_fingerprint):
+        if self.get_meta("run_status") in ("blocked", "structure_error"):
+            raise BlockedError(
+                "중단된 파트는 원인 확인 없이 재개 자료로 초기화하지 않습니다."
+            )
+        with Path(path).open(encoding="utf-8") as handle:
+            header = json.loads(next(handle))
+            if (
+                header.get("type") != "metadata"
+                or header.get("version") != 1
+                or header.get("columns") != COLUMNS
+            ):
+                raise ValueError("재개 자료 형식이 맞지 않습니다.")
+            if header.get("source_fingerprint") != expected_fingerprint:
+                raise ValueError("재개 자료와 전체 수집 대상이 다릅니다.")
+            if header.get("source_status") in ("blocked", "structure_error", "running"):
+                raise BlockedError("재개 자료의 접근 제한/실행 중 상태를 확인하세요.")
+            self.save_nodes(header["categories"])
+            pending = {
+                r[0]
+                for r in self.connection.execute(
+                    "SELECT product_id FROM jobs WHERE status='pending'"
+                )
+            }
+            count = 0
+            with self.connection:
+                for line in handle:
+                    item = json.loads(line)
+                    data = item["data"]
+                    if set(data) != set(COLUMNS) or item["status"] not in (
+                        "complete",
+                        "review",
+                    ):
+                        raise ValueError(
+                            "재개 자료의 컬럼 또는 결과 상태가 맞지 않습니다."
+                        )
+                    if data["product_id"] not in pending:
+                        continue
+                    metadata = dict(item["metadata"])
+                    metadata["original_source"] = metadata.get("source", "")
+                    metadata["source"] = "snapshot"
+                    self.connection.execute(
+                        "UPDATE jobs SET status=?,data_json=?,metadata_json=? WHERE product_id=?",
+                        (
+                            item["status"],
+                            json.dumps(data, ensure_ascii=False),
+                            json.dumps(metadata, ensure_ascii=False),
+                            data["product_id"],
+                        ),
+                    )
+                    pending.remove(data["product_id"])
+                    count += 1
+            pacing = self.get_meta(
+                "pacing", {"remaining": 0, "batch": 0, "requests": 0, "next_at": 0}
+            )
+            pacing["next_at"] = max(pacing["next_at"], header.get("not_before", 0))
+            self.set_meta("pacing", pacing)
+            if header.get("pilot_passed"):
+                self.set_meta("pilot_passed", True)
+            return count
 
     def reuse_legacy(self, rows):
         lookup = {}
@@ -420,15 +581,22 @@ class Store:
     def export(self, output):
         output = Path(output)
         output.parent.mkdir(parents=True, exist_ok=True)
-        temporary = output.with_suffix(".tmp")
-        with temporary.open("w", encoding="utf-8-sig", newline="") as handle:
-            writer = csv.DictWriter(handle, fieldnames=COLUMNS)
-            writer.writeheader()
-            for row in self.connection.execute(
-                "SELECT data_json FROM jobs WHERE data_json IS NOT NULL ORDER BY position"
-            ):
-                writer.writerow(json.loads(row[0]))
-        temporary.replace(output)
+        for path, condition in (
+            (output, "1=1"),
+            (
+                output.with_name(output.stem + ".phase1.csv"),
+                "publication_month<='2016-12'",
+            ),
+        ):
+            temporary = path.with_suffix(".tmp")
+            with temporary.open("w", encoding="utf-8-sig", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=COLUMNS)
+                writer.writeheader()
+                for row in self.connection.execute(
+                    f"SELECT data_json FROM jobs WHERE data_json IS NOT NULL AND {condition} ORDER BY position"
+                ):
+                    writer.writerow(json.loads(row[0]))
+            temporary.replace(path)
         lookup_path = output.with_name(output.stem + ".categories.csv")
         temporary = lookup_path.with_suffix(".tmp")
         with temporary.open("w", encoding="utf-8-sig", newline="") as handle:
@@ -465,6 +633,14 @@ class Store:
             "last_request": self.get_meta("last_request"),
             "last_error": self.get_meta("last_error"),
             "pilot_passed": self.get_meta("pilot_passed", False),
+            "partition": self.get_meta("partition", {"part": 1, "parts": 1}),
+            "collection_through_year": self.get_meta("collection_through_year", 2016),
+            "phases": self.phase_counts(),
+            "pacing_settings": {
+                "request_seconds": REQUEST_DELAY,
+                "batch_requests": BATCH_SIZE,
+                "batch_rest_seconds": BATCH_REST,
+            },
         }
         status_path = output.with_suffix(".progress.json")
         temporary = status_path.with_suffix(".tmp")
@@ -488,7 +664,7 @@ class Pacer:
         while (remaining := state["next_at"] - self.clock.time()) > 0:
             self.clock.sleep(min(remaining, 30))
         if state["remaining"] == 0:
-            state["remaining"] = self.rng.randint(100, 150)
+            state["remaining"] = self.rng.randint(*BATCH_SIZE)
             state["batch"] += 1
             logging.info("묶음 %s 시작: %s회 요청", state["batch"], state["remaining"])
         state["remaining"] -= 1
@@ -497,15 +673,15 @@ class Pacer:
         state["next_at"] = (
             self.clock.time()
             + 30
-            + max(20, self.minimum_delay)
-            + (600 if state["remaining"] == 0 else 0)
+            + max(REQUEST_DELAY[1], self.minimum_delay)
+            + (BATCH_REST[1] if state["remaining"] == 0 else 0)
         )
         self.store.set_meta("pacing", state)
 
     def after_request(self, minimum_pause=0):
         state = self.store.get_meta("pacing")
-        gap = max(self.minimum_delay, self.rng.uniform(5, 20))
-        rest = self.rng.uniform(300, 600) if state["remaining"] == 0 else 0
+        gap = max(self.minimum_delay, self.rng.uniform(*REQUEST_DELAY))
+        rest = self.rng.uniform(*BATCH_REST) if state["remaining"] == 0 else 0
         state["next_at"] = self.clock.time() + max(gap + rest, minimum_pause)
         self.store.set_meta("pacing", state)
         if rest:
@@ -687,10 +863,91 @@ def collect_source_categories(client, store, cache=None):
     logging.info("출처 분류 한글명 %s개 확인", len(nodes))
 
 
+def partition_output(base, part, parts):
+    return (
+        base if parts == 1 else base.with_name(f"{base.stem}.part{part}{base.suffix}")
+    )
+
+
+def next_job(store, through_year):
+    return store.connection.execute(
+        "SELECT * FROM jobs WHERE status='pending' AND publication_month<=? "
+        "ORDER BY (publication_month>'2016-12'),position LIMIT 1",
+        (f"{through_year}-12",),
+    ).fetchone()
+
+
+def finish_phase(store, through_year):
+    counts = (
+        store.phase_counts()["2010_2016"] if through_year == 2016 else store.counts()
+    )
+    review = any(counts[s] for s in ("review", "failed", "not_found"))
+    status = "phase1_finished" if through_year == 2016 else "finished"
+    store.set_meta("run_status", status + ("_with_review" if review else ""))
+    if through_year == 2016:
+        logging.info(
+            "1차 목표 2010~2016년 미수집 0건. 확인 필요/실패 %s건. 2017년 이후는 --through-year 2026으로 별도 실행하세요.",
+            sum(counts[s] for s in ("review", "failed", "not_found")),
+        )
+
+
+def prepare_parts(args):
+    """네트워크 요청 없이 동일한 재개 자료와 두 개의 고정 작업 명단을 만든다."""
+    targets = select_targets(read_csv(args.input))
+    legacy = read_csv(args.legacy) if args.legacy.exists() else []
+    with single_process_lock(args.output.parent / "yes24_details_2010_2026.lock"):
+        saved = export_snapshot(args.output.with_suffix(".sqlite3"), args.snapshot)
+        report = {"saved_results": saved, "target_total": len(targets), "parts": []}
+        for part in (1, 2):
+            owned = partition_targets(targets, part, 2)
+            output = partition_output(args.output, part, 2)
+            manifest = output.with_name(output.stem + ".targets.csv")
+            with manifest.open("w", encoding="utf-8-sig", newline="") as handle:
+                writer = csv.DictWriter(
+                    handle,
+                    fieldnames=[
+                        "product_id",
+                        "product_url",
+                        "publication_month",
+                        "source_category",
+                    ],
+                )
+                writer.writeheader()
+                writer.writerows(
+                    {key: row.get(key, "") for key in writer.fieldnames}
+                    for row in owned
+                )
+            store = Store(sqlite3.connect(output.with_suffix(".sqlite3")))
+            try:
+                store.initialize(
+                    owned,
+                    random.SystemRandom(),
+                    choose_pilot(owned, legacy, random.SystemRandom()),
+                )
+                store.import_snapshot(args.snapshot, target_fingerprint(targets))
+                store.set_meta("partition", {"part": part, "parts": 2})
+                store.set_meta("collection_through_year", 2016)
+                store.set_meta("run_status", "ready_partition")
+                store.export(output)
+                report["parts"].append(
+                    {
+                        "part": part,
+                        "output": str(output),
+                        "counts": dict(store.counts()),
+                        "phases": store.phase_counts(),
+                    }
+                )
+            finally:
+                store.connection.close()
+        print(json.dumps(report, ensure_ascii=False, indent=2))
+    return 0
+
+
 def run(args):
     output = args.output
     output.parent.mkdir(parents=True, exist_ok=True)
-    with single_process_lock(output.with_suffix(".lock")):
+    # 두 파트도 한 PC에서는 하나만 실행한다. 이전 단일 수집기와도 같은 잠금을 사용한다.
+    with single_process_lock(output.parent / "yes24_details_2010_2026.lock"):
         store = Store(sqlite3.connect(output.with_suffix(".sqlite3")))
         try:
             if (
@@ -702,13 +959,49 @@ def run(args):
                 )
                 return 1
             rng = random.SystemRandom()
-            targets = select_targets(read_csv(args.input))
+            if args.resume_after_stop and store.get_meta("run_status") in (
+                "blocked",
+                "structure_error",
+            ):
+                store.set_meta("run_status", "resume_authorized")
+            all_targets = select_targets(read_csv(args.input))
+            targets = partition_targets(all_targets, args.part, args.parts)
             legacy = read_csv(args.legacy) if args.legacy.exists() else []
             store.initialize(targets, rng, choose_pilot(targets, legacy, rng))
+            store.set_meta("partition", {"part": args.part, "parts": args.parts})
+            store.set_meta("collection_through_year", args.through_year)
+            if args.parts > 1:
+                if not args.snapshot.exists():
+                    raise ValueError(
+                        "공통 재개 자료가 없습니다. 원격 저장소의 최신 코드를 git pull로 받아 주세요."
+                    )
+                imported = store.import_snapshot(
+                    args.snapshot, target_fingerprint(all_targets)
+                )
+                logging.info(
+                    "파트 %s/%s 기존 재개 자료 %s건 반영",
+                    args.part,
+                    args.parts,
+                    imported,
+                )
             store.set_meta("run_status", "running")
             store.set_meta("last_error", None)
             store.export(output)
             logging.info("대상 %s건, 현재 %s", len(targets), dict(store.counts()))
+            logging.info(
+                "이번 실행 목표: 2010~%s년; 단계별 현황 %s",
+                args.through_year,
+                store.phase_counts(),
+            )
+            logging.info(
+                "대기 설정: 건별 %s~%s초 / 묶음 %s~%s회 / 휴식 %s~%s초",
+                *REQUEST_DELAY,
+                *BATCH_SIZE,
+                *BATCH_REST,
+            )
+            if next_job(store, args.through_year) is None:
+                finish_phase(store, args.through_year)
+                return 0
             client = Client(store, Pacer(store))
             client.initialize_robots()
             collect_source_categories(
@@ -718,9 +1011,7 @@ def run(args):
             )
             processed = 0
             while True:
-                job = store.connection.execute(
-                    "SELECT * FROM jobs WHERE status='pending' ORDER BY position LIMIT 1"
-                ).fetchone()
+                job = next_job(store, args.through_year)
                 if job is None:
                     break
                 product_id = job["product_id"]
@@ -769,13 +1060,7 @@ def run(args):
                 if args.limit and processed >= args.limit:
                     store.set_meta("run_status", "paused_limit")
                     return 2
-            counts = store.counts()
-            store.set_meta(
-                "run_status",
-                "finished_with_review"
-                if any(counts[s] for s in ("review", "failed", "not_found"))
-                else "finished",
-            )
+            finish_phase(store, args.through_year)
             return 0
         except (BlockedError, StructureError) as exc:
             store.set_meta(
@@ -809,8 +1094,30 @@ def main():
     parser.add_argument(
         "--legacy", type=Path, default=ROOT / "data/yes24_it_mobile.csv"
     )
+    parser.add_argument("--output", type=Path, default=None)
     parser.add_argument(
-        "--output", type=Path, default=ROOT / "data/yes24_details_2010_2026.csv"
+        "--part", type=int, choices=(1, 2), help="이 컴퓨터가 담당할 파트 번호"
+    )
+    parser.add_argument(
+        "--through-year",
+        type=int,
+        choices=(2016, 2026),
+        default=2016,
+        help="기본값 2016: 1차 구간만 수집 후 종료. 2026으로 2017년 이후 이어서 수집",
+    )
+    parser.add_argument(
+        "--parts", type=int, choices=(1, 2), default=2, help="기본값 2: 두 PC 분할"
+    )
+    parser.add_argument(
+        "--snapshot",
+        type=Path,
+        default=SNAPSHOT,
+        help="두 PC에 공유할 기존 결과와 분류 사전",
+    )
+    parser.add_argument(
+        "--prepare-parts",
+        action="store_true",
+        help="현재 PC의 통합 SQLite에서 두 파트 명단·재개 자료만 준비. HTTP 요청 없음",
     )
     parser.add_argument(
         "--limit", type=int, default=0, help="이번 실행의 상세 시도 수. 0은 전체 대상"
@@ -823,6 +1130,20 @@ def main():
     args = parser.parse_args()
     if args.limit < 0:
         parser.error("limit는 0 이상이어야 합니다.")
+    if args.prepare_parts and (args.part is not None or args.parts != 2):
+        parser.error("--prepare-parts는 --part 없이 --parts 2로 사용하세요.")
+    if not args.prepare_parts and args.part is None:
+        parser.error("PC별로 --part 1 또는 --part 2를 지정하세요.")
+    if args.part is not None and args.part > args.parts:
+        parser.error("파트 번호가 전체 파트 수보다 큽니다.")
+    if args.output is None:
+        base_output = ROOT / "data/yes24_details_2010_2026.csv"
+        args.output = (
+            base_output
+            if args.prepare_parts
+            else partition_output(base_output, args.part, args.parts)
+        )
+    args.output.parent.mkdir(parents=True, exist_ok=True)
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s %(levelname)s %(message)s",
@@ -831,7 +1152,13 @@ def main():
             logging.StreamHandler(),
         ],
     )
-    return run(args)
+    try:
+        return prepare_parts(args) if args.prepare_parts else run(args)
+    except (OSError, RuntimeError, ValueError) as exc:
+        logging.error(
+            "실행 중단: %s. 기존 수집이 실행 중이면 먼저 Ctrl+C로 중단하세요.", exc
+        )
+        return 1
 
 
 if __name__ == "__main__":

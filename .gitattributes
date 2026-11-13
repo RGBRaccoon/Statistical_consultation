@@ -1,0 +1,2 @@
+# 책 소개·목차의 원문 공백을 보존하는 CSV이므로 코드용 공백 검사를 적용하지 않는다.
+class3/data/yes24_details_2010_2026*.csv -whitespace

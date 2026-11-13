@@ -1,0 +1,57 @@
+{
+  "updated_at": "2026-11-13T18:49:06+00:00",
+  "status": "ready_partition",
+  "counts": {
+    "complete": 859,
+    "pending": 12998,
+    "review": 37,
+    "reused": 896,
+    "total": 13894
+  },
+  "pacing": {
+    "remaining": 0,
+    "batch": 0,
+    "requests": 0,
+    "next_at": 1794595239.1609957
+  },
+  "last_request": null,
+  "last_error": null,
+  "pilot_passed": true,
+  "partition": {
+    "part": 2,
+    "parts": 2
+  },
+  "collection_through_year": 2016,
+  "phases": {
+    "2010_2016": {
+      "pending": 4817,
+      "complete": 216,
+      "review": 16,
+      "failed": 0,
+      "not_found": 0,
+      "total": 5049
+    },
+    "2017_2026": {
+      "pending": 8181,
+      "complete": 643,
+      "review": 21,
+      "failed": 0,
+      "not_found": 0,
+      "total": 8845
+    }
+  },
+  "pacing_settings": {
+    "request_seconds": [
+      2,
+      5
+    ],
+    "batch_requests": [
+      200,
+      300
+    ],
+    "batch_rest_seconds": [
+      180,
+      300
+    ]
+  }
+}
