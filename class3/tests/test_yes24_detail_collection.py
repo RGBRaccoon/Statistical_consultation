@@ -5,6 +5,7 @@ import random
 import sqlite3
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -288,6 +289,96 @@ def test_http_block_stops_without_retry_or_new_session():
     assert session.calls == 1
     assert store.get_meta("pacing")["requests"] == 1
     assert store.get_meta("pacing")["next_at"] >= clock.time() + 600
+
+
+@pytest.mark.parametrize(
+    "status,location,skip",
+    [
+        (302, "/Product/Base/AdultCheck/16514984", True),
+        (302, "https://www.yes24.com/Product/Base/AdultCheck/16514984", True),
+        (302, "//www.yes24.com/Product/Base/AdultCheck/16514984", True),
+        (302, "https://other.example/Product/Base/AdultCheck/16514984", False),
+        (302, "/Product/Base/AdultCheck/123", False),
+        (302, "/login", False),
+        (401, "/Product/Base/AdultCheck/16514984", False),
+        (403, "/Product/Base/AdultCheck/16514984", False),
+        (429, "/Product/Base/AdultCheck/16514984", False),
+    ],
+)
+def test_only_matching_adult_redirect_is_skippable(status, location, skip):
+    store, clock = memory_store(), Clock()
+    calls = []
+
+    class Session:
+        def get(self, *args, **kwargs):
+            calls.append((args, kwargs))
+            response = crawler.requests.Response()
+            response.status_code = status
+            response.headers["Location"] = location
+            return response
+
+    client = crawler.Client(
+        store, crawler.Pacer(store, rng=FixedRandom(), clock=clock), Session()
+    )
+    expected = crawler.AdultCheckError if skip else crawler.BlockedError
+    with pytest.raises(expected):
+        client.fetch("/product/goods/16514984", check_robots=False)
+    assert len(calls) == 1
+    assert calls[0][1]["allow_redirects"] is False
+
+
+def test_adult_pilot_is_reviewed_and_collection_continues_after_restart(
+    tmp_path, monkeypatch
+):
+    rows = [
+        {"product_id": product, "publication_month": "2016-01"}
+        for product in ("16514984", "20")
+    ]
+    args = SimpleNamespace(
+        output=tmp_path / "books.csv",
+        input=tmp_path / "input.csv",
+        legacy=tmp_path / "missing.csv",
+        resume_after_stop=True,
+        part=1,
+        parts=1,
+        through_year=2016,
+        limit=0,
+    )
+    with args.input.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    store = crawler.Store(sqlite3.connect(args.output.with_suffix(".sqlite3")))
+    store.initialize(rows, random.Random(1), ["16514984", "20"])
+    store.set_meta("run_status", "blocked")
+    store.connection.close()
+    calls = []
+
+    def fetch(self, path, **kwargs):
+        calls.append(path)
+        if path.endswith("/16514984"):
+            raise crawler.AdultCheckError("성인 인증 필요")
+        self.store.set_meta("last_request", {"attempt": 1})
+        return HTML.replace("2024년 02월 03일", "2016년 01월 03일")
+
+    monkeypatch.setattr(crawler.Client, "initialize_robots", lambda self: None)
+    monkeypatch.setattr(crawler.Client, "fetch", fetch)
+    monkeypatch.setattr(crawler, "collect_source_categories", lambda *a: None)
+    assert crawler.run(args) == 0
+    assert set(calls) == {"/product/goods/16514984", "/product/goods/20"}
+    assert crawler.run(args) == 0
+    assert len(calls) == 2
+    store = crawler.Store(sqlite3.connect(args.output.with_suffix(".sqlite3")))
+    adult = store.connection.execute(
+        "SELECT * FROM jobs WHERE product_id='16514984'"
+    ).fetchone()
+    assert adult["status"] == "review"
+    assert adult["data_json"] is None
+    assert json.loads(adult["metadata_json"])["reason"] == "adult_check"
+    assert store.counts()["complete"] == 1
+    assert store.get_meta("pilot_passed") is True
+    assert store.get_meta("run_status") == "phase1_finished_with_review"
+    store.connection.close()
 
 
 def test_result_is_durable_and_csv_roundtrips_without_extra_columns(tmp_path):
