@@ -54,6 +54,22 @@ class NotFoundError(RuntimeError):
     pass
 
 
+class AdultCheckError(RuntimeError):
+    """인증이 필요한 개별 상품은 인증 경로를 요청하지 않고 검토 대상으로 남긴다."""
+
+
+def is_adult_check_redirect(status, path, location):
+    product = re.fullmatch(r"/product/goods/(\d+)", path, re.I)
+    redirect = urlparse(location)
+    return bool(
+        status in (302, 303, 307, 308)
+        and product
+        and redirect.scheme.lower() in ("", "https")
+        and redirect.netloc.lower() in ("", "www.yes24.com")
+        and redirect.path.lower() == f"/product/base/adultcheck/{product.group(1)}"
+    )
+
+
 def now_iso():
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -737,6 +753,12 @@ class Client:
                         ).path,
                     },
                 )
+                if is_adult_check_redirect(
+                    response.status_code, path, response.headers.get("Location", "")
+                ):
+                    raise AdultCheckError(
+                        f"{path}: 성인 인증 필요. 인증 페이지를 요청하지 않고 건너뜁니다."
+                    )
                 if response.status_code in (401, 403, 429) or response.is_redirect:
                     raise BlockedError(
                         f"HTTP {response.status_code}: {path}; 자동 재시도 중단"
@@ -1031,6 +1053,30 @@ def run(args):
                         raise StructureError(
                             f"{product_id}: 소량 점검에서 코드 포함 분류를 확인하지 못했습니다."
                         )
+                except AdultCheckError as exc:
+                    store.mark_error(product_id, "review", exc)
+                    with store.connection:
+                        store.connection.execute(
+                            "UPDATE jobs SET metadata_json=? WHERE product_id=?",
+                            (
+                                json.dumps(
+                                    {
+                                        "reason": "adult_check",
+                                        "error": str(exc),
+                                        "http_status": store.get_meta(
+                                            "last_request", {}
+                                        ).get("status"),
+                                        "collected_at": now_iso(),
+                                    },
+                                    ensure_ascii=False,
+                                ),
+                                product_id,
+                            ),
+                        )
+                    logging.warning(
+                        "성인 인증 상품 %s: 검토 대상으로 보존하고 다음 상품으로 진행",
+                        product_id,
+                    )
                 except NotFoundError as exc:
                     store.mark_error(product_id, "not_found", exc)
                 except requests.RequestException as exc:
@@ -1042,7 +1088,8 @@ def run(args):
                     ).fetchone()[0]
                     if not pilot_pending and not store.get_meta("pilot_passed"):
                         unsuccessful = store.connection.execute(
-                            "SELECT count(*) FROM jobs WHERE pilot=1 AND data_json IS NULL"
+                            "SELECT count(*) FROM jobs WHERE pilot=1 AND data_json IS NULL "
+                            "AND COALESCE(json_extract(metadata_json,'$.reason'),'')!='adult_check'"
                         ).fetchone()[0]
                         if unsuccessful:
                             raise StructureError(
