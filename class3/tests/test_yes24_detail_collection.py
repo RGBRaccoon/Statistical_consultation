@@ -300,6 +300,13 @@ def test_http_block_stops_without_retry_or_new_session():
         (302, "https://other.example/Product/Base/AdultCheck/16514984", False),
         (302, "/Product/Base/AdultCheck/123", False),
         (302, "/login", False),
+        (302, "http://www.yes24.com/Product/Base/AdultCheck/16514984", False),
+        (
+            302,
+            "https://www.yes24.com.evil.example/Product/Base/AdultCheck/16514984",
+            False,
+        ),
+        (302, "/Product/Base/AdultCheck/16514984/extra", False),
         (401, "/Product/Base/AdultCheck/16514984", False),
         (403, "/Product/Base/AdultCheck/16514984", False),
         (429, "/Product/Base/AdultCheck/16514984", False),
